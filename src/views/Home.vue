@@ -1,15 +1,20 @@
 <template>
-  <hello-world />
+  <div>
+    <v-card
+    height="400px"
+    width="700px">
+      hello
+    </v-card>
+  </div>
 </template>
 
 <script>
-import HelloWorld from '../components/HelloWorld'
 
 export default {
   name: 'Home',
 
   components: {
-    HelloWorld
+    // HelloWorld,
   }
 }
 </script>
