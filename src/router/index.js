@@ -1,5 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import Home from '../views/Home.vue'
+import Admin from '../views/Admin.vue'
+import UserManage from '../components/UserManage.vue'
+import DataManage from '../components/DataManage.vue'
 
 Vue.use(VueRouter)
 
@@ -33,6 +37,26 @@ const routes = [
     path: '/About',
     name: 'About',
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+  },
+  {
+    path: '/admin',
+    name: 'Admin',
+    component: Admin,
+    redirect: '/admin/usermanage',
+    children: [
+      {
+        path: 'usermanage',
+        component: UserManage
+      },
+      {
+        path: 'datamanage',
+        component: DataManage
+      }
+    ]
+  },
+  {
+    path: '*',
+    redirect: '/'
   }
 ]
 
