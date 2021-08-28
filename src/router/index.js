@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
 import Admin from '../views/Admin.vue'
 import UserManage from '../components/UserManage.vue'
 import DataManage from '../components/DataManage.vue'
