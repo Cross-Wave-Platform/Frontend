@@ -12,10 +12,14 @@
         </span>
       </v-app-bar-title>
 
-      <!-- <v-img
-        src="https://scontent.ftpe7-3.fna.fbcdn.net/v/t31.18172-8/12465938_539406982888206_5102129001026077151_o.jpg?_nc_cat=103&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=ywEtmtgKUBUAX9JO0rK&tn=TKrYiZZRW55v75Rf&_nc_ht=scontent.ftpe7-3.fna&oh=81e7e153f6d44bd7839a61d20e71cac9&oe=612BB1A8"
+      <v-spacer></v-spacer>
+
+      <v-img
+        src="./assets/KIT_LOGO.png"
+        class="logo"
+        overlap
       >
-      </v-img> -->
+      </v-img>
       <v-spacer></v-spacer>
       <span style="cursor: pointer" @click="$router.push('/Profile')">
         Username
@@ -45,21 +49,21 @@
           >
             <v-row
               no-gutters
+              align="center"
             >
               <v-col
                 cols="4"
               >
-                <v-card
-                  :elevation="0"
-                  tile
-                  fill-height
-                >
                   <v-img
-                    src="https://scontent.ftpe7-3.fna.fbcdn.net/v/t31.18172-8/12465938_539406982888206_5102129001026077151_o.jpg?_nc_cat=103&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=ywEtmtgKUBUAX9JO0rK&tn=TKrYiZZRW55v75Rf&_nc_ht=scontent.ftpe7-3.fna&oh=81e7e153f6d44bd7839a61d20e71cac9&oe=612BB1A8"
-                    gradient="to top right, rgba(100,115,201,.33), rgba(25,32,72,.7)"
+                    src="./assets/KIT_LOGO.png"
+                    gradient="to top right, rgba(255,255,255,.33), rgba(255,255,255,.7)"
                   >
                   </v-img>
-                </v-card>
+                <!-- <v-card
+                  :elevation="0"
+                  tile
+                >
+                </v-card> -->
               </v-col>
               <v-col
                 cols="8"
@@ -314,7 +318,8 @@ export default {
 .logo {
   height: 100px;
   width: 100px;
-  margin-top: -50px;
+  margin-bottom: -10px;
+  padding-bottom: -10px;
 }
 #app {
   /* background-image: url('https://scontent.ftpe7-3.fna.fbcdn.net/v/t31.18172-8/12465938_539406982888206_5102129001026077151_o.jpg?_nc_cat=103&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=ywEtmtgKUBUAX9JO0rK&tn=TKrYiZZRW55v75Rf&_nc_ht=scontent.ftpe7-3.fna&oh=81e7e153f6d44bd7839a61d20e71cac9&oe=612BB1A8'),
@@ -324,7 +329,8 @@ export default {
   background-size: center/40% cover,
                    cover; */
                    /* url('https://scontent.ftpe7-3.fna.fbcdn.net/v/t31.18172-8/12465938_539406982888206_5102129001026077151_o.jpg?_nc_cat=103&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=ywEtmtgKUBUAX9JO0rK&tn=TKrYiZZRW55v75Rf&_nc_ht=scontent.ftpe7-3.fna&oh=81e7e153f6d44bd7839a61d20e71cac9&oe=612BB1A8') */
-  background: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), center/40% url('https://scontent.ftpe7-3.fna.fbcdn.net/v/t31.18172-8/12465938_539406982888206_5102129001026077151_o.jpg?_nc_cat=103&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=ywEtmtgKUBUAX9JO0rK&tn=TKrYiZZRW55v75Rf&_nc_ht=scontent.ftpe7-3.fna&oh=81e7e153f6d44bd7839a61d20e71cac9&oe=612BB1A8')
+  /* background: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), center/40% url('https://scontent.ftpe7-3.fna.fbcdn.net/v/t31.18172-8/12465938_539406982888206_5102129001026077151_o.jpg?_nc_cat=103&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=ywEtmtgKUBUAX9JO0rK&tn=TKrYiZZRW55v75Rf&_nc_ht=scontent.ftpe7-3.fna&oh=81e7e153f6d44bd7839a61d20e71cac9&oe=612BB1A8') */
+  background: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), right bottom/20% url('./assets/KIT_LOGO.png')
   /* background: center/40% url('https://scontent.ftpe7-3.fna.fbcdn.net/v/t31.18172-8/12465938_539406982888206_5102129001026077151_o.jpg?_nc_cat=103&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=ywEtmtgKUBUAX9JO0rK&tn=TKrYiZZRW55v75Rf&_nc_ht=scontent.ftpe7-3.fna&oh=81e7e153f6d44bd7839a61d20e71cac9&oe=612BB1A8') */
    no-repeat !important;
   background-size: cover;
