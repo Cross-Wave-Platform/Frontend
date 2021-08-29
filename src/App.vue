@@ -275,12 +275,12 @@ export default {
       {
         index: 3,
         name: '合併分析',
-        path: '/'
+        path: '/export'
       },
       {
         index: 4,
         name: '權限管理',
-        path: '/'
+        path: '/admin'
       },
       {
         index: 5,
