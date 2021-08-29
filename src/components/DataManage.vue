@@ -39,33 +39,75 @@
                     {{ input_data.keyword.length ?  '>> ': ''}}
                     {{ input_data.keyword }}
         </p>
-        <v-simple-table>
-            <template v-slot:default>
-            <thead>
-                <tr>
-                <th>檔案名稱</th>
-                <th>釋出狀態</th>
-                <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr v-for="item in titleMenuData" :key="item.id" style="font-size:16;">
-                <td>{{ item.title }}</td>
-                <td>{{ item.state ? "已釋出" : "未釋出" }}</td>
-                <td>
-                    <v-btn text v-b-modal.modal-data>
-                    <v-icon left>mdi-pencil</v-icon>編輯
-                    </v-btn>
-                </td>
-                </tr>
-            </tbody>
-            </template>
-        </v-simple-table>
+        <v-data-table
+            :headers="headers"
+            :items="titleMenuData"
+            sort-by="title"
+        >
+            <template v-slot:top>
+            <v-toolbar flat>
+                  <v-toolbar-title>問卷資料</v-toolbar-title>
+                  <v-divider
+                    class="mx-4"
+                    inset
+                    vertical
+                  ></v-divider>
+                  <v-spacer></v-spacer>
+
+                  <v-dialog
+                    v-model="dialog"
+                    max-width="500px"
+                  >
+                    <v-card>
+                      <v-card-title>
+                        <span class="text-h5">問卷釋出</span>
+                      </v-card-title>
+
+                      <v-card-text>
+                        <v-text-field
+                          v-model="editedItem.title"
+                          label="帳戶名稱"
+                          readonly
+                        ></v-text-field>
+                        <v-switch
+                          v-model="editedItem.state"
+                          flat
+                          :label="`${editedItem.state ? '已釋出':'未釋出'}`"
+                        ></v-switch>
+                      </v-card-text>
+
+                      <v-card-actions>
+                        <v-spacer></v-spacer>
+                        <v-btn
+                          color="blue darken-1"
+                          text
+                          @click="close"
+                        >
+                          Cancel
+                        </v-btn>
+                        <v-btn
+                          color="blue darken-1"
+                          text
+                          @click="save"
+                        >
+                          Save
+                        </v-btn>
+                      </v-card-actions>
+                    </v-card>
+                  </v-dialog>
+                </v-toolbar>
+              </template>
+              <template v-slot:item.state="{ item }">
+                {{ item.state?'已釋出':'未釋出' }}
+              </template>
+              <template v-slot:item.actions="{ item }">
+                <v-btn text @click="editItem(item)">
+                  <v-icon left>mdi-pencil</v-icon>編輯
+                </v-btn>
+              </template>
+            </v-data-table>
         </v-card-text>
     </v-card>
-    <b-modal id="modal-data" title="BootstrapVue">
-        <p class="my-4">Hello from modal!</p>
-    </b-modal>
   </div>
 </template>
 <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
@@ -75,6 +117,7 @@ export default {
   name: 'DataManage',
   data () {
     return {
+      dialog: false,
       menuData: [],
       input_data: {
         group: '全部',
@@ -87,6 +130,33 @@ export default {
       monthofData: ['全部','3月齡','6月齡','9月齡','12月齡','24月齡','36月齡'],
       typeofData: ['全部','家長','親友','教保/教師'],
       releaseState: ['全部','已釋出','未釋出'],
+      headers: [
+        {
+            text: '問卷名稱',
+            align: 'start',
+            sortable: false,
+            value: 'title',
+        },
+        { text: '釋出狀態', value: 'state' },
+        { text: '', value: 'actions', sortable: false }
+      ],
+      editedIndex: -1,
+      editedItem: {
+        id: '',
+        title: '',
+        month: '',
+        wave: '',
+        people: '',
+        state: '',
+      },
+      defaultItem: {
+        id: '',
+        title: '',
+        month: '',
+        wave: '',
+        people: '',
+        state: '',
+      }
     }
   },
   computed: {
@@ -135,13 +205,39 @@ export default {
             return this.typeMenuDataForState.filter(item =>{
                 return (
                     item.title.toLowerCase().indexOf
-                        (this.input_data.keyword.toLowerCase()!==-1)
+                        (this.input_data.keyword.toLowerCase())!==-1
                     )
             })
         }else{
             return this.typeMenuDataForState
         }
     }
+  },
+  watch: {
+    dialog (val) {
+      val || this.close()
+    }
+  },
+
+  methods: {
+    editItem (item) {
+      this.editedIndex = this.menuData.indexOf(item)
+      this.editedItem = Object.assign({}, item)
+      this.dialog = true
+    },
+
+    close () {
+      this.dialog = false
+      this.$nextTick(() => {
+        this.editedItem = Object.assign({}, this.defaultItem)
+        this.editedIndex = -1
+      })
+    },
+
+    save () {
+      Object.assign(this.menuData[this.editedIndex], this.editedItem)
+      this.close()
+    },
   },
   mounted () {
     axios.get('http://localhost:8000/Datas').then((res) => {

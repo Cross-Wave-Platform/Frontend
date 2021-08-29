@@ -3,6 +3,9 @@ import VueRouter from 'vue-router'
 import Admin from '../views/Admin.vue'
 import UserManage from '../components/UserManage.vue'
 import DataManage from '../components/DataManage.vue'
+import Export from '../views/Export.vue'
+import Join from '../components/Join.vue'
+import Analysis from '../components/Analysis.vue'
 
 Vue.use(VueRouter)
 
@@ -50,6 +53,22 @@ const routes = [
       {
         path: 'datamanage',
         component: DataManage
+      }
+    ]
+  },
+  {
+    path: '/export',
+    name: 'Export',
+    component: Export,
+    redirect: '/export/join',
+    children: [
+      {
+        path: 'join',
+        component: Join
+      },
+      {
+        path: 'analysis',
+        component: Analysis
       }
     ]
   },
