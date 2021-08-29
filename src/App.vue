@@ -6,6 +6,24 @@
       dark
       dense
     >
+      <span
+        class="circle mx-1"
+        style="cursor: pointer"
+        @click="$router.push('/')"
+      >
+      </span>
+      <span
+        class="ml-n9 mr-5"
+        style="cursor: pointer"
+        @click="$router.push('/')"
+      >
+        <v-img
+          src="./assets/KIT_LOGO.png"
+          style="width: 25px"
+          background-color="white"
+        >
+        </v-img>
+      </span>
       <v-app-bar-title>
         <span style="cursor: pointer" @click="$router.push('/')">
           幼兒發展資料庫
@@ -13,20 +31,17 @@
       </v-app-bar-title>
 
       <v-spacer></v-spacer>
-
-      <v-img
-        src="./assets/KIT_LOGO.png"
-        class="logo"
-        overlap
+      <span
+        style="cursor: pointer"
+        @click="$router.push('/Profile')"
+        v-if="userdata.username!=null"
       >
-      </v-img>
-      <v-spacer></v-spacer>
-      <span style="cursor: pointer" @click="$router.push('/Profile')">
-        Username
+        {{userdata.username}}
       </span>
       <v-divider
         vertical
         class="mx-4"
+        v-if="userdata.username!=null"
       ></v-divider>
       <v-dialog
         v-model="dialog"
@@ -37,6 +52,7 @@
             outlined
             v-bind="attrs"
             v-on="on"
+            dense
           >
             <v-icon class="mr-2">mdi-login</v-icon>
             <span>Login</span>
@@ -86,7 +102,9 @@
                   <v-tabs-items
                     v-model="loginTab"
                   >
-                    <v-tab-item>
+                    <v-tab-item
+                      transition="fade-transition" reverse-transition="fade-transition"
+                    >
                       <v-card
                         class="pa-4"
                       >
@@ -125,7 +143,9 @@
                         </v-form>
                       </v-card>
                     </v-tab-item>
-                    <v-tab-item>
+                    <v-tab-item
+                      transition="fade-transition" reverse-transition="fade-transition"
+                    >
                       <v-card
                         class="pa-4"
                       >
@@ -213,6 +233,7 @@
         text-color="primary"
         grow
       >
+        <v-tabs-slider color="secondary"></v-tabs-slider>
         <v-tab
           v-for="item in tabItems"
           :key="'Tab_'+item.index"
@@ -248,6 +269,9 @@ export default {
     account: null,
     password: null,
     privacyCheckbox: false,
+    userdata: {
+      username: null
+    },
     usernameRules: [
       v => !!v || 'Username is required',
       v => (v && v.length < 15) || 'Username must be less than 15 characters'
@@ -286,21 +310,21 @@ export default {
         name: '權限管理',
         path: '/'
       },
-      {
-        index: 5,
-        name: '歷史紀錄',
-        path: '/'
-      },
+      // {
+      //   index: 5,
+      //   name: '歷史紀錄',
+      //   path: '/'
+      // },
       {
         index: 6,
         name: '問題回報',
         path: '/ProblemReport'
-      },
-      {
-        index: 7,
-        name: '聯繫我們',
-        path: '/ContactUs'
       }
+      // {
+      //   index: 7,
+      //   name: '聯繫我們',
+      //   path: '/ContactUs'
+      // }
     ]
   }),
   methods: {
@@ -315,10 +339,34 @@ export default {
 </script>
 
 <style>
+.circle {
+  width: 40px;
+  height: 40px;
+  background: white;
+  border-radius: 50%
+}
+.diamond {
+  width: 0;
+  height: 0;
+  border: 20px solid transparent;
+  border-bottom-color: white;
+  position: relative;
+  top: -20px;
+}
+.diamond:after {
+  content: '';
+  position: absolute;
+  left: -20px;
+  top: 20px;
+  width: 0;
+  height: 0;
+  border: 20px solid transparent;
+  border-top-color:  white;
+}
 .logo {
-  height: 100px;
-  width: 100px;
-  margin-bottom: -10px;
+  max-height: 100%;
+  width: 1vw;
+  margin-bottom: -100px;
   padding-bottom: -10px;
 }
 #app {
