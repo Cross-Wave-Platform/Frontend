@@ -1,20 +1,11 @@
 <template>
-  <div>
-    <v-card
-    height="400px"
-    width="700px">
-      hello
-    </v-card>
-  </div>
+  <div></div>
 </template>
 
 <script>
 
 export default {
-  name: 'Home',
+  name: 'Home'
 
-  components: {
-    // HelloWorld,
-  }
 }
 </script>

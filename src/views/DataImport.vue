@@ -2,6 +2,7 @@
   <v-tabs vertical>
       <v-tab
         class="font-weight-bold"
+        style="width: 200px"
       >
         <v-icon left>
           mdi-file-delimited
@@ -20,6 +21,7 @@
       <!-- <v-divider></v-divider> -->
       <v-tab
         class="font-weight-bold"
+        style="width: 200px"
       >
         <v-icon left>
           mdi-file-document
@@ -31,41 +33,47 @@
 
       <v-tab-item
         transparent-body
+        transition="fade-transition" reverse-transition="fade-transition"
       >
         <v-card
           tile
+          elevation="0"
         >
-          <v-card-title primary-title>
+          <v-card-title primary-title
+            class="font-weight-bold mb-2"
+          >
             波次選擇
           </v-card-title>
           <v-select
             :items="groupItems"
             v-model="group"
             label="選擇組別(大小月齡)"
-            class="ml-8"
+            class="mx-8"
             dense
           ></v-select>
           <v-select
             :items="identityItems"
             v-model="identity"
             label="選擇身分"
-            class="ml-8"
+            class="mx-8"
             dense
           ></v-select>
           <v-select
             :items="waveItems"
             v-model="wave"
             label="選擇波次"
-            class="ml-8"
+            class="mx-8"
             dense
           ></v-select>
-          <v-card-title primary-title>
+          <v-card-title primary-title
+            class="font-weight-bold mb-2"
+          >
             匯入SAV檔
           </v-card-title>
           <v-file-input
             v-model="savFile"
             label="File input"
-            class="ml-8"
+            class="mx-8"
             counter
             show-size
             truncate-length="30"
@@ -83,6 +91,7 @@
           <v-card-actions>
             <v-btn
               color="success"
+              class="ml-8"
             >
               add
             </v-btn>
@@ -91,7 +100,30 @@
             >
               clear
             </v-btn>
-            <v-icon
+            <span
+              v-if="savStatus!=null"
+            >
+              <span
+                v-for="(item, index) in savStatus"
+                :key="index"
+              >
+                <v-icon
+                  color="secondary"
+                  class="ml-4"
+                  v-if="item=='done'"
+                >
+                  mdi-checkbox-marked-circle
+                </v-icon>
+                <v-progress-circular
+                  indeterminate
+                  color="secondary"
+                  :size="21"
+                  class="ml-4"
+                  v-if="item=='loading'"
+                ></v-progress-circular>
+              </span>
+            </span>
+            <!-- <v-icon
               color="secondary"
               class="ml-4"
             >
@@ -108,7 +140,7 @@
               color="secondary"
               :size="21"
               class="ml-4"
-            ></v-progress-circular>
+            ></v-progress-circular> -->
             <!-- <v-progress-circular
               indeterminate
               color="secondary"
@@ -124,6 +156,7 @@
             elevation="2"
             dismissible
             type="error"
+            class="mt-4"
           >
             123
           </v-alert>
@@ -242,11 +275,15 @@
           </v-alert>
         </v-card>
       </v-tab-item> -->
-      <v-tab-item>
+      <v-tab-item
+        transition="fade-transition" reverse-transition="fade-transition"
+      >
         <v-card
           tile
         >
-          <v-card-title primary-title>
+          <v-card-title primary-title
+            class="font-weight-bold mb-2"
+          >
             匯入變項對照表
           </v-card-title>
           <v-file-input
@@ -270,6 +307,7 @@
           <v-card-actions>
             <v-btn
               color="success"
+              class="ml-8"
             >
               add
             </v-btn>
@@ -278,18 +316,29 @@
             >
               clear
             </v-btn>
-            <v-icon
-              color="secondary"
-              class="ml-4"
+            <span
+              v-if="savStatus!=null"
             >
-              mdi-checkbox-marked-circle
-            </v-icon>
-            <v-progress-circular
-              indeterminate
-              color="secondary"
-              :size="21"
-              class="ml-4"
-            ></v-progress-circular>
+              <span
+                v-for="(item, index) in varStatus"
+                :key="index"
+              >
+                <v-icon
+                  color="secondary"
+                  class="ml-4"
+                  v-if="item=='done'"
+                >
+                  mdi-checkbox-marked-circle
+                </v-icon>
+                <v-progress-circular
+                  indeterminate
+                  color="secondary"
+                  :size="21"
+                  class="ml-4"
+                  v-if="item=='loading'"
+                ></v-progress-circular>
+              </span>
+            </span>
           </v-card-actions>
           <v-alert
             border="left"
@@ -297,6 +346,7 @@
             dense
             elevation="2"
             dismissible
+            class="mt-4"
             type="error"
           >
             123
@@ -328,7 +378,19 @@ export default {
     ],
     savFile: null,
     codeFile: null,
-    ansFile: null
+    ansFile: null,
+    savStatus: [
+      'done',
+      'loading',
+      'loading'
+    ],
+    varStatus: null
   })
 }
 </script>
+
+<style scoped>
+#tab-items {
+  background-color: transparent;
+}
+</style>
