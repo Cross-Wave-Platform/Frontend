@@ -2,7 +2,9 @@
   <v-tabs
     vertical
   >
-    <v-tab>
+    <v-tab
+      style="width: 200px"
+    >
       個人資訊
     </v-tab>
     <v-tab>
@@ -12,13 +14,43 @@
       修改暱稱
     </v-tab>
 
-    <v-tab-item>
-      <p>註冊email：example@email.com</p>
-      <p>暱稱：Username</p>
-      <p>使用者身分：一般成員</p>
+    <v-tab-item
+      transition="fade-transition" reverse-transition="fade-transition"
+    >
+      <v-container
+        class="mx-8"
+      >
+        <v-row
+          v-for="item in userdata"
+          :key="item.title"
+          align="center"
+          class="my-n4"
+        >
+          <v-col
+            cols="3"
+          >
+            <v-subtitle
+              class="primary--text font-weight-bold"
+              justify="center"
+            >
+              {{item.title}}
+            </v-subtitle>
+          </v-col>
+          <v-col
+            cols="9"
+          >
+            <v-text-field
+              :value="item.content"
+              readonly
+            ></v-text-field>
+          </v-col>
+        </v-row>
+      </v-container>
     </v-tab-item>
 
-    <v-tab-item>
+    <v-tab-item
+      transition="fade-transition" reverse-transition="fade-transition"
+    >
       <v-card>
         <v-form
           ref="passwordForm"
@@ -67,7 +99,9 @@
         </v-btn>
       </v-card>
     </v-tab-item>
-    <v-tab-item>
+    <v-tab-item
+      transition="fade-transition" reverse-transition="fade-transition"
+    >
       <v-card>
         <v-form
           ref="nameForm"
@@ -112,7 +146,21 @@ export default {
       newPassword: ''
     },
     nameForm: false,
-    name: ''
+    name: '',
+    userdata: [
+      {
+        title: '註冊E-mail',
+        content: 'example@email.com'
+      },
+      {
+        title: '暱稱',
+        content: 'Username'
+      },
+      {
+        title: '使用者身分',
+        content: '一般成員'
+      }
+    ]
   })
 }
 </script>

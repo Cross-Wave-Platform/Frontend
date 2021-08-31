@@ -1,7 +1,8 @@
 <template>
   <v-tabs vertical>
     <v-tab
-      class="font-weight-bold"
+        class="font-weight-bold"
+        style="width: 200px"
     >
       <v-icon left>
         mdi-comment-question
@@ -18,6 +19,7 @@
     </v-tab>
     <v-tab-item
       transparent
+      transition="fade-transition" reverse-transition="fade-transition"
     >
       <v-tabs
         vertical
@@ -26,6 +28,7 @@
         <v-tab
           v-for="item in commonQuestion"
           :key="item.category"
+          style="width: 150px"
         >
           {{item.category}}
         </v-tab>
@@ -34,18 +37,26 @@
       >
         <v-tab-item
           v-for="item in commonQuestion"
+          transition="fade-transition" reverse-transition="fade-transition"
           :key="item.category"
         >
           <v-expansion-panels
             v-for="problem in item.problem"
             :key="problem.question"
             focusable
+            tile
+            class="px-4"
           >
-            <v-expansion-panel>
-              <v-expansion-panel-header>
+            <v-expansion-panel
+              accordion
+            >
+              <v-expansion-panel-header
+              >
                 {{problem.question}}
               </v-expansion-panel-header>
-              <v-expansion-panel-content>
+              <v-expansion-panel-content
+                class="mt-3"
+              >
                 {{problem.answer}}
               </v-expansion-panel-content>
             </v-expansion-panel>
@@ -67,10 +78,13 @@
 
       </v-card> -->
     </v-tab-item>
-    <v-tab-item>
+    <v-tab-item
+      transition="fade-transition" reverse-transition="fade-transition"
+    >
       <v-card
         tile
         elevation="0"
+        class="mx-12"
       >
         <v-form
           ref="reportForm"
@@ -80,13 +94,13 @@
           <v-text-field
             v-model="report.title"
             label="Title"
-            :rules="[v => !!v || report.content != '' || 'You have to write at least title or content.']"
+            :rules="[v => !!v || !!report.content || 'You have to write at least title or content.']"
           >
           </v-text-field>
           <v-textarea
             v-model="report.content"
             label="Content"
-            :rules="[v => !!v || report.title != '' || 'You have to write at least title or content.']"
+            :rules="[v => !!v || !!report.title || 'You have to write at least title or content.']"
           >
           </v-textarea>
           <v-file-input
