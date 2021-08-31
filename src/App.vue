@@ -270,7 +270,7 @@ export default {
       {
         index: 2,
         name: '資料查詢',
-        path: '/'
+        path: '/search'
       },
       {
         index: 3,
