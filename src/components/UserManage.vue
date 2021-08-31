@@ -1,18 +1,19 @@
 <template>
   <div class="usermanage">
     <div>
-        <v-card flat>
+        <v-card flat style="background-color: white!important;opacity: 0.8;border-color: transparent!important;">
           <v-card-text>
             <v-text-field
               label="關鍵字搜尋-帳戶名稱及信箱"
               v-model="input_user.keyword"
+              prepend-inner-icon="mdi-magnify"
             ></v-text-field>
             <p>
               搜尋狀態: {{ input_user.option }} {{ input_user.keyword.length ? ">> "+input_user.keyword:"" }}
             </p>
             <v-data-table
               :headers="headers"
-              :items="titleMenuUsers"
+              :items="typeMenuUsers"
               sort-by="account"
               class="elevation-1"
             >
@@ -136,16 +137,16 @@ export default {
   computed: {
     typeMenuUsers(){
         if(this.input_user.option === '全部會員'){
-            return this.menuUsers
+            return this.titleMenuUsers
         }else{
-            return this.menuUsers.filter(item =>{
+            return this.titleMenuUsers.filter(item =>{
                 return item.state === this.input_user.option
             })
         }
     },
     titleMenuUsers(){
         if(this.input_user.keyword){
-            return this.typeMenuUsers.filter(item =>{
+            return this.menuUsers.filter(item =>{
                 return (
                     item.account.toLowerCase().indexOf
                       (this.input_user.keyword.toLowerCase())!==-1
@@ -154,7 +155,7 @@ export default {
                 )
             })
         }else{
-            return this.typeMenuUsers
+            return this.menuUsers
         }
     }
   },

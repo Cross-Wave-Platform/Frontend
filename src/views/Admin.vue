@@ -1,6 +1,5 @@
 <template>
   <div class="admin">
-    <v-app>
       <v-row no-gutters>
         <v-col cols=2>
           <div style="position: sticky; top: 76px">
@@ -18,7 +17,6 @@
         </v-col>
         <v-col  cols=10><router-view></router-view></v-col>
       </v-row>
-    </v-app>
   </div>
 </template>
 <script>

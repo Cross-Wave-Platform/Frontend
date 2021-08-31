@@ -1,10 +1,11 @@
 <template>
   <div class="datamanage">
-    <v-card flat>
+    <v-card flat style="background-color: white!important;opacity: 0.8;border-color: transparent!important;">
         <v-card-text>
         <v-text-field
             label="關鍵字搜尋-資料名稱"
             v-model="input_data.keyword"
+            prepend-inner-icon="mdi-magnify"
             ></v-text-field> <!-- 關鍵字輸入 -->
         <v-col
             class="d-flex"
