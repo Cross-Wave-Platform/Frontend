@@ -3,7 +3,7 @@
       <v-row no-gutters>
         <v-col cols=2>
           <div style="position: sticky; top: 76px">
-            <v-tabs vertical>
+            <v-tabs vertical left>
                 <v-tab class="font-weight-bold" to="/admin/usermanage">
                     <v-icon left>mdi-account</v-icon>
                     使用者權限管理
@@ -11,6 +11,10 @@
                 <v-tab class="font-weight-bold" to="/admin/datamanage">
                     <v-icon left>mdi-clipboard-text-multiple</v-icon>
                     資料權限管理
+                </v-tab>
+                <v-tab class="font-weight-bold" to="/admin/dataimport">
+                    <v-icon left>mdi-import</v-icon>
+                    資料匯入
                 </v-tab>
             </v-tabs>
           </div>

@@ -1,6 +1,5 @@
 <template>
   <div class="export">
-    <v-app>
       <v-row no-gutters>
         <v-col cols=2>
             <div>
@@ -12,7 +11,6 @@
         </v-col>
         <v-col  cols=10><router-view></router-view></v-col>
       </v-row>
-    </v-app>
   </div>
 </template>
 <script>

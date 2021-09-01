@@ -21,11 +21,6 @@ const routes = [
     component: () => import('@/views/Profile.vue')
   },
   {
-    path: '/DataImport',
-    name: 'DataImport',
-    component: () => import('@/views/DataImport.vue')
-  },
-  {
     path: '/ContactUs',
     name: 'ContactUs',
     component: () => import('@/views/ContactUs.vue')
@@ -53,6 +48,11 @@ const routes = [
       {
         path: 'datamanage',
         component: DataManage
+      },
+      {
+        path: 'dataimport',
+        name: 'DataImport',
+        component: () => import('@/views/DataImport.vue')
       }
     ]
   },

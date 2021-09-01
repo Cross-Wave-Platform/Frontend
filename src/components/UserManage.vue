@@ -1,7 +1,7 @@
 <template>
   <div class="usermanage">
     <div>
-        <v-card flat style="background-color: white!important;opacity: 0.8;border-color: transparent!important;">
+        <v-card flat color="rgba(255, 255, 255, 0.0)">
           <v-card-text>
             <v-text-field
               label="關鍵字搜尋-帳戶名稱及信箱"
@@ -15,6 +15,7 @@
               :headers="headers"
               :items="typeMenuUsers"
               sort-by="account"
+              style="background-color:rgba(255, 255, 255, 0.4);"
               class="elevation-1"
             >
               <template v-slot:top>
