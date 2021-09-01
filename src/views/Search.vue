@@ -111,11 +111,11 @@
             </v-container>
         </div>
 
-        <div id="searchResult" v-if="searchResult.length">
+        <div id="searchResult">
             <v-card>
                 <v-card-title>搜尋結果</v-card-title>
                 <v-card-text>顯示{{ColMenu.length}}筆</v-card-text>
-                 <v-data-table
+                <v-data-table
                     v-model="selectedCol"
                     :headers="header"
                     :items="ColMenu"
@@ -123,14 +123,25 @@
                     item-key="pid"
                     show-select
                 >
-                    <!-- <template v-slot:item.typeAction="{ item }">
+                    <template v-slot:item.typeAction="{ item }">
                         <v-select
                             v-model="tableType[item.index]"
                             :items="item.exist"
-
+                            item-text="type"
                         >
                         </v-select>
-                    </template> -->
+                    </template>
+                    <template v-slot:item.waveAction="{ item }">
+                        <div>
+                            <label>小月齡組:</label>
+                            <span v-for="wave in TableWave(item.index)[0].young" :key="wave"> {{wave}} </span>
+                        </div>
+                        <div>
+                            <label>大月齡組: </label>
+                            <span v-for="wave in TableWave(item.index)[0].old" :key="wave"> {{wave}} </span>
+                        </div>
+                    </template>
+
                 </v-data-table>
             </v-card>
         </div>
@@ -222,9 +233,13 @@ export default {
         return this.facetMenu
       }
     }
+
   },
 
   methods: {
+    test (item) {
+      console.log(item)
+    },
     monthOldIsLegal () {
       if (this.selectedMonthOld.length > 1 && this.selectedQuestionnaireType.length > 1) {
         alert('跨問卷類型僅限同月齡組!')
@@ -278,16 +293,19 @@ export default {
           if (!this.facetList.length || this.facetList.indexOf(keyword) === -1) {
             this.facetList.push(keyword)
           }
-          this.tableType[i + 1] = Object.keys(this.searchResult[i].exist)[0]
-          console.log(Object.keys(this.searchResult[i].exist)[0])
+          this.tableType[i + 1] = this.searchResult[i].exist[0].type
+          this.searchResult[i].index = i + 1
+          console.log(this.searchResult[i].exist[0].type)
         }
         this.lockCombo = true
         this.showWave = true
       })
     },
+
     unlockCombination () {
       this.lockCombo = false
     },
+
     reset () {
       this.selectedMonthOld = []
       this.selectedQuestionnaireType = []
@@ -296,6 +314,14 @@ export default {
       this.waveList = []
       this.omitConditions = true
       this.lockCombo = false
+    },
+
+    TableWave (index) {
+      return this.searchResult[index].exist.filter(item => {
+        const target = this.tableType[index].toLowerCase()
+        const type = item.type.toLowerCase()
+        return target === type
+      })
     }
 
   }
