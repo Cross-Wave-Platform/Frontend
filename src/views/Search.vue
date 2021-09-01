@@ -1,151 +1,150 @@
 <template>
     <div id="search">
-        <div>
-            <v-container id="combination" fluid>
-                <v-row>
-                    <v-col>
-                        <v-container fluid>
-                            <h3>請先綁定欲合併的問卷組合</h3>
-                            <v-row align="center">
-                                <v-col cols=3>
-                                    月齡組:
-                                </v-col>
-                                <v-col cols=9>
-                                    <v-btn-toggle multiple v-model="selectedMonthOld">
-                                        <v-btn v-for="monthOld in monthOldList" :key="monthOld.monthOld"
-                                            rounded
-                                            depressed
-                                            :value="monthOld.value"
-                                            :disabled="lockCombo"
-                                            @click="monthOldIsLegal"
+        <v-row no-gutters>
+            <v-col cols=2 no-gutters id="Combo">
+                <v-list>
+                    <v-list-item>
+                        <v-list-item-content>
+                            <v-list-item-title>
+                                <h3>欲合併之問卷組合</h3>
+                            </v-list-item-title>
+                        </v-list-item-content>
+                    </v-list-item>
 
-                                        >
-                                            {{monthOld.monthOld}}
-                                        </v-btn>
-                                    </v-btn-toggle>
-                                </v-col>
-                            </v-row>
-                            <v-row align="center">
-                                <v-col cols=3>
-                                    問卷類型:
-                                </v-col>
-                                <v-col cols=9>
-                                    <v-btn-toggle multiple v-model="selectedQuestionnaireType">
-                                        <v-btn v-for="type in questionnaireTypeList" :key="type.type"
-                                            rounded
-                                            depressed
-                                            :value="type.value"
-                                            :disabled="lockCombo"
-                                            @click="typeIsLegal"
-                                        >
-                                            {{type.type}}
-                                        </v-btn>
-                                    </v-btn-toggle>
-                                </v-col>
-                            </v-row>
-                            <v-row>
-                                <v-btn @click="getWaveList" :disabled="lockCombo">搜尋存有波次</v-btn>
-                            </v-row>
-                            <v-row align="center">
-                                <v-col cols=3>
-                                    波次:
-                                    <!-- <span v-show="omitConditions"></span> -->
-                                </v-col>
-                                <v-col cols=9>
-                                    <v-select
-                                        dense
-                                        v-model="selectedWave"
-                                        :items="waveList"
-                                        :disabled="lockCombo || omitConditions"
-                                        item-text="wave"
-                                        chips
-                                        label="請先選擇月齡組以及問卷類型"
-                                        multiple
-                                        outlined
-                                    ></v-select>
-                                </v-col>
-                                <!-- <v-col cols=10>
-                                    <v-btn-toggle multiple v-model="selectedWave">
-                                        <v-btn v-for="wave in waveList" :key="wave.wave"
-                                            rounded
-                                            depressed
-                                            :value="wave.value"
-                                            :disabled="lockCombo"
-                                            @click="waveIsLegal"
-                                        >
-                                            {{wave.wave}}
-                                        </v-btn>
-                                    </v-btn-toggle>
-                                </v-col> -->
-                            </v-row>
-                            <v-row>
-                                <v-col cols=3>
-                                    <v-btn rounded @click="getColList" :disabled="lockCombo">綁定</v-btn>
-                                </v-col>
-                                <v-col cols=3>
-                                    <v-btn rounded @click="unlockCombination">解除綁定</v-btn>
-                                </v-col>
-                                <v-col cols=3>
-                                    <v-btn rounded @click="reset">恢復預設</v-btn>
-                                </v-col>
-                            </v-row>
-                        </v-container>
-                    </v-col>
-                    <v-col>
-                        <h3>資料篩選</h3>
+                    <v-divider></v-divider>
 
-                        <label>構面:</label>
-                        <v-chip-group
-                            v-model="selectedFacet"
-                            column
-                            multiple
-                        >
-                            <v-chip v-for="facet in facetList" :key="facet" :value="facet" filter outlined>
-                                {{ facet }}
-                            </v-chip>
-                        </v-chip-group>
-                        <label>關鍵字搜尋: </label>
-                        <v-text-field label="請輸入變項代碼/變項敘述" v-model="searchKeyword"></v-text-field>
-                    </v-col>
-                </v-row>
-            </v-container>
-        </div>
+                    <v-list-item>
+                        <v-list-item-content>
+                            月齡組:
+                            <v-btn-toggle multiple dense v-model="selectedMonthOld">
+                                <v-btn v-for="monthOld in monthOldList" :key="monthOld.monthOld"
+                                    rounded
+                                    depressed
+                                    :value="monthOld.value"
+                                    :disabled="lockCombo"
+                                    @click="monthOldIsLegal"
 
-        <div id="searchResult">
-            <v-card>
-                <v-card-title>搜尋結果</v-card-title>
-                <v-card-text>顯示{{ColMenu.length}}筆</v-card-text>
-                <v-data-table
-                    v-model="selectedCol"
-                    :headers="header"
-                    :items="ColMenu"
-                    :items-per-page="5"
-                    item-key="pid"
-                    show-select
+                                >
+                                    {{monthOld.monthOld}}
+                                </v-btn>
+                            </v-btn-toggle>
+                        </v-list-item-content>
+                    </v-list-item>
+
+                    <v-list-item>
+                        <v-list-item-content>
+                            問卷類型:
+                            <v-btn-toggle multiple dense v-model="selectedQuestionnaireType">
+                                <v-btn v-for="type in questionnaireTypeList" :key="type.type"
+                                    rounded
+                                    depressed
+                                    :value="type.value"
+                                    :disabled="lockCombo"
+                                    @click="typeIsLegal"
+                                >
+                                    {{type.type}}
+                                </v-btn>
+                            </v-btn-toggle>
+                        </v-list-item-content>
+                    </v-list-item>
+
+                    <v-list-item>
+                        <v-btn
+                            @click="getWaveList"
+                            :disabled="lockCombo"
+                            color="primary">
+                            搜尋存有波次
+                        </v-btn>
+                    </v-list-item>
+
+                    <v-list-item>
+                        <v-list-item-content>
+                            波次:
+                            <v-select
+                                dense
+                                v-model="selectedWave"
+                                :items="waveList"
+                                :disabled="lockCombo || omitConditions"
+                                item-text="wave"
+                                chips
+                                label="請先選擇月齡組以及問卷類型"
+                                multiple
+                                outlined
+                            ></v-select>
+                        </v-list-item-content>
+                    </v-list-item>
+
+                    <v-list-item>
+                        <v-btn rounded @click="getColList" v-if="!lockCombo">綁定</v-btn>
+                        <v-btn rounded @click="unlockCombination" v-else>解除綁定</v-btn>
+                        <v-spacer></v-spacer>
+                        <v-btn rounded @click="reset">恢復預設</v-btn>
+                    </v-list-item>
+
+                </v-list>
+
+            </v-col>
+            <v-col cols=10 no-gutters>
+                <h3>資料篩選</h3>
+
+                <label>構面:</label>
+                <v-chip-group
+                    v-model="selectedFacet"
+                    column
+                    multiple
                 >
-                    <template v-slot:item.typeAction="{ item }">
-                        <v-select
-                            v-model="tableType[item.index]"
-                            :items="item.exist"
-                            item-text="type"
-                        >
-                        </v-select>
-                    </template>
-                    <template v-slot:item.waveAction="{ item }">
-                        <div>
-                            <label>小月齡組:</label>
-                            <span v-for="wave in TableWave(item.index)[0].young" :key="wave"> {{wave}} </span>
-                        </div>
-                        <div>
-                            <label>大月齡組: </label>
-                            <span v-for="wave in TableWave(item.index)[0].old" :key="wave"> {{wave}} </span>
-                        </div>
-                    </template>
+                    <v-chip v-for="facet in facetList" :key="facet" :value="facet" filter outlined>
+                        {{ facet }}
+                    </v-chip>
+                </v-chip-group>
+                <!-- <label>關鍵字搜尋: </label>
+                <v-text-field label="請輸入變項代碼/變項敘述" v-model="searchKeyword"></v-text-field> -->
 
-                </v-data-table>
-            </v-card>
-        </div>
+                <v-card>
+                    <v-card-title>
+                        搜尋結果
+                        <v-spacer></v-spacer>
+                        <v-text-field
+                            v-model="searchKeyword"
+                            prepend-inner-icon="mdi-magnify"
+                            label="請輸入變項編碼或變項敘述"
+                            single-line
+                            hide-details
+                        ></v-text-field>
+                    </v-card-title>
+                    <v-card-text>顯示{{facetMenu.length}}筆</v-card-text>
+                    <v-data-table
+                        v-model="selectedCol"
+                        :headers="header"
+                        :search="searchKeyword"
+                        :items="facetMenu"
+                        :items-per-page="5"
+                        item-key="pid"
+                        show-select
+                    >
+                        <template v-slot:item.typeAction="{ item }">
+                            <v-select
+                                v-model="tableType[item.index]"
+                                :items="item.exist"
+                                item-text="type"
+                            >
+                            </v-select>
+                        </template>
+                        <template v-slot:item.waveAction="{ item }">
+                            <div>
+                                <label>小月齡組:</label>
+                                <span v-for="wave in TableWave(item.index)[0].young" :key="wave"> {{wave}} </span>
+                            </div>
+                            <div>
+                                <label>大月齡組: </label>
+                                <span v-for="wave in TableWave(item.index)[0].old" :key="wave"> {{wave}} </span>
+                            </div>
+                        </template>
 
+                    </v-data-table>
+                </v-card>
+            </v-col>
+        </v-row>
     </div>
 </template>
 
@@ -219,21 +218,7 @@ export default {
       } else {
         return this.searchResult
       }
-    },
-
-    ColMenu () {
-      if (this.searchKeyword) {
-        return this.facetMenu.filter(item => {
-          const keyword = this.searchKeyword.toLowerCase()
-          const des = item.topic.toLowerCase()
-          const pid = item.problem_id.toLowerCase()
-          return des.indexOf(keyword) !== -1 || pid.indexOf(keyword) !== -1
-        })
-      } else {
-        return this.facetMenu
-      }
     }
-
   },
 
   methods: {
@@ -286,7 +271,7 @@ export default {
       }
     },
     getColList () {
-      axios.get('http://localhost:8000/SearchResult').then((res) => {
+      axios.get('http://localhost:8000/newSearchResult').then((res) => {
         this.searchResult = res.data
         for (let i = 0; i < this.searchResult.length; i++) {
           const keyword = this.searchResult[i].class

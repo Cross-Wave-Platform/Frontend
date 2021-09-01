@@ -771,5 +771,12868 @@
 		{"pid": 125, "problem_id": "caregiverf03", "topic": "四.女方照顧孩子親友的親職參與：3.幫助這孩子的學習活動", "class": "no_group", "survey_id": [1, 2], "exist": [{"type": "parent", "young": [], "old": [3, 6]}]},
 		{"pid": 126, "problem_id": "caregiverf04", "topic": "四.女方照顧孩子親友的親職參與：4.關愛與回應這孩子", "class": "no_group", "survey_id": [1, 2], "exist": [{"type": "parent", "young": [], "old": [3, 6]}]},
 		{"pid": 127, "problem_id": "caregiverf05", "topic": "四.女方照顧孩子親友的親職參與：5.陪這孩子玩", "class": "no_group", "survey_id": [1, 2], "exist": [{"type": "parent", "young": [], "old": [3, 6]}]}
-	]
+	],
+
+	"newSearchResult": [
+		{
+		  "pid": 1,
+		  "problem_id": "baby_id",
+		  "topic": "幼兒編號",
+		  "class": "basic",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 2,
+		  "problem_id": "interviewer_id",
+		  "topic": "訪員編號-系統",
+		  "class": "basic",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 3,
+		  "problem_id": "baby_dob",
+		  "topic": "幼兒生日",
+		  "class": "basic",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 4,
+		  "problem_id": "int_date",
+		  "topic": "完訪日期",
+		  "class": "basic",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 5,
+		  "problem_id": "baby_sex",
+		  "topic": "幼兒性別",
+		  "class": "basic",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 6,
+		  "problem_id": "relationship",
+		  "topic": "受訪者與幼兒關係",
+		  "class": "basic",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 7,
+		  "problem_id": "pfa0101",
+		  "topic": "一.1.這孩子親生父母的出生年?父",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 8,
+		  "problem_id": "pfa0101a",
+		  "topic": "一.1.這孩子親生父母是民國幾年出生?父",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 9,
+		  "problem_id": "pfa0102",
+		  "topic": "一.1.這孩子親生父母的出生年?母",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 10,
+		  "problem_id": "pfa0102a",
+		  "topic": "一.1.這孩子親生父母是民國幾年出生?母",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 11,
+		  "problem_id": "pfa0201",
+		  "topic": "一.2.這孩子親生父母的教育程度：父",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 12,
+		  "problem_id": "pfa0202",
+		  "topic": "一.2.這孩子親生父母的教育程度：母",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 13,
+		  "problem_id": "pfa03",
+		  "topic": "一.3.這孩子親生父親的原國籍",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 14,
+		  "problem_id": "pfa0301",
+		  "topic": "一.3.1.這孩子親生父親的原國籍(5)東南亞國籍為",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 15,
+		  "problem_id": "pfa0301a",
+		  "topic": "一.3.1.這孩子親生父親的原國籍(5)東南亞國籍為其他東南亞國家(請說明)",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 16,
+		  "problem_id": "pfa0302",
+		  "topic": "一.3.2.這孩子親生父親的原國籍(6)其他亞洲國家國籍為",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 17,
+		  "problem_id": "pfa0302a",
+		  "topic": "一.3.2.這孩子親生父親的原國籍(6)其他亞洲國家國籍為其他(請說明)",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 18,
+		  "problem_id": "pfa03a",
+		  "topic": "一.3.這孩子親生父親的原國籍(7)其他國家(請說明)",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 19,
+		  "problem_id": "pfa0303",
+		  "topic": "一.3.3.這孩子父親在台灣居住的時間約__年",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 20,
+		  "problem_id": "pfa030401",
+		  "topic": "一.3.4.1.這孩子父親中文的聽說讀寫能力如何?[聽]",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 21,
+		  "problem_id": "pfa030402",
+		  "topic": "一.3.4.2.這孩子父親中文的聽說讀寫能力如何?[說]",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 22,
+		  "problem_id": "pfa030403",
+		  "topic": "一.3.4.3.這孩子父親中文的聽說讀寫能力如何?[讀]",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 23,
+		  "problem_id": "pfa030404",
+		  "topic": "一.3.4.4.這孩子父親中文的聽說讀寫能力如何?[寫]",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 24,
+		  "problem_id": "pfa04",
+		  "topic": "一.4.這孩子親生母親的原國籍",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 25,
+		  "problem_id": "pfa0401",
+		  "topic": "一.4.1.這孩子親生母親的原國籍(5)東南亞國籍為",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 26,
+		  "problem_id": "pfa0401a",
+		  "topic": "一.4.1.這孩子親生母親的原國籍(5)東南亞國籍為其他東南亞國家(請說明)",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 27,
+		  "problem_id": "pfa0402",
+		  "topic": "一.4.2.這孩子親生母親的原國籍(6)其他亞洲國家國籍為",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 28,
+		  "problem_id": "pfa0402a",
+		  "topic": "一.4.2.這孩子親生母親的原國籍(6)其他亞洲國家國籍為其他(請說明)",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 29,
+		  "problem_id": "pfa04a",
+		  "topic": "一.4.這孩子親生母親的原國籍(7)其他國家(請說明)",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 30,
+		  "problem_id": "pfa0403",
+		  "topic": "一.4.3.這孩子母親在台灣居住的時間約__年",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 31,
+		  "problem_id": "pfa040401",
+		  "topic": "一.4.4.1.這孩子母親中文的聽說讀寫能力如何?[聽]",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 32,
+		  "problem_id": "pfa040402",
+		  "topic": "一.4.4.2.這孩子母親中文的聽說讀寫能力如何?[說]",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 33,
+		  "problem_id": "pfa040403",
+		  "topic": "一.4.4.3.這孩子母親中文的聽說讀寫能力如何?[讀]",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 34,
+		  "problem_id": "pfa040404",
+		  "topic": "一.4.4.4.這孩子母親中文的聽說讀寫能力如何?[寫]",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 35,
+		  "problem_id": "pfa05",
+		  "topic": "一.5.這孩子父母的婚姻狀況",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 36,
+		  "problem_id": "pfa05a",
+		  "topic": "一.5.這孩子父母的婚姻狀況：其他",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 37,
+		  "problem_id": "pfa06",
+		  "topic": "一.6.這孩子是否享有下列育兒的相關津貼/補助?",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 38,
+		  "problem_id": "pfa060101",
+		  "topic": "一.6.1.這孩子享有育兒的津貼/補助為(複選)(1)各縣市生育獎勵/津貼/補助",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 39,
+		  "problem_id": "pfa060102",
+		  "topic": "一.6.1.這孩子享有育兒的津貼/補助為(複選)(2)父母未就業家庭育兒津貼/台北市育兒津貼",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 40,
+		  "problem_id": "pfa060103",
+		  "topic": "一.6.1.這孩子享有育兒的津貼/補助為(複選)(3)保母托育費用補助-保母資格為幼保相關科系畢業或結訓保母者",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 41,
+		  "problem_id": "pfa060104",
+		  "topic": "一.6.1.這孩子享有育兒的津貼/補助為(複選)(4)保母托育費用補助-保母資格為證照保母者",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 42,
+		  "problem_id": "pfa060105",
+		  "topic": "一.6.1.這孩子享有育兒的津貼/補助為(複選)(5)5歲幼兒免學費教育計畫",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 43,
+		  "problem_id": "pfa060106",
+		  "topic": "一.6.1.這孩子享有育兒的津貼/補助為(複選)(6)弱勢家庭兒童托育補助",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 44,
+		  "problem_id": "pfa060107",
+		  "topic": "一.6.1.這孩子享有育兒的津貼/補助為(複選)(7)弱勢家庭兒童臨時托育補助",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 45,
+		  "problem_id": "pfa060108",
+		  "topic": "一.6.1.這孩子享有育兒的津貼/補助為(複選)(8)其他",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 46,
+		  "problem_id": "pfa060108a",
+		  "topic": "一.6.1.這孩子享有育兒的津貼/補助為(複選)(8)其他(請說明)",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 47,
+		  "problem_id": "pfa07",
+		  "topic": "一.7.這孩子父母是否有因為這孩子申請過育嬰假?",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 48,
+		  "problem_id": "pfa0701",
+		  "topic": "一.7.1.育嬰假申請者為：父親",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 49,
+		  "problem_id": "pfa070101",
+		  "topic": "一.7.1.1.父親申請育嬰假的狀況",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 50,
+		  "problem_id": "pfa070101a",
+		  "topic": "一.7.1.1.1.父親曾經申請過育嬰假，目前已不在假期中：在孩子__個月大時開始請育嬰假",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 51,
+		  "problem_id": "pfa070101b",
+		  "topic": "一.7.1.1.1.父親曾經申請過育嬰假，目前已不在假期中：共請過__個月的育嬰假",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 52,
+		  "problem_id": "pfa070102a",
+		  "topic": "一.7.1.1.2.父親第一次申請育嬰假，且在假期中：在孩子__個月大時開始請育嬰假",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 53,
+		  "problem_id": "pfa070102b",
+		  "topic": "一.7.1.1.2.父親第一次申請育嬰假，且在假期中：預計共請__個月的育嬰假",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 54,
+		  "problem_id": "pfa070103a",
+		  "topic": "一.7.1.1.3.父親曾請過育嬰假，且在假期中：之前是在孩子__個月大時開始請育嬰假",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 55,
+		  "problem_id": "pfa070103b",
+		  "topic": "一.7.1.1.3.父親曾請過育嬰假，且在假期中：之前共請過__個月的育嬰假",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 56,
+		  "problem_id": "pfa070104a",
+		  "topic": "一.7.1.1.4.父親曾請過育嬰假，且在假期中：這次是在孩子__個月大時開始請育嬰假",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 57,
+		  "problem_id": "pfa070104b",
+		  "topic": "一.7.1.1.4.父親曾請過育嬰假，且在假期中：這次預計共請__個月的育嬰假",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 58,
+		  "problem_id": "pfa0702",
+		  "topic": "一.7.1.育嬰假申請者為：母親",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 59,
+		  "problem_id": "pfa070201",
+		  "topic": "一.7.1.2.母親申請育嬰假的狀況",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 60,
+		  "problem_id": "pfa070201a",
+		  "topic": "一.7.1.2.1.母親曾經申請過育嬰假，目前已不在假期中：在孩子__個月大時開始請育嬰假",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 61,
+		  "problem_id": "pfa070201b",
+		  "topic": "一.7.1.2.1.母親曾經申請過育嬰假，目前已不在假期中：共請過__個月的育嬰假",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 62,
+		  "problem_id": "pfa070202a",
+		  "topic": "一.7.1.2.2.母親第一次申請育嬰假，且在假期中：在孩子__個月大時開始請育嬰假",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 63,
+		  "problem_id": "pfa070202b",
+		  "topic": "一.7.1.2.2.母親第一次申請育嬰假，且在假期中：預計共請__個月的育嬰假",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 64,
+		  "problem_id": "pfa070203a",
+		  "topic": "一.7.1.2.3.母親曾請過育嬰假，且在假期中：之前是在孩子__個月大時開始請育嬰假",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 65,
+		  "problem_id": "pfa070203b",
+		  "topic": "一.7.1.2.3.母親曾請過育嬰假，且在假期中：之前共請過__個月的育嬰假",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 66,
+		  "problem_id": "pfa070204a",
+		  "topic": "一.7.1.2.4.母親曾請過育嬰假，且在假期中：這次是在孩子__個月大時開始請育嬰假",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 67,
+		  "problem_id": "pfa070204b",
+		  "topic": "一.7.1.2.4.母親曾請過育嬰假，且在假期中：這次預計共請__個月的育嬰假",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 68,
+		  "problem_id": "pfa08",
+		  "topic": "一.8.這孩子父母有吸菸的習慣嗎?",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 69,
+		  "problem_id": "pfa09",
+		  "topic": "一.9.這孩子父母每星期有喝醉酒嗎?",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 70,
+		  "problem_id": "pfa1001",
+		  "topic": "一.10.1.這孩子父親的工作狀況",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 71,
+		  "problem_id": "pfa1002",
+		  "topic": "一.10.2.這孩子母親的工作狀況",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 72,
+		  "problem_id": "pfa1101",
+		  "topic": "一.11.1.這孩子父親的工作類型",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 73,
+		  "problem_id": "pfa1101a",
+		  "topic": "一.11.1.這孩子父親的工作類型：其他(請說明)",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 74,
+		  "problem_id": "pfa1102",
+		  "topic": "一.11.2.這孩子母親的工作類型",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 75,
+		  "problem_id": "pfa1102a",
+		  "topic": "一.11.2.這孩子母親的工作類型：其他(請說明)",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 76,
+		  "problem_id": "pfa12",
+		  "topic": "一.12.這孩子父親每週上班或工作幾小時?(含加班時間)",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 77,
+		  "problem_id": "pfa13",
+		  "topic": "一.13.這孩子母親每週上班或工作幾小時?(含加班時間)",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 78,
+		  "problem_id": "pfa14",
+		  "topic": "一.14.這孩子的家庭是否為兩地家庭/通勤家庭(指夫妻因為工作、求學或其他因素以致與配偶分居兩地，每隔一段時間才能相聚)?",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 79,
+		  "problem_id": "pfa1501",
+		  "topic": "一.15.1.這孩子父親最常說的語言是",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 80,
+		  "problem_id": "pfa1501a",
+		  "topic": "一.15.1.這孩子父親最常說的語言是：其他(請說明)",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 81,
+		  "problem_id": "pfa1502",
+		  "topic": "一.15.2.這孩子母親最常說的語言是",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 82,
+		  "problem_id": "pfa1502a",
+		  "topic": "一.15.2.這孩子母親最常說的語言是：其他(請說明)",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 83,
+		  "problem_id": "pfa1601",
+		  "topic": "一.16.1.過去3個月，這孩子父親是否會感覺悲傷、憂鬱、憂愁、不快樂?",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 84,
+		  "problem_id": "pfa1602",
+		  "topic": "一.16.2.過去3個月，這孩子母親是否會感覺悲傷、憂鬱、憂愁、不快樂?",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 85,
+		  "problem_id": "pfb0101",
+		  "topic": "二.1.這孩子現在和哪些人一起住?(複選)(01)父、養父、繼父、寄養父",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 86,
+		  "problem_id": "pfb0102",
+		  "topic": "二.1.這孩子現在和哪些人一起住?(複選)(02)母、養母、繼母、寄養母",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 87,
+		  "problem_id": "pfb0103",
+		  "topic": "二.1.這孩子現在和哪些人一起住?(複選)(03)祖父",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 88,
+		  "problem_id": "pfb0104",
+		  "topic": "二.1.這孩子現在和哪些人一起住?(複選)(04)祖母",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 89,
+		  "problem_id": "pfb0105",
+		  "topic": "二.1.這孩子現在和哪些人一起住?(複選)(05)外祖父",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 90,
+		  "problem_id": "pfb0106",
+		  "topic": "二.1.這孩子現在和哪些人一起住?(複選)(06)外祖母",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 91,
+		  "problem_id": "pfb0107",
+		  "topic": "二.1.這孩子現在和哪些人一起住?(複選)(07)伯父、伯母",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 92,
+		  "problem_id": "pfb0108",
+		  "topic": "二.1.這孩子現在和哪些人一起住?(複選)(08)叔叔、嬸嬸",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 93,
+		  "problem_id": "pfb0109",
+		  "topic": "二.1.這孩子現在和哪些人一起住?(複選)(09)姑姑、姑丈",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 94,
+		  "problem_id": "pfb0110",
+		  "topic": "二.1.這孩子現在和哪些人一起住?(複選)(10)舅舅、舅媽",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 95,
+		  "problem_id": "pfb0111",
+		  "topic": "二.1.這孩子現在和哪些人一起住?(複選)(11)阿姨、姨丈",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 96,
+		  "problem_id": "pfb0112",
+		  "topic": "二.1.這孩子現在和哪些人一起住?(複選)(12)兄",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 97,
+		  "problem_id": "pfb0112a",
+		  "topic": "二.1.這孩子現在和哪些人一起住?(複選)(12)兄__人",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 98,
+		  "problem_id": "pfb0113",
+		  "topic": "二.1.這孩子現在和哪些人一起住?(複選)(13)弟",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 99,
+		  "problem_id": "pfb0113a",
+		  "topic": "二.1.這孩子現在和哪些人一起住?(複選)(13)弟__人",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 100,
+		  "problem_id": "pfb0114",
+		  "topic": "二.1.這孩子現在和哪些人一起住?(複選)(14)姊",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 101,
+		  "problem_id": "pfb0114a",
+		  "topic": "二.1.這孩子現在和哪些人一起住?(複選)(14)姊__人",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 102,
+		  "problem_id": "pfb0115",
+		  "topic": "二.1.這孩子現在和哪些人一起住?(複選)(15)妹",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 103,
+		  "problem_id": "pfb0115a",
+		  "topic": "二.1.這孩子現在和哪些人一起住?(複選)(15)妹__人",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 104,
+		  "problem_id": "pfb0116",
+		  "topic": "二.1.這孩子現在和哪些人一起住?(複選)(16)表/堂兄姊",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 105,
+		  "problem_id": "pfb0116a",
+		  "topic": "二.1.這孩子現在和哪些人一起住?(複選)(16)表/堂兄姊__人",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 106,
+		  "problem_id": "pfb0117",
+		  "topic": "二.1.這孩子現在和哪些人一起住?(複選)(17)表/堂弟妹",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 107,
+		  "problem_id": "pfb0117a",
+		  "topic": "二.1.這孩子現在和哪些人一起住?(複選)(17)表/堂弟妹__人",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 108,
+		  "problem_id": "pfb0118",
+		  "topic": "二.1.這孩子現在和哪些人一起住?(複選)(18)傭人",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 109,
+		  "problem_id": "pfb0119",
+		  "topic": "二.1.這孩子現在和哪些人一起住?(複選)(19)父母親的男(女)朋友或同居人",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 110,
+		  "problem_id": "pfb0120",
+		  "topic": "二.1.這孩子現在和哪些人一起住?(複選)(20)其他",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 111,
+		  "problem_id": "pfb0120a",
+		  "topic": "二.1.這孩子現在和哪些人一起住?(複選)(20)其他(請說明)",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 112,
+		  "problem_id": "pfb0121",
+		  "topic": "二.1.這孩子現在和哪些人一起住?(複選)拒答",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 113,
+		  "problem_id": "pfb0122",
+		  "topic": "二.1.這孩子現在和哪些人一起住?(複選)不知道",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 114,
+		  "problem_id": "pfb02",
+		  "topic": "二.2.這孩子有沒有兄弟姊妹?",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 115,
+		  "problem_id": "pfb0201",
+		  "topic": "二.2.1.兄弟姊妹情況：兄",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 116,
+		  "problem_id": "pfb0201a",
+		  "topic": "二.2.1.兄弟姊妹情況：兄1出生年(民國)",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 117,
+		  "problem_id": "pfb0201b",
+		  "topic": "二.2.1.兄弟姊妹情況：兄2出生年(民國)",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 118,
+		  "problem_id": "pfb0201c",
+		  "topic": "二.2.1.兄弟姊妹情況：兄3出生年(民國)",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 119,
+		  "problem_id": "pfb0201d",
+		  "topic": "二.2.1.兄弟姊妹情況：兄4出生年(民國)",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 120,
+		  "problem_id": "pfb0201e",
+		  "topic": "二.2.1.兄弟姊妹情況：兄5出生年(民國)",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 121,
+		  "problem_id": "pfb0201f",
+		  "topic": "二.2.1.兄弟姊妹情況：兄6出生年(民國)",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 122,
+		  "problem_id": "pfb0201g",
+		  "topic": "二.2.1.兄弟姊妹情況：兄7出生年(民國)",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 123,
+		  "problem_id": "pfb0201h",
+		  "topic": "二.2.1.兄弟姊妹情況：兄8出生年(民國)",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 124,
+		  "problem_id": "pfb0201i",
+		  "topic": "二.2.1.兄弟姊妹情況：兄9出生年(民國)",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 125,
+		  "problem_id": "pfb0202",
+		  "topic": "二.2.1.兄弟姊妹情況：弟",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 126,
+		  "problem_id": "pfb0202a",
+		  "topic": "二.2.1.兄弟姊妹情況：弟1出生年(民國)",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 127,
+		  "problem_id": "pfb0202b",
+		  "topic": "二.2.1.兄弟姊妹情況：弟2出生年(民國)",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 128,
+		  "problem_id": "pfb0202c",
+		  "topic": "二.2.1.兄弟姊妹情況：弟3出生年(民國)",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 129,
+		  "problem_id": "pfb0202d",
+		  "topic": "二.2.1.兄弟姊妹情況：弟4出生年(民國)",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 130,
+		  "problem_id": "pfb0202e",
+		  "topic": "二.2.1.兄弟姊妹情況：弟5出生年(民國)",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 131,
+		  "problem_id": "pfb0202f",
+		  "topic": "二.2.1.兄弟姊妹情況：弟6出生年(民國)",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 132,
+		  "problem_id": "pfb0202g",
+		  "topic": "二.2.1.兄弟姊妹情況：弟7出生年(民國)",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 133,
+		  "problem_id": "pfb0202h",
+		  "topic": "二.2.1.兄弟姊妹情況：弟8出生年(民國)",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 134,
+		  "problem_id": "pfb0202i",
+		  "topic": "二.2.1.兄弟姊妹情況：弟9出生年(民國)",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 135,
+		  "problem_id": "pfb0203",
+		  "topic": "二.2.1.兄弟姊妹情況：姊",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 136,
+		  "problem_id": "pfb0203a",
+		  "topic": "二.2.1.兄弟姊妹情況：姊1出生年(民國)",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 137,
+		  "problem_id": "pfb0203b",
+		  "topic": "二.2.1.兄弟姊妹情況：姊2出生年(民國)",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 138,
+		  "problem_id": "pfb0203c",
+		  "topic": "二.2.1.兄弟姊妹情況：姊3出生年(民國)",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 139,
+		  "problem_id": "pfb0203d",
+		  "topic": "二.2.1.兄弟姊妹情況：姊4出生年(民國)",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 140,
+		  "problem_id": "pfb0203e",
+		  "topic": "二.2.1.兄弟姊妹情況：姊5出生年(民國)",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 141,
+		  "problem_id": "pfb0203f",
+		  "topic": "二.2.1.兄弟姊妹情況：姊6出生年(民國)",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 142,
+		  "problem_id": "pfb0203g",
+		  "topic": "二.2.1.兄弟姊妹情況：姊7出生年(民國)",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 143,
+		  "problem_id": "pfb0203h",
+		  "topic": "二.2.1.兄弟姊妹情況：姊8出生年(民國)",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 144,
+		  "problem_id": "pfb0203i",
+		  "topic": "二.2.1.兄弟姊妹情況：姊9出生年(民國)",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 145,
+		  "problem_id": "pfb0204",
+		  "topic": "二.2.1.兄弟姊妹情況：妹",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 146,
+		  "problem_id": "pfb0204a",
+		  "topic": "二.2.1.兄弟姊妹情況：妹1出生年(民國)",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 147,
+		  "problem_id": "pfb0204b",
+		  "topic": "二.2.1.兄弟姊妹情況：妹2出生年(民國)",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 148,
+		  "problem_id": "pfb0204c",
+		  "topic": "二.2.1.兄弟姊妹情況：妹3出生年(民國)",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 149,
+		  "problem_id": "pfb0204d",
+		  "topic": "二.2.1.兄弟姊妹情況：妹4出生年(民國)",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 150,
+		  "problem_id": "pfb0204e",
+		  "topic": "二.2.1.兄弟姊妹情況：妹5出生年(民國)",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 151,
+		  "problem_id": "pfb0204f",
+		  "topic": "二.2.1.兄弟姊妹情況：妹6出生年(民國)",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 152,
+		  "problem_id": "pfb0204g",
+		  "topic": "二.2.1.兄弟姊妹情況：妹7出生年(民國)",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 153,
+		  "problem_id": "pfb0204h",
+		  "topic": "二.2.1.兄弟姊妹情況：妹8出生年(民國)",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 154,
+		  "problem_id": "pfb0204i",
+		  "topic": "二.2.1.兄弟姊妹情況：妹9出生年(民國)",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 155,
+		  "problem_id": "pfb03",
+		  "topic": "二.3.這孩子幾歲開始托給別人照顧?",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 156,
+		  "problem_id": "pfb03a",
+		  "topic": "二.3.這孩子__歲開始由父母以外的人照顧",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 157,
+		  "problem_id": "pfb03b",
+		  "topic": "二.3.這孩子__月開始由父母以外的人照顧",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 158,
+		  "problem_id": "pfb04",
+		  "topic": "二.4.由孩子出生到現在，白天照顧這孩子的人(不含父母)是否更換過?(臨時托育不算)",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 159,
+		  "problem_id": "pfb04a",
+		  "topic": "二.4.由孩子出生到現在，白天照顧這孩子的人有更換過，到目前為止總共換過__位照顧者",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 160,
+		  "problem_id": "pfb05a",
+		  "topic": "二.5.1.目前白天主要照顧這孩子的人，是從孩子__歲開始照顧",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 161,
+		  "problem_id": "pfb05b",
+		  "topic": "二.5.1.目前白天主要照顧這孩子的人，是從孩子__月開始照顧",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 162,
+		  "problem_id": "pfb0501a",
+		  "topic": "二.5.1.目前白天主要照顧這孩子的人，平均每週照顧__天",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 163,
+		  "problem_id": "pfb0501b",
+		  "topic": "二.5.1.目前白天主要照顧這孩子的人，平均每天照顧__小時",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 164,
+		  "problem_id": "pfb0502",
+		  "topic": "二.5.2.這孩子白天在哪裡被照顧?",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 165,
+		  "problem_id": "pfb0502a",
+		  "topic": "二.5.2.這孩子白天在哪裡被照顧?其他(請說明)",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 166,
+		  "problem_id": "pfb06",
+		  "topic": "二.6.這孩子是否自己一人睡在一個房間?",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 167,
+		  "problem_id": "pfb0601",
+		  "topic": "二.6.1.這孩子不是自己一人睡，跟下列人一起睡在一個房間(複選)(1)父親",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 168,
+		  "problem_id": "pfb0602",
+		  "topic": "二.6.1.這孩子不是自己一人睡，跟下列人一起睡在一個房間(複選)(2)母親",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 169,
+		  "problem_id": "pfb0603",
+		  "topic": "二.6.1.這孩子不是自己一人睡，跟下列人一起睡在一個房間(複選)(3)祖父(母)",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 170,
+		  "problem_id": "pfb0604",
+		  "topic": "二.6.1.這孩子不是自己一人睡，跟下列人一起睡在一個房間(複選)(4)外祖父(母)",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 171,
+		  "problem_id": "pfb0605",
+		  "topic": "二.6.1.這孩子不是自己一人睡，跟下列人一起睡在一個房間(複選)(5)兄弟姊妹",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 172,
+		  "problem_id": "pfb0606",
+		  "topic": "二.6.1.這孩子不是自己一人睡，跟下列人一起睡在一個房間(複選)(6)保母",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 173,
+		  "problem_id": "pfb0607",
+		  "topic": "二.6.1.這孩子不是自己一人睡，跟下列人一起睡在一個房間(複選)(7)幫傭",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 174,
+		  "problem_id": "pfb0608",
+		  "topic": "二.6.1.這孩子不是自己一人睡，跟下列人一起睡在一個房間(複選)(8)其他",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 175,
+		  "problem_id": "pfb0608a",
+		  "topic": "二.6.1.這孩子不是自己一人睡，跟下列人一起睡在一個房間(複選)(8)其他(請說明)",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 176,
+		  "problem_id": "pfb07",
+		  "topic": "二.7.這孩子是否自己一人睡在自己的床?",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 177,
+		  "problem_id": "pfb0701",
+		  "topic": "二.7.1.這孩子不是自己一人睡在自己的床，跟下列人一起睡一張床(複選)(1)父親",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 178,
+		  "problem_id": "pfb0702",
+		  "topic": "二.7.1.這孩子不是自己一人睡在自己的床，跟下列人一起睡一張床(複選)(2)母親",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 179,
+		  "problem_id": "pfb0703",
+		  "topic": "二.7.1.這孩子不是自己一人睡在自己的床，跟下列人一起睡一張床(複選)(3)祖父(母)",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 180,
+		  "problem_id": "pfb0704",
+		  "topic": "二.7.1.這孩子不是自己一人睡在自己的床，跟下列人一起睡一張床(複選)(4)外祖父(母)",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 181,
+		  "problem_id": "pfb0705",
+		  "topic": "二.7.1.這孩子不是自己一人睡在自己的床，跟下列人一起睡一張床(複選)(5)兄弟姊妹",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 182,
+		  "problem_id": "pfb0706",
+		  "topic": "二.7.1.這孩子不是自己一人睡在自己的床，跟下列人一起睡一張床(複選)(6)保母",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 183,
+		  "problem_id": "pfb0707",
+		  "topic": "二.7.1.這孩子不是自己一人睡在自己的床，跟下列人一起睡一張床(複選)(7)幫傭",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 184,
+		  "problem_id": "pfb0708",
+		  "topic": "二.7.1.這孩子不是自己一人睡在自己的床，跟下列人一起睡一張床(複選)(8)其他",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 185,
+		  "problem_id": "pfb0708a",
+		  "topic": "二.7.1.這孩子不是自己一人睡在自己的床，跟下列人一起睡一張床(複選)(8)其他(請說明)",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 186,
+		  "problem_id": "pfb0801",
+		  "topic": "二.8.1.這孩子白天最常聽到哪種語言",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 187,
+		  "problem_id": "pfb0801a",
+		  "topic": "二.8.1.這孩子白天最常聽到哪種語言：其他(請說明)",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 188,
+		  "problem_id": "pfb0802",
+		  "topic": "二.8.2.這孩子晚上最常聽到哪種語言",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 189,
+		  "problem_id": "pfb0802a",
+		  "topic": "二.8.2.這孩子晚上最常聽到哪種語言：其他(請說明)",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 190,
+		  "problem_id": "pfb080301",
+		  "topic": "二.8.3.這孩子會使用哪一種本土語言?(複選)(1)不會使用本土語言(勾選本選項不得勾選其他選項)",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 191,
+		  "problem_id": "pfb080302",
+		  "topic": "二.8.3.這孩子會使用哪一種本土語言?(複選)(2)閩南語",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 192,
+		  "problem_id": "pfb08030201",
+		  "topic": "二.8.3.1.這孩子會使用哪一種本土語言?閩南語：熟練程度",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 193,
+		  "problem_id": "pfb080303",
+		  "topic": "二.8.3.這孩子會使用哪一種本土語言?(複選)(3)客語",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 194,
+		  "problem_id": "pfb08030301",
+		  "topic": "二.8.3.2.這孩子會使用哪一種本土語言?客語：熟練程度",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 195,
+		  "problem_id": "pfb080304",
+		  "topic": "二.8.3.這孩子會使用哪一種本土語言?(複選)(4)原住民族語",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 196,
+		  "problem_id": "pfb08030401",
+		  "topic": "二.8.3.3.這孩子會使用哪一種本土語言?原住民族語：熟練程度",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 197,
+		  "problem_id": "pfb080305",
+		  "topic": "二.8.3.這孩子會使用哪一種本土語言?(複選)(5)其他",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 198,
+		  "problem_id": "pfb080305a",
+		  "topic": "二.8.3.這孩子會使用哪一種本土語言?(複選)(5)其他(請說明)",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 199,
+		  "problem_id": "pfb08030501",
+		  "topic": "二.8.3.4.這孩子會使用哪一種本土語言?其他本土語言：熟練程度",
+		  "class": "basic",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 200,
+		  "problem_id": "pfb080306",
+		  "topic": "二.8.3.這孩子會使用哪一種本土語言?(複選)拒答",
+		  "class": "no_group",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 201,
+		  "problem_id": "pfb080307",
+		  "topic": "二.8.3.這孩子會使用哪一種本土語言?(複選)不知道",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 202,
+		  "problem_id": "pfb080401",
+		  "topic": "二.8.4.這孩子會使用哪一種外國語言?(複選)(1)不會使用外國語言(勾選本選項不得勾選其他選項)",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 203,
+		  "problem_id": "pfb080402",
+		  "topic": "二.8.4.這孩子會使用哪一種外國語言?(複選)(2)英語",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 204,
+		  "problem_id": "pfb08040201",
+		  "topic": "二.8.4.1.這孩子會使用哪一種外國語言：英語：熟練程度",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 205,
+		  "problem_id": "pfb080403",
+		  "topic": "二.8.4.這孩子會使用哪一種外國語言?(複選)(3)東南亞國家語言(例如：越語、印尼語、馬來語、菲律賓語、泰語、緬甸語、高棉語等)",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 206,
+		  "problem_id": "pfb08040301",
+		  "topic": "二.8.4.2.這孩子會使用哪一種外國語言：東南亞國家語言：熟練程度",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 207,
+		  "problem_id": "pfb080404",
+		  "topic": "二.8.4.這孩子會使用哪一種外國語言?(複選)(4)其他",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 208,
+		  "problem_id": "pfb080404a",
+		  "topic": "二.8.4.這孩子會使用哪一種外國語言?(複選)(4)其他(請說明)",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 209,
+		  "problem_id": "pfb08040401",
+		  "topic": "二.8.4.3.這孩子會使用哪一種外國語言：其他外國語言：熟練程度",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 210,
+		  "problem_id": "pfb080405",
+		  "topic": "二.8.4.這孩子會使用哪一種外國語言?(複選)拒答",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 211,
+		  "problem_id": "pfb080406",
+		  "topic": "二.8.4.這孩子會使用哪一種外國語言?(複選)不知道",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 212,
+		  "problem_id": "pfb09",
+		  "topic": "二.9.這孩子現在還吸奶嘴嗎?",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 213,
+		  "problem_id": "pfb09a",
+		  "topic": "二.9.這孩子現在還吸奶嘴嗎?現在沒吸了，之前吸到__歲(實足年齡)停止",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 214,
+		  "problem_id": "pfb09b",
+		  "topic": "二.9.這孩子現在還吸奶嘴嗎?現在沒吸了，之前吸到__個月大(實足年齡)停止",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 215,
+		  "problem_id": "pfb10",
+		  "topic": "二.10.這孩子現在還包尿布嗎?",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 216,
+		  "problem_id": "pfb10a",
+		  "topic": "二.10.這孩子現在還包尿布嗎?沒有，在__歲(實足年齡)時停用尿布",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 217,
+		  "problem_id": "pfb10b",
+		  "topic": "二.10.這孩子現在還包尿布嗎?沒有，又__個月大(實足年齡)時停用尿布",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 218,
+		  "problem_id": "pfb11",
+		  "topic": "二.11.這孩子是否有固定讓他覺得安全而且常帶在身邊的物品?",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 219,
+		  "problem_id": "pfb11a",
+		  "topic": "二.11.這孩子是否有固定讓他覺得安全而且常帶在身邊的物品?有，但在__歲(實足年齡)時停用",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 220,
+		  "problem_id": "pfb11b",
+		  "topic": "二.11.這孩子是否有固定讓他覺得安全而且常帶在身邊的物品?有，又__個月大(實足年齡)時停用",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 221,
+		  "problem_id": "pfb12",
+		  "topic": "二.12.這孩子家庭的所有收入(包括薪水、退休金、年金、房租及其他)，每個月大約有多少?(以新台幣計算)",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 222,
+		  "problem_id": "pfb13",
+		  "topic": "二.13.您是否為幼兒的父母親?",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 223,
+		  "problem_id": "pfc01",
+		  "topic": "三.[其他主要照顧者]1.您是民國__年出生的",
+		  "class": "group1",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 224,
+		  "problem_id": "pfc0201",
+		  "topic": "三.[其他主要照顧者]2.1.您及配偶的教育程度是：男方",
+		  "class": "group1",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 225,
+		  "problem_id": "pfc0202",
+		  "topic": "三.[其他主要照顧者]2.2.您及配偶的教育程度是：女方",
+		  "class": "group1",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 226,
+		  "problem_id": "pfc03",
+		  "topic": "三.[其他主要照顧者]3.您的原國籍",
+		  "class": "group1",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 227,
+		  "problem_id": "pfc0301",
+		  "topic": "三.[其他主要照顧者]3.1.您的原國籍(5)東南亞國籍為",
+		  "class": "group1",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 228,
+		  "problem_id": "pfc0301a",
+		  "topic": "三.[其他主要照顧者]3.1.您的原國籍(5)東南亞國籍為其他東南亞國家(請說明)",
+		  "class": "group1",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 229,
+		  "problem_id": "pfc0302",
+		  "topic": "三.[其他主要照顧者]3.2.您的原國籍(6)其他亞洲國家國籍為",
+		  "class": "group1",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 230,
+		  "problem_id": "pfc0302a",
+		  "topic": "三.[其他主要照顧者]3.2.您的原國籍(6)其他亞洲國家國籍為其他(請說明)",
+		  "class": "group1",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 231,
+		  "problem_id": "pfc03a",
+		  "topic": "三.[其他主要照顧者]3.您的原國籍(7)其他國家(請說明)",
+		  "class": "group1",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 232,
+		  "problem_id": "pfc0303",
+		  "topic": "三.[其他主要照顧者]3.3.您在台灣居住的時間約__年",
+		  "class": "group1",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 233,
+		  "problem_id": "pfc030401",
+		  "topic": "三.[其他主要照顧者]3.4.1.您中文的聽說讀寫能力如何?聽",
+		  "class": "group1",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 234,
+		  "problem_id": "pfc030402",
+		  "topic": "三.[其他主要照顧者]3.4.2.您中文的聽說讀寫能力如何?說",
+		  "class": "group1",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 235,
+		  "problem_id": "pfc030403",
+		  "topic": "三.[其他主要照顧者]3.4.3.您中文的聽說讀寫能力如何?讀",
+		  "class": "group1",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 236,
+		  "problem_id": "pfc030404",
+		  "topic": "三.[其他主要照顧者]3.4.4.您中文的聽說讀寫能力如何?寫",
+		  "class": "group1",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 237,
+		  "problem_id": "pfc04",
+		  "topic": "三.[其他主要照顧者]4.您的婚姻狀況",
+		  "class": "group1",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 238,
+		  "problem_id": "pfc04a",
+		  "topic": "三.[其他主要照顧者]4.您的婚姻狀況：其他(請說明)",
+		  "class": "group1",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 239,
+		  "problem_id": "pfc05",
+		  "topic": "三.[其他主要照顧者]5.您及配偶有吸菸的習慣嗎?",
+		  "class": "group1",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 240,
+		  "problem_id": "pfc06",
+		  "topic": "三.[其他主要照顧者]6.您及配偶每星期有喝醉酒嗎?",
+		  "class": "group1",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 241,
+		  "problem_id": "pfc0701",
+		  "topic": "三.[其他主要照顧者]7.1.您及配偶的工作狀況：男方",
+		  "class": "group1",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 242,
+		  "problem_id": "pfc0702",
+		  "topic": "三.[其他主要照顧者]7.2.您及配偶的工作狀況：女方",
+		  "class": "group1",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 243,
+		  "problem_id": "pfc08",
+		  "topic": "三.[其他主要照顧者]8.您每週照顧這孩子__小時",
+		  "class": "group1",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 244,
+		  "problem_id": "pfc09",
+		  "topic": "三.[其他主要照顧者]9.您最常說的語言",
+		  "class": "group1",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 245,
+		  "problem_id": "pfc09a",
+		  "topic": "三.[其他主要照顧者]9.您最常說的語言：其他(請說明)",
+		  "class": "group1",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 246,
+		  "problem_id": "pfc10",
+		  "topic": "三.[其他主要照顧者]10.您是否上過126小時的保母專業訓練課程?",
+		  "class": "group1",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 247,
+		  "problem_id": "pfc1101",
+		  "topic": "三.[其他主要照顧者]11.1.過去3個月，您及配偶是否會感覺悲傷、憂鬱、憂愁、不快樂?男方",
+		  "class": "group1",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 248,
+		  "problem_id": "pfc1102",
+		  "topic": "三.[其他主要照顧者]11.2.過去3個月，您及配偶是否會感覺悲傷、憂鬱、憂愁、不快樂?女方",
+		  "class": "group1",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 249,
+		  "problem_id": "coga01",
+		  "topic": "一.1.孩子能夠知道以觸碰的方式讓玩具發出聲音或是移動位置",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 250,
+		  "problem_id": "coga02",
+		  "topic": "一.2.當週圍有很多人時，孩子能夠從中找到爸爸/媽媽",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 251,
+		  "problem_id": "coga03",
+		  "topic": "一.3.孩子能夠知道玩具的影像與聲音之間的關係，例如：當您學狗叫時，孩子能夠看向或指向小狗或小狗的圖像",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 252,
+		  "problem_id": "coga04",
+		  "topic": "一.4.孩子能夠重覆因自己的動作而造成的有趣事件，例如：突然間發現大力吸吮奶嘴可以發出有趣聲音，便一再重覆這個動作",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 253,
+		  "problem_id": "coga05",
+		  "topic": "一.5.當展示一個有吸引力的玩具給孩子看，接著把玩具放在遮蔽物下面，孩子能夠移開遮蔽物，找出玩具",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 254,
+		  "problem_id": "coga06",
+		  "topic": "一.6.在孩子面前將玩具藏起來時，孩子能夠在最後看到玩具的地方尋找它",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 255,
+		  "problem_id": "coga07",
+		  "topic": "一.7.玩具不見了，孩子能夠在幾個可能的地方尋找它",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 256,
+		  "problem_id": "coga08",
+		  "topic": "一.8.孩子能夠假裝用杯子喝水或假裝拿手機或話筒講電話",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 257,
+		  "problem_id": "coga09",
+		  "topic": "一.9.孩子能夠在一段時間後模仿大人的行為，例如：看書、拿筆在紙上亂畫或是拿遙控器試著開電視",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 258,
+		  "problem_id": "coga10",
+		  "topic": "一.10.孩子能夠了解一些大人常用的手勢，例如：「揮手」表示「再見」",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 259,
+		  "problem_id": "coga11",
+		  "topic": "一.11.為了拿到某件東西(例如：玩具)，孩子會把障礙物推倒/撥開或是試著利用其它東西去拿取",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 260,
+		  "problem_id": "coga12",
+		  "topic": "一.12.孩子能夠注視眼前緩慢移動的東西或人",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 261,
+		  "problem_id": "coga13",
+		  "topic": "一.13.孩子正在玩某件物品(例如：玩具)，當您說服孩子做其它事情時，孩子能夠停下來",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 262,
+		  "problem_id": "cogc01",
+		  "topic": "一.14.孩子能夠玩扮演遊戲，例如：假裝在煮飯或是假裝自己是醫生",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 263,
+		  "problem_id": "cogc02",
+		  "topic": "一.15.在沒有他人幫助的狀況下，孩子能夠獨立且正確地說出自己幾歲",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 264,
+		  "problem_id": "cogc03",
+		  "topic": "一.16.如果有人問孩子他/她是男生還是女生，孩子可以正確地回答",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 265,
+		  "problem_id": "cogc04",
+		  "topic": "一.17.孩子能夠講出兩個不同的顏色名稱",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 266,
+		  "problem_id": "cogc05",
+		  "topic": "一.18.孩子能夠知道什麼是圓形",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 267,
+		  "problem_id": "cogc06",
+		  "topic": "一.19.孩子能夠正確講出媽媽或爸爸的名字",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 268,
+		  "problem_id": "cogc07",
+		  "topic": "一.20.孩子能夠知道哪本故事書曾經看過或聽過",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 269,
+		  "problem_id": "cogc08",
+		  "topic": "一.21.孩子能夠在要求下，將玩具或用過的物品放回原來固定存放的地方",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 270,
+		  "problem_id": "cogc09",
+		  "topic": "一.22.在公共場合，當您要求孩子降低音量時，他能夠立刻降低音量並且至少維持數分鐘",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 271,
+		  "problem_id": "cogc10",
+		  "topic": "一.23.在家裡，當您說「不可以」時，孩子能夠立刻停止跑跳並且至少維持數分鐘",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 272,
+		  "problem_id": "lana01",
+		  "topic": "二.1.孩子會發出類似ㄅㄚ、ㄇㄚ、ㄉㄚ的聲音",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 273,
+		  "problem_id": "lana02",
+		  "topic": "二.2.孩子會模仿大人發出過的聲音或嘴型",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 274,
+		  "problem_id": "lana03",
+		  "topic": "二.3.孩子能用手指著物品，表達想要拿那個東西",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 275,
+		  "problem_id": "lana04",
+		  "topic": "二.4.孩子能用點頭、搖頭表達自己的需求",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 276,
+		  "problem_id": "lana05",
+		  "topic": "二.5.孩子能辨認出生活環境中不同的聲音(例如：小鳥叫聲、汽車聲)",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 277,
+		  "problem_id": "lanc01",
+		  "topic": "二.6.孩子能聽得懂簡單的口語指令，並完成指令(例如：「拍拍手」)",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 278,
+		  "problem_id": "lanc02",
+		  "topic": "二.7.孩子能聽得懂並依照順序完成?個(或以上)的口語指?(例如：「先拍拍手，再摸摸頭」)",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 279,
+		  "problem_id": "lana06",
+		  "topic": "二.8.孩子能自己說出生活物品的名稱(例如：「球球」、「杯子」)",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 280,
+		  "problem_id": "lanc03",
+		  "topic": "二.9.孩子能自己說出日常生活中用來形容人、事、物的詞彙(例如：「冰冰的水」、「阿姨好漂亮」)",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 281,
+		  "problem_id": "lanc04",
+		  "topic": "二.10.孩子能針對「這是什麼」的問句做出回應(例如：大人問「這是什麼東西?」，孩子回答「香蕉」;大人問「這是什麼地方?」，孩子回答「學校」)",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 282,
+		  "problem_id": "lanc05",
+		  "topic": "二.11.孩子與熟悉的人說話時，能主動開啟話題(例如：和爸媽、老師說話)",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 283,
+		  "problem_id": "lanc06",
+		  "topic": "二.12.孩子對聽不清楚或聽不懂的話語，能主動要求別人澄清(例如：「你在說什麼啊?」、「可以再說一次嗎?」)",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 284,
+		  "problem_id": "lanc07",
+		  "topic": "二.13.孩子知道生活中常見的標示或圖像符號所代表的意思(例如：紅綠燈、超商標誌)",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 285,
+		  "problem_id": "lanc08",
+		  "topic": "二.14.孩子翻書的方向是正確的(例如：書的上下左右是正確的)",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 286,
+		  "problem_id": "lanc09",
+		  "topic": "二.15.孩子知道圖畫書的封面有書名、作者或繪圖者",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 287,
+		  "problem_id": "soca01",
+		  "topic": "三.1.即使不是顏色很鮮豔的東西，孩子很容易就注意到",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 288,
+		  "problem_id": "soca02",
+		  "topic": "三.2.當孩子有機會選擇活動時，他很快就決定要做什麼，而且立刻做",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 289,
+		  "problem_id": "socc04",
+		  "topic": "三.3.面對新的活動時，孩子會馬上參與",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 290,
+		  "problem_id": "socc05",
+		  "topic": "三.4.在熟人的聚會中，孩子喜歡和不同的人一起玩",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 291,
+		  "problem_id": "soca03",
+		  "topic": "三.5.在大人的提醒下，孩子會耐心等待他想要的東西",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 292,
+		  "problem_id": "soca04",
+		  "topic": "三.6.有人跟孩子說「不可以」時，他會馬上停止那項行為",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 293,
+		  "problem_id": "socc16",
+		  "topic": "三.7.在大人的提醒下，孩子會保護自己的安全或配合環境需求來表現行為(例如：帶孩子到賣易碎品的地方，孩子會小心地行走)",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 294,
+		  "problem_id": "socc17",
+		  "topic": "三.8.孩子玩喜歡的玩具或活動時，會很投入且持續玩一陣子",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 295,
+		  "problem_id": "soca05",
+		  "topic": "三.9.孩子會因為沒有得到我的注意而哭泣，例如：要我陪著他或是回應他",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 296,
+		  "problem_id": "socc01",
+		  "topic": "三.10.孩子想要我抱或跟我玩，我沒有回應時，孩子會生氣",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 297,
+		  "problem_id": "socc06",
+		  "topic": "三.11.孩子容易生氣或發脾氣",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 298,
+		  "problem_id": "socc07",
+		  "topic": "三.12.遇到不熟悉的大人時，孩子會害羞",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 299,
+		  "problem_id": "socc08",
+		  "topic": "三.13.孩子做錯事時，會覺得丟臉",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 300,
+		  "problem_id": "socc02",
+		  "topic": "三.14.我不在孩子身邊時，他會轉頭找我或注意我在哪裡",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 301,
+		  "problem_id": "socc03",
+		  "topic": "三.15.我跟孩子說「沒關係」，孩子就會去接近那些原本讓他害怕的東西",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 302,
+		  "problem_id": "socc09",
+		  "topic": "三.16.見到我進門時，孩子馬上顯得很高興，會笑或跟我打招呼",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 303,
+		  "problem_id": "socc10",
+		  "topic": "三.17.我心情不好時，孩子會變得安靜、或是安慰我、或問我為什麼難過",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 304,
+		  "problem_id": "soca06",
+		  "topic": "三.18.在陌生的地方，只要有認識的人陪著孩子，孩子看不到我也不會哭",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 305,
+		  "problem_id": "soca15",
+		  "topic": "三.19.孩子看到我時，他會把頭轉開或不想看到我",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 306,
+		  "problem_id": "soca16",
+		  "topic": "三.20.帶孩子到陌生的地方時，孩子根本不在意我，會四處看看或自己玩",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 307,
+		  "problem_id": "soca07",
+		  "topic": "三.21.看到陌生人時，即使我在孩子的身邊，孩子依然顯得很緊張",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 308,
+		  "problem_id": "soca17",
+		  "topic": "三.22.孩子很黏我，縱使我陪著他，他也很少去玩旁邊的玩具或跟其他的人玩",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 309,
+		  "problem_id": "soca18",
+		  "topic": "三.23.帶孩子到陌生的地方時，孩子會緊抱著或緊跟著我",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 310,
+		  "problem_id": "socc11",
+		  "topic": "三.24.孩子看到我對他生氣的表情時，會變得安靜",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 311,
+		  "problem_id": "socc12",
+		  "topic": "三.25.孩子看到別人跌倒時，知道對方會痛",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 312,
+		  "problem_id": "soca08",
+		  "topic": "三.26.給孩子他喜歡的東西時，孩子會表現出高興或興奮的心情",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 313,
+		  "problem_id": "soca09",
+		  "topic": "三.27.拿走孩子喜歡的東西(例如：奶嘴、玩具)時，孩子會以哭泣或身體動作表達抗議或生氣的心情",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 314,
+		  "problem_id": "soca10",
+		  "topic": "三.28.帶孩子去打預防針，孩子看到醫生/護士拿出針頭，預告將打針時，會有害怕、緊張的樣子(例如：哭泣或是想躲到爸媽身後)",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 315,
+		  "problem_id": "socc13",
+		  "topic": "三.29.面對不熟悉的玩具或人，孩子會先看我的表情反應，再決定是否接近這個玩具或人",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 316,
+		  "problem_id": "socc18",
+		  "topic": "三.30.面對陌生的人物或環境，孩子會看我的表情反應，來決定自己的行為",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 317,
+		  "problem_id": "soca11",
+		  "topic": "三.31.孩子會試著用各種方法讓我幫他找到他想要的東西(例如：發出聲音、拉著我過去拿、或以簡單話語表達)",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 318,
+		  "problem_id": "soca12",
+		  "topic": "三.32.孩子會模仿大人做出日常生活中的簡單動作(例如：假裝自己在打電話、或模仿大人開車的樣子)",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 319,
+		  "problem_id": "socc14",
+		  "topic": "三.33.孩子會用聲音、語言、手勢或動作讓別人知道他的興趣或喜好(例如：孩子指著車子笑著看向媽媽)",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 320,
+		  "problem_id": "socc19",
+		  "topic": "三.34.在參加活動或討論時，孩子會主動發表自己的看法或意見",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 321,
+		  "problem_id": "socc20",
+		  "topic": "三.35.孩子會主動對他人說出自己心裡的感覺",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 322,
+		  "problem_id": "soca13",
+		  "topic": "三.36.孩子會跟大人或其他小朋友一起玩扮家家酒的遊戲(例如：假裝媽媽在煮飯或假裝去醫院看病)",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 323,
+		  "problem_id": "socc15",
+		  "topic": "三.37.孩子喜歡和大人或其他小朋友一起玩玩具",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 324,
+		  "problem_id": "socc21",
+		  "topic": "三.38.孩子能與其他小朋友共享物品(例如：玩具、文具)",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 325,
+		  "problem_id": "soca14",
+		  "topic": "三.39.我要求孩子將手裡的東西交給我時，他能夠照我的話做",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 326,
+		  "problem_id": "socc22",
+		  "topic": "三.40.當要求孩子結束遊戲時，他會聽話而停止遊戲",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 327,
+		  "problem_id": "bodyag01",
+		  "topic": "四.1.躺著時，會抓自己的腳趾玩",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 328,
+		  "problem_id": "bodyag02",
+		  "topic": "四.2.趴著時，會用前臂撐起，頭能抬起",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 329,
+		  "problem_id": "bodyag03",
+		  "topic": "四.3.躺著時，腳會在空中踢來踢去",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 330,
+		  "problem_id": "bodyag04",
+		  "topic": "四.4.躺著時，大人將孩子拉坐起來，孩子的頭部會有往前傾的動作",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 331,
+		  "problem_id": "bodyag11",
+		  "topic": "四.5.會自己翻身(例如：從躺著翻身成趴著)",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 332,
+		  "problem_id": "bodyag05",
+		  "topic": "四.6.趴著時，會用手掌撐起，胸部能抬起",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 333,
+		  "problem_id": "bodyag06",
+		  "topic": "四.7.不須支撐，會自己坐穩",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 334,
+		  "problem_id": "bodyag07",
+		  "topic": "四.8.會自己肚子離地向前爬行",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 335,
+		  "problem_id": "bodyag08",
+		  "topic": "四.9.不扶東西，會自己平穩站著",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 336,
+		  "problem_id": "bodyag12",
+		  "topic": "四.10.會自己坐著和人面對面滾球玩",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 337,
+		  "problem_id": "bodyag09",
+		  "topic": "四.11.不扶東西，會自己行走",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 338,
+		  "problem_id": "bodyag10",
+		  "topic": "四.12.不扶東西，會自己從坐著到站起來",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 339,
+		  "problem_id": "bodycg01",
+		  "topic": "四.13.站著時，會自己過肩單手丟小球",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 340,
+		  "problem_id": "bodycg02",
+		  "topic": "四.14.會自己跑一段距離，不會跌倒",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 341,
+		  "problem_id": "bodycg03",
+		  "topic": "四.15.站著時，會自己配合旋律有節奏的扭動身體",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 342,
+		  "problem_id": "bodycg04",
+		  "topic": "四.16.會自己原地雙腳往上跳",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 343,
+		  "problem_id": "bodycg05",
+		  "topic": "四.17.會自己溜滑梯",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 344,
+		  "problem_id": "bodycg06",
+		  "topic": "四.18.不扶東西，會自己走上樓梯",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 345,
+		  "problem_id": "bodycg07",
+		  "topic": "四.19.會自己踢球(站著把球踢走即可)",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 346,
+		  "problem_id": "bodycg08",
+		  "topic": "四.20.不扶東西，會自己走下樓梯",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 347,
+		  "problem_id": "bodyaf01",
+		  "topic": "四.21.躺著時，眼睛會追著眼前移動之人或物看",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 348,
+		  "problem_id": "bodyaf02",
+		  "topic": "四.22.握住物品後，會自己再放開物品",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 349,
+		  "problem_id": "bodyaf03",
+		  "topic": "四.23.會自己伸手抓握住面前的小東西(例如：小鈴鐺)",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 350,
+		  "problem_id": "bodyaf04",
+		  "topic": "四.24.會自己手拿搖鈴搖動",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 351,
+		  "problem_id": "bodyaf08",
+		  "topic": "四.25.會自己用整個手掌抓握小顆食物(例如：葡萄乾、小饅頭)",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 352,
+		  "problem_id": "bodyaf05",
+		  "topic": "四.26.會自己雙手各拿一個小東西",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 353,
+		  "problem_id": "bodyaf06",
+		  "topic": "四.27.會自己把東西從一隻手換到另外一隻手上",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 354,
+		  "problem_id": "bodyaf07",
+		  "topic": "四.28.會自己用拇指及食指指腹捏起小顆食物(例如：葡萄乾、小饅頭)",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 355,
+		  "problem_id": "bodyaf09",
+		  "topic": "四.29.會自己一手拿著棒子或其他東西敲打物品(例如：打鼓)",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 356,
+		  "problem_id": "bodyaf10",
+		  "topic": "四.30.會自己用拇指及食指指尖捏起細長物品(例如：細毛線、頭髮)",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 357,
+		  "problem_id": "bodyaf11",
+		  "topic": "四.31.會自己一頁一頁翻開厚紙板的故事書",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 358,
+		  "problem_id": "bodyaf12",
+		  "topic": "四.32.會自己手握著杯子喝水",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 359,
+		  "problem_id": "bodyaf13",
+		  "topic": "四.33.會自己用筆亂塗",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 360,
+		  "problem_id": "bodycf03",
+		  "topic": "四.34.會自己畫直線",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 361,
+		  "problem_id": "bodycf04",
+		  "topic": "四.35.會自己用湯匙吃東西",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 362,
+		  "problem_id": "bodyaf14",
+		  "topic": "四.36.會自己脫掉短襪",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 363,
+		  "problem_id": "bodycf05",
+		  "topic": "四.37.會自己一頁一頁翻開紙張薄的故事書",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 364,
+		  "problem_id": "bodycf06",
+		  "topic": "四.38.會自己堆疊四個以上的方形物體(例如：積木、麻將)",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 365,
+		  "problem_id": "bodyaf15",
+		  "topic": "四.39.會自己用食指比出『1』",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 366,
+		  "problem_id": "bodycf07",
+		  "topic": "四.40.會自己用食指和中指比出『2』",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 367,
+		  "problem_id": "bodyaf16",
+		  "topic": "四.41.會自己用叉子吃東西",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 368,
+		  "problem_id": "bodycf08",
+		  "topic": "四.42.會自己畫圓形",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 369,
+		  "problem_id": "bodycf01",
+		  "topic": "四.43.會自己脫套頭衣服(例如：T恤)",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 370,
+		  "problem_id": "bodycf02",
+		  "topic": "四.44.會自己解開衣服上的小鈕扣",
+		  "class": "group1",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 371,
+		  "problem_id": "famc01",
+		  "topic": "一.1.我帶這孩子拜訪親友或請親友到家裡來玩",
+		  "class": "group1",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 372,
+		  "problem_id": "famc02",
+		  "topic": "一.2.我帶這孩子到住家外面看看玩玩(例如：公園、市場、廟口)",
+		  "class": "group1",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 373,
+		  "problem_id": "famevic01",
+		  "topic": "一.3.我帶這孩子去書店或圖書館",
+		  "class": "group1",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 374,
+		  "problem_id": "famc03",
+		  "topic": "一.4.我讓這孩子玩按壓、抓取、踢腿、推、拉的物品(例如：球類、學步車)",
+		  "class": "group1",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 375,
+		  "problem_id": "famc04",
+		  "topic": "一.5.我讓這孩子玩抱枕、絨布玩具或家家酒的物品",
+		  "class": "group1",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 376,
+		  "problem_id": "famc05",
+		  "topic": "一.6.我讓這孩子玩訓練手眼協調的物品(例如：套套杯、拼圖、軟性積木等)",
+		  "class": "group1",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 377,
+		  "problem_id": "famc06",
+		  "topic": "一.7.我讓這孩子玩認識顏色、形狀、大小、數字的物品",
+		  "class": "group1",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 378,
+		  "problem_id": "famc07",
+		  "topic": "一.8.我讓孩子玩操作性的物品(例如：積木、麵糰、黏土、串珠、畫圖工具、雪花片、拼圖等)",
+		  "class": "group1",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 379,
+		  "problem_id": "famc08",
+		  "topic": "一.9.有適合孩子參與的活動時，我會和這孩子一起參加(例如：親子共遊活動)",
+		  "class": "group1",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 380,
+		  "problem_id": "famc09",
+		  "topic": "一.10.我教導這孩子學習各種物品的名稱",
+		  "class": "group1",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 381,
+		  "problem_id": "famc10",
+		  "topic": "一.11.我教這孩子說「請」、「謝謝」、「對不起」",
+		  "class": "group1",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 382,
+		  "problem_id": "famc11",
+		  "topic": "一.12.我讓這孩子學習空間概念(例如：上下、左右、前後)",
+		  "class": "group1",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 383,
+		  "problem_id": "famc12",
+		  "topic": "一.13.我讓這孩子學習認識數字",
+		  "class": "group1",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 384,
+		  "problem_id": "famc13",
+		  "topic": "一.14.我讓這孩子學習認識國字",
+		  "class": "group1",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 385,
+		  "problem_id": "famevic02",
+		  "topic": "一.15.我讓這孩子認識注音符號",
+		  "class": "group1",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 386,
+		  "problem_id": "famevic03",
+		  "topic": "一.16.我播放或唱童謠兒歌給這孩子聽",
+		  "class": "group1",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 387,
+		  "problem_id": "famevic04",
+		  "topic": "一.17.我播放有聲書給這孩子聽",
+		  "class": "group1",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 388,
+		  "problem_id": "famevic05",
+		  "topic": "一.18.我用適當的說話速度和語調與這孩子說話",
+		  "class": "group1",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 389,
+		  "problem_id": "famevic06",
+		  "topic": "一.19.與孩子說話時，我會把他的話多加幾個字或引導他多說一些",
+		  "class": "group1",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 390,
+		  "problem_id": "famevic07",
+		  "topic": "一.20.我會和這孩子聊發生過的事(例如：帶孩子出去玩或孩子第一次自己穿衣服的事)",
+		  "class": "group1",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 391,
+		  "problem_id": "famc14",
+		  "topic": "一.21.這孩子出聲或說話時，我會說話回應",
+		  "class": "group1",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 392,
+		  "problem_id": "famc15",
+		  "topic": "一.22.我親親或抱抱這孩子",
+		  "class": "group1",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 393,
+		  "problem_id": "famc16",
+		  "topic": "一.23.我做事的時候，也會和這孩子說話",
+		  "class": "group1",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 394,
+		  "problem_id": "famc17",
+		  "topic": "一.24.當孩子不聽話時，我責罵這孩子",
+		  "class": "group1",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 395,
+		  "problem_id": "famc18",
+		  "topic": "一.25.必要時，我用限制這孩子的行動來管教他(例如：罰站、不准玩玩具)",
+		  "class": "group1",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 396,
+		  "problem_id": "famc19",
+		  "topic": "一.26.當這孩子行為失控時，我打孩子",
+		  "class": "group1",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 397,
+		  "problem_id": "famc20",
+		  "topic": "一.27.我保持這孩子的生活環境乾淨整齊(主要照顧者回答)",
+		  "class": "group1",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 398,
+		  "problem_id": "famc21",
+		  "topic": "一.27.我保持這孩子的生活環境乾淨整齊(訪員需要觀察的題目)",
+		  "class": "group1",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 399,
+		  "problem_id": "famevia01",
+		  "topic": "一.28.我餵這孩子時，會看著他",
+		  "class": "group1",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 400,
+		  "problem_id": "famevia02",
+		  "topic": "一.29.我餵這孩子時，會讓他看電視/電腦或玩平板/手機",
+		  "class": "no_group",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 401,
+		  "problem_id": "famevia03",
+		  "topic": "一.30.我在餵奶時，會抱著這孩子",
+		  "class": "group2",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 402,
+		  "problem_id": "famevic08",
+		  "topic": "一.31.家中適合這個孩子年齡的書有幾本(包含購買、他人贈送、借閱)?",
+		  "class": "group2",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 403,
+		  "problem_id": "famevic09",
+		  "topic": "一.32.您唸書給孩子聽的次數?",
+		  "class": "group2",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 404,
+		  "problem_id": "famevic10",
+		  "topic": "一.33.您平均每次唸多少時間的書給這孩子聽?",
+		  "class": "group2",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 405,
+		  "problem_id": "famevic1101",
+		  "topic": "一.34.這孩子會使用或玩到哪些電子產品?(複選)(1)智慧型手機",
+		  "class": "group2",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 406,
+		  "problem_id": "famevic1102",
+		  "topic": "一.34.這孩子會使用或玩到哪些電子產品?(複選)(2)平板電腦",
+		  "class": "group2",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 407,
+		  "problem_id": "famevic1103",
+		  "topic": "一.34.這孩子會使用或玩到哪些電子產品?(複選)(3)桌上型電腦",
+		  "class": "group2",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 408,
+		  "problem_id": "famevic1104",
+		  "topic": "一.34.這孩子會使用或玩到哪些電子產品?(複選)(4)筆記型電腦",
+		  "class": "group2",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 409,
+		  "problem_id": "famevic1105",
+		  "topic": "一.34.這孩子會使用或玩到哪些電子產品?(複選)(5)電視遊樂器(例如：Wii、Xbox)",
+		  "class": "group2",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 410,
+		  "problem_id": "famevic1106",
+		  "topic": "一.34.這孩子會使用或玩到哪些電子產品?(複選)(6)電視(包含各類影音媒體，例如：DVD、VCD)",
+		  "class": "group2",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 411,
+		  "problem_id": "famevic1107",
+		  "topic": "一.34.這孩子會使用或玩到哪些電子產品?(複選)(7)從未使用或玩過以上這些產品(選此選項者不可選其他選項)",
+		  "class": "group2",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 412,
+		  "problem_id": "famevic1108",
+		  "topic": "一.34.這孩子會使用或玩到哪些電子產品?(複選)拒答",
+		  "class": "group2",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 413,
+		  "problem_id": "famevic1109",
+		  "topic": "一.34.這孩子會使用或玩到哪些電子產品?(複選)不知道",
+		  "class": "group2",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 414,
+		  "problem_id": "famevic1201",
+		  "topic": "一.35.1.這孩子平均每天看多久電視(含各類影音媒體)?",
+		  "class": "group2",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 415,
+		  "problem_id": "famevic1202",
+		  "topic": "一.35.2.除了電視，這孩子平均每天接觸多久電子產品(例如：電腦、平板、手機)?",
+		  "class": "group2",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 416,
+		  "problem_id": "famevic1301",
+		  "topic": "一.36.1.這孩子醒著時，您平均每天花多少時間和這孩子相處互動(例如：遊戲、共讀、吃飯、講話等)平日",
+		  "class": "group2",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 417,
+		  "problem_id": "famevic1302",
+		  "topic": "一.36.2.這孩子醒著時，您平均每天花多少時間和這孩子相處互動(例如：遊戲、共讀、吃飯、講話等)假日",
+		  "class": "group2",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 418,
+		  "problem_id": "famevic14",
+		  "topic": "一.37.您覺得在家中幫您做家事或照顧孩子的人手足夠嗎?",
+		  "class": "group2",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 419,
+		  "problem_id": "famevic15",
+		  "topic": "一.38.這孩子曾經學過才藝嗎?",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 420,
+		  "problem_id": "famevic15a",
+		  "topic": "一.38.這孩子曾經學過才藝，__歲(足歲)時開始學習第一項才藝",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 421,
+		  "problem_id": "famevic1501",
+		  "topic": "一.38.1.這孩子沒有學過才藝，是否打算讓這孩子學才藝?",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 422,
+		  "problem_id": "famevic1501a",
+		  "topic": "一.38.1.這孩子沒有學過才藝，打算__歲(足歲)的時候開始讓孩子學一些才藝",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 423,
+		  "problem_id": "famevic150201",
+		  "topic": "一.38.2.這孩子曾經(包含現在)學習哪些才藝?(複選)(1)英文",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 424,
+		  "problem_id": "famevic150201a",
+		  "topic": "一.38.2.這孩子曾經(包含現在)學才藝學多久?(1)英文，學了__年",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 425,
+		  "problem_id": "famevic150201b",
+		  "topic": "一.38.2.這孩子曾經(包含現在)學才藝學多久?(1)英文，學了__月",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 426,
+		  "problem_id": "famevic150202",
+		  "topic": "一.38.2.這孩子曾經(包含現在)學習哪些才藝?(複選)(2)珠心算或數學",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 427,
+		  "problem_id": "famevic150202a",
+		  "topic": "一.38.2.這孩子曾經(包含現在)學才藝學多久?(2)珠心算或數學，學了__年",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 428,
+		  "problem_id": "famevic150202b",
+		  "topic": "一.38.2.這孩子曾經(包含現在)學才藝學多久?(2)珠心算或數學，學了__月",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 429,
+		  "problem_id": "famevic150203",
+		  "topic": "一.38.2.這孩子曾經(包含現在)學習哪些才藝?(複選)(3)電腦",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 430,
+		  "problem_id": "famevic150203a",
+		  "topic": "一.38.2.這孩子曾經(包含現在)學才藝學多久?(3)電腦，學了__年",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 431,
+		  "problem_id": "famevic150203b",
+		  "topic": "一.38.2.這孩子曾經(包含現在)學才藝學多久?(3)電腦，學了__月",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 432,
+		  "problem_id": "famevic150204",
+		  "topic": "一.38.2.這孩子曾經(包含現在)學習哪些才藝?(複選)(4)書法",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 433,
+		  "problem_id": "famevic150204a",
+		  "topic": "一.38.2.這孩子曾經(包含現在)學才藝學多久?(4)書法，學了__年",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 434,
+		  "problem_id": "famevic150204b",
+		  "topic": "一.38.2.這孩子曾經(包含現在)學才藝學多久?(4)書法，學了__月",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 435,
+		  "problem_id": "famevic150205",
+		  "topic": "一.38.2.這孩子曾經(包含現在)學習哪些才藝?(複選)(5)棋藝",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 436,
+		  "problem_id": "famevic150205a",
+		  "topic": "一.38.2.這孩子曾經(包含現在)學才藝學多久?(5)棋藝，學了__年",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 437,
+		  "problem_id": "famevic150205b",
+		  "topic": "一.38.2.這孩子曾經(包含現在)學才藝學多久?(5)棋藝，學了__月",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 438,
+		  "problem_id": "famevic150206",
+		  "topic": "一.38.2.這孩子曾經(包含現在)學習哪些才藝?(複選)(6)讀經",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 439,
+		  "problem_id": "famevic150206a",
+		  "topic": "一.38.2.這孩子曾經(包含現在)學才藝學多久?(6)讀經，學了__年",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 440,
+		  "problem_id": "famevic150206b",
+		  "topic": "一.38.2.這孩子曾經(包含現在)學才藝學多久?(6)讀經，學了__月",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 441,
+		  "problem_id": "famevic150207",
+		  "topic": "一.38.2.這孩子曾經(包含現在)學習哪些才藝?(複選)(7)體能(例如：游泳、律動、舞蹈等)",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 442,
+		  "problem_id": "famevic150207a",
+		  "topic": "一.38.2.這孩子曾經(包含現在)學才藝學多久?(7)體能，學了__年",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 443,
+		  "problem_id": "famevic150207b",
+		  "topic": "一.38.2.這孩子曾經(包含現在)學才藝學多久?(7)體能，學了__月",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 444,
+		  "problem_id": "famevic150208",
+		  "topic": "一.38.2.這孩子曾經(包含現在)學習哪些才藝?(複選)(8)音樂(例如：打擊樂、鋼琴、小提琴、直笛等)",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 445,
+		  "problem_id": "famevic150208a",
+		  "topic": "一.38.2.這孩子曾經(包含現在)學才藝學多久?(8)音樂，學了__年",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 446,
+		  "problem_id": "famevic150208b",
+		  "topic": "一.38.2.這孩子曾經(包含現在)學才藝學多久?(8)音樂，學了__月",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 447,
+		  "problem_id": "famevic150209",
+		  "topic": "一.38.2.這孩子曾經(包含現在)學習哪些才藝?(複選)(9)藝術(例如：水彩、手工藝、陶藝等)",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 448,
+		  "problem_id": "famevic150209a",
+		  "topic": "一.38.2.這孩子曾經(包含現在)學才藝學多久?(9)藝術學了__年",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 449,
+		  "problem_id": "famevic150209b",
+		  "topic": "一.38.2.這孩子曾經(包含現在)學才藝學多久?(9)藝術學了__月",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 450,
+		  "problem_id": "famevic150210",
+		  "topic": "一.38.2.這孩子曾經(包含現在)學習哪些才藝?(複選)(10)其他才藝",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 451,
+		  "problem_id": "famevic150210c",
+		  "topic": "一.38.2.這孩子曾經(包含現在)學習哪些才藝?(複選)(10)其他才藝(請說明)",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 452,
+		  "problem_id": "famevic150210a",
+		  "topic": "一.38.2.這孩子曾經(包含現在)學才藝學多久?(10)其他才藝，學了__年",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 453,
+		  "problem_id": "famevic150210b",
+		  "topic": "一.38.2.這孩子曾經(包含現在)學才藝學多久?(10)其他才藝，學了__月",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 454,
+		  "problem_id": "famevic16",
+		  "topic": "一.39.孩子住家是否有室外空間(例如：院子或公用設施)能讓這孩子活動?",
+		  "class": "group2",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 455,
+		  "problem_id": "famevic1601",
+		  "topic": "一.39.1.孩子住家的室外空間有哪些場地或活動設施?(複選)(1)可讓孩子抓握(攀爬或懸吊)的器材",
+		  "class": "group2",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 456,
+		  "problem_id": "famevic1602",
+		  "topic": "一.39.1.孩子住家的室外空間有哪些場地或活動設施?(複選)(2)樓梯(至少有兩階)",
+		  "class": "group2",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 457,
+		  "problem_id": "famevic1603",
+		  "topic": "一.39.1.孩子住家的室外空間有哪些場地或活動設施?(複選)(3)可爬上爬下的器材或平台(至少20公分高)",
+		  "class": "group2",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 458,
+		  "problem_id": "famevic1604",
+		  "topic": "一.39.1.孩子住家的室外空間有哪些場地或活動設施?(複選)(4)不同角度的斜坡或斜面",
+		  "class": "group2",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 459,
+		  "problem_id": "famevic1605",
+		  "topic": "一.39.1.孩子住家的室外空間有哪些場地或活動設施?(複選)(5)其他",
+		  "class": "group2",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 460,
+		  "problem_id": "famevic1605a",
+		  "topic": "一.39.1.孩子住家的室外空間有哪些場地或活動設施?(複選)(5)其他(請說明)",
+		  "class": "group2",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 461,
+		  "problem_id": "famevic17",
+		  "topic": "一.40.孩子住家是否有室內空間能讓這孩子活動?",
+		  "class": "group2",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 462,
+		  "problem_id": "famevic1701",
+		  "topic": "一.40.1.孩子住家的室內空間有哪些場地或活動設施?(複選)(1)可讓孩子抓握(攀爬或懸吊)的器材",
+		  "class": "group2",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 463,
+		  "problem_id": "famevic1702",
+		  "topic": "一.40.1.孩子住家的室內空間有哪些場地或活動設施?(複選)(2)樓梯(至少有兩階)",
+		  "class": "group2",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 464,
+		  "problem_id": "famevic1703",
+		  "topic": "一.40.1.孩子住家的室內空間有哪些場地或活動設施?(複選)(3)可爬上爬下的器材或傢俱(沙發、椅子等)",
+		  "class": "group2",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 465,
+		  "problem_id": "famevic1704",
+		  "topic": "一.40.1.孩子住家的室內空間有哪些場地或活動設施?(複選)(4)專門的遊戲室(只提供孩子玩耍的房間，臥室不算)",
+		  "class": "group2",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 466,
+		  "problem_id": "famevic1705",
+		  "topic": "一.40.1.孩子住家的室內空間有哪些場地或活動設施?(複選)(5)專門放玩具的地方且孩子隨時可拿來玩(箱子、抽屜等)",
+		  "class": "group2",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 467,
+		  "problem_id": "famevic1706",
+		  "topic": "一.40.1.孩子住家的室內空間有哪些場地或活動設施?(複選)(6)其他",
+		  "class": "group2",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 468,
+		  "problem_id": "famevic1706a",
+		  "topic": "一.40.1.孩子住家的室內空間有哪些場地或活動設施?(複選)(6)其他(請說明)",
+		  "class": "group2",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 469,
+		  "problem_id": "famedu01",
+		  "topic": "二.1.我現在嚴厲的管教，孩子將來會感激",
+		  "class": "group2",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 470,
+		  "problem_id": "famedu02",
+		  "topic": "二.2.我責罵或批評孩子，會讓孩子進步",
+		  "class": "group2",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 471,
+		  "problem_id": "famedu03",
+		  "topic": "二.3.孩子不聽話時，應該被我處罰",
+		  "class": "group2",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 472,
+		  "problem_id": "famedu04",
+		  "topic": "二.4.孩子遇到我時，應該要主動跟我打招呼",
+		  "class": "group2",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 473,
+		  "problem_id": "famedu05",
+		  "topic": "二.5.我與孩子說話時，孩子應該專心的看著我",
+		  "class": "group2",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 474,
+		  "problem_id": "famedu06",
+		  "topic": "二.6.我應該要求孩子好還要更好，使他進步",
+		  "class": "group2",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 475,
+		  "problem_id": "famedu07",
+		  "topic": "二.7.只有孩子表現良好學習成果，我才有成就感",
+		  "class": "group2",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 476,
+		  "problem_id": "famedu08",
+		  "topic": "二.8.我該告訴孩子，他行為不恰當時應該感到丟臉",
+		  "class": "group2",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 477,
+		  "problem_id": "famedu09",
+		  "topic": "二.9.我應該為孩子在外面沒規矩而感到丟臉",
+		  "class": "group2",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 478,
+		  "problem_id": "famedu10",
+		  "topic": "二.10.我在戒孩子吸奶嘴時，應該採取強硬的立場(或做法)",
+		  "class": "group2",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 479,
+		  "problem_id": "famedu11",
+		  "topic": "二.11.我應該對孩子進行嚴格的大小便訓練",
+		  "class": "group2",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 480,
+		  "problem_id": "famedu12",
+		  "topic": "二.12.我應該讓孩子做任何他想做的事",
+		  "class": "group2",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 481,
+		  "problem_id": "famedu13",
+		  "topic": "二.13.我覺得我有能力教好孩子",
+		  "class": "group2",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 482,
+		  "problem_id": "famedu1401",
+		  "topic": "二.14.您認為這個年紀的孩子，最重要的學習是什麼?最重要",
+		  "class": "group2",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 483,
+		  "problem_id": "famedu1402",
+		  "topic": "二.14.您認為這個年紀的孩子，最重要的學習是什麼?次之",
+		  "class": "group2",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 484,
+		  "problem_id": "famedu1403",
+		  "topic": "二.14.您認為這個年紀的孩子，最重要的學習是什麼?再次之",
+		  "class": "group2",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 485,
+		  "problem_id": "famedu1401a",
+		  "topic": "二.14.您認為這個年紀的孩子，最重要的學習是什麼?最重要：其他(請說明)",
+		  "class": "group2",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 486,
+		  "problem_id": "famedu1402a",
+		  "topic": "二.14.您認為這個年紀的孩子，最重要的學習是什麼?次之：其他(請說明)",
+		  "class": "group2",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 487,
+		  "problem_id": "famedu1403a",
+		  "topic": "二.14.您認為這個年紀的孩子，最重要的學習是什麼?再次之：其他(請說明)",
+		  "class": "group2",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 488,
+		  "problem_id": "fammar01",
+		  "topic": "三.1.家中的收入可以支付生活開銷",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 489,
+		  "problem_id": "fammar02",
+		  "topic": "三.2.我對我的婚姻感到滿意[沒有配偶者，請選「不適答」]",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 490,
+		  "problem_id": "fammar03",
+		  "topic": "三.3.配偶和我在教養子女上是很好的合作夥伴[沒有配偶者，請選「不適答」]",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 491,
+		  "problem_id": "fammar04",
+		  "topic": "三.4.我會偏愛這個孩子[只有1個小孩者，請選「不適答」]",
+		  "class": "group2",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 492,
+		  "problem_id": "fammar05",
+		  "topic": "三.5.我帶的孩子們會相互照顧與分享(例如：分享玩具、一起遊戲)[只有1個小孩者，請選「不適答」]",
+		  "class": "group2",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 493,
+		  "problem_id": "fammar06",
+		  "topic": "三.6.我帶的孩子們常常有衝突(例如：搶玩具、告狀)[只有1個小孩者，請選「不適答」]",
+		  "class": "group2",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 494,
+		  "problem_id": "fammar07",
+		  "topic": "三.7.請問您是否為幼兒的父母親?",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 495,
+		  "problem_id": "fatherinvo01",
+		  "topic": "四.孩子父親的親職參與：1.照顧這孩子的衣食等生活基本需求",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 496,
+		  "problem_id": "fatherinvo02",
+		  "topic": "四.孩子父親的親職參與：2.教這孩子生活常規",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 497,
+		  "problem_id": "fatherinvo03",
+		  "topic": "四.孩子父親的親職參與：3.幫助這孩子的學習活動",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 498,
+		  "problem_id": "fatherinvo04",
+		  "topic": "四.孩子父親的親職參與：4.關愛與回應這孩子",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 499,
+		  "problem_id": "fatherinvo05",
+		  "topic": "四.孩子父親的親職參與：5.陪這孩子玩",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 500,
+		  "problem_id": "motherinvo01",
+		  "topic": "五.孩子母親的親職參與：1.照顧這孩子的衣食等生活基本需求",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 501,
+		  "problem_id": "motherinvo02",
+		  "topic": "五.孩子母親的親職參與：2.教這孩子生活常規",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 502,
+		  "problem_id": "motherinvo03",
+		  "topic": "五.孩子母親的親職參與：3.幫助這孩子的學習活動",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 503,
+		  "problem_id": "motherinvo04",
+		  "topic": "五.孩子母親的親職參與：4.關愛與回應這孩子",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 504,
+		  "problem_id": "motherinvo05",
+		  "topic": "五.孩子母親的親職參與：5.陪這孩子玩",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 505,
+		  "problem_id": "caregiverm01",
+		  "topic": "六.男方照顧孩子親友的親職參與：1.照顧這孩子的衣食等生活基本需求",
+		  "class": "group2",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 506,
+		  "problem_id": "caregiverm02",
+		  "topic": "六.男方照顧孩子親友的親職參與：2.教這孩子生活常規",
+		  "class": "group2",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 507,
+		  "problem_id": "caregiverm03",
+		  "topic": "六.男方照顧孩子親友的親職參與：3.幫助這孩子的學習活動",
+		  "class": "group2",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 508,
+		  "problem_id": "caregiverm04",
+		  "topic": "六.男方照顧孩子親友的親職參與：4.關愛與回應這孩子",
+		  "class": "group2",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 509,
+		  "problem_id": "caregiverm05",
+		  "topic": "六.男方照顧孩子親友的親職參與：5.陪這孩子玩",
+		  "class": "group2",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 510,
+		  "problem_id": "caregiverf01",
+		  "topic": "六.女方照顧孩子親友的親職參與：1.照顧這孩子的衣食等生活基本需求",
+		  "class": "group2",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 511,
+		  "problem_id": "caregiverf02",
+		  "topic": "六.女方照顧孩子親友的親職參與：2.教這孩子生活常規",
+		  "class": "group2",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 512,
+		  "problem_id": "caregiverf03",
+		  "topic": "六.女方照顧孩子親友的親職參與：3.幫助這孩子的學習活動",
+		  "class": "group2",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 513,
+		  "problem_id": "caregiverf04",
+		  "topic": "六.女方照顧孩子親友的親職參與：4.關愛與回應這孩子",
+		  "class": "group2",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 514,
+		  "problem_id": "caregiverf05",
+		  "topic": "六.女方照顧孩子親友的親職參與：5.陪這孩子玩",
+		  "class": "group2",
+		  "survey_id": [
+			1,
+			2
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			},
+			{
+			  "type": "friend",
+			  "young": [
+				6
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 515,
+		  "problem_id": "careinfo",
+		  "topic": "1.這孩子目前有送到保母家(在宅)或就讀幼兒園或托嬰中心嗎?",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 516,
+		  "problem_id": "teacherinfo",
+		  "topic": "1.1.是否願意提供教保人員資訊?",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 517,
+		  "problem_id": "trelationship01",
+		  "topic": "1.1.1.(願意提供教保人員資訊，但要徵得本人同意者)教保人員與幼兒的關係是",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 518,
+		  "problem_id": "howsoon",
+		  "topic": "1.1.2.(願意提供教保人員資訊，但要徵得本人同意者)訪員多久後方便再連絡呢?",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 519,
+		  "problem_id": "howsoona",
+		  "topic": "1.1.2.(願意提供教保人員資訊，但要徵得本人同意者)訪員多久後方便再連絡呢?其他(請說明)",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 520,
+		  "problem_id": "trelationship02",
+		  "topic": "1.1.3.(願意提供教保人員資訊者)教保人員與幼兒的關係是",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 521,
+		  "problem_id": "schoolhour",
+		  "topic": "2.孩子目前平均每天上學(送托)的時間多久?平均__小時",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 522,
+		  "problem_id": "parentsam",
+		  "topic": "2.孩子目前平均每天上學(送托)的時間多久?從__(時)",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 523,
+		  "problem_id": "parentspm",
+		  "topic": "2.孩子目前平均每天上學(送托)的時間多久?到__(時)",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 524,
+		  "problem_id": "contentment",
+		  "topic": "3.您滿意現在這個機構(或保母、老師)的教保服務?",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 525,
+		  "problem_id": "carehome01",
+		  "topic": "4.1.保母(老師)關心我",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 526,
+		  "problem_id": "carehome02",
+		  "topic": "4.2.保母(老師)讓我知道我是個好家長",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 527,
+		  "problem_id": "carehome03",
+		  "topic": "4.3.保母(老師)感激我對孩子學習及照顧的參與",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 528,
+		  "problem_id": "carehome04",
+		  "topic": "4.4.保母(老師)提供我孩子在保母家、中心或班級上學習、行為和社會互動的狀況",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 529,
+		  "problem_id": "carehome05",
+		  "topic": "4.5.保母(老師)幫助我尋求與照顧或教養孩子有關的資訊與資源",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 530,
+		  "problem_id": "careduty01",
+		  "topic": "5.1.確定孩子複習托嬰(育)中心(幼兒園或保母家)所學，確定孩子了解托嬰(育)中心(幼兒園或保母)所教的東西",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 531,
+		  "problem_id": "careduty02",
+		  "topic": "5.2.幫助孩子適當處理他的情緒",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 532,
+		  "problem_id": "careduty03",
+		  "topic": "5.3.找出孩子最有興趣學習的事情",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 533,
+		  "problem_id": "careduty04",
+		  "topic": "5.4.確保孩子家庭和托嬰(育)中心(幼兒園或保母)有良好的溝通",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 534,
+		  "problem_id": "careduty05",
+		  "topic": "5.5.確定孩子的學習環境安全",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 535,
+		  "problem_id": "careduty06",
+		  "topic": "5.6.確定孩子獲得支持，可以讓他在托嬰(育)中心(幼兒園或保母家)有最佳表現",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 536,
+		  "problem_id": "careduty07",
+		  "topic": "5.7.確定孩子在托嬰(育)中心(幼兒園或保母家)有大人可以傾訴(說話)",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 537,
+		  "problem_id": "careduty08",
+		  "topic": "5.8.確定孩子和別的孩子有良好關係",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 538,
+		  "problem_id": "prec01",
+		  "topic": "一.1.請問您對媽媽在懷這個孩子期間的狀況瞭解嗎?",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 539,
+		  "problem_id": "prec02",
+		  "topic": "一.2.這孩子的媽媽__歲(足歲)時生這孩子",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 540,
+		  "problem_id": "prec03",
+		  "topic": "一.3.這孩子的媽媽在懷孕的時候，有沒有定期產檢?",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 541,
+		  "problem_id": "prec04",
+		  "topic": "一.4.產前檢查有任何異常的情形嗎?",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 542,
+		  "problem_id": "prec0401",
+		  "topic": "一.4.1.在懷孕第幾週時發現異常情況?(複選)(1)初期(懷孕第1~12週)",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 543,
+		  "problem_id": "prec0401a",
+		  "topic": "一.4.1.1.在懷孕初期(懷孕第1~12週)時發現異常情況為：____",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 544,
+		  "problem_id": "prec0402",
+		  "topic": "一.4.1.在懷孕第幾週時發現異常情況?(複選)(2)中期(懷孕第13~27週)",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 545,
+		  "problem_id": "prec0402a",
+		  "topic": "一.4.1.2.在懷孕中期(懷孕第13~27週)時發現異常情況為：____",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 546,
+		  "problem_id": "prec0403",
+		  "topic": "一.4.1.在懷孕第幾週時發現異常情況?(複選)(3)末期(懷孕28週以上)",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 547,
+		  "problem_id": "prec0403a",
+		  "topic": "一.4.1.3.在懷孕末期(懷孕28週以上)時發現異常情況為：____",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 548,
+		  "problem_id": "prec05",
+		  "topic": "一.5.這孩子的媽媽在懷孕期間是否吸菸?",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 549,
+		  "problem_id": "prec06",
+		  "topic": "一.6.這孩子的媽媽在懷孕期間是否喝酒?",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 550,
+		  "problem_id": "preem01",
+		  "topic": "一.7.您對媽媽懷孕期間的情緒、感覺瞭解嗎?",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 551,
+		  "problem_id": "preem0201",
+		  "topic": "一.8.1.懷孕期間，媽媽是否會感覺對未來感到絕望",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 552,
+		  "problem_id": "preem0202",
+		  "topic": "一.8.2.懷孕期間，媽媽是否會感覺生命中沒有樂趣",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 553,
+		  "problem_id": "preem0203",
+		  "topic": "一.8.3.懷孕期間，媽媽是否會感覺感到快樂",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 554,
+		  "problem_id": "preem0204",
+		  "topic": "一.8.4.懷孕期間，媽媽是否會感覺悲傷、憂鬱、憂愁、不快樂",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 555,
+		  "problem_id": "preem03",
+		  "topic": "一.9.懷孕期間，這孩子的媽媽是否會感覺悲傷、憂鬱、憂愁、不快樂?",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 556,
+		  "problem_id": "postn01",
+		  "topic": "二.1.請問您對這孩子出生時的狀況瞭解嗎?",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 557,
+		  "problem_id": "postn02",
+		  "topic": "二.2.這孩子出生時的週數：__週",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 558,
+		  "problem_id": "postn03",
+		  "topic": "二.3.這孩子出生時的體重：__公克",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 559,
+		  "problem_id": "postn04",
+		  "topic": "二.4.這孩子的生產方式",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 560,
+		  "problem_id": "postn0501",
+		  "topic": "二.5.這孩子出生時的主要問題為何(複選)(1)沒有問題(選此項者不可選其他選項)",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 561,
+		  "problem_id": "postn0502",
+		  "topic": "二.5.這孩子出生時的主要問題為何(複選)(2)早產",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 562,
+		  "problem_id": "postn0503",
+		  "topic": "二.5.這孩子出生時的主要問題為何(複選)(3)黃疸過高(照光或換血治療)",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 563,
+		  "problem_id": "postn0504",
+		  "topic": "二.5.這孩子出生時的主要問題為何(複選)(4)體重過輕(體重低於2500公克以下)",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 564,
+		  "problem_id": "postn0505",
+		  "topic": "二.5.這孩子出生時的主要問題為何(複選)(5)體重過重(體重高於4000公克以上)",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 565,
+		  "problem_id": "postn0506",
+		  "topic": "二.5.這孩子出生時的主要問題為何(複選)(6)出生時曾經緊急處理(指住進加護病房或特殊住院情形)",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 566,
+		  "problem_id": "postn0507",
+		  "topic": "二.5.這孩子出生時的主要問題為何(複選)(7)缺氧",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 567,
+		  "problem_id": "postn0508",
+		  "topic": "二.5.這孩子出生時的主要問題為何(複選)(8)難產",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 568,
+		  "problem_id": "postn0509",
+		  "topic": "二.5.這孩子出生時的主要問題為何(複選)(9)癲癇",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 569,
+		  "problem_id": "postn0510",
+		  "topic": "二.5.這孩子出生時的主要問題為何(複選)(10)先天性疾病",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 570,
+		  "problem_id": "postn0510a",
+		  "topic": "二.5.這孩子出生時的主要問題為何(複選)(10)先天性疾病(請說明)",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 571,
+		  "problem_id": "postn0511",
+		  "topic": "二.5.這孩子出生時的主要問題為何(複選)(11)其他",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 572,
+		  "problem_id": "postn0511a",
+		  "topic": "二.5.這孩子出生時的主要問題為何(複選)(11)其他(請說明)",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 573,
+		  "problem_id": "postn0512",
+		  "topic": "二.5.這孩子出生時的主要問題為何(複選)拒答",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 574,
+		  "problem_id": "postn0513",
+		  "topic": "二.5.這孩子出生時的主要問題為何(複選)不知道",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 575,
+		  "problem_id": "postn06",
+		  "topic": "二.6.這孩子一出生，有沒有住過加護病房?",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 576,
+		  "problem_id": "postn06a",
+		  "topic": "二.6.這孩子一出生，有住過加護病房，住__天",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 577,
+		  "problem_id": "postn07",
+		  "topic": "二.7.這孩子出生後在醫院住幾天才回家?",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 578,
+		  "problem_id": "postc0101",
+		  "topic": "二.8.1.在這孩子出生後，媽媽是否會感覺對未來感到絕望",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 579,
+		  "problem_id": "postc0102",
+		  "topic": "二.8.2.在這孩子出生後，媽媽是否會感覺生命中沒有樂趣",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 580,
+		  "problem_id": "postc0103",
+		  "topic": "二.8.3.在這孩子出生後，媽媽是否會感覺感到快樂",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 581,
+		  "problem_id": "postc0104",
+		  "topic": "二.8.4.在這孩子出生後，媽媽是否會感覺悲傷、憂鬱、憂愁、不快樂",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 582,
+		  "problem_id": "heigh",
+		  "topic": "三.1.這孩子現在的身長：__公分",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 583,
+		  "problem_id": "heighy",
+		  "topic": "三.1.這孩子現在的身長測量時間：民國__年",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 584,
+		  "problem_id": "heighm",
+		  "topic": "三.1.這孩子現在的身長測量時間：__月",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 585,
+		  "problem_id": "heighd",
+		  "topic": "三.1.這孩子現在的身長測量時間：__日",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 586,
+		  "problem_id": "weight",
+		  "topic": "三.2.這孩子現在的體重：__公斤",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 587,
+		  "problem_id": "weighty",
+		  "topic": "三.2.這孩子現在的體重測量時間：民國__年",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 588,
+		  "problem_id": "weightm",
+		  "topic": "三.2.這孩子現在的體重測量時間：__月",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 589,
+		  "problem_id": "weightd",
+		  "topic": "三.2.這孩子現在的體重測量時間：__日",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 590,
+		  "problem_id": "health01",
+		  "topic": "三.3.這孩子做過聽力篩檢嗎?",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 591,
+		  "problem_id": "health0101",
+		  "topic": "三.3.1.這孩子聽力篩檢結果正常嗎?",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 592,
+		  "problem_id": "health0102",
+		  "topic": "三.3.1.1.發現這孩子聽力篩檢結果異常的介入情形",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 593,
+		  "problem_id": "health03",
+		  "topic": "三.4.這孩子做過新生兒篩檢嗎?",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 594,
+		  "problem_id": "health0301",
+		  "topic": "三.4.1.這孩子新生兒篩檢結果正常嗎?",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 595,
+		  "problem_id": "health030101",
+		  "topic": "三.4.1.1.這孩子新生兒篩檢什麼項目異常(複選)(1)先天性甲狀腺低能症(CHT)",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 596,
+		  "problem_id": "health030102",
+		  "topic": "三.4.1.1.這孩子新生兒篩檢什麼項目異常(複選)(2)半乳糖血症(GAL)",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 597,
+		  "problem_id": "health030103",
+		  "topic": "三.4.1.1.這孩子新生兒篩檢什麼項目異常(複選)(3)葡萄糖6磷酸鹽去氫脢缺乏症",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 598,
+		  "problem_id": "health030104",
+		  "topic": "三.4.1.1.這孩子新生兒篩檢什麼項目異常(複選)(4)先天性腎上腺增生症(CAH)",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 599,
+		  "problem_id": "health030105",
+		  "topic": "三.4.1.1.這孩子新生兒篩檢什麼項目異常(複選)(5)苯酮尿症(PKU)",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 600,
+		  "problem_id": "health030106",
+		  "topic": "三.4.1.1.這孩子新生兒篩檢什麼項目異常(複選)(6)高胱胺酸尿症(HCU)",
+		  "class": "group2",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 601,
+		  "problem_id": "health030107",
+		  "topic": "三.4.1.1.這孩子新生兒篩檢什麼項目異常(複選)(7)中鏈醯輔脢A去氫脢缺乏症(MCAD)",
+		  "class": "group3",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 602,
+		  "problem_id": "health030108",
+		  "topic": "三.4.1.1.這孩子新生兒篩檢什麼項目異常(複選)(8)楓糖尿症(MSUD)",
+		  "class": "group3",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 603,
+		  "problem_id": "health030109",
+		  "topic": "三.4.1.1.這孩子新生兒篩檢什麼項目異常(複選)(9)戊二酸血症第一型(GA-1)",
+		  "class": "group3",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 604,
+		  "problem_id": "health030110",
+		  "topic": "三.4.1.1.這孩子新生兒篩檢什麼項目異常(複選)(10)異戊酸血症(IVA)",
+		  "class": "group3",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 605,
+		  "problem_id": "health030111",
+		  "topic": "三.4.1.1.這孩子新生兒篩檢什麼項目異常(複選)(11)甲基丙二酸血症(MMA)",
+		  "class": "group3",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 606,
+		  "problem_id": "health0302",
+		  "topic": "三.4.1.2.發現這孩子新生兒篩檢結果異常的介入情形",
+		  "class": "group3",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 607,
+		  "problem_id": "health04",
+		  "topic": "三.6.這孩子有沒有重大傷病卡?",
+		  "class": "group3",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 608,
+		  "problem_id": "health04a",
+		  "topic": "三.6.這孩子有沒有重大傷病卡?有，診斷是",
+		  "class": "group3",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 609,
+		  "problem_id": "health05",
+		  "topic": "三.7.這孩子有沒有身心障礙證明?",
+		  "class": "group3",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 610,
+		  "problem_id": "health05a",
+		  "topic": "三.7.這孩子有沒有身心障礙證明?有，障礙類別是",
+		  "class": "group3",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 611,
+		  "problem_id": "med01",
+		  "topic": "三.8.這孩子是否罹患確定診斷之疾病?",
+		  "class": "group3",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 612,
+		  "problem_id": "med0101",
+		  "topic": "三.8.1.這孩子罹患確定診斷之疾病：神經系統(複選)(1)沒有(選此項者不可選其他選項)",
+		  "class": "group3",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 613,
+		  "problem_id": "med0102",
+		  "topic": "三.8.1.這孩子罹患確定診斷之疾病：神經系統(複選)(2)癲癇",
+		  "class": "group3",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 614,
+		  "problem_id": "med0103",
+		  "topic": "三.8.1.這孩子罹患確定診斷之疾病：神經系統(複選)(3)熱性痙攣",
+		  "class": "group3",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 615,
+		  "problem_id": "med0104",
+		  "topic": "三.8.1.這孩子罹患確定診斷之疾病：神經系統(複選)(4)腦水腫",
+		  "class": "group3",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 616,
+		  "problem_id": "med0105",
+		  "topic": "三.8.1.這孩子罹患確定診斷之疾病：神經系統(複選)(5)腦出血",
+		  "class": "group3",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 617,
+		  "problem_id": "med0106",
+		  "topic": "三.8.1.這孩子罹患確定診斷之疾病：神經系統(複選)(6)水腦",
+		  "class": "group3",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 618,
+		  "problem_id": "med0107",
+		  "topic": "三.8.1.這孩子罹患確定診斷之疾病：神經系統(複選)(7)腦炎",
+		  "class": "group3",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 619,
+		  "problem_id": "med0108",
+		  "topic": "三.8.1.這孩子罹患確定診斷之疾病：神經系統(複選)(8)腦性麻痺",
+		  "class": "group3",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 620,
+		  "problem_id": "med0201",
+		  "topic": "三.8.2.這孩子罹患確定診斷之疾病：眼耳鼻喉系統(複選)(1)沒有(選此項者不可選其他選項)",
+		  "class": "group3",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 621,
+		  "problem_id": "med0202",
+		  "topic": "三.8.2.這孩子罹患確定診斷之疾病：眼耳鼻喉系統(複選)(2)視力問題",
+		  "class": "group3",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 622,
+		  "problem_id": "med0203",
+		  "topic": "三.8.2.這孩子罹患確定診斷之疾病：眼耳鼻喉系統(複選)(3)聽力問題",
+		  "class": "group3",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 623,
+		  "problem_id": "med0204",
+		  "topic": "三.8.2.這孩子罹患確定診斷之疾病：眼耳鼻喉系統(複選)(4)唇顎裂",
+		  "class": "group3",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 624,
+		  "problem_id": "med0205",
+		  "topic": "三.8.2.這孩子罹患確定診斷之疾病：眼耳鼻喉系統(複選)(5)鼻道問題",
+		  "class": "group3",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 625,
+		  "problem_id": "med0301",
+		  "topic": "三.8.3.這孩子罹患確定診斷之疾病：骨骼牙齒系統(複選)(1)沒有(選此項者不可選其他選項)",
+		  "class": "group3",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 626,
+		  "problem_id": "med0302",
+		  "topic": "三.8.3.這孩子罹患確定診斷之疾病：骨骼牙齒系統(複選)(2)四肢異常",
+		  "class": "group3",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 627,
+		  "problem_id": "med0303",
+		  "topic": "三.8.3.這孩子罹患確定診斷之疾病：骨骼牙齒系統(複選)(3)髖關節脫臼",
+		  "class": "group3",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 628,
+		  "problem_id": "med0304",
+		  "topic": "三.8.3.這孩子罹患確定診斷之疾病：骨骼牙齒系統(複選)(4)牙齒",
+		  "class": "group3",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 629,
+		  "problem_id": "med0305",
+		  "topic": "三.8.3.這孩子罹患確定診斷之疾病：骨骼牙齒系統(複選)(5)外觀異常",
+		  "class": "group3",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 630,
+		  "problem_id": "med0401",
+		  "topic": "三.8.4.這孩子罹患確定診斷之疾病：遺傳跟代謝系統(複選)(1)沒有(選此項者不可選其他選項)",
+		  "class": "group3",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 631,
+		  "problem_id": "med0402",
+		  "topic": "三.8.4.這孩子罹患確定診斷之疾病：遺傳跟代謝系統(複選)(2)染色體異常",
+		  "class": "group3",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 632,
+		  "problem_id": "med0403",
+		  "topic": "三.8.4.這孩子罹患確定診斷之疾病：遺傳跟代謝系統(複選)(3)罕見疾病",
+		  "class": "group3",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 633,
+		  "problem_id": "med0404",
+		  "topic": "三.8.4.這孩子罹患確定診斷之疾病：遺傳跟代謝系統(複選)(4)糖尿病",
+		  "class": "group3",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 634,
+		  "problem_id": "med0405",
+		  "topic": "三.8.4.這孩子罹患確定診斷之疾病：遺傳跟代謝系統(複選)(5)甲狀腺功能",
+		  "class": "group3",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 635,
+		  "problem_id": "med0501",
+		  "topic": "三.8.5.這孩子罹患確定診斷之疾病：發展性或其他心智方面的疾病(複選)(1)沒有(選此項者不可選其他選項)",
+		  "class": "group3",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 636,
+		  "problem_id": "med0502",
+		  "topic": "三.8.5.這孩子罹患確定診斷之疾病：發展性或其他心智方面的疾病(複選)(2)發展遲緩",
+		  "class": "group3",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 637,
+		  "problem_id": "med0503",
+		  "topic": "三.8.5.這孩子罹患確定診斷之疾病：發展性或其他心智方面的疾病(複選)(3)語言障礙",
+		  "class": "group3",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 638,
+		  "problem_id": "med0504",
+		  "topic": "三.8.5.這孩子罹患確定診斷之疾病：發展性或其他心智方面的疾病(複選)(4)自閉症",
+		  "class": "group3",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 639,
+		  "problem_id": "med0505",
+		  "topic": "三.8.5.這孩子罹患確定診斷之疾病：發展性或其他心智方面的疾病(複選)(5)智能障礙",
+		  "class": "group3",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 640,
+		  "problem_id": "med0506",
+		  "topic": "三.8.5.這孩子罹患確定診斷之疾病：發展性或其他心智方面的疾病(複選)(6)注意力缺損(過動症)",
+		  "class": "group3",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 641,
+		  "problem_id": "med0601",
+		  "topic": "三.8.6.這孩子罹患確定診斷之疾病(複選)：其他",
+		  "class": "group3",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 642,
+		  "problem_id": "med0601a",
+		  "topic": "三.8.6.這孩子罹患確定診斷之疾病(複選)：其他，名稱：____",
+		  "class": "group3",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 643,
+		  "problem_id": "med0902",
+		  "topic": "三.9.這孩子出生到現在得過幾次中耳炎?",
+		  "class": "group3",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 644,
+		  "problem_id": "med0902a",
+		  "topic": "三.9.這孩子出生到現在得過幾次中耳炎?有，__次",
+		  "class": "group3",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 645,
+		  "problem_id": "vac01",
+		  "topic": "三.12.這孩子是否完成該年齡應接種之疫苗?",
+		  "class": "group3",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 646,
+		  "problem_id": "health06",
+		  "topic": "三.13.您覺得這孩子目前的健康情況如何?",
+		  "class": "group3",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 647,
+		  "problem_id": "food01",
+		  "topic": "四.1.媽媽是否曾哺餵這孩子母奶?",
+		  "class": "group3",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 648,
+		  "problem_id": "food01a",
+		  "topic": "四.1.媽媽哺餵這孩子母奶到__個月",
+		  "class": "group3",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 649,
+		  "problem_id": "food02",
+		  "topic": "四.2.這孩子吃甜食(如糖果、甜的飲料)的頻率?",
+		  "class": "group3",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 650,
+		  "problem_id": "sleep01",
+		  "topic": "五.1.這孩子平常時(非假日)的睡覺狀況如何?",
+		  "class": "group3",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 651,
+		  "problem_id": "sleep01a",
+		  "topic": "五.1.1.這孩子平常時(非假日)的睡覺狀況如何?不固定，每天睡眠總計時間約__小時",
+		  "class": "group3",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 652,
+		  "problem_id": "sleep01b",
+		  "topic": "五.1.2.這孩子平常時(非假日)的睡覺狀況如何?固定，大概__點上床睡覺",
+		  "class": "group3",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 653,
+		  "problem_id": "sleep01c",
+		  "topic": "五.1.2.這孩子平常時(非假日)的睡覺狀況如何?固定，大概__點起床",
+		  "class": "group3",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 654,
+		  "problem_id": "sleep01d",
+		  "topic": "五.1.3.這孩子平常時(非假日)的睡覺狀況如何?固定，每天睡眠總計時間約__小時",
+		  "class": "group3",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 655,
+		  "problem_id": "slequa1",
+		  "topic": "五.2.這孩子最近容易半夜哭鬧，而且需要較長時間(約半小時以上)安撫嗎?",
+		  "class": "group3",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 656,
+		  "problem_id": "slequa2",
+		  "topic": "五.3.您覺得這孩子的睡眠品質",
+		  "class": "group3",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 657,
+		  "problem_id": "wsel0",
+		  "topic": "不等機率加權權值",
+		  "class": "group3",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		},
+		{
+		  "pid": 658,
+		  "problem_id": "w_post_sel",
+		  "topic": "事後分層加權權值",
+		  "class": "group3",
+		  "survey_id": [
+			1
+		  ],
+		  "exist": [
+			{
+			  "type": "teacher",
+			  "young": [
+				3
+			  ],
+			  "old": []
+			}
+		  ]
+		}
+	  ]
 }
