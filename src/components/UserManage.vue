@@ -14,6 +14,7 @@
             <v-data-table
               :headers="headers"
               :items="typeMenuUsers"
+              :items-per-page="5"
               sort-by="account"
               style="background-color:rgba(255, 255, 255, 0.4);"
               class="elevation-1"

@@ -43,6 +43,7 @@
         <v-data-table
             :headers="headers"
             :items="titleMenuData"
+            :items-per-page="5"
             sort-by="title"
             style="background-color:rgba(255, 255, 255, 0.4);"
             class="elevation-1"

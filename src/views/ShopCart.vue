@@ -1,26 +1,22 @@
 <template>
     <div id="shopcart">
-        <v-card>
+        <v-card flat style="background-color:rgba(255, 255, 255, 0.0);">
             <v-card-title>我的資料</v-card-title>
             <v-data-table
                 :headers="header"
                 :items="shopcart"
+                :items-per-page="5"
                 item-key="pid"
                 sort-by="pid"
+                style="background-color:rgba(255, 255, 255, 0.4);"
             >
                 <template v-slot:header.delAction>
-                    <v-icon
-                        small
-                         @click="delete_all"
-                    >
+                    <v-icon @click="delete_all">
                         mdi-delete
                     </v-icon>
                 </template>
                 <template v-slot:item.delAction="{ item }">
-                    <v-icon
-                        small
-                        @click="deleteItem(item)"
-                    >
+                    <v-icon @click="deleteItem(item)">
                         mdi-delete
                     </v-icon>
                 </template>
