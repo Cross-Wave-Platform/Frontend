@@ -12,10 +12,6 @@
                     <v-icon left>mdi-clipboard-text-multiple</v-icon>
                     資料權限管理
                 </v-tab>
-                <v-tab class="font-weight-bold" to="/admin/dataimport">
-                    <v-icon left>mdi-import</v-icon>
-                    資料匯入
-                </v-tab>
             </v-tabs>
           </div>
         </v-col>

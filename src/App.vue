@@ -290,11 +290,11 @@ export default {
         name: '最新消息',
         path: '/'
       },
-      // {
-      //   index: 1,
-      //   name: '資料匯入',
-      //   path: '/DataImport'
-      // },
+      {
+        index: 1,
+        name: '資料匯入',
+        path: '/DataImport'
+      },
       {
         index: 2,
         name: '資料查詢',

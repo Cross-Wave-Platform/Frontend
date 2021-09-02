@@ -21,6 +21,11 @@ const routes = [
     component: () => import('@/views/Profile.vue')
   },
   {
+    path: '/DataImport',
+    name: 'DataImport',
+    component: () => import('@/views/DataImport.vue')
+  },
+  {
     path: '/ContactUs',
     name: 'ContactUs',
     component: () => import('@/views/ContactUs.vue')
@@ -48,11 +53,6 @@ const routes = [
       {
         path: 'datamanage',
         component: DataManage
-      },
-      {
-        path: 'dataimport',
-        name: 'DataImport',
-        component: () => import('@/views/DataImport.vue')
       }
     ]
   },
@@ -71,6 +71,11 @@ const routes = [
         component: Analysis
       }
     ]
+  },
+  {
+    path: '/shopcart',
+    name: 'ShopCart',
+    component: () => import(/* webpackChunkName: "about" */ '../views/ShopCart.vue')
   },
   {
     path: '*',
