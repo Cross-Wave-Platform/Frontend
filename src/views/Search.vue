@@ -2,103 +2,103 @@
     <div id="search">
         <v-row no-gutters>
             <v-col cols=2 no-gutters id="Combo">
-                <v-list>
-                    <v-list-item>
-                        <v-list-item-content>
-                            <v-list-item-title>
-                                <h3>欲合併之問卷組合</h3>
-                            </v-list-item-title>
-                        </v-list-item-content>
-                    </v-list-item>
+                <navigation-drawer floating permenant>
+                    <v-list>
+                        <v-list-item>
+                            <v-list-item-content>
+                                <v-list-item-title>
+                                    <h3>欲合併之問卷組合</h3>
+                                </v-list-item-title>
+                            </v-list-item-content>
+                        </v-list-item>
 
-                    <v-divider></v-divider>
+                        <v-divider></v-divider>
 
-                    <v-list-item>
-                        <v-list-item-content>
-                            月齡組:
-                            <v-btn-toggle multiple dense v-model="selectedMonthOld">
-                                <v-btn v-for="monthOld in monthOldList" :key="monthOld.monthOld"
-                                    rounded
-                                    depressed
-                                    :value="monthOld.value"
-                                    :disabled="lockCombo"
-                                    @click="monthOldIsLegal"
+                        <v-list-item>
+                            <v-list-item-content>
+                                月齡組:
+                                <v-btn-toggle multiple dense v-model="selectedMonthOld">
+                                    <v-btn v-for="monthOld in monthOldList" :key="monthOld.monthOld"
+                                        rounded
+                                        depressed
+                                        :value="monthOld.value"
+                                        :disabled="lockCombo"
+                                        @click="monthOldIsLegal"
 
-                                >
-                                    {{monthOld.monthOld}}
-                                </v-btn>
-                            </v-btn-toggle>
-                        </v-list-item-content>
-                    </v-list-item>
+                                    >
+                                        {{monthOld.monthOld}}
+                                    </v-btn>
+                                </v-btn-toggle>
+                            </v-list-item-content>
+                        </v-list-item>
 
-                    <v-list-item>
-                        <v-list-item-content>
-                            問卷類型:
-                            <v-btn-toggle multiple dense v-model="selectedQuestionnaireType">
-                                <v-btn v-for="type in questionnaireTypeList" :key="type.type"
-                                    rounded
-                                    depressed
-                                    :value="type.value"
-                                    :disabled="lockCombo"
-                                    @click="typeIsLegal"
-                                >
-                                    {{type.type}}
-                                </v-btn>
-                            </v-btn-toggle>
-                        </v-list-item-content>
-                    </v-list-item>
+                        <v-list-item>
+                            <v-list-item-content>
+                                問卷類型:
+                                <v-btn-toggle multiple dense v-model="selectedQuestionnaireType">
+                                    <v-btn v-for="type in questionnaireTypeList" :key="type.type"
+                                        rounded
+                                        depressed
+                                        :value="type.value"
+                                        :disabled="lockCombo"
+                                        @click="typeIsLegal"
+                                    >
+                                        {{type.type}}
+                                    </v-btn>
+                                </v-btn-toggle>
+                            </v-list-item-content>
+                        </v-list-item>
 
-                    <v-list-item>
-                        <v-btn
-                            @click="getWaveList"
-                            :disabled="lockCombo"
-                            color="primary">
-                            搜尋存有波次
-                        </v-btn>
-                    </v-list-item>
+                        <v-list-item>
+                            <v-btn
+                                @click="getWaveList"
+                                :disabled="lockCombo"
+                                color="primary">
+                                搜尋存有波次
+                            </v-btn>
+                        </v-list-item>
 
-                    <v-list-item>
-                        <v-list-item-content>
-                            波次:
-                            <v-select
-                                dense
-                                v-model="selectedWave"
-                                :items="waveList"
-                                :disabled="lockCombo || omitConditions"
-                                item-text="wave"
-                                chips
-                                label="請先選擇月齡組以及問卷類型"
-                                multiple
-                                outlined
-                            ></v-select>
-                        </v-list-item-content>
-                    </v-list-item>
+                        <v-list-item>
+                            <v-list-item-content>
+                                波次:
+                                <v-select
+                                    dense
+                                    v-model="selectedWave"
+                                    :items="waveList"
+                                    :disabled="lockCombo || omitConditions"
+                                    item-text="wave"
+                                    chips
+                                    label="請先選擇月齡組以及問卷類型"
+                                    multiple
+                                    outlined
+                                ></v-select>
+                            </v-list-item-content>
+                        </v-list-item>
 
-                    <v-list-item>
-                        <v-btn rounded @click="getColList" v-if="!lockCombo">綁定</v-btn>
-                        <v-btn rounded @click="unlockCombination" v-else>解除綁定</v-btn>
-                        <v-spacer></v-spacer>
-                        <v-btn rounded @click="reset">恢復預設</v-btn>
-                    </v-list-item>
+                        <v-list-item>
+                            <v-btn rounded @click="getColList" v-if="!lockCombo">綁定</v-btn>
+                            <v-btn rounded @click="unlockCombination" v-else>解除綁定</v-btn>
+                            <v-spacer></v-spacer>
+                            <v-btn rounded @click="reset">恢復預設</v-btn>
+                        </v-list-item>
 
-                </v-list>
+                    </v-list>
+                </navigation-drawer>
 
             </v-col>
             <v-col cols=10 no-gutters>
-                <h3>資料篩選</h3>
-
-                <label>構面:</label>
-                <v-chip-group
-                    v-model="selectedFacet"
-                    column
-                    multiple
-                >
-                    <v-chip v-for="facet in facetList" :key="facet" :value="facet" filter outlined>
-                        {{ facet }}
-                    </v-chip>
-                </v-chip-group>
-                <!-- <label>關鍵字搜尋: </label>
-                <v-text-field label="請輸入變項代碼/變項敘述" v-model="searchKeyword"></v-text-field> -->
+                <div id="facetFilter" v-if="facetList.length">
+                    <label>構面篩選:</label>
+                    <v-chip-group
+                        v-model="selectedFacet"
+                        column
+                        multiple
+                    >
+                        <v-chip v-for="facet in facetList" :key="facet" :value="facet" filter outlined>
+                            {{ facet }}
+                        </v-chip>
+                    </v-chip-group>
+                </div>
 
                 <v-card>
                     <v-card-title>
@@ -205,7 +205,9 @@ export default {
         { text: '構面', align: 'center', value: 'class' },
         { text: '存有類型', value: 'typeAction' },
         { text: '存有波次', value: 'waveAction' }
-      ]
+      ],
+
+      color: '#673AB7'
     }
   },
 
@@ -222,9 +224,6 @@ export default {
   },
 
   methods: {
-    test (item) {
-      console.log(item)
-    },
     monthOldIsLegal () {
       if (this.selectedMonthOld.length > 1 && this.selectedQuestionnaireType.length > 1) {
         alert('跨問卷類型僅限同月齡組!')
@@ -258,7 +257,7 @@ export default {
         }
       ]
     },
-    waveIsLegal: function () {
+    waveIsLegal () {
       if (this.selectedWave.length > 1) {
         let change = false
         if (this.selectedMonthOld.length > 1) { alert('跨月齡組僅限同波次!'); change = true }
@@ -312,3 +311,12 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+#Combo {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+</style>
