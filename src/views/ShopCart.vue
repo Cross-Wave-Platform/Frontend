@@ -24,6 +24,24 @@
                         mdi-delete
                     </v-icon>
                 </template>
+                <template v-slot:item.typeAction="{ item }">
+                    <v-select
+                        v-model="tableType[item.index]"
+                        :items="item.exist"
+                        item-text="type"
+                    >
+                    </v-select>
+                </template>
+                <template v-slot:item.waveAction="{ item }">
+                    <div>
+                        <label>小月齡組:</label>
+                        <span v-for="wave in TableWave(item.index)[0].young" :key="wave"> {{wave}} </span>
+                    </div>
+                    <div>
+                        <label>大月齡組: </label>
+                        <span v-for="wave in TableWave(item.index)[0].old" :key="wave"> {{wave}} </span>
+                    </div>
+                </template>
             </v-data-table>
             <v-dialog v-model="dialogDelete" max-width="500px">
                 <v-card>
@@ -59,6 +77,7 @@ export default {
         { text: '存有類型', value: 'typeAction' },
         { text: '存有波次', value: 'waveAction' }
       ],
+      tableType: ['none'],
       dialogDelete: false,
       editedIndex: -1,
       editedItem: {}
@@ -94,11 +113,22 @@ export default {
     delete_all () {
       this.deleteall = true
       this.dialogDelete = true
+    },
+    TableWave (index) {
+      return this.shopcart[index].exist.filter(item => {
+        const target = this.tableType[index].toLowerCase()
+        const type = item.type.toLowerCase()
+        return target === type
+      })
     }
   },
   mounted () {
     axios.get('http://localhost:8000/ShopCart').then((res) => {
       this.shopcart = res.data
+      for (let i = 0; i < this.shopcart.length; i++) {
+        this.tableType[i + 1] = this.shopcart[i].exist[0].type
+        this.shopcart[i].index = i + 1
+      }
     })
   }
 }

@@ -78,6 +78,11 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/ShopCart.vue')
   },
   {
+    path: '/search',
+    name: 'Search',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Search.vue')
+  },
+  {
     path: '*',
     redirect: '/'
   }

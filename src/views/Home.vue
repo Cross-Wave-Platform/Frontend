@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-carousel v-model="model">
+    <!-- <v-carousel v-model="model">
       <v-carousel-item
         v-for="(color, i) in colors"
         :key="color"
@@ -21,7 +21,7 @@
           </v-row>
         </v-sheet>
       </v-carousel-item>
-    </v-carousel>
+    </v-carousel> -->
   </div>
 </template>
 
@@ -31,14 +31,14 @@ export default {
   name: 'Home',
   data () {
     return {
-      model: 0,
-      colors: [
-        'primary',
-        'secondary',
-        'yellow darken-2',
-        'red',
-        'orange'
-      ]
+      model: 0
+      // colors: [
+      //   'primary',
+      //   'secondary',
+      //   'yellow darken-2',
+      //   'red',
+      //   'orange'
+      // ]
     }
   }
 }

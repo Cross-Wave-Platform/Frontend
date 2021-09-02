@@ -38,11 +38,18 @@
       >
         {{userdata.username}}
       </span>
+
+      <v-btn text to="/shopcart">
+          <v-icon left>mdi-cart-outline</v-icon>
+          我的資料
+      </v-btn>
+
       <v-divider
         vertical
         class="mx-4"
         v-if="userdata.username!=null"
       ></v-divider>
+
       <v-dialog
         v-model="dialog"
         max-width="700px"
@@ -298,7 +305,7 @@ export default {
       {
         index: 2,
         name: '資料查詢',
-        path: '/'
+        path: '/search'
       },
       {
         index: 3,
