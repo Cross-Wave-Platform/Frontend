@@ -1,10 +1,9 @@
 <template>
   <div class="admin">
-    <v-app>
       <v-row no-gutters>
         <v-col cols=2>
           <div style="position: sticky; top: 76px">
-            <v-tabs vertical>
+            <v-tabs vertical left>
                 <v-tab class="font-weight-bold" to="/admin/usermanage">
                     <v-icon left>mdi-account</v-icon>
                     使用者權限管理
@@ -18,7 +17,6 @@
         </v-col>
         <v-col  cols=10><router-view></router-view></v-col>
       </v-row>
-    </v-app>
   </div>
 </template>
 <script>

@@ -1,10 +1,11 @@
 <template>
   <div class="datamanage">
-    <v-card flat>
+    <v-card flat style="background-color:rgba(255, 255, 255, 0.0);">
         <v-card-text>
         <v-text-field
             label="關鍵字搜尋-資料名稱"
             v-model="input_data.keyword"
+            prepend-inner-icon="mdi-magnify"
             ></v-text-field> <!-- 關鍵字輸入 -->
         <v-col
             class="d-flex"
@@ -42,7 +43,10 @@
         <v-data-table
             :headers="headers"
             :items="titleMenuData"
+            :items-per-page="5"
             sort-by="title"
+            style="background-color:rgba(255, 255, 255, 0.4);"
+            class="elevation-1"
         >
             <template v-slot:top>
             <v-toolbar flat>
