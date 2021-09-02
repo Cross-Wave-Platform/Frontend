@@ -642,5 +642,27 @@
             "people": "教保/教師",
             "state": false
         }
-    ]
+    ],
+	"ShopCart": [
+		{"pid": 1, "problem_id": "baby_id", "topic": "幼兒編號", "class": "no_group", "survey_id": [1, 2], "exist": [{"type": "parent", "young": [], "old": [3, 6]}]},
+		{"pid": 2, "problem_id": "interviewer_id", "topic": "訪員系統編號", "class": "no_group", "survey_id": [1, 2], "exist": [{"type": "parent", "young": [], "old": [3, 6]}]},
+		{"pid": 3, "problem_id": "baby_dob", "topic": "幼兒生日", "class": "no_group", "survey_id": [1, 2], "exist": [{"type": "parent", "young": [], "old": [3, 6]}]},
+		{"pid": 4, "problem_id": "int_date", "topic": "完訪日期", "class": "no_group", "survey_id": [1, 2], "exist": [{"type": "parent", "young": [], "old": [3, 6]}]},
+		{"pid": 5, "problem_id": "baby_sex", "topic": "幼兒性別", "class": "no_group", "survey_id": [1, 2], "exist": [{"type": "parent", "young": [], "old": [3, 6]}]},
+		{"pid": 6, "problem_id": "relationship", "topic": "受訪者與幼兒關係", "class": "no_group", "survey_id": [1, 2], "exist": [{"type": "parent", "young": [], "old": [3, 6]}]},
+		{"pid": 7, "problem_id": "pfc01", "topic": "一.1.您是民國__年出生的", "class": "no_group", "survey_id": [1, 2], "exist": [{"type": "parent", "young": [], "old": [3, 6]}]},
+		{"pid": 8, "problem_id": "pfc0202", "topic": "一.2.1.您及配偶的教育程度是：男方", "class": "no_group", "survey_id": [1, 2], "exist": [{"type": "parent", "young": [], "old": [3, 6]}]},
+		{"pid": 9, "problem_id": "pfc0201", "topic": "一.2.2.您及配偶的教育程度是：女方", "class": "no_group", "survey_id": [1, 2], "exist": [{"type": "parent", "young": [], "old": [3, 6]}]},
+		{"pid": 10, "problem_id": "pfc03", "topic": "一.3.您的原國籍", "class": "no_group", "survey_id": [1, 2], "exist": [{"type": "parent", "young": [], "old": [3, 6]}]},
+		{"pid": 11, "problem_id": "pfc0301", "topic": "一.3.1.您的原國籍(5)東南亞國籍為", "class": "no_group", "survey_id": [1, 2], "exist": [{"type": "parent", "young": [], "old": [3, 6]}]},
+		{"pid": 12, "problem_id": "pfc0301a", "topic": "一.3.1.您的原國籍(5)東南亞國籍為其他東南亞國家(請說明)", "class": "no_group", "survey_id": [1, 2], "exist": [{"type": "parent", "young": [], "old": [3, 6]}]},
+		{"pid": 13, "problem_id": "pfc0302", "topic": "一.3.2.您的原國籍(6)其他亞洲國家國籍為", "class": "no_group", "survey_id": [1, 2], "exist": [{"type": "parent", "young": [], "old": [3, 6]}]},
+		{"pid": 14, "problem_id": "pfc0302a", "topic": "一.3.2.您的原國籍(6)其他亞洲國家國籍為其他(請說明)", "class": "no_group", "survey_id": [1, 2], "exist": [{"type": "parent", "young": [], "old": [3, 6]}]},
+		{"pid": 15, "problem_id": "pfc03a", "topic": "一.3.您的原國籍(7)其他國家(請說明)", "class": "no_group", "survey_id": [1, 2], "exist": [{"type": "parent", "young": [], "old": [3, 6]}]},
+		{"pid": 16, "problem_id": "pfc0303", "topic": "一.3.3.您在台灣居住的時間約__年", "class": "no_group", "survey_id": [1, 2], "exist": [{"type": "parent", "young": [], "old": [3, 6]}]},
+		{"pid": 17, "problem_id": "pfc030401", "topic": "一.3.4.1.您中文的聽說讀寫能力如何?聽", "class": "no_group", "survey_id": [1, 2], "exist": [{"type": "parent", "young": [], "old": [3, 6]}]},
+		{"pid": 18, "problem_id": "pfc030402", "topic": "一.3.4.2.您中文的聽說讀寫能力如何?說", "class": "no_group", "survey_id": [1, 2], "exist": [{"type": "parent", "young": [], "old": [3, 6]}]},
+		{"pid": 19, "problem_id": "pfc030403", "topic": "一.3.4.3.您中文的聽說讀寫能力如何?讀", "class": "no_group", "survey_id": [1, 2], "exist": [{"type": "parent", "young": [], "old": [3, 6]}]},
+		{"pid": 20, "problem_id": "pfc030404", "topic": "一.3.4.4.您中文的聽說讀寫能力如何?寫", "class": "no_group", "survey_id": [1, 2], "exist": [{"type": "parent", "young": [], "old": [3, 6]}]}
+	]
 }

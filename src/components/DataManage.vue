@@ -1,6 +1,6 @@
 <template>
   <div class="datamanage">
-    <v-card flat style="background-color: white!important;opacity: 0.8;border-color: transparent!important;">
+    <v-card flat style="background-color:rgba(255, 255, 255, 0.0);">
         <v-card-text>
         <v-text-field
             label="關鍵字搜尋-資料名稱"
@@ -44,6 +44,8 @@
             :headers="headers"
             :items="titleMenuData"
             sort-by="title"
+            style="background-color:rgba(255, 255, 255, 0.4);"
+            class="elevation-1"
         >
             <template v-slot:top>
             <v-toolbar flat>
