@@ -30,16 +30,25 @@
         </span>
       </v-app-bar-title>
 
-      <v-spacer></v-spacer>
-      <span
-        style="cursor: pointer"
-        @click="$router.push('/Profile')"
+        <v-spacer></v-spacer>
+        <span
+          style="cursor: pointer"
+          @click="$router.push('/Profile')"
+          v-if="userdata.username!=null"
+        >
+          {{userdata.username}}
+        </span>
+
+        <v-divider
+          vertical
+          class="mx-4"
+          v-if="userdata.username!=null"
+        ></v-divider>
+      <v-btn
+        text
+        to="/shopcart"
         v-if="userdata.username!=null"
       >
-        {{userdata.username}}
-      </span>
-
-      <v-btn text to="/shopcart">
           <v-icon left>mdi-cart-outline</v-icon>
           我的資料
       </v-btn>
@@ -277,7 +286,7 @@ export default {
     password: null,
     privacyCheckbox: false,
     userdata: {
-      username: null
+      username: 'name'
     },
     usernameRules: [
       v => !!v || 'Username is required',
