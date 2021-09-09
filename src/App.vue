@@ -26,7 +26,7 @@
       </span>
       <v-app-bar-title>
         <span style="cursor: pointer" @click="$router.push('/')">
-          幼兒發展資料庫
+          臺灣幼兒發展調查資料庫
         </span>
       </v-app-bar-title>
 
