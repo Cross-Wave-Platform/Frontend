@@ -30,20 +30,22 @@
         </span>
       </v-app-bar-title>
 
-        <v-spacer></v-spacer>
-        <span
-          style="cursor: pointer"
-          @click="$router.push('/Profile')"
-          v-if="userdata.username!=null"
-        >
-          {{userdata.username}}
-        </span>
+      <v-spacer></v-spacer>
 
-        <v-divider
-          vertical
-          class="mx-4"
-          v-if="userdata.username!=null"
-        ></v-divider>
+      <span
+        style="cursor: pointer"
+        @click="$router.push('/Profile')"
+        v-if="userdata.username!=null"
+      >
+        {{userdata.username}}
+      </span>
+
+      <v-divider
+        vertical
+        class="mx-4"
+        v-if="userdata.username!=null"
+      ></v-divider>
+
       <v-btn
         text
         to="/shopcart"
