@@ -288,7 +288,7 @@ export default {
     password: null,
     privacyCheckbox: false,
     userdata: {
-      username: 'name'
+      username: null
     },
     usernameRules: [
       v => !!v || 'Username is required',
