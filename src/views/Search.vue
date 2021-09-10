@@ -269,8 +269,8 @@ export default {
       }
     },
     getColList () {
-      axios.get('http://localhost:8000/newSearchResult').then((res) => {
-        this.searchResult = res.data
+      axios.get('/api/searchApp/searchProblem').then((res) => {
+        this.searchResult = res.data.data.info
         for (let i = 0; i < this.searchResult.length; i++) {
           const keyword = this.searchResult[i].class
           if (!this.facetList.length || this.facetList.indexOf(keyword) === -1) {

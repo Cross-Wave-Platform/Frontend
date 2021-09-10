@@ -26,7 +26,7 @@
       </span>
       <v-app-bar-title>
         <span style="cursor: pointer" @click="$router.push('/')">
-          幼兒發展資料庫
+          臺灣幼兒發展調查資料庫
         </span>
       </v-app-bar-title>
 
@@ -181,8 +181,8 @@
                             dense
                           ></v-text-field>
                           <v-text-field
-                            v-model="account"
-                            :rules="accountRules"
+                            v-model="email"
+                            :rules="emailRules"
                             label="E-mail address"
                             outlined
                             required
@@ -286,6 +286,7 @@ export default {
     registerValid: true,
     username: null,
     account: null,
+    email: null,
     password: null,
     privacyCheckbox: false,
     userdata: {
@@ -299,9 +300,13 @@ export default {
       v => !!v || 'Account is required'
       // v => /.+@.+\..+/.test(v) || 'E-mail must be valid'
     ],
+    emailRules: [
+      v => !!v || 'E-mail is required',
+      v => /.+@.+\..+/.test(v) || 'E-mail must be valid'
+    ],
     passwordRules: [
-      v => !!v || 'Password is required',
-      v => (v && v.length >= 8) || 'Password must be longer than 8 characters'
+      v => !!v || 'Password is required'
+      // v => (v && v.length >= 8) || 'Password must be longer than 8 characters'
     ],
     tabItems: [
       {
@@ -350,8 +355,7 @@ export default {
     login () {
       if (this.$refs.loginForm.validate()) {
         const config = {
-          url: '/loginApp/login',
-          baseURL: this.apiURL,
+          url: '/api/loginApp/login',
           method: 'post',
 
           data: {
@@ -365,6 +369,7 @@ export default {
           })
           .catch()
       }
+      console.log('hi')
     },
     register () {
       this.$refs.registerForm.validate()
