@@ -31,6 +31,7 @@
       </v-app-bar-title>
 
       <v-spacer></v-spacer>
+
       <span
         style="cursor: pointer"
         @click="$router.push('/Profile')"
@@ -39,7 +40,17 @@
         {{userdata.username}}
       </span>
 
-      <v-btn text to="/shopcart">
+      <v-divider
+        vertical
+        class="mx-4"
+        v-if="userdata.username!=null"
+      ></v-divider>
+
+      <v-btn
+        text
+        to="/shopcart"
+        v-if="userdata.username!=null"
+      >
           <v-icon left>mdi-cart-outline</v-icon>
           我的資料
       </v-btn>
