@@ -1,89 +1,94 @@
 <template>
     <div id="search">
-        <v-row no-gutters>
+        <v-row>
             <v-col cols=2 id="Combo">
-                <v-list>
-                    <v-list-item>
-                        <v-list-item-content>
-                            <v-list-item-title>
-                                <h3>欲合併之問卷組合</h3>
-                            </v-list-item-title>
-                        </v-list-item-content>
-                    </v-list-item>
+                <v-navigation-drawer
+                  style="top:50px;"
+                  permenant
+                  absolute
+                >
+                  <v-list>
+                      <v-list-item>
+                          <v-list-item-content>
+                              <v-list-item-title>
+                                  <h3>欲合併之問卷組合</h3>
+                              </v-list-item-title>
+                          </v-list-item-content>
+                      </v-list-item>
 
-                    <v-divider></v-divider>
+                      <v-divider></v-divider>
 
-                    <v-list-item>
-                        <v-list-item-content>
-                            月齡組:
-                            <v-btn-toggle multiple dense v-model="selectedMonthOld">
-                                <v-btn v-for="monthOld in monthOldList" :key="monthOld.monthOld"
-                                    rounded
-                                    depressed
-                                    :value="monthOld.value"
-                                    :disabled="lockCombo"
-                                    @click="monthOldIsLegal"
+                      <v-list-item>
+                          <v-list-item-content>
+                              月齡組:
+                              <v-btn-toggle multiple dense v-model="selectedMonthOld">
+                                  <v-btn v-for="monthOld in monthOldList" :key="monthOld.monthOld"
+                                      rounded
+                                      depressed
+                                      :value="monthOld.value"
+                                      :disabled="lockCombo"
+                                      @click="monthOldIsLegal"
+                                  >
+                                      {{monthOld.monthOld}}
+                                  </v-btn>
+                              </v-btn-toggle>
+                          </v-list-item-content>
+                      </v-list-item>
 
-                                >
-                                    {{monthOld.monthOld}}
-                                </v-btn>
-                            </v-btn-toggle>
-                        </v-list-item-content>
-                    </v-list-item>
+                      <v-list-item>
+                          <v-list-item-content>
+                              問卷類型:
+                              <v-btn-toggle multiple dense v-model="selectedQuestionnaireType">
+                                  <v-btn v-for="type in questionnaireTypeList" :key="type.type"
+                                      rounded
+                                      depressed
+                                      :value="type.value"
+                                      :disabled="lockCombo"
+                                      @click="typeIsLegal"
+                                  >
+                                      {{type.type}}
+                                  </v-btn>
+                              </v-btn-toggle>
+                          </v-list-item-content>
+                      </v-list-item>
 
-                    <v-list-item>
-                        <v-list-item-content>
-                            問卷類型:
-                            <v-btn-toggle multiple dense v-model="selectedQuestionnaireType">
-                                <v-btn v-for="type in questionnaireTypeList" :key="type.type"
-                                    rounded
-                                    depressed
-                                    :value="type.value"
-                                    :disabled="lockCombo"
-                                    @click="typeIsLegal"
-                                >
-                                    {{type.type}}
-                                </v-btn>
-                            </v-btn-toggle>
-                        </v-list-item-content>
-                    </v-list-item>
+                      <v-list-item>
+                          <v-btn
+                              @click="getWaveList"
+                              :disabled="lockCombo"
+                              color="primary">
+                              搜尋存有波次
+                          </v-btn>
+                      </v-list-item>
 
-                    <v-list-item>
-                        <v-btn
-                            @click="getWaveList"
-                            :disabled="lockCombo"
-                            color="primary">
-                            搜尋存有波次
-                        </v-btn>
-                    </v-list-item>
+                      <v-list-item>
+                          <v-list-item-content>
+                              波次:
+                              <v-select
+                                  dense
+                                  v-model="selectedWave"
+                                  :items="waveList"
+                                  :disabled="lockCombo || omitConditions"
+                                  item-text="wave"
+                                  chips
+                                  label="請先選擇月齡組以及問卷類型"
+                                  multiple
+                                  outlined
+                              ></v-select>
+                          </v-list-item-content>
+                      </v-list-item>
 
-                    <v-list-item>
-                        <v-list-item-content>
-                            波次:
-                            <v-select
-                                dense
-                                v-model="selectedWave"
-                                :items="waveList"
-                                :disabled="lockCombo || omitConditions"
-                                item-text="wave"
-                                chips
-                                label="請先選擇月齡組以及問卷類型"
-                                multiple
-                                outlined
-                            ></v-select>
-                        </v-list-item-content>
-                    </v-list-item>
+                      <v-list-item>
+                          <v-btn rounded @click="getColList" v-if="!lockCombo">綁定</v-btn>
+                          <v-btn rounded @click="unlockCombination" v-else>解除綁定</v-btn>
+                          <v-spacer></v-spacer>
+                          <v-btn rounded @click="reset">恢復預設</v-btn>
+                      </v-list-item>
 
-                    <v-list-item>
-                        <v-btn rounded @click="getColList" v-if="!lockCombo">綁定</v-btn>
-                        <v-btn rounded @click="unlockCombination" v-else>解除綁定</v-btn>
-                        <v-spacer></v-spacer>
-                        <v-btn rounded @click="reset">恢復預設</v-btn>
-                    </v-list-item>
-
-                </v-list>
-
+                  </v-list>
+                </v-navigation-drawer>
             </v-col>
+
             <v-col cols=10 no-gutters>
                 <div id="facetFilter" v-if="facetList.length">
                     <label>構面篩選:</label>
@@ -109,6 +114,18 @@
                             single-line
                             hide-details
                         ></v-text-field>
+                        <v-tooltip bottom>
+                          <template v-slot:activator="{ on, attrs }">
+                            <v-btn
+                              text
+                              v-bind="attrs"
+                              v-on="on"
+                            >
+                              <v-icon>mdi-plus-thick</v-icon>
+                            </v-btn>
+                          </template>
+                          <span>加入我的資料</span>
+                        </v-tooltip>
                     </v-card-title>
                     <v-card-text>顯示{{facetMenu.length}}筆</v-card-text>
                     <v-data-table
