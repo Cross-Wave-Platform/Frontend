@@ -132,9 +132,9 @@
                           lazy-validation
                         >
                           <v-text-field
-                            v-model="account"
-                            :rules="accountRules"
-                            label="E-mail address"
+                            v-model="username"
+                            :rules="usernameRules"
+                            label="Username"
                             outlined
                             required
                             dense
@@ -272,7 +272,7 @@
 </template>
 
 <script>
-
+import axios from 'axios'
 export default {
   name: 'App',
 
@@ -299,8 +299,8 @@ export default {
       v => /.+@.+\..+/.test(v) || 'E-mail must be valid'
     ],
     passwordRules: [
-      v => !!v || 'Password is required',
-      v => (v && v.length >= 8) || 'Password must be longer than 8 characters'
+      v => !!v || 'Password is required'
+      // v => (v && v.length >= 8) || 'Password must be longer than 8 characters'
     ],
     tabItems: [
       {
@@ -348,6 +348,11 @@ export default {
   methods: {
     login () {
       this.$refs.loginForm.validate()
+      axios.post('/api/loginApp/login', {
+        username: this.username,
+        password: this.password
+      })
+      console.log('hi')
     },
     register () {
       this.$refs.registerForm.validate()
