@@ -360,11 +360,6 @@ export default {
       },
       {
         index: 3,
-        name: '合併分析',
-        path: '/export'
-      },
-      {
-        index: 4,
         name: '權限管理',
         path: '/admin'
       },
