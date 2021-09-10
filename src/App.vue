@@ -134,7 +134,7 @@
                           <v-text-field
                             v-model="account"
                             :rules="accountRules"
-                            label="E-mail address"
+                            label="Account"
                             outlined
                             required
                             dense
@@ -272,11 +272,12 @@
 </template>
 
 <script>
-
+import axios from 'axios'
 export default {
   name: 'App',
 
   data: () => ({
+    apiURL: 'http://localhost:5000',
     mainTab: null,
     loginTab: null,
     dialog: false,
@@ -295,8 +296,8 @@ export default {
       v => (v && v.length < 15) || 'Username must be less than 15 characters'
     ],
     accountRules: [
-      v => !!v || 'E-mail is required',
-      v => /.+@.+\..+/.test(v) || 'E-mail must be valid'
+      v => !!v || 'Account is required'
+      // v => /.+@.+\..+/.test(v) || 'E-mail must be valid'
     ],
     passwordRules: [
       v => !!v || 'Password is required',
@@ -347,7 +348,23 @@ export default {
   }),
   methods: {
     login () {
-      this.$refs.loginForm.validate()
+      if (this.$refs.loginForm.validate()) {
+        const config = {
+          url: '/loginApp/login',
+          baseURL: this.apiURL,
+          method: 'post',
+
+          data: {
+            username: this.account,
+            password: this.password
+          }
+        }
+        axios(config)
+          .then((res) => {
+            console.log(res)
+          })
+          .catch()
+      }
     },
     register () {
       this.$refs.registerForm.validate()
