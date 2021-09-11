@@ -275,6 +275,7 @@
     </v-app-bar>
     <v-main>
       <v-tabs
+        v-if="userdata.nickname != null"
         v-model="mainTab"
         background-color="secondary"
         text-color="primary"
@@ -449,6 +450,7 @@ export default {
           this.userdata = {
             nickname: null
           }
+          this.$router.push('/')
         })
     },
     register () {
