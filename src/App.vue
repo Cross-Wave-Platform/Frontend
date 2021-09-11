@@ -35,21 +35,21 @@
       <span
         style="cursor: pointer"
         @click="$router.push('/Profile')"
-        v-if="userdata.username!=null"
+        v-if="userdata.nickname!=null"
       >
-        {{userdata.username}}
+        {{userdata.nickname}}
       </span>
 
       <v-divider
         vertical
         class="mx-4"
-        v-if="userdata.username!=null"
+        v-if="userdata.nickname!=null"
       ></v-divider>
 
       <v-btn
         text
         to="/shopcart"
-        v-if="userdata.username!=null"
+        v-if="userdata.nickname!=null"
       >
           <v-icon left>mdi-cart-outline</v-icon>
           我的資料
@@ -58,13 +58,13 @@
       <v-divider
         vertical
         class="mx-4"
-        v-if="userdata.username!=null"
+        v-if="userdata.nickname!=null"
       ></v-divider>
 
       <v-dialog
         v-model="dialog"
         max-width="700px"
-        v-if="userdata.username == null"
+        v-if="userdata.nickname == null"
       >
         <template v-slot:activator="{ on, attrs }">
           <v-btn
@@ -266,7 +266,7 @@
       <v-btn
         outlined
         dense
-        v-if="userdata.username != null"
+        v-if="userdata.nickname != null"
         @click="logout"
       >
         <v-icon class="mr-2">mdi-logout</v-icon>
@@ -293,6 +293,7 @@
       <v-container
         fluid
         background-color="transparent"
+        style="max-height: 90vh;"
       >
         <router-view/>
       </v-container>
@@ -342,26 +343,30 @@ export default {
       v => !!v || 'Password is required'
       // v => (v && v.length >= 8) || 'Password must be longer than 8 characters'
     ],
-    tabItems: [
+    allTabItems: [
       {
         index: 0,
         name: '最新消息',
-        path: '/'
+        path: '/',
+        auth: 2
       },
       {
         index: 1,
         name: '資料匯入',
-        path: '/DataImport'
+        path: '/DataImport',
+        auth: 1
       },
       {
         index: 2,
         name: '資料查詢',
-        path: '/search'
+        path: '/search',
+        auth: 2
       },
       {
         index: 3,
         name: '權限管理',
-        path: '/admin'
+        path: '/admin',
+        auth: 1
       },
       // {
       //   index: 5,
@@ -371,7 +376,8 @@ export default {
       {
         index: 6,
         name: '問題回報',
-        path: '/ProblemReport'
+        path: '/ProblemReport',
+        auth: 2
       }
       // {
       //   index: 7,
@@ -380,9 +386,25 @@ export default {
       // }
     ]
   }),
+  beforeMount () {
+    this.loadInfo()
+  },
+  computed: {
+    tabItems: function () {
+      return this.allTabItems.filter(word => word.auth >= this.userdata.auth)
+    }
+  },
   methods: {
     loadInfo () {
-
+      const config = {
+        url: '/api/personalApp/loadInfo',
+        method: 'get'
+      }
+      axios(config)
+        .then((res) => {
+          console.log(res.data.data)
+          this.userdata = res.data.data
+        })
     },
     login () {
       if (this.$refs.loginForm.validate()) {
@@ -401,7 +423,8 @@ export default {
             this.alertPlace = 'login'
             this.alertType = 'success'
             this.alertMsg = res.data.message + ', reflesh after 5 sec'
-            this.userdata.username = this.account
+            // this.userdata.nickname = this.account
+            this.loadInfo()
             this.dialog = false
             // this.$router.go(0)
           })
@@ -424,7 +447,7 @@ export default {
           console.log('logout!!')
           this.alertPlace = ''
           this.userdata = {
-            username: null
+            nickname: null
           }
         })
     },
