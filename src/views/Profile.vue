@@ -51,7 +51,10 @@
     <v-tab-item
       transition="fade-transition" reverse-transition="fade-transition"
     >
-      <v-card>
+      <v-card
+        tile
+        elevation="0"
+      >
         <v-form
           ref="passwordForm"
           v-model="passwordForm"
@@ -93,16 +96,29 @@
           dark
           color="primary"
           block
+          @click="changePassword"
         >
           Save
           <v-icon right>mdi-content-save</v-icon>
         </v-btn>
+        <v-alert
+          :value="alertPlace == 'changePassword'"
+          :type="alertType"
+          dense
+          outlined
+          class="mt-3"
+        >
+          {{alertMsg}}
+        </v-alert>
       </v-card>
     </v-tab-item>
     <v-tab-item
       transition="fade-transition" reverse-transition="fade-transition"
     >
-      <v-card>
+      <v-card
+        tile
+        elevation="0"
+      >
         <v-form
           ref="nameForm"
           v-model="nameForm"
@@ -111,8 +127,8 @@
         >
           <v-text-field
             v-model="name"
-            label="New Username"
-            :rules="[v => !!v || 'Please enter new username.']"
+            label="New Nickname"
+            :rules="[v => !!v || 'Please enter new nickname.']"
             outlined
           >
           </v-text-field>
@@ -121,10 +137,20 @@
           dark
           color="primary"
           block
+          @click="changeNickname"
         >
           Save
           <v-icon right>mdi-content-save</v-icon>
         </v-btn>
+        <v-alert
+          :value="alertPlace == 'changeNickname'"
+          :type="alertType"
+          dense
+          outlined
+          class="mt-3"
+        >
+          {{alertMsg}}
+        </v-alert>
       </v-card>
     </v-tab-item>
   </v-tabs>
@@ -136,6 +162,10 @@ export default {
   name: 'Profile',
 
   data: () => ({
+    alertPlace: '',
+    alertType: null,
+    alertMsg: '',
+
     passwordForm: false,
     showPassword: {
       oldPassword: false,
@@ -196,6 +226,61 @@ export default {
           console.log(res.data.data)
           this.userdata = res.data.data
         })
+    },
+    changePassword () {
+      if (this.$refs.passwordForm.validate()) {
+        const config = {
+          url: '/api/personalApp/changePassword',
+          method: 'put',
+
+          data: {
+            oldPassword: this.password.oldPassword,
+            newPassword: this.password.newPassword
+          }
+        }
+        axios(config)
+          .then((res) => {
+            console.log(res.data.message)
+            this.alertPlace = 'changePassword'
+            this.alertType = 'success'
+            this.alertMsg = res.data.message
+          })
+          .catch((err) => {
+            console.log(err.response)
+            this.alertPlace = 'changePassword'
+            this.alertType = 'error'
+            this.alertMsg = err.response.data.message
+            // console.log('ERR!!!')
+          })
+      }
+    },
+
+    changeNickname () {
+      if (this.$refs.nameForm.validate()) {
+        const config = {
+          url: '/api/personalApp/changeNickname',
+          method: 'put',
+
+          data: {
+            newNickname: this.name
+          }
+        }
+        axios(config)
+          .then((res) => {
+            console.log(res.data.message)
+            this.alertPlace = 'changeNickname'
+            this.alertType = 'success'
+            this.alertMsg = res.data.message
+            this.$router.go(0)
+          })
+          .catch((err) => {
+            console.log(err.response)
+            this.alertPlace = 'changeNickname'
+            this.alertType = 'error'
+            this.alertMsg = err.response.data.message
+            // console.log('ERR!!!')
+          })
+      }
     }
   }
 }
