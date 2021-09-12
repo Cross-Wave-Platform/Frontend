@@ -85,6 +85,7 @@
         tile
         elevation="0"
         class="mx-12"
+        color="rgba(255, 255, 255, 0.0)"
       >
         <v-form
           ref="reportForm"
