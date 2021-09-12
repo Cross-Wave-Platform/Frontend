@@ -123,13 +123,11 @@ export default {
     ],
     editedIndex: -1,
     editedItem: {
-      id: '',
       account: '',
       email: '',
       state: '',
     },
     defaultItem: {
-      id: '',
       account: '',
       email: '',
       state: '',
@@ -185,12 +183,30 @@ export default {
 
     save () {
       Object.assign(this.menuUsers[this.editedIndex], this.editedItem)
+      let data={
+        user: this.editedItem.account,
+        userlevel: ''
+      }
+      if(this.editedItem.state=='管理員') data.userlevel='admin'
+      else if(this.editedItem.state=='一般會員') data.userlevel='member'
+      else data.userlevel='blacklist'
+      axios.put('/api/adminApp/change_auth',data)
       this.close()
     },
   },
   mounted () {
-    axios.get('http://localhost:8000/Users').then((res) => {
-      this.menuUsers = res.data
+    axios.get('/api/adminApp/user_management',{
+      params: { Identity: 'All' }
+    }).then((res) => {
+      for(let i=0;i<res.data.data.length;i++){
+        let arr = ['管理員','一般會員','黑名單']
+        let item={
+          account: res.data.data[i].account_name,
+          email: res.data.data[i].email,
+          state: arr[res.data.data[i].auth-1]
+        }
+        this.menuUsers.push(item);
+      }
     })
   }
 }
