@@ -2,9 +2,13 @@
   <div>
     <v-carousel v-model="model">
       <v-carousel-item
-        v-for="(color, i) in colors"
+        v-for="color in colors"
         :key="color"
       >
+      <!-- <v-carousel-item
+        v-for="(color, i) in colors"
+        :key="color"
+      > -->
         <v-sheet
           :color="color"
           height="100%"
@@ -16,7 +20,8 @@
             justify="center"
           >
             <div class="text-h2">
-              Slide {{ i + 1 }}
+              Welcome
+              <!-- Slide {{ i + 1 }} -->
             </div>
           </v-row>
         </v-sheet>
