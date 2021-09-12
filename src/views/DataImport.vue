@@ -1,5 +1,5 @@
 <template>
-  <v-tabs vertical style="background-color:rgba(255, 255, 255, 0.4);">
+  <v-tabs vertical>
       <v-tab
         class="font-weight-bold"
         style="width: 200px"
