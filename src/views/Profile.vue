@@ -21,7 +21,7 @@
         class="mx-8"
       >
         <v-row
-          v-for="item in userdata"
+          v-for="item in info"
           :key="item.title"
           align="center"
           class="my-n4"
@@ -131,6 +131,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   name: 'Profile',
 
@@ -147,20 +148,55 @@ export default {
     },
     nameForm: false,
     name: '',
-    userdata: [
-      {
-        title: '註冊E-mail',
-        content: 'example@email.com'
-      },
-      {
-        title: '暱稱',
-        content: 'Username'
-      },
-      {
-        title: '使用者身分',
-        content: '一般成員'
+    userdata: null
+  }),
+  beforeMount () {
+    this.loadInfo()
+  },
+  computed: {
+    info: function () {
+      if (this.userdata == null) {
+        return [
+          {
+            title: '註冊E-mail',
+            content: ''
+          },
+          {
+            title: '暱稱',
+            content: ''
+          },
+          {
+            title: '使用者身分',
+            content: ''
+          }
+        ]
       }
-    ]
-  })
+      var ret = [
+        {
+          title: '註冊E-mail',
+          content: this.userdata.email
+        },
+        {
+          title: '暱稱',
+          content: this.userdata.nickname
+        }
+      ]
+      if (this.userdata.auth === 1) { ret.push({ title: '使用者身分', content: '管理員' }) } else { ret.push({ title: '使用者身分', content: '一般會員' }) }
+      return ret
+    }
+  },
+  methods: {
+    loadInfo () {
+      const config = {
+        url: '/api/personalApp/loadInfo',
+        method: 'get'
+      }
+      axios(config)
+        .then((res) => {
+          console.log(res.data.data)
+          this.userdata = res.data.data
+        })
+    }
+  }
 }
 </script>

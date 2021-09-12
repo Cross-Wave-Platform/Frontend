@@ -125,22 +125,38 @@
           dark
           block
           color="primary"
+          @click="quickReport"
         >
           Send
           <v-icon right>
             mdi-send
           </v-icon>
         </v-btn>
+        <v-alert
+          :value="alertPlace == 'quickReport'"
+          :type="alertType"
+          dense
+          outlined
+          class="mt-3"
+        >
+          {{alertMsg}}
+        </v-alert>
       </v-card>
     </v-tab-item>
   </v-tabs>
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   name: 'ProblemReport',
 
   data: () => ({
+    alertPlace: '',
+    alertType: null,
+    alertMsg: '',
+
     questionCategory: null,
     commonQuestion: [
       {
@@ -177,6 +193,37 @@ export default {
       content: '',
       file: null
     }
-  })
+  }),
+  methods: {
+    quickReport () {
+      console.log('report!!')
+      var bodyFormData = new FormData()
+      bodyFormData.append('file', this.report.file)
+      bodyFormData.append('title', this.report.title)
+      bodyFormData.append('content', this.report.content)
+      const config = {
+        url: '/api/reportApp/quickReport',
+        method: 'post',
+
+        data: bodyFormData
+      }
+      axios(config)
+        .then((res) => {
+          console.log(res)
+          this.alertPlace = 'quickReport'
+          this.alertType = 'success'
+          this.alertMsg = res.data.message
+          this.savDialog = false
+        })
+        .catch((err) => {
+          console.log(err)
+          console.log(err.response)
+          this.alertPlace = 'quickReport'
+          this.alertType = 'error'
+          this.alertMsg = err.response.data.message
+          this.savDialog = false
+        })
+    }
+  }
 }
 </script>
