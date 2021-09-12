@@ -227,3 +227,21 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+  /* >>>.v-tabs--vertical {
+    background-color:rgba(255, 255, 255, 0.0);
+  } */
+  >>> .v-item-group {
+    background-color:rgba(255, 255, 255, 0.0);
+  }
+  /* >>> .v-window__container {
+    background-color:rgba(255, 255, 255, 0.0);
+  } */
+  /* >>> .v-tabs-bar {
+    background-color:rgba(255, 255, 255, 0.0);
+  }
+  >>> .v-slide-group__wrapper {
+    background-color:rgba(255, 255, 255, 0.0);
+  } */
+</style>
