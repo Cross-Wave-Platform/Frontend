@@ -37,6 +37,7 @@
         <v-card
           tile
           elevation="0"
+          color="rgba(255, 255, 255, 0.0)"
         >
           <v-card-title primary-title
             class="font-weight-bold mb-2"
@@ -207,6 +208,7 @@
           tile
           elevation="0"
           class="pb-2"
+          color="rgba(255, 255, 255, 0.0)"
         >
           <v-card-title primary-title
             class="font-weight-bold mb-2"
@@ -470,6 +472,15 @@ export default {
 </script>
 
 <style scoped>
+>>> .v-item-group {
+  background-color:rgba(255, 255, 255, 0.0);
+}
+/* >>> .v-window__container {
+  background-color:rgba(255, 255, 255, 0.0);
+} */
+/* >>>.v-tabs--vertical {
+  background-color:rgba(255, 255, 255, 0.0);
+} */
 #transparent-body {
   background-color:rgba(255, 255, 255, 0.4);
 }
