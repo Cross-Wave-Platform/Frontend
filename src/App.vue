@@ -281,12 +281,13 @@
           v-if="userdata.nickname != null"
           v-model="mainTab"
           grow
+          light
           class="mainTab"
           style="background-color: #C6D033;"
         >
           <!-- background-color="transparent"
           text-color="basil" -->
-          <v-tabs-slider color="secondary"></v-tabs-slider>
+          <v-tabs-slider color="transparent"></v-tabs-slider>
           <v-tab
             v-for="item in tabItems"
             :key="'Tab_'+item.index"
