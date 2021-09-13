@@ -393,7 +393,7 @@ export default {
   computed: {
     waveItems: function () {
       if (this.allWaves != null) { return this.allWaves.filter(wave => wave.age_type === this.group && wave.survey_type === this.identity) }
-      return null
+      return []
     }
   },
   methods: {
