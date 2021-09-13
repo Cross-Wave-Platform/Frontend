@@ -131,7 +131,7 @@ export default {
         keyword: ''
       },
       groupofData: ['全部','大月齡組','小月齡組'],
-      monthofData: ['全部','3月齡','6月齡','9月齡','12月齡','24月齡','36月齡'],
+      monthofData: ['全部','M3','M6','M9','M12','M24','M36','M48','M60','M72','G1','G2','G3'],
       typeofData: ['全部','家長','親友','教保/教師'],
       releaseState: ['全部','已釋出','未釋出'],
       headers: [
