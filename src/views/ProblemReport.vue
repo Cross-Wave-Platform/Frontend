@@ -205,7 +205,7 @@ export default {
     quickReport () {
       if (this.$refs.reportForm.validate()) {
         this.loadReport = true
-        console.log('report!!')
+        // console.log('report!!')
         var bodyFormData = new FormData()
         bodyFormData.append('file', this.report.file)
         bodyFormData.append('title', this.report.title)
@@ -218,15 +218,15 @@ export default {
         }
         axios(config)
           .then((res) => {
-            console.log(res)
+            // console.log(res)
             this.alertPlace = 'quickReport'
             this.alertType = 'success'
             this.alertMsg = res.data.message
             this.savDialog = false
           })
           .catch((err) => {
-            console.log(err)
-            console.log(err.response)
+            // console.log(err)
+            // console.log(err.response)
             this.alertPlace = 'quickReport'
             this.alertType = 'error'
             this.alertMsg = err.response.data.message

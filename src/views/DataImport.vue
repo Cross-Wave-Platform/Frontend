@@ -404,12 +404,12 @@ export default {
       }
       axios(config)
         .then((res) => {
-          console.log(res.data.data.wave)
+          // console.log(res.data.data.wave)
           this.allWaves = res.data.data.wave
         })
     },
     uploadSAV () {
-      console.log('upload!!')
+      // console.log('upload!!')
       var bodyFormData = new FormData()
       bodyFormData.append('file', this.savFile)
       bodyFormData.append('ageType', this.group)
@@ -421,18 +421,18 @@ export default {
 
         data: bodyFormData
       }
-      console.log(bodyFormData)
+      // console.log(bodyFormData)
       axios(config)
         .then((res) => {
-          console.log(res)
+          // console.log(res)
           this.alertPlace = 'sav'
           this.alertType = 'success'
           this.alertMsg = res.data.message
           this.savDialog = false
         })
         .catch((err) => {
-          console.log(err)
-          console.log(err.response)
+          // console.log(err)
+          // console.log(err.response)
           this.alertPlace = 'sav'
           this.alertType = 'error'
           this.alertMsg = err.response.data.message
@@ -440,7 +440,7 @@ export default {
         })
     },
     uploadSurveyProblem () {
-      console.log('upload!!')
+      // console.log('upload!!')
       var bodyFormData = new FormData()
       bodyFormData.append('file', this.surveyFile)
       const config = {
@@ -449,18 +449,18 @@ export default {
 
         data: bodyFormData
       }
-      console.log(this.surveyFile)
+      // console.log(this.surveyFile)
       axios(config)
         .then((res) => {
-          console.log(res)
+          // console.log(res)
           this.alertPlace = 'survey'
           this.alertType = 'success'
           this.alertMsg = res.data.message
           this.surveyDialog = false
         })
         .catch((err) => {
-          console.log(err)
-          console.log(err.response)
+          // console.log(err)
+          // console.log(err.response)
           this.alertPlace = 'survey'
           this.alertType = 'error'
           this.alertMsg = err.response.data.message

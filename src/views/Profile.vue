@@ -223,7 +223,7 @@ export default {
       }
       axios(config)
         .then((res) => {
-          console.log(res.data.data)
+          // console.log(res.data.data)
           this.userdata = res.data.data
         })
     },
@@ -240,13 +240,13 @@ export default {
         }
         axios(config)
           .then((res) => {
-            console.log(res.data.message)
+            // console.log(res.data.message)
             this.alertPlace = 'changePassword'
             this.alertType = 'success'
             this.alertMsg = res.data.message
           })
           .catch((err) => {
-            console.log(err.response)
+            // console.log(err.response)
             this.alertPlace = 'changePassword'
             this.alertType = 'error'
             this.alertMsg = err.response.data.message
@@ -267,14 +267,14 @@ export default {
         }
         axios(config)
           .then((res) => {
-            console.log(res.data.message)
+            // console.log(res.data.message)
             this.alertPlace = 'changeNickname'
             this.alertType = 'success'
             this.alertMsg = res.data.message
             this.$router.go(0)
           })
           .catch((err) => {
-            console.log(err.response)
+            // console.log(err.response)
             this.alertPlace = 'changeNickname'
             this.alertType = 'error'
             this.alertMsg = err.response.data.message
