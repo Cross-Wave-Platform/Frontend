@@ -85,10 +85,11 @@
         tile
         elevation="0"
         class="mx-12"
+        color="rgba(255, 255, 255, 0.0)"
       >
         <v-form
           ref="reportForm"
-          v-model="reportValid"
+          v-model="reportForm"
           lazy-validation
         >
           <v-text-field
@@ -109,6 +110,7 @@
             counter
             show-size
             truncate-length="30"
+            :rules="[v => !v || v.size < 25 * 1024 * 1024 || 'File size should be less than 25 MB!']"
           >
           <template v-slot:selection="{ text }">
             <v-chip
@@ -125,6 +127,7 @@
           dark
           block
           color="primary"
+          :loading="loadReport"
           @click="quickReport"
         >
           Send
@@ -156,6 +159,10 @@ export default {
     alertPlace: '',
     alertType: null,
     alertMsg: '',
+
+    reportForm: false,
+
+    loadReport: false,
 
     questionCategory: null,
     commonQuestion: [
@@ -196,34 +203,58 @@ export default {
   }),
   methods: {
     quickReport () {
-      console.log('report!!')
-      var bodyFormData = new FormData()
-      bodyFormData.append('file', this.report.file)
-      bodyFormData.append('title', this.report.title)
-      bodyFormData.append('content', this.report.content)
-      const config = {
-        url: '/api/reportApp/quickReport',
-        method: 'post',
+      if (this.$refs.reportForm.validate()) {
+        this.loadReport = true
+        console.log('report!!')
+        var bodyFormData = new FormData()
+        bodyFormData.append('file', this.report.file)
+        bodyFormData.append('title', this.report.title)
+        bodyFormData.append('content', this.report.content)
+        const config = {
+          url: '/api/reportApp/quickReport',
+          method: 'post',
 
-        data: bodyFormData
+          data: bodyFormData
+        }
+        axios(config)
+          .then((res) => {
+            console.log(res)
+            this.alertPlace = 'quickReport'
+            this.alertType = 'success'
+            this.alertMsg = res.data.message
+            this.savDialog = false
+          })
+          .catch((err) => {
+            console.log(err)
+            console.log(err.response)
+            this.alertPlace = 'quickReport'
+            this.alertType = 'error'
+            this.alertMsg = err.response.data.message
+            this.savDialog = false
+          })
+          .finally(() => {
+            this.loadReport = false
+          })
       }
-      axios(config)
-        .then((res) => {
-          console.log(res)
-          this.alertPlace = 'quickReport'
-          this.alertType = 'success'
-          this.alertMsg = res.data.message
-          this.savDialog = false
-        })
-        .catch((err) => {
-          console.log(err)
-          console.log(err.response)
-          this.alertPlace = 'quickReport'
-          this.alertType = 'error'
-          this.alertMsg = err.response.data.message
-          this.savDialog = false
-        })
     }
   }
 }
 </script>
+
+<style scoped>
+  /* >>>.v-tabs--vertical {
+    background-color:rgba(255, 255, 255, 0.0);
+  } */
+  >>> .v-item-group {
+    background-color:rgba(255, 255, 255, 0.0);
+  }
+  /* >>> .v-window__container {
+    background-color:rgba(255, 255, 255, 0.0);
+  } */
+  /* >>> .v-tabs-bar {
+    background-color:rgba(255, 255, 255, 0.0);
+  }
+  >>> .v-slide-group__wrapper {
+    background-color:rgba(255, 255, 255, 0.0);
+  } */
+</style>
