@@ -457,6 +457,7 @@ export default {
           this.alertType = 'success'
           this.alertMsg = res.data.message
           this.surveyDialog = false
+          this.fileWave()
         })
         .catch((err) => {
           // console.log(err)
