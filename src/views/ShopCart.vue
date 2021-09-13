@@ -6,7 +6,7 @@
               <v-card-title>我的資料</v-card-title>
               <v-data-table
                   :headers="header"
-                  :items="shopcart"
+                  :items="problemList"
                   :items-per-page="5"
                   item-key="pid"
                   sort-by="pid"
@@ -43,11 +43,11 @@
               </v-data-table>
               <v-dialog v-model="dialogDelete" max-width="500px">
                   <v-card>
-                      <v-card-title class="text-h5">Are you sure you want to delete this item?</v-card-title>
+                      <v-card-title class="text-h5">確定要刪除此變項?</v-card-title>
                       <v-card-actions>
                       <v-spacer></v-spacer>
-                      <v-btn color="blue darken-1" text @click="closeDelete">Cancel</v-btn>
-                      <v-btn color="blue darken-1" text @click="deleteItemConfirm">OK</v-btn>
+                      <v-btn color="blue darken-1" text @click="closeDelete">取消</v-btn>
+                      <v-btn color="blue darken-1" text @click="deleteItemConfirm">確認</v-btn>
                       <v-spacer></v-spacer>
                       </v-card-actions>
                   </v-card>
@@ -109,7 +109,7 @@ export default {
         { text: '存有類型', value: 'typeAction' },
         { text: '存有波次', value: 'waveAction' }
       ],
-      tableType: ['none'],
+      tableType: [],
       dialogDelete: false,
       editedIndex: -1,
       editedItem: {},
@@ -120,7 +120,9 @@ export default {
       OptionJoin: ['Full Join', 'Inner Join', 'Union'],
       OptionExport: ['CSV', 'SAV'],
 
-      searchResult: []
+      searchResult: [],
+      problemList: [],
+      facetList: []
     }
   },
   watch: {
@@ -130,15 +132,15 @@ export default {
   },
   methods: {
     deleteItem (item) {
-      this.editedIndex = this.shopcart.indexOf(item)
+      this.editedIndex = this.problemList.indexOf(item)
       this.editedItem = Object.assign({}, item)
       this.dialogDelete = true
     },
     deleteItemConfirm () {
       if (this.deleteall) {
-        this.shopcart = []
+        this.problemList = []
       } else {
-        this.shopcart.splice(this.editedIndex, 1)
+        this.problemList.splice(this.editedIndex, 1)
       }
       this.closeDelete()
     },
@@ -155,19 +157,42 @@ export default {
       this.dialogDelete = true
     },
     TableWave (index) {
-      return this.shopcart[index].exist.filter(item => {
+      console.log(index, this.problemList[index])
+      return this.problemList[index].exist.filter(item => {
         const target = this.tableType[index].toLowerCase()
         const type = item.type.toLowerCase()
+        console.log(target, type)
         return target === type
       })
+    },
+    getSearchProblem () {
+      axios.get('/api/searchApp/searchProblem')
+        .then((res) => {
+          this.searchResult = res.data.data.info
+
+          this.problemList = this.searchResult.filter(item => {
+            return this.shopcart.findIndex(problem => problem.problem_id === item.pid) !== -1
+          })
+          // Facet
+          for (let i = 0; i < this.problemList.length; i++) {
+            for (let i = 0; i < this.searchResult.length; i++) {
+              const keyword = this.searchResult[i].class
+              if (!this.facetList.length || this.facetList.indexOf(keyword) === -1) {
+                this.facetList.push(keyword)
+              }
+            }
+            this.problemList[i].index = i
+            this.tableType[i] = this.searchResult[i].exist[0].type
+          }
+          console.log(this.problemList)
+        })
     }
   },
   mounted () {
     axios.get('/api/searchApp/getProblem').then((res) => {
       this.shopcart = res.data.data.problemList
-      for (let i = 0; i < this.shopcart.length; i++) {
-        this.tableType[i + 1] = this.shopcart[i].exist[0].type
-        this.shopcart[i].index = i + 1
+      if (this.shopcart.length) {
+        this.getSearchProblem()
       }
     })
   }

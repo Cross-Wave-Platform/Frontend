@@ -80,10 +80,22 @@
 
                       <v-list-item>
                           <v-btn rounded @click="getColList" v-if="!lockCombo">綁定</v-btn>
-                          <v-btn rounded @click="unlockCombination" v-else>解除綁定</v-btn>
-                          <v-spacer></v-spacer>
-                          <v-btn rounded @click="reset">恢復預設</v-btn>
+                          <v-btn rounded @click="dialogUnlock = true" v-else>解除綁定</v-btn>
+                          <!-- <v-spacer></v-spacer>
+                          <v-btn rounded @click="reset">恢復預設</v-btn> -->
                       </v-list-item>
+
+                      <v-dialog v-model="dialogUnlock" max-width="500px">
+                          <v-card>
+                              <v-card-title class="text-h5">解除綁定將會清空購物車，請問是否確認解除綁定</v-card-title>
+                              <v-card-actions>
+                              <v-spacer></v-spacer>
+                              <v-btn color="blue darken-1" text @click="closeUnlock">取消</v-btn>
+                              <v-btn color="blue darken-1" text @click="unlockCombination">確認</v-btn>
+                              <v-spacer></v-spacer>
+                              </v-card-actions>
+                          </v-card>
+                      </v-dialog>
 
                   </v-list>
                 </v-navigation-drawer>
@@ -115,17 +127,19 @@
                             hide-details
                         ></v-text-field>
 
-                        <!-- <v-tooltip bottom>
-                          <template v-slot:activator="StoreProblem">
+                        <v-tooltip bottom>
+                          <template v-slot:activator="{on, attrs}">
                             <v-btn
                               text
-                              v-on:click="StoreProblem"
+                              v-bind="attrs"
+                              v-on="on"
+                              @click="StoreProblem"
                             >
                               <v-icon>mdi-plus-thick</v-icon>
                             </v-btn>
                           </template>
                           <span>加入我的資料</span>
-                        </v-tooltip> -->
+                        </v-tooltip>
 
                         <!-- <v-tooltip bottom v-model="addBtnTTip">
                           加入我的資料
@@ -140,10 +154,10 @@
                           <v-icon>mdi-plus-thick</v-icon>
                         </v-btn> -->
 
-                        <v-btn rounded @click="StoreProblem">
+                        <!-- <v-btn rounded @click="StoreProblem">
                           <v-icon>mdi-plus-thick</v-icon>
                           加入我的資料
-                        </v-btn>
+                        </v-btn> -->
 
                     </v-card-title>
                     <v-card-text>顯示{{facetMenu.length}}筆</v-card-text>
@@ -244,7 +258,8 @@ export default {
       ],
 
       color: '#673AB7',
-      addBtnTTip: false
+      addBtnTTip: false,
+      dialogUnlock: false
     }
   },
 
@@ -327,31 +342,46 @@ export default {
             if (!this.facetList.length || this.facetList.indexOf(keyword) === -1) {
               this.facetList.push(keyword)
             }
-            this.tableType[i + 1] = this.searchResult[i].exist[0].type
-            this.searchResult[i].index = i + 1
+            this.tableType[i] = this.searchResult[i].exist[0].type
+            this.searchResult[i].index = i
+
             console.log(this.searchResult[i].exist[0].type)
           }
           this.lockCombo = true
           this.showWave = true
         })
-        .catch((err) => console.err(err))
+        .catch((err) => { console.err(err) })
+    },
+
+    closeUnlock () {
+      this.dialogUnlock = false
     },
 
     unlockCombination () {
       this.lockCombo = false
       axios.delete('/api/searchApp/delCombo')
-        .catch((err) => console.err(err))
-    },
+        .catch((err) => { console.err(err) })
+      axios.delete('/api/searchApp/delProblem')
+        .catch((err) => { console.err(err) })
 
-    reset () {
-      this.selectedMonthOld = []
-      this.selectedQuestionnaireType = []
+      this.omitConditions = true
       this.selectedWave = []
       this.selectedFacet = []
       this.waveList = []
-      this.omitConditions = true
-      this.lockCombo = false
+      this.searchResult = []
+      this.facetList = []
+      this.dialogUnlock = false
     },
+
+    // reset () {
+    //   this.selectedMonthOld = []
+    //   this.selectedQuestionnaireType = []
+    //   this.selectedWave = []
+    //   this.selectedFacet = []
+    //   this.waveList = []
+    //   this.omitConditions = true
+    //   this.lockCombo = false
+    // },
 
     TableWave (index) {
       return this.searchResult[index].exist.filter(item => {
@@ -375,7 +405,8 @@ export default {
       axios.post('/api/searchApp/storeProblem', {
         problemList: this.problemsForStore
       })
-        .catch((err) => console.err(err))
+
+      alert('已成功加入我的資料!')
     }
   },
 
@@ -384,11 +415,21 @@ export default {
     axios.get('/api/searchApp/getCombo').then((res) => {
       this.selectedMonthOld = res.data.data.info.age_type
       this.selectedQuestionnaireType = res.data.data.info.survey_type
+      this.waveList = res.data.data.info.wave
       this.selectedWave = res.data.data.info.wave
 
       if (this.selectedMonthOld.length || this.selectedQuestionnaireType.length || this.selectedWave.length) {
         // Get Search Problem
         this.getSearchProblem()
+        // Get Problem
+        axios.get('/api/searchApp/getProblem').then((res) => {
+          this.shopcart = res.data.data.problemList
+          if (this.shopcart.length) {
+            this.selectedCol = this.searchResult.filter(item => {
+              return this.shopcart.findIndex(problem => problem.problem_id === item.pid) !== -1
+            })
+          }
+        })
       }
     })
   }
