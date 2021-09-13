@@ -131,6 +131,7 @@
                           ref="loginForm"
                           v-model="loginValid"
                           lazy-validation
+                          @submit.prevent="login"
                         >
                           <v-text-field
                             v-model="account"
@@ -155,6 +156,7 @@
                             :disabled="!loginValid"
                             color="success"
                             @click="login"
+                            type="submit"
                             block
                           >
                             Login
@@ -181,6 +183,7 @@
                           ref="registerForm"
                           v-model="registerValid"
                           lazy-validation
+                          @submit.prevent="register"
                         >
                           <v-text-field
                             v-model="username"
@@ -239,6 +242,7 @@
                             :disabled="!registerValid"
                             color="success"
                             @click="register"
+                            type="submit"
                             block
                           >
                             Register
@@ -272,14 +276,16 @@
         <v-icon class="mr-2">mdi-logout</v-icon>
         <span>Logout</span>
       </v-btn>
-      <template v-slot:extension>
+      <template v-slot:extension v-if="userdata.nickname != null">
         <v-tabs
           v-if="userdata.nickname != null"
           v-model="mainTab"
-          background-color="secondary"
-          text-color="primary"
           grow
+          class="mainTab"
+          style="background-color: #C6D033;"
         >
+          <!-- background-color="transparent"
+          text-color="basil" -->
           <v-tabs-slider color="secondary"></v-tabs-slider>
           <v-tab
             v-for="item in tabItems"
@@ -505,6 +511,22 @@ export default {
 </script>
 
 <style>
+/* .v-tab:not(.v-tab--active)  {
+  color: #2D7535!important;
+
+} */
+/* >>> .v-tab--active {
+  color: #2D7535
+}
+>>> .v-tab:not(.v-tab--active) {
+  color: #2D7535;
+} */
+.basil {
+  background-color: #C6D033 !important;
+}
+.basil--text {
+  color: #2D7535 !important;
+}
 .circle {
   width: 40px;
   height: 40px;
