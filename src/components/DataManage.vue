@@ -76,7 +76,7 @@
                         <v-switch
                           v-model="editedItem.state"
                           flat
-                          :label="`${editedItem.state ? '已釋出':'未釋出'}`"
+                          :label="`${editedItem.state==1 ? '已釋出':'未釋出'}`"
                         ></v-switch>
                       </v-card-text>
 
@@ -146,6 +146,7 @@ export default {
       ],
       editedIndex: -1,
       editedItem: {
+        id: '',
         title: '',
         group: '',
         month: '',
@@ -153,6 +154,7 @@ export default {
         state: '',
       },
       defaultItem: {
+        id: '',
         title: '',
         group: '',
         month: '',
@@ -238,6 +240,12 @@ export default {
 
     save () {
       Object.assign(this.menuData[this.editedIndex], this.editedItem)
+      let data={
+        DataId: this.editedItem.id,
+        Release: (this.editedItem.state) ? 1 : 0
+      }
+      console.log(data)
+      axios.put('/api/adminApp/release',data)
       this.close()
     },
   },
@@ -248,8 +256,11 @@ export default {
       let tmp_group=['小月齡組','大月齡組']
       let tmp_type=['教保/教師','家長','親友']
       for(let i=0;i<res.data.data.length;i++){
+        let str='KIT'
+        str+= (res.data.data[i].age_type==1) ? '3月齡組' : '36月齡組'
         let item={
-          title: 'KIT'+tmp_group[res.data.data[i].age_type-1]+res.data.data[i].wave+tmp_type[res.data.data[i].survey_type-1],
+          id: res.data.data[i].survey_id,
+          title: str+res.data.data[i].wave+tmp_type[res.data.data[i].survey_type-1],
           group: tmp_group[res.data.data[i].age_type-1],
           month: res.data.data[i].wave,
           type: tmp_type[res.data.data[i].survey_type-1],
