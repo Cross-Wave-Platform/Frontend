@@ -4,7 +4,7 @@
             <v-col cols=2 id="Combo">
                 <v-navigation-drawer
                   style="top:50px;"
-                  permenant
+                  permanent
                   absolute
                 >
                   <v-list>
@@ -114,18 +114,37 @@
                             single-line
                             hide-details
                         ></v-text-field>
-                        <v-tooltip bottom>
-                          <template v-slot:activator="{ on, attrs }">
+
+                        <!-- <v-tooltip bottom>
+                          <template v-slot:activator="StoreProblem">
                             <v-btn
                               text
-                              v-bind="attrs"
-                              v-on="on"
+                              v-on:click="StoreProblem"
                             >
                               <v-icon>mdi-plus-thick</v-icon>
                             </v-btn>
                           </template>
                           <span>加入我的資料</span>
+                        </v-tooltip> -->
+
+                        <!-- <v-tooltip bottom v-model="addBtnTTip">
+                          加入我的資料
                         </v-tooltip>
+
+                        <v-btn
+                          icon
+                          @click="StoreProblem"
+                          @mouseover="addBtnTTip = true"
+                          @mouseleave="addBtnTTip = false"
+                        >
+                          <v-icon>mdi-plus-thick</v-icon>
+                        </v-btn> -->
+
+                        <v-btn rounded @click="StoreProblem">
+                          <v-icon>mdi-plus-thick</v-icon>
+                          加入我的資料
+                        </v-btn>
+
                     </v-card-title>
                     <v-card-text>顯示{{facetMenu.length}}筆</v-card-text>
                     <v-data-table
@@ -174,25 +193,25 @@ export default {
       monthOldList: [
         {
           monthOld: '小/3月齡組',
-          value: 'young'
+          value: 1
         },
         {
           monthOld: '大/36月齡組',
-          value: 'old'
+          value: 2
         }
       ],
       questionnaireTypeList: [
         {
           type: '家長',
-          value: 'parent'
+          value: 2
         },
         {
           type: '親友',
-          value: 'relative'
+          value: 3
         },
         {
           type: '教保/教師',
-          value: 'instructor'
+          value: 1
         }
       ],
       waveList: [],
@@ -208,6 +227,7 @@ export default {
       selectedQuestionnaireType: [],
       selectedWave: [],
       selectedCol: [],
+      problemsForStore: [],
       shopcart: [],
       searchKeyword: '',
       showWave: false,
@@ -223,7 +243,8 @@ export default {
         { text: '存有波次', value: 'waveAction' }
       ],
 
-      color: '#673AB7'
+      color: '#673AB7',
+      addBtnTTip: false
     }
   },
 
@@ -258,20 +279,16 @@ export default {
     },
     getWaveList () {
       this.omitConditions = false
-      this.waveList = [
+      console.log(this.selectedMonthOld, this.selectedQuestionnaireType)
+      // Search Wave
+      axios.get('/api/searchApp/searchWave',
         {
-          wave: 'M36',
-          value: 'M36'
-        },
-        {
-          wave: 'M48',
-          value: 'M48'
-        },
-        {
-          wave: 'M60',
-          value: 'M60'
-        }
-      ]
+          params: { ageType: this.selectedMonthOld, surveyType: this.selectedQuestionnaireType }
+        })
+        .then((res) => {
+          console.log(res)
+          this.waveList = res.data.data.wave
+        })
     },
     waveIsLegal () {
       if (this.selectedWave.length > 1) {
@@ -286,24 +303,44 @@ export default {
       }
     },
     getColList () {
-      axios.get('/api/searchApp/searchProblem').then((res) => {
-        this.searchResult = res.data.data.info
-        for (let i = 0; i < this.searchResult.length; i++) {
-          const keyword = this.searchResult[i].class
-          if (!this.facetList.length || this.facetList.indexOf(keyword) === -1) {
-            this.facetList.push(keyword)
-          }
-          this.tableType[i + 1] = this.searchResult[i].exist[0].type
-          this.searchResult[i].index = i + 1
-          console.log(this.searchResult[i].exist[0].type)
+      // lockCombo
+      axios.post('/api/searchApp/storeCombo', {
+        info: {
+          age_type: this.selectedMonthOld,
+          survey_type: this.selectedQuestionnaireType,
+          wave: this.selectedWave
         }
-        this.lockCombo = true
-        this.showWave = true
       })
+        .catch((err) => {
+          console.error(err)
+        })
+
+      this.getSearchProblem()
+    },
+
+    getSearchProblem () {
+      axios.get('/api/searchApp/searchProblem')
+        .then((res) => {
+          this.searchResult = res.data.data.info
+          for (let i = 0; i < this.searchResult.length; i++) {
+            const keyword = this.searchResult[i].class
+            if (!this.facetList.length || this.facetList.indexOf(keyword) === -1) {
+              this.facetList.push(keyword)
+            }
+            this.tableType[i + 1] = this.searchResult[i].exist[0].type
+            this.searchResult[i].index = i + 1
+            console.log(this.searchResult[i].exist[0].type)
+          }
+          this.lockCombo = true
+          this.showWave = true
+        })
+        .catch((err) => console.err(err))
     },
 
     unlockCombination () {
       this.lockCombo = false
+      axios.delete('/api/searchApp/delCombo')
+        .catch((err) => console.err(err))
     },
 
     reset () {
@@ -322,8 +359,38 @@ export default {
         const type = item.type.toLowerCase()
         return target === type
       })
-    }
+    },
 
+    StoreProblem () {
+      for (let i = 0; i < this.selectedCol.length; i++) {
+        const item = {
+          problem_id: this.selectedCol[i].pid,
+          survey_id: this.selectedCol[i].survey_id
+        }
+        this.problemsForStore.push(item)
+      }
+
+      console.log(this.problemsForStore)
+
+      axios.post('/api/searchApp/storeProblem', {
+        problemList: this.problemsForStore
+      })
+        .catch((err) => console.err(err))
+    }
+  },
+
+  mounted () {
+    // getCombo
+    axios.get('/api/searchApp/getCombo').then((res) => {
+      this.selectedMonthOld = res.data.data.info.age_type
+      this.selectedQuestionnaireType = res.data.data.info.survey_type
+      this.selectedWave = res.data.data.info.wave
+
+      if (this.selectedMonthOld.length || this.selectedQuestionnaireType.length || this.selectedWave.length) {
+        // Get Search Problem
+        this.getSearchProblem()
+      }
+    })
   }
 }
 </script>

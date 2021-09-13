@@ -118,7 +118,9 @@ export default {
         export: null
       },
       OptionJoin: ['Full Join', 'Inner Join', 'Union'],
-      OptionExport: ['CSV', 'SAV']
+      OptionExport: ['CSV', 'SAV'],
+
+      searchResult: []
     }
   },
   watch: {
@@ -161,8 +163,8 @@ export default {
     }
   },
   mounted () {
-    axios.get('http://localhost:8000/ShopCart').then((res) => {
-      this.shopcart = res.data
+    axios.get('/api/searchApp/getProblem').then((res) => {
+      this.shopcart = res.data.data.problemList
       for (let i = 0; i < this.shopcart.length; i++) {
         this.tableType[i + 1] = this.shopcart[i].exist[0].type
         this.shopcart[i].index = i + 1
