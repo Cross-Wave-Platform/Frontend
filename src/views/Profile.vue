@@ -21,7 +21,7 @@
         class="mx-8"
       >
         <v-row
-          v-for="item in userdata"
+          v-for="item in info"
           :key="item.title"
           align="center"
           class="my-n4"
@@ -51,7 +51,10 @@
     <v-tab-item
       transition="fade-transition" reverse-transition="fade-transition"
     >
-      <v-card>
+      <v-card
+        tile
+        elevation="0"
+      >
         <v-form
           ref="passwordForm"
           v-model="passwordForm"
@@ -93,16 +96,29 @@
           dark
           color="primary"
           block
+          @click="changePassword"
         >
           Save
           <v-icon right>mdi-content-save</v-icon>
         </v-btn>
+        <v-alert
+          :value="alertPlace == 'changePassword'"
+          :type="alertType"
+          dense
+          outlined
+          class="mt-3"
+        >
+          {{alertMsg}}
+        </v-alert>
       </v-card>
     </v-tab-item>
     <v-tab-item
       transition="fade-transition" reverse-transition="fade-transition"
     >
-      <v-card>
+      <v-card
+        tile
+        elevation="0"
+      >
         <v-form
           ref="nameForm"
           v-model="nameForm"
@@ -111,8 +127,8 @@
         >
           <v-text-field
             v-model="name"
-            label="New Username"
-            :rules="[v => !!v || 'Please enter new username.']"
+            label="New Nickname"
+            :rules="[v => !!v || 'Please enter new nickname.']"
             outlined
           >
           </v-text-field>
@@ -121,20 +137,35 @@
           dark
           color="primary"
           block
+          @click="changeNickname"
         >
           Save
           <v-icon right>mdi-content-save</v-icon>
         </v-btn>
+        <v-alert
+          :value="alertPlace == 'changeNickname'"
+          :type="alertType"
+          dense
+          outlined
+          class="mt-3"
+        >
+          {{alertMsg}}
+        </v-alert>
       </v-card>
     </v-tab-item>
   </v-tabs>
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   name: 'Profile',
 
   data: () => ({
+    alertPlace: '',
+    alertType: null,
+    alertMsg: '',
+
     passwordForm: false,
     showPassword: {
       oldPassword: false,
@@ -147,20 +178,110 @@ export default {
     },
     nameForm: false,
     name: '',
-    userdata: [
-      {
-        title: '註冊E-mail',
-        content: 'example@email.com'
-      },
-      {
-        title: '暱稱',
-        content: 'Username'
-      },
-      {
-        title: '使用者身分',
-        content: '一般成員'
+    userdata: null
+  }),
+  beforeMount () {
+    this.loadInfo()
+  },
+  computed: {
+    info: function () {
+      if (this.userdata == null) {
+        return [
+          {
+            title: '註冊E-mail',
+            content: ''
+          },
+          {
+            title: '暱稱',
+            content: ''
+          },
+          {
+            title: '使用者身分',
+            content: ''
+          }
+        ]
       }
-    ]
-  })
+      var ret = [
+        {
+          title: '註冊E-mail',
+          content: this.userdata.email
+        },
+        {
+          title: '暱稱',
+          content: this.userdata.nickname
+        }
+      ]
+      if (this.userdata.auth === 1) { ret.push({ title: '使用者身分', content: '管理員' }) } else { ret.push({ title: '使用者身分', content: '一般會員' }) }
+      return ret
+    }
+  },
+  methods: {
+    loadInfo () {
+      const config = {
+        url: '/api/personalApp/loadInfo',
+        method: 'get'
+      }
+      axios(config)
+        .then((res) => {
+          console.log(res.data.data)
+          this.userdata = res.data.data
+        })
+    },
+    changePassword () {
+      if (this.$refs.passwordForm.validate()) {
+        const config = {
+          url: '/api/personalApp/changePassword',
+          method: 'put',
+
+          data: {
+            oldPassword: this.password.oldPassword,
+            newPassword: this.password.newPassword
+          }
+        }
+        axios(config)
+          .then((res) => {
+            console.log(res.data.message)
+            this.alertPlace = 'changePassword'
+            this.alertType = 'success'
+            this.alertMsg = res.data.message
+          })
+          .catch((err) => {
+            console.log(err.response)
+            this.alertPlace = 'changePassword'
+            this.alertType = 'error'
+            this.alertMsg = err.response.data.message
+            // console.log('ERR!!!')
+          })
+      }
+    },
+
+    changeNickname () {
+      if (this.$refs.nameForm.validate()) {
+        const config = {
+          url: '/api/personalApp/changeNickname',
+          method: 'put',
+
+          data: {
+            newNickname: this.name
+          }
+        }
+        axios(config)
+          .then((res) => {
+            console.log(res.data.message)
+            this.alertPlace = 'changeNickname'
+            this.alertType = 'success'
+            this.alertMsg = res.data.message
+            this.$router.go(0)
+          })
+          .catch((err) => {
+            console.log(err.response)
+            this.alertPlace = 'changeNickname'
+            this.alertType = 'error'
+            this.alertMsg = err.response.data.message
+            // console.log('ERR!!!')
+          })
+      }
+    }
+  }
 }
 </script>

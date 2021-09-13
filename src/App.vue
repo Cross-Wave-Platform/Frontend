@@ -35,21 +35,21 @@
       <span
         style="cursor: pointer"
         @click="$router.push('/Profile')"
-        v-if="userdata.username!=null"
+        v-if="userdata.nickname!=null"
       >
-        {{userdata.username}}
+        {{userdata.nickname}}
       </span>
 
       <v-divider
         vertical
         class="mx-4"
-        v-if="userdata.username!=null"
+        v-if="userdata.nickname!=null"
       ></v-divider>
 
       <v-btn
         text
         to="/shopcart"
-        v-if="userdata.username!=null"
+        v-if="userdata.nickname!=null"
       >
           <v-icon left>mdi-cart-outline</v-icon>
           我的資料
@@ -58,12 +58,13 @@
       <v-divider
         vertical
         class="mx-4"
-        v-if="userdata.username!=null"
+        v-if="userdata.nickname!=null"
       ></v-divider>
 
       <v-dialog
         v-model="dialog"
         max-width="700px"
+        v-if="userdata.nickname == null"
       >
         <template v-slot:activator="{ on, attrs }">
           <v-btn
@@ -132,9 +133,9 @@
                           lazy-validation
                         >
                           <v-text-field
-                            v-model="username"
-                            :rules="usernameRules"
-                            label="Username"
+                            v-model="account"
+                            :rules="accountRules"
+                            label="Account"
                             outlined
                             required
                             dense
@@ -158,6 +159,15 @@
                           >
                             Login
                           </v-btn>
+                          <v-alert
+                            :value="alertPlace == 'login'"
+                            :type="alertType"
+                            dense
+                            outlined
+                            class="mt-2 mb-n1"
+                          >
+                            {{alertMsg}}
+                          </v-alert>
                         </v-form>
                       </v-card>
                     </v-tab-item>
@@ -181,8 +191,8 @@
                             dense
                           ></v-text-field>
                           <v-text-field
-                            v-model="account"
-                            :rules="accountRules"
+                            v-model="email"
+                            :rules="emailRules"
                             label="E-mail address"
                             outlined
                             required
@@ -233,6 +243,15 @@
                           >
                             Register
                           </v-btn>
+                          <v-alert
+                            :value="alertPlace == 'register'"
+                            :type="alertType"
+                            dense
+                            outlined
+                            class="mt-2 mb-n1"
+                          >
+                            {{alertMsg}}
+                          </v-alert>
                         </v-form>
                       </v-card>
                     </v-tab-item>
@@ -243,9 +262,20 @@
           </v-container>
         </v-sheet>
       </v-dialog>
+
+      <v-btn
+        outlined
+        dense
+        v-if="userdata.nickname != null"
+        @click="logout"
+      >
+        <v-icon class="mr-2">mdi-logout</v-icon>
+        <span>Logout</span>
+      </v-btn>
     </v-app-bar>
     <v-main>
       <v-tabs
+        v-if="userdata.nickname != null"
         v-model="mainTab"
         background-color="secondary"
         text-color="primary"
@@ -264,6 +294,7 @@
       <v-container
         fluid
         background-color="transparent"
+        style="max-height: 90vh;"
       >
         <router-view/>
       </v-container>
@@ -277,15 +308,23 @@ export default {
   name: 'App',
 
   data: () => ({
+    apiURL: 'http://localhost:5000',
     mainTab: null,
     loginTab: null,
     dialog: false,
     showPassword: false,
     loginValid: true,
     registerValid: true,
+
     username: null,
     account: null,
+    email: null,
     password: null,
+
+    alertPlace: '',
+    alertType: null,
+    alertMsg: '',
+
     privacyCheckbox: false,
     userdata: {
       username: null
@@ -295,6 +334,9 @@ export default {
       v => (v && v.length < 15) || 'Username must be less than 15 characters'
     ],
     accountRules: [
+      v => !!v || 'Account is required'
+    ],
+    emailRules: [
       v => !!v || 'E-mail is required',
       v => /.+@.+\..+/.test(v) || 'E-mail must be valid'
     ],
@@ -302,26 +344,30 @@ export default {
       v => !!v || 'Password is required'
       // v => (v && v.length >= 8) || 'Password must be longer than 8 characters'
     ],
-    tabItems: [
+    allTabItems: [
       {
         index: 0,
         name: '最新消息',
-        path: '/'
+        path: '/',
+        auth: 2
       },
       {
         index: 1,
         name: '資料匯入',
-        path: '/DataImport'
+        path: '/DataImport',
+        auth: 1
       },
       {
         index: 2,
         name: '資料查詢',
-        path: '/search'
+        path: '/search',
+        auth: 2
       },
       {
         index: 3,
         name: '權限管理',
-        path: '/admin'
+        path: '/admin',
+        auth: 1
       },
       // {
       //   index: 5,
@@ -331,7 +377,8 @@ export default {
       {
         index: 6,
         name: '問題回報',
-        path: '/ProblemReport'
+        path: '/ProblemReport',
+        auth: 2
       }
       // {
       //   index: 7,
@@ -340,17 +387,99 @@ export default {
       // }
     ]
   }),
+  beforeMount () {
+    this.loadInfo()
+  },
+  computed: {
+    tabItems: function () {
+      return this.allTabItems.filter(word => word.auth >= this.userdata.auth)
+    }
+  },
   methods: {
+    loadInfo () {
+      const config = {
+        url: '/api/personalApp/loadInfo',
+        method: 'get'
+      }
+      axios(config)
+        .then((res) => {
+          console.log(res.data.data)
+          this.userdata = res.data.data
+        })
+    },
     login () {
-      this.$refs.loginForm.validate()
-      axios.post('/api/loginApp/login', {
-        username: this.username,
-        password: this.password
-      })
-      console.log('hi')
+      if (this.$refs.loginForm.validate()) {
+        const config = {
+          url: '/api/loginApp/login',
+          method: 'post',
+
+          data: {
+            username: this.account,
+            password: this.password
+          }
+        }
+        axios(config)
+          .then((res) => {
+            console.log(res.data.message)
+            this.alertPlace = 'login'
+            this.alertType = 'success'
+            this.alertMsg = res.data.message + ', reflesh after 5 sec'
+            // this.userdata.nickname = this.account
+            this.loadInfo()
+            this.dialog = false
+            // this.$router.go(0)
+          })
+          .catch((err) => {
+            console.log(err.response.data.message)
+            this.alertPlace = 'login'
+            this.alertType = 'error'
+            this.alertMsg = err.response.data.message
+            // console.log('ERR!!!')
+          })
+      }
+    },
+    logout () {
+      const config = {
+        url: '/api/loginApp/logout',
+        method: 'post'
+      }
+      axios(config)
+        .then((res) => {
+          console.log('logout!!')
+          this.alertPlace = ''
+          this.userdata = {
+            nickname: null
+          }
+          this.$router.push('/')
+        })
     },
     register () {
-      this.$refs.registerForm.validate()
+      if (this.$refs.registerForm.validate()) {
+        const config = {
+          url: '/api/loginApp/register',
+          method: 'post',
+
+          data: {
+            username: this.username,
+            password: this.password,
+            email: this.email
+          }
+        }
+        axios(config)
+          .then((res) => {
+            console.log(res.data.message)
+            this.alertPlace = 'register'
+            this.alertType = 'success'
+            this.alertMsg = res.data.message
+          })
+          .catch((err) => {
+            console.log(err.response.data.message)
+            this.alertPlace = 'register'
+            this.alertType = 'error'
+            this.alertMsg = err.response.data.message
+            // console.log('ERR!!!')
+          })
+      }
     }
   }
 }

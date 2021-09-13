@@ -131,7 +131,7 @@ export default {
         keyword: ''
       },
       groupofData: ['全部','大月齡組','小月齡組'],
-      monthofData: ['全部','3月齡','6月齡','9月齡','12月齡','24月齡','36月齡'],
+      monthofData: ['全部','M3','M6','M9','M12','M24','M36','M48','M60','M72','G1','G2','G3'],
       typeofData: ['全部','家長','親友','教保/教師'],
       releaseState: ['全部','已釋出','未釋出'],
       headers: [
@@ -146,19 +146,17 @@ export default {
       ],
       editedIndex: -1,
       editedItem: {
-        id: '',
         title: '',
+        group: '',
         month: '',
-        wave: '',
-        people: '',
+        type: '',
         state: '',
       },
       defaultItem: {
-        id: '',
         title: '',
+        group: '',
         month: '',
-        wave: '',
-        people: '',
+        type: '',
         state: '',
       }
     }
@@ -169,7 +167,7 @@ export default {
             return this.menuData
         }else{
             return this.menuData.filter(item =>{
-                return item.month === this.input_data.group
+                return item.group === this.input_data.group
             })
         }
     },
@@ -178,7 +176,7 @@ export default {
             return this.typeMenuDataForGroup
         }else{
             return this.typeMenuDataForGroup.filter(item =>{
-                return item.wave === this.input_data.month
+                return item.month === this.input_data.month
             })
         }
     },
@@ -187,7 +185,7 @@ export default {
             return this.typeMenuDataForMonth
         }else{
             return this.typeMenuDataForMonth.filter(item =>{
-                return item.people === this.input_data.type
+                return item.type === this.input_data.type
             })
         }
     },
@@ -244,8 +242,21 @@ export default {
     },
   },
   mounted () {
-    axios.get('http://localhost:8000/Datas').then((res) => {
-      this.menuData = res.data
+    axios.get('/api/adminApp/auth',{
+      params: { auth: 'All_data' }
+    }).then((res) => {
+      let tmp_group=['小月齡組','大月齡組']
+      let tmp_type=['教保/教師','家長','親友']
+      for(let i=0;i<res.data.data.length;i++){
+        let item={
+          title: 'KIT'+tmp_group[res.data.data[i].age_type-1]+res.data.data[i].wave+tmp_type[res.data.data[i].survey_type-1],
+          group: tmp_group[res.data.data[i].age_type-1],
+          month: res.data.data[i].wave,
+          type: tmp_type[res.data.data[i].survey_type-1],
+          state: res.data.data[i].release
+        }
+        this.menuData.push(item)
+      }
     })
   }
 }
