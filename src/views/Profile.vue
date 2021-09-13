@@ -29,12 +29,12 @@
           <v-col
             cols="3"
           >
-            <v-subtitle
+            <div
               class="primary--text font-weight-bold"
               justify="center"
             >
               {{item.title}}
-            </v-subtitle>
+            </div>
           </v-col>
           <v-col
             cols="9"
