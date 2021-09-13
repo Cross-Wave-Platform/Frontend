@@ -272,9 +272,28 @@
         <v-icon class="mr-2">mdi-logout</v-icon>
         <span>Logout</span>
       </v-btn>
+      <template v-slot:extension>
+        <v-tabs
+          v-if="userdata.nickname != null"
+          v-model="mainTab"
+          background-color="secondary"
+          text-color="primary"
+          grow
+        >
+          <v-tabs-slider color="secondary"></v-tabs-slider>
+          <v-tab
+            v-for="item in tabItems"
+            :key="'Tab_'+item.index"
+            class="font-weight-bold"
+            :to="item.path"
+          >
+            {{item.name}}
+          </v-tab>
+        </v-tabs>
+      </template>
     </v-app-bar>
     <v-main>
-      <v-tabs
+      <!-- <v-tabs
         v-if="userdata.nickname != null"
         v-model="mainTab"
         background-color="secondary"
@@ -290,12 +309,12 @@
         >
           {{item.name}}
         </v-tab>
-      </v-tabs>
+      </v-tabs> -->
       <v-container
         fluid
         background-color="transparent"
-        style="max-height: 90vh;"
       >
+        <!-- style="max-height: 90vh;" -->
         <router-view/>
       </v-container>
     </v-main>
@@ -403,7 +422,7 @@ export default {
       }
       axios(config)
         .then((res) => {
-          console.log(res.data.data)
+          // console.log(res.data.data)
           this.userdata = res.data.data
         })
     },
@@ -420,7 +439,7 @@ export default {
         }
         axios(config)
           .then((res) => {
-            console.log(res.data.message)
+            // console.log(res.data.message)
             this.alertPlace = 'login'
             this.alertType = 'success'
             this.alertMsg = res.data.message + ', reflesh after 5 sec'
@@ -430,7 +449,7 @@ export default {
             // this.$router.go(0)
           })
           .catch((err) => {
-            console.log(err.response.data.message)
+            // console.log(err.response.data.message)
             this.alertPlace = 'login'
             this.alertType = 'error'
             this.alertMsg = err.response.data.message
@@ -445,7 +464,7 @@ export default {
       }
       axios(config)
         .then((res) => {
-          console.log('logout!!')
+          // console.log('logout!!')
           this.alertPlace = ''
           this.userdata = {
             nickname: null
@@ -467,13 +486,13 @@ export default {
         }
         axios(config)
           .then((res) => {
-            console.log(res.data.message)
+            // console.log(res.data.message)
             this.alertPlace = 'register'
             this.alertType = 'success'
             this.alertMsg = res.data.message
           })
           .catch((err) => {
-            console.log(err.response.data.message)
+            // console.log(err.response.data.message)
             this.alertPlace = 'register'
             this.alertType = 'error'
             this.alertMsg = err.response.data.message
