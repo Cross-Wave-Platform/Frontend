@@ -64,14 +64,16 @@
             <v-list dense>
               <v-list-item>
                 <v-select
-                    :items="OptionJoin"
-                    v-model="input.join"
-                    label="合併方式"
+                  :items="OptionJoin"
+                  item-text="method"
+                  item-value="value"
+                  v-model="exportContent.mergeMethod"
+                  label="合併方式"
                 ></v-select>
               </v-list-item>
               <v-list-item>
                 <v-radio-group
-                    v-model="input.export"
+                    v-model="exportContent.fileFormat"
                     column
                     label="匯出方式"
                 >
@@ -80,7 +82,7 @@
               </v-list-item>
               <v-list-item>
                 <v-list-item-content>
-                  <v-btn dark color=primary>匯出</v-btn>
+                  <v-btn dark color=primary @click="exportFile">匯出</v-btn>
                 </v-list-item-content>
               </v-list-item>
             </v-list>
@@ -113,16 +115,30 @@ export default {
       dialogDelete: false,
       editedIndex: -1,
       editedItem: {},
-      input: {
-        join: null,
-        export: null
+      exportContent: {
+        mergeMethod: '',
+        fileFormat: ''
       },
-      OptionJoin: ['Full Join', 'Inner Join', 'Union'],
+      OptionJoin: [
+        {
+          method: 'Inner Join',
+          value: 'inner'
+        },
+        {
+          method: 'Outer Join',
+          value: 'outer'
+        },
+        {
+          method: 'Union',
+          value: 'union'
+        }
+      ],
       OptionExport: ['CSV', 'SAV'],
 
       searchResult: [],
       problemList: [],
-      facetList: []
+      facetList: [],
+      problemsForStore: []
     }
   },
   watch: {
@@ -141,6 +157,7 @@ export default {
         this.problemList = []
       } else {
         this.problemList.splice(this.editedIndex, 1)
+        for (let i = this.editedIndex; i < this.problemList.length; i++) { this.problemList[i].index-- }
       }
       this.closeDelete()
     },
@@ -155,13 +172,14 @@ export default {
     delete_all () {
       this.deleteall = true
       this.dialogDelete = true
+
+      axios.delete('/api/searchApp/delProblem')
+        .catch((err) => { console.err(err) })
     },
     TableWave (index) {
-      console.log(index, this.problemList[index])
       return this.problemList[index].exist.filter(item => {
         const target = this.tableType[index].toLowerCase()
         const type = item.type.toLowerCase()
-        console.log(target, type)
         return target === type
       })
     },
@@ -184,16 +202,61 @@ export default {
             this.problemList[i].index = i
             this.tableType[i] = this.searchResult[i].exist[0].type
           }
-          console.log(this.problemList)
         })
+    },
+
+    exportFile () {
+      this.changeApiFormat()
+      axios.post('/api/searchApp/storeProblem', {
+        problemList: this.problemsForStore
+      })
+        .then(res => {
+          axios({
+            url: '/api/fileApp/export',
+            method: 'GET',
+            responseType: 'blob',
+            params: {
+              mergeMethod: this.exportContent.mergeMethod,
+              fileFormat: this.exportContent.fileFormat.toLowerCase()
+            }
+          }).then((res) => {
+            const fileURL = window.URL.createObjectURL(new Blob([res.data]))
+            const fileLink = document.createElement('a')
+
+            fileLink.href = fileURL
+            this.exportContent.fileFormat === 'CSV'
+              ? fileLink.setAttribute('download', 'output.zip') : fileLink.setAttribute('download', 'output.sav')
+            document.body.appendChild(fileLink)
+
+            fileLink.click()
+          })
+        })
+    },
+
+    changeApiFormat () {
+      for (let i = 0; i < this.problemList.length; i++) {
+        const item = {
+          problem_id: this.problemList[i].pid,
+          survey_id: this.problemList[i].survey_id
+        }
+        this.problemsForStore.push(item)
+      }
     }
   },
+
   mounted () {
     axios.get('/api/searchApp/getProblem').then((res) => {
       this.shopcart = res.data.data.problemList
       if (this.shopcart.length) {
         this.getSearchProblem()
       }
+    })
+  },
+
+  beforeDestroy () {
+    this.changeApiFormat()
+    axios.post('/api/searchApp/storeProblem', {
+      problemList: this.problemsForStore
     })
   }
 }
