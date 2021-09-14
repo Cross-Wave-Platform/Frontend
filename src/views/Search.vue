@@ -259,7 +259,8 @@ export default {
 
       color: '#673AB7',
       addBtnTTip: false,
-      dialogUnlock: false
+      dialogUnlock: false,
+      isStoreProblem: false
     }
   },
 
@@ -404,8 +405,32 @@ export default {
         problemList: this.problemsForStore
       })
 
+      this.isStoreProblem = true
       alert('已成功加入我的資料!')
+    },
+
+    preventNav (event) {
+      if (!this.selectedCol.length && !this.isStoreProblem) return
+      event.preventDefault()
+      // Chrome requires returnValue to be set.
+      event.returnValue = ''
     }
+  },
+
+  beforeMount () {
+    window.addEventListener('beforeunload', this.preventNav)
+    this.$once('hook:beforeDestroy', () => {
+      window.removeEventListener('beforeunload', this.preventNav)
+    })
+  },
+
+  beforeRouteLeave (to, from, next) {
+    if (this.selectedCol.length) {
+      if (!window.confirm('資料尚未加入我的資料，離開將不會儲存變更')) {
+        return
+      }
+    }
+    next()
   },
 
   mounted () {

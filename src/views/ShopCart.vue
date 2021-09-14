@@ -41,15 +41,23 @@
                       </div>
                   </template>
               </v-data-table>
+
               <v-dialog v-model="dialogDelete" max-width="500px">
-                  <v-card>
-                      <v-card-title class="text-h5">確定要刪除此變項?</v-card-title>
-                      <v-card-actions>
-                      <v-spacer></v-spacer>
-                      <v-btn color="blue darken-1" text @click="closeDelete">取消</v-btn>
-                      <v-btn color="blue darken-1" text @click="deleteItemConfirm">確認</v-btn>
-                      <v-spacer></v-spacer>
-                      </v-card-actions>
+                  <v-card class="elevation-8">
+                      <v-container fluid>
+                      <v-row justify="center">
+                        <v-card-title class="text-h5" v-if="deleteAll">確定要刪除所有變項?</v-card-title>
+                        <v-card-title class="text-h5" v-else>確定要刪除此變項?</v-card-title>
+                      </v-row>
+                      <v-row justify="center" class="mt-5 mb-2">
+                        <v-card-actions>
+                          <v-spacer></v-spacer>
+                          <v-btn color="blue darken-1" text @click="closeDelete">取消</v-btn>
+                          <v-btn color="blue darken-1" text @click="deleteItemConfirm">確認</v-btn>
+                          <v-spacer></v-spacer>
+                        </v-card-actions>
+                      </v-row>
+                    </v-container>
                   </v-card>
               </v-dialog>
           </v-card>
@@ -82,9 +90,34 @@
               </v-list-item>
               <v-list-item>
                 <v-list-item-content>
-                  <v-btn dark color=primary @click="exportFile">匯出</v-btn>
+                  <v-btn dark color=primary @click="exportFile" :disabled="exportDialog">匯出</v-btn>
                 </v-list-item-content>
               </v-list-item>
+
+                  <v-dialog
+                  v-model="exportDialog"
+                  hide-overlay
+                  persistent
+                  width="400"
+                >
+                  <v-card class="elevation-8 pb-3">
+                    <v-container fluid>
+                      <v-row justify="center">
+                        <h2 class="mt-5">
+                          正在合併資料，請勿跳轉頁面
+                        </h2>
+                      </v-row>
+                      <v-row justify="center" class="mt-5 mb-2">
+                        <v-progress-circular
+                            indeterminate
+                            color="secondary"
+                            :size="36"
+                        ></v-progress-circular>
+                      </v-row>
+                    </v-container>
+                  </v-card>
+                </v-dialog>
+
             </v-list>
           </v-navigation-drawer>
         </v-col>
@@ -101,7 +134,7 @@ export default {
     return {
       shopcart: [],
       select: false,
-      deleteall: false,
+      deleteAll: false,
       header: [
         { text: '', value: 'delAction', sortable: false },
         { text: '變項代碼', align: 'center', value: 'problem_id' },
@@ -138,7 +171,8 @@ export default {
       searchResult: [],
       problemList: [],
       facetList: [],
-      problemsForStore: []
+      problemsForStore: [],
+      exportDialog: false
     }
   },
   watch: {
@@ -153,7 +187,7 @@ export default {
       this.dialogDelete = true
     },
     deleteItemConfirm () {
-      if (this.deleteall) {
+      if (this.deleteAll) {
         this.problemList = []
       } else {
         this.problemList.splice(this.editedIndex, 1)
@@ -163,14 +197,14 @@ export default {
     },
     closeDelete () {
       this.dialogDelete = false
-      this.deleteall = false
+      this.deleteAll = false
       this.$nextTick(() => {
         this.editedItem = Object.assign({}, this.defaultItem)
         this.editedIndex = -1
       })
     },
     delete_all () {
-      this.deleteall = true
+      this.deleteAll = true
       this.dialogDelete = true
 
       axios.delete('/api/searchApp/delProblem')
@@ -206,6 +240,11 @@ export default {
     },
 
     exportFile () {
+      if (this.exportContent.mergeMethod === '' || this.exportContent.fileFormat === '') {
+        this.$swal('請選擇合併方式及匯出檔案格式')
+        return
+      }
+      this.exportDialog = true
       this.changeApiFormat()
       axios.post('/api/searchApp/storeProblem', {
         problemList: this.problemsForStore
@@ -229,6 +268,8 @@ export default {
             document.body.appendChild(fileLink)
 
             fileLink.click()
+
+            this.exportDialog = false
           })
         })
     },
