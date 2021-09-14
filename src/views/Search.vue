@@ -344,8 +344,6 @@ export default {
             }
             this.tableType[i] = this.searchResult[i].exist[0].type
             this.searchResult[i].index = i
-
-            console.log(this.searchResult[i].exist[0].type)
           }
           this.lockCombo = true
           this.showWave = true
@@ -421,15 +419,33 @@ export default {
       if (this.selectedMonthOld.length || this.selectedQuestionnaireType.length || this.selectedWave.length) {
         // Get Search Problem
         this.getSearchProblem()
-        // Get Problem
-        axios.get('/api/searchApp/getProblem').then((res) => {
-          this.shopcart = res.data.data.problemList
-          if (this.shopcart.length) {
-            this.selectedCol = this.searchResult.filter(item => {
-              return this.shopcart.findIndex(problem => problem.problem_id === item.pid) !== -1
+        axios.get('/api/searchApp/searchProblem')
+          .then((res) => {
+            this.searchResult = res.data.data.info
+            for (let i = 0; i < this.searchResult.length; i++) {
+              const keyword = this.searchResult[i].class
+              if (!this.facetList.length || this.facetList.indexOf(keyword) === -1) {
+                this.facetList.push(keyword)
+              }
+              this.tableType[i] = this.searchResult[i].exist[0].type
+              this.searchResult[i].index = i
+            }
+            this.lockCombo = true
+            this.showWave = true
+
+            // Get Problem
+            axios.get('/api/searchApp/getProblem').then((res) => {
+              this.shopcart = res.data.data.problemList
+              console.log(this.shopcart)
+              if (this.shopcart.length) {
+                this.selectedCol = this.searchResult.filter(item => {
+                  return this.shopcart.findIndex(problem => problem.problem_id === item.pid) !== -1
+                })
+                console.log(this.selectedCol)
+              }
             })
-          }
-        })
+          })
+          .catch((err) => { console.err(err) })
       }
     })
   }
