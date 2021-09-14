@@ -4,7 +4,7 @@
         <v-card-text>
         <v-text-field
             label="關鍵字搜尋-資料名稱"
-            v-model="input_data.keyword"
+            v-model.trim="input_data.keyword"
             prepend-inner-icon="mdi-magnify"
             ></v-text-field> <!-- 關鍵字輸入 -->
         <v-col
@@ -131,7 +131,7 @@ export default {
         keyword: ''
       },
       groupofData: ['全部','大月齡組','小月齡組'],
-      monthofData: ['全部','M3','M6','M9','M12','M24','M36','M48','M60','M72','G1','G2','G3'],
+      monthofData: ['全部','M3','M6','M12','M24','M36','M48','M60','M72','G1','G2','G3','G4','G5','G6','G7','G8','G9','G10','G11','G12'],
       typeofData: ['全部','家長','親友','教保/教師'],
       releaseState: ['全部','已釋出','未釋出'],
       headers: [
@@ -245,7 +245,7 @@ export default {
         Release: (this.editedItem.state) ? 1 : 0
       }
       console.log(data)
-      axios.put('/api/adminApp/release',data)
+      axios.put('/api/adminApp/release',data).catch((err)=>{console.log(err)})
       this.close()
     },
   },
@@ -268,7 +268,7 @@ export default {
         }
         this.menuData.push(item)
       }
-    })
+    }).catch((err)=>{console.log(err)})
   }
 }
 </script>

@@ -5,7 +5,7 @@
           <v-card-text>
             <v-text-field
               label="關鍵字搜尋-帳戶名稱及信箱"
-              v-model="input_user.keyword"
+              v-model.trim="input_user.keyword"
               prepend-inner-icon="mdi-magnify"
             ></v-text-field>
             <p>
@@ -190,7 +190,7 @@ export default {
       option: '全部會員',
       keyword: ''
     },
-    OptionState: ['全部會員','管理員','一般會員','黑名單'],
+    OptionState: ['全部會員','管理員','一般會員'],
     EditOption: ['管理員','一般會員'],
     headers: [
       {
