@@ -265,7 +265,7 @@ export default {
       if (this.selectedMonthOld.length > 1 && this.selectedQuestionnaireType.length > 1) {
         this.$swal({
           title: '跨問卷類型僅限同月齡組！',
-          text: '2秒后自动关闭。',
+          text: '2秒後自動關閉。',
           icon: 'warning',
           timer: 2000
         }).then(
