@@ -3,7 +3,6 @@
         <v-row>
             <v-col cols=2 id="Combo">
                 <v-navigation-drawer
-                  style="top:50px;"
                   permanent
                   absolute
                 >
@@ -27,7 +26,6 @@
                                       depressed
                                       :value="monthOld.value"
                                       :disabled="lockCombo"
-                                      @click="monthOldIsLegal"
                                   >
                                       {{monthOld.monthOld}}
                                   </v-btn>
@@ -44,7 +42,6 @@
                                       depressed
                                       :value="type.value"
                                       :disabled="lockCombo"
-                                      @click="typeIsLegal"
                                   >
                                       {{type.type}}
                                   </v-btn>
@@ -80,23 +77,10 @@
 
                       <v-list-item>
                           <v-btn rounded @click="getColList" v-if="!lockCombo">綁定</v-btn>
-                          <v-btn rounded @click="dialogUnlock = true" v-else>解除綁定</v-btn>
+                          <v-btn rounded @click="unlockCombination" v-else>解除綁定</v-btn>
                           <!-- <v-spacer></v-spacer>
                           <v-btn rounded @click="reset">恢復預設</v-btn> -->
                       </v-list-item>
-
-                      <v-dialog v-model="dialogUnlock" max-width="500px">
-                          <v-card>
-                              <v-card-title class="text-h5">解除綁定將會清空購物車，請問是否確認解除綁定</v-card-title>
-                              <v-card-actions>
-                              <v-spacer></v-spacer>
-                              <v-btn color="blue darken-1" text @click="closeUnlock">取消</v-btn>
-                              <v-btn color="blue darken-1" text @click="unlockCombination">確認</v-btn>
-                              <v-spacer></v-spacer>
-                              </v-card-actions>
-                          </v-card>
-                      </v-dialog>
-
                   </v-list>
                 </v-navigation-drawer>
             </v-col>
@@ -276,23 +260,75 @@ export default {
     }
   },
 
-  methods: {
-    monthOldIsLegal () {
+  watch: {
+    selectedMonthOld: function () {
       if (this.selectedMonthOld.length > 1 && this.selectedQuestionnaireType.length > 1) {
-        alert('跨問卷類型僅限同月齡組!')
+        this.$swal({
+          title: '跨問卷類型僅限同月齡組！',
+          text: '2秒后自动关闭。',
+          icon: 'warning',
+          timer: 2000
+        }).then(
+          function () {},
+          function (dismiss) {
+            if (dismiss === 'timer') {
+              console.log('I was closed by the timer')
+            }
+          }
+        )
         const tempelement = this.selectedMonthOld[this.selectedMonthOld.length - 1]
         this.selectedMonthOld = []
         this.selectedMonthOld.push(tempelement)
       }
     },
-    typeIsLegal () {
+    selectedQuestionnaireType: function () {
       if (this.selectedMonthOld.length > 1 && this.selectedQuestionnaireType.length > 1) {
-        alert('跨月齡組僅限同問卷類型!')
+        this.$swal({
+          title: '跨月齡組僅限同問卷類型!',
+          text: '2秒后自动关闭。',
+          icon: 'warning',
+          timer: 2000
+        }).then(
+          function () {},
+          function (dismiss) {
+            if (dismiss === 'timer') {
+              console.log('I was closed by the timer')
+            }
+          }
+        )
         const tempelement = this.selectedQuestionnaireType[this.selectedQuestionnaireType.length - 1]
         this.selectedQuestionnaireType = []
         this.selectedQuestionnaireType.push(tempelement)
       }
     },
+    selectedWave: function () {
+      if (this.selectedWave.length > 1) {
+        let change = false
+        let str = ''
+        if (this.selectedMonthOld.length > 1) { str = '跨月齡組僅限同波次!'; change = true }
+        if (this.selectedQuestionnaireType.length > 1) { str = '跨問卷類型僅限同波次!'; change = true }
+        if (change) {
+          this.$swal({
+            title: str,
+            text: '2秒后自动关闭。',
+            icon: 'warning',
+            timer: 2000
+          }).then(
+            function () {},
+            function (dismiss) {
+              if (dismiss === 'timer') {
+                console.log('I was closed by the timer')
+              }
+            }
+          )
+          const tempelement = this.selectedWave[this.selectedWave.length - 1]
+          this.selectedWave = []
+          this.selectedWave.push(tempelement)
+        }
+      }
+    }
+  },
+  methods: {
     getWaveList () {
       this.omitConditions = false
       console.log(this.selectedMonthOld, this.selectedQuestionnaireType)
@@ -306,32 +342,26 @@ export default {
           this.waveList = res.data.data.wave
         })
     },
-    waveIsLegal () {
-      if (this.selectedWave.length > 1) {
-        let change = false
-        if (this.selectedMonthOld.length > 1) { alert('跨月齡組僅限同波次!'); change = true }
-        if (this.selectedQuestionnaireType.length > 1) { alert('跨問卷類型僅限同波次!'); change = true }
-        if (change) {
-          const tempelement = this.selectedWave[this.selectedWave.length - 1]
-          this.selectedWave = []
-          this.selectedWave.push(tempelement)
-        }
-      }
-    },
     getColList () {
       // lockCombo
-      axios.post('/api/searchApp/storeCombo', {
-        info: {
-          age_type: this.selectedMonthOld,
-          survey_type: this.selectedQuestionnaireType,
-          wave: this.selectedWave
-        }
-      })
-        .catch((err) => {
+      if (this.selectedWave.length) {
+        axios.post('/api/searchApp/storeCombo', {
+          info: {
+            age_type: this.selectedMonthOld,
+            survey_type: this.selectedQuestionnaireType,
+            wave: this.selectedWave
+          }
+        }).catch((err) => {
           console.error(err)
         })
-
-      this.getSearchProblem()
+        this.getSearchProblem()
+      } else {
+        this.$swal({
+          title: '選項不能為空!',
+          text: '請檢查所有選項',
+          icon: 'warning'
+        })
+      }
     },
 
     getSearchProblem () {
@@ -352,24 +382,36 @@ export default {
         .catch((err) => { console.err(err) })
     },
 
-    closeUnlock () {
-      this.dialogUnlock = false
-    },
-
     unlockCombination () {
-      this.lockCombo = false
-      axios.delete('/api/searchApp/delCombo')
-        .catch((err) => { console.err(err) })
-      axios.delete('/api/searchApp/delProblem')
-        .catch((err) => { console.err(err) })
+      this.$swal({
+        title: '確定解除綁定嗎',
+        text: '解除綁定將會清空我的資料!',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: '解除綁定！'
+      }).then((result) => {
+        if (result.value) {
+          this.$swal(
+            '解除綁定！',
+            '我的資料已被清空',
+            'success'
+          )
+          this.lockCombo = false
+          axios.delete('/api/searchApp/delCombo')
+            .catch((err) => { console.err(err) })
+          axios.delete('/api/searchApp/delProblem')
+            .catch((err) => { console.err(err) })
 
-      this.omitConditions = true
-      this.selectedWave = []
-      this.selectedFacet = []
-      this.waveList = []
-      this.searchResult = []
-      this.facetList = []
-      this.dialogUnlock = false
+          this.omitConditions = true
+          this.selectedWave = []
+          this.selectedFacet = []
+          this.waveList = []
+          this.searchResult = []
+          this.facetList = []
+        }
+      })
     },
 
     // reset () {
