@@ -5,7 +5,7 @@
           <v-card-text>
             <v-text-field
               label="關鍵字搜尋-帳戶名稱及信箱"
-              v-model="input_user.keyword"
+              v-model.trim="input_user.keyword"
               prepend-inner-icon="mdi-magnify"
             ></v-text-field>
             <p>
@@ -98,22 +98,24 @@
                   </v-toolbar>
                 </template>
                 <template v-slot:item.actions="{ item }">
-                  <v-btn text @click="editItem(item,'edit')">
-                    <v-icon left>mdi-pencil</v-icon>編輯
-                  </v-btn>
-                  <v-tooltip bottom>
-                    <template v-slot:activator="{ on, attrs }">
-                      <v-btn
-                        icon
-                        v-bind="attrs"
-                        v-on="on"
-                        @click="editItem(item,'black')"
-                      >
-                        <v-icon>mdi-account-cancel</v-icon>
-                      </v-btn>
-                    </template>
-                    <span>移至黑名單</span>
-                  </v-tooltip>
+                  <span v-if="item.account!==username">
+                    <!-- <v-btn text @click="editItem(item,'edit')">
+                      <v-icon left>mdi-pencil</v-icon>編輯
+                    </v-btn> --> <!--超級管理員可用-->
+                    <v-tooltip bottom>
+                      <template v-slot:activator="{ on, attrs }">
+                        <v-btn
+                          icon
+                          v-bind="attrs"
+                          v-on="on"
+                          @click="editItem(item,'black')"
+                        >
+                          <v-icon>mdi-account-cancel</v-icon>
+                        </v-btn>
+                      </template>
+                      <span>移至黑名單</span>
+                    </v-tooltip>
+                  </span>
                 </template>
               </v-data-table>
             </div>
@@ -183,11 +185,12 @@ export default {
     blacklist: 0,
     filterBtnTTip: false,
     menuUsers: [[],[]],
+    username: '',
     input_user: {
       option: '全部會員',
       keyword: ''
     },
-    OptionState: ['全部會員','管理員','一般會員','黑名單'],
+    OptionState: ['全部會員','管理員','一般會員'],
     EditOption: ['管理員','一般會員'],
     headers: [
       {
@@ -271,6 +274,8 @@ export default {
         this.editedItem.state = '黑名單'
         axios.put('/api/adminApp/change_auth',{
           user: this.editedItem.account, userlevel: 'blacklist'
+        }).then((res)=>{
+          console.log('移至黑名單')
         }).catch(function (error) {
           console.log(error);
         })
@@ -278,6 +283,8 @@ export default {
         this.editedItem.state = '一般會員'
         axios.put('/api/adminApp/change_auth',{
           user: this.editedItem.account, userlevel: 'member'
+        }).then((res)=>{
+          console.log('移出黑名單')
         }).catch(function (error) {
           console.log(error);
         })
@@ -288,7 +295,6 @@ export default {
     },
 
     closeBlack () {
-      console.log('cancelblack')
       this.dialogDelete = false
       this.$nextTick(() => {
         this.editedItem = Object.assign({}, this.defaultItem)
@@ -324,6 +330,7 @@ export default {
     }).catch(function (error) {
       console.log(error);
     }),
+
     axios.get('/api/adminApp/user_management',{
       params: { Identity: 'blacklist' }
     }).then((res) => {
@@ -337,6 +344,11 @@ export default {
       }
     }).catch(function (error) {
       console.log(error);
+    }),
+
+    axios.get('/api/personalApp/loadInfo').then((res)=>{
+      this.username=res.data.data.account_name
+      console.log(res.data.data)
     })
   }
 }

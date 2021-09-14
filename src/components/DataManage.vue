@@ -4,7 +4,7 @@
         <v-card-text>
         <v-text-field
             label="關鍵字搜尋-資料名稱"
-            v-model="input_data.keyword"
+            v-model.trim="input_data.keyword"
             prepend-inner-icon="mdi-magnify"
             ></v-text-field> <!-- 關鍵字輸入 -->
         <v-col
@@ -76,7 +76,7 @@
                         <v-switch
                           v-model="editedItem.state"
                           flat
-                          :label="`${editedItem.state ? '已釋出':'未釋出'}`"
+                          :label="`${editedItem.state==1 ? '已釋出':'未釋出'}`"
                         ></v-switch>
                       </v-card-text>
 
@@ -131,7 +131,7 @@ export default {
         keyword: ''
       },
       groupofData: ['全部','大月齡組','小月齡組'],
-      monthofData: ['全部','M3','M6','M9','M12','M24','M36','M48','M60','M72','G1','G2','G3'],
+      monthofData: ['全部','M3','M6','M12','M24','M36','M48','M60','M72','G1','G2','G3','G4','G5','G6','G7','G8','G9','G10','G11','G12'],
       typeofData: ['全部','家長','親友','教保/教師'],
       releaseState: ['全部','已釋出','未釋出'],
       headers: [
@@ -146,6 +146,7 @@ export default {
       ],
       editedIndex: -1,
       editedItem: {
+        id: '',
         title: '',
         group: '',
         month: '',
@@ -153,6 +154,7 @@ export default {
         state: '',
       },
       defaultItem: {
+        id: '',
         title: '',
         group: '',
         month: '',
@@ -238,6 +240,12 @@ export default {
 
     save () {
       Object.assign(this.menuData[this.editedIndex], this.editedItem)
+      let data={
+        DataId: this.editedItem.id,
+        Release: (this.editedItem.state) ? 1 : 0
+      }
+      console.log(data)
+      axios.put('/api/adminApp/release',data).catch((err)=>{console.log(err)})
       this.close()
     },
   },
@@ -248,8 +256,11 @@ export default {
       let tmp_group=['小月齡組','大月齡組']
       let tmp_type=['教保/教師','家長','親友']
       for(let i=0;i<res.data.data.length;i++){
+        let str='KIT'
+        str+= (res.data.data[i].age_type==1) ? '3月齡組' : '36月齡組'
         let item={
-          title: 'KIT'+tmp_group[res.data.data[i].age_type-1]+res.data.data[i].wave+tmp_type[res.data.data[i].survey_type-1],
+          id: res.data.data[i].survey_id,
+          title: str+res.data.data[i].wave+tmp_type[res.data.data[i].survey_type-1],
           group: tmp_group[res.data.data[i].age_type-1],
           month: res.data.data[i].wave,
           type: tmp_type[res.data.data[i].survey_type-1],
@@ -257,7 +268,7 @@ export default {
         }
         this.menuData.push(item)
       }
-    })
+    }).catch((err)=>{console.log(err)})
   }
 }
 </script>
