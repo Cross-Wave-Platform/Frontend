@@ -18,6 +18,7 @@ const routes = [
     name: 'Profile',
     component: () => import('@/views/Profile.vue'),
     meta: {
+      requiresAuth: true,
       authRequirement: 2
     }
   },
@@ -26,6 +27,7 @@ const routes = [
     name: 'DataImport',
     component: () => import('@/views/DataImport.vue'),
     meta: {
+      requiresAuth: true,
       authRequirement: 1
     }
   },
@@ -34,6 +36,7 @@ const routes = [
     name: 'ContactUs',
     component: () => import('@/views/ContactUs.vue'),
     meta: {
+      requiresAuth: true,
       authRequirement: 3
     }
   },
@@ -42,6 +45,7 @@ const routes = [
     name: 'ProblemReport',
     component: () => import('@/views/ProblemReport.vue'),
     meta: {
+      requiresAuth: true,
       authRequirement: 3
     }
   },
@@ -50,6 +54,7 @@ const routes = [
     name: 'About',
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
     meta: {
+      requiresAuth: true,
       authRequirement: 3
     }
   },
@@ -63,6 +68,7 @@ const routes = [
         path: 'usermanage',
         component: UserManage,
         meta: {
+          requiresAuth: true,
           authRequirement: 1
         }
       },
@@ -70,6 +76,7 @@ const routes = [
         path: 'datamanage',
         component: DataManage,
         meta: {
+          requiresAuth: true,
           authRequirement: 1
         }
       }
@@ -80,6 +87,7 @@ const routes = [
     name: 'ShopCart',
     component: () => import(/* webpackChunkName: "about" */ '../views/ShopCart.vue'),
     meta: {
+      requiresAuth: true,
       authRequirement: 2
     }
   },
@@ -88,6 +96,7 @@ const routes = [
     name: 'Search',
     component: () => import(/* webpackChunkName: "about" */ '../views/Search.vue'),
     meta: {
+      requiresAuth: true,
       authRequirement: 2
     }
   },
@@ -106,7 +115,7 @@ const router = new VueRouter({
 router.beforeEach((to, from, next) => {
   // console.log('to: ', to)
   // console.log('from: ', from)
-  if (to.matched.some(record => record.meta.authRequirement)) {
+  if (to.matched.some(record => record.meta.requiresAuth)) {
     if (store.state.userdata.auth <= to.meta.authRequirement) {
       // console.log('go in')
       next()

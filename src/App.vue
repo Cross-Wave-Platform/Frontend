@@ -418,9 +418,9 @@ export default {
       // }
     ]
   }),
-  beforeMount () {
-    this.loadInfo()
-  },
+  // beforeMount () {
+  //   this.loadInfo()
+  // },
   computed: {
     tabItems: function () {
       return this.allTabItems.filter(word => word.auth >= this.userdata.auth)
