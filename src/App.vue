@@ -131,6 +131,7 @@
                           ref="loginForm"
                           v-model="loginValid"
                           lazy-validation
+                          @submit.prevent="login"
                         >
                           <v-text-field
                             v-model="account"
@@ -155,6 +156,7 @@
                             :disabled="!loginValid"
                             color="success"
                             @click="login"
+                            type="submit"
                             block
                           >
                             Login
@@ -181,6 +183,7 @@
                           ref="registerForm"
                           v-model="registerValid"
                           lazy-validation
+                          @submit.prevent="register"
                         >
                           <v-text-field
                             v-model="username"
@@ -239,6 +242,7 @@
                             :disabled="!registerValid"
                             color="success"
                             @click="register"
+                            type="submit"
                             block
                           >
                             Register
@@ -272,9 +276,31 @@
         <v-icon class="mr-2">mdi-logout</v-icon>
         <span>Logout</span>
       </v-btn>
+      <template v-slot:extension v-if="userdata.nickname != null">
+        <v-tabs
+          v-if="userdata.nickname != null"
+          v-model="mainTab"
+          grow
+          light
+          class="mainTab"
+          style="background-color: #C6D033;"
+        >
+          <!-- background-color="transparent"
+          text-color="basil" -->
+          <v-tabs-slider color="transparent"></v-tabs-slider>
+          <v-tab
+            v-for="item in tabItems"
+            :key="'Tab_'+item.index"
+            class="font-weight-bold"
+            :to="item.path"
+          >
+            {{item.name}}
+          </v-tab>
+        </v-tabs>
+      </template>
     </v-app-bar>
     <v-main>
-      <v-tabs
+      <!-- <v-tabs
         v-if="userdata.nickname != null"
         v-model="mainTab"
         background-color="secondary"
@@ -290,12 +316,12 @@
         >
           {{item.name}}
         </v-tab>
-      </v-tabs>
+      </v-tabs> -->
       <v-container
         fluid
         background-color="transparent"
-        style="max-height: 90vh;"
       >
+        <!-- style="max-height: 90vh;" -->
         <router-view/>
       </v-container>
     </v-main>
@@ -403,7 +429,7 @@ export default {
       }
       axios(config)
         .then((res) => {
-          console.log(res.data.data)
+          // console.log(res.data.data)
           this.userdata = res.data.data
         })
     },
@@ -420,7 +446,7 @@ export default {
         }
         axios(config)
           .then((res) => {
-            console.log(res.data.message)
+            // console.log(res.data.message)
             this.alertPlace = 'login'
             this.alertType = 'success'
             this.alertMsg = res.data.message + ', reflesh after 5 sec'
@@ -430,7 +456,7 @@ export default {
             // this.$router.go(0)
           })
           .catch((err) => {
-            console.log(err.response.data.message)
+            // console.log(err.response.data.message)
             this.alertPlace = 'login'
             this.alertType = 'error'
             this.alertMsg = err.response.data.message
@@ -445,7 +471,7 @@ export default {
       }
       axios(config)
         .then((res) => {
-          console.log('logout!!')
+          // console.log('logout!!')
           this.alertPlace = ''
           this.userdata = {
             nickname: null
@@ -467,13 +493,13 @@ export default {
         }
         axios(config)
           .then((res) => {
-            console.log(res.data.message)
+            // console.log(res.data.message)
             this.alertPlace = 'register'
             this.alertType = 'success'
             this.alertMsg = res.data.message
           })
           .catch((err) => {
-            console.log(err.response.data.message)
+            // console.log(err.response.data.message)
             this.alertPlace = 'register'
             this.alertType = 'error'
             this.alertMsg = err.response.data.message
@@ -486,6 +512,22 @@ export default {
 </script>
 
 <style>
+/* .v-tab:not(.v-tab--active)  {
+  color: #2D7535!important;
+
+} */
+/* >>> .v-tab--active {
+  color: #2D7535
+}
+>>> .v-tab:not(.v-tab--active) {
+  color: #2D7535;
+} */
+.basil {
+  background-color: #C6D033 !important;
+}
+.basil--text {
+  color: #2D7535 !important;
+}
 .circle {
   width: 40px;
   height: 40px;
