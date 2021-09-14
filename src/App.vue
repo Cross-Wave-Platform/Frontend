@@ -276,7 +276,10 @@
         <v-icon class="mr-2">mdi-logout</v-icon>
         <span>Logout</span>
       </v-btn>
-      <template v-slot:extension v-if="userdata.nickname != null">
+      <template
+        v-slot:extension
+        v-if="userdata.nickname != null"
+      >
         <v-tabs
           v-if="userdata.nickname != null"
           v-model="mainTab"
@@ -330,6 +333,8 @@
 
 <script>
 import axios from 'axios'
+import { mapState } from 'vuex'
+
 export default {
   name: 'App',
 
@@ -352,9 +357,9 @@ export default {
     alertMsg: '',
 
     privacyCheckbox: false,
-    userdata: {
-      username: null
-    },
+    // userdata: {
+    //   username: null
+    // },
     usernameRules: [
       v => !!v || 'Username is required',
       v => (v && v.length < 15) || 'Username must be less than 15 characters'
@@ -375,7 +380,7 @@ export default {
         index: 0,
         name: '最新消息',
         path: '/',
-        auth: 2
+        auth: 3
       },
       {
         index: 1,
@@ -419,7 +424,10 @@ export default {
   computed: {
     tabItems: function () {
       return this.allTabItems.filter(word => word.auth >= this.userdata.auth)
-    }
+    },
+    ...mapState({
+      userdata: state => state.userdata
+    })
   },
   methods: {
     loadInfo () {
@@ -427,10 +435,15 @@ export default {
         url: '/api/personalApp/loadInfo',
         method: 'get'
       }
+      // console.log('hi')
       axios(config)
         .then((res) => {
           // console.log(res.data.data)
-          this.userdata = res.data.data
+          // this.userdata = res.data.data
+          this.$store.commit('loadUserdata', res.data.data)
+        })
+        .catch(() => {
+          this.$store.commit('loadUserdata', { nickname: null, auth: 3 })
         })
     },
     login () {
@@ -449,7 +462,7 @@ export default {
             // console.log(res.data.message)
             this.alertPlace = 'login'
             this.alertType = 'success'
-            this.alertMsg = res.data.message + ', reflesh after 5 sec'
+            this.alertMsg = res.data.message
             // this.userdata.nickname = this.account
             this.loadInfo()
             this.dialog = false
@@ -473,9 +486,11 @@ export default {
         .then((res) => {
           // console.log('logout!!')
           this.alertPlace = ''
-          this.userdata = {
-            nickname: null
-          }
+          // this.userdata = {
+          //   nickname: null
+          // }
+          this.loadInfo()
+
           this.$router.push('/')
         })
     },

@@ -158,6 +158,8 @@
 
 <script>
 import axios from 'axios'
+import { mapState } from 'vuex'
+
 export default {
   name: 'Profile',
 
@@ -165,6 +167,8 @@ export default {
     alertPlace: '',
     alertType: null,
     alertMsg: '',
+
+    // userdata: null,
 
     passwordForm: false,
     showPassword: {
@@ -177,15 +181,17 @@ export default {
       newPassword: ''
     },
     nameForm: false,
-    name: '',
-    userdata: null
+    name: ''
   }),
-  beforeMount () {
-    this.loadInfo()
-  },
+  // beforeMount () {
+  //   this.loadInfo()
+  // },
   computed: {
+    ...mapState({
+      userdata: state => state.userdata
+    }),
     info: function () {
-      if (this.userdata == null) {
+      if (this.userdata.nickname == null) {
         return [
           {
             title: '註冊E-mail',
@@ -221,10 +227,15 @@ export default {
         url: '/api/personalApp/loadInfo',
         method: 'get'
       }
+      // console.log('hi')
       axios(config)
         .then((res) => {
           // console.log(res.data.data)
-          this.userdata = res.data.data
+          // this.userdata = res.data.data
+          this.$store.commit('loadUserdata', res.data.data)
+        })
+        .catch(() => {
+          this.$store.commit('loadUserdata', { nickname: null })
         })
     },
     changePassword () {
@@ -271,7 +282,8 @@ export default {
             this.alertPlace = 'changeNickname'
             this.alertType = 'success'
             this.alertMsg = res.data.message
-            this.$router.go(0)
+            this.loadInfo()
+            // this.$router.go(0)
           })
           .catch((err) => {
             // console.log(err.response)
