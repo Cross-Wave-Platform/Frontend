@@ -108,10 +108,10 @@ router.beforeEach((to, from, next) => {
   // console.log('from: ', from)
   if (to.matched.some(record => record.meta.authRequirement)) {
     if (store.state.userdata.auth <= to.meta.authRequirement) {
-      console.log('go in')
+      // console.log('go in')
       next()
     } else {
-      console.log('reject')
+      // console.log('reject')
       next({
         path: '/',
         query: {
