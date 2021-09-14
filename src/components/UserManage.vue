@@ -98,7 +98,7 @@
                   </v-toolbar>
                 </template>
                 <template v-slot:item.actions="{ item }">
-                  <span v-if="item.account!==username">
+                  <span v-if="item.state!=='管理員'">
                     <!-- <v-btn text @click="editItem(item,'edit')">
                       <v-icon left>mdi-pencil</v-icon>編輯
                     </v-btn> --> <!--超級管理員可用-->
@@ -177,6 +177,7 @@
 <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
 <script>
 import axios from 'axios'
+import { mapState } from 'vuex'
 export default {
   name: 'UserManage',
   data: () => ({
@@ -185,7 +186,6 @@ export default {
     blacklist: 0,
     filterBtnTTip: false,
     menuUsers: [[],[]],
-    username: '',
     input_user: {
       option: '全部會員',
       keyword: ''
@@ -217,6 +217,9 @@ export default {
   }),
 
   computed: {
+    ...mapState({
+      userdata: state => state.userdata
+    }),
     typeMenuUsers(){
         if(this.input_user.option === '全部會員'){
             return this.titleMenuUsers
@@ -344,11 +347,6 @@ export default {
       }
     }).catch(function (error) {
       console.log(error);
-    }),
-
-    axios.get('/api/personalApp/loadInfo').then((res)=>{
-      this.username=res.data.data.account_name
-      console.log(res.data.data)
     })
   }
 }
