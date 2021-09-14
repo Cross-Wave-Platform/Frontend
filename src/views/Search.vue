@@ -285,7 +285,7 @@ export default {
       if (this.selectedMonthOld.length > 1 && this.selectedQuestionnaireType.length > 1) {
         this.$swal({
           title: '跨月齡組僅限同問卷類型!',
-          text: '2秒后自动关闭。',
+          text: '2秒後自動關閉。',
           icon: 'warning',
           timer: 2000
         }).then(
@@ -310,7 +310,7 @@ export default {
         if (change) {
           this.$swal({
             title: str,
-            text: '2秒后自动关闭。',
+            text: '2秒後自動關閉。',
             icon: 'warning',
             timer: 2000
           }).then(
@@ -448,7 +448,10 @@ export default {
       })
 
       this.isStoreProblem = true
-      alert('已成功加入我的資料!')
+      this.$swal({
+        title: '已成功加入我的資料!',
+        icon: 'success'
+      })
     },
 
     preventNav (event) {
