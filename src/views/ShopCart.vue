@@ -3,7 +3,7 @@
       <v-row>
         <v-col cols=10>
           <v-card flat style="background-color:rgba(255, 255, 255, 0.0);">
-              <v-card-title>我的資料</v-card-title>
+              <v-card-title class="font-weight-bold">我的資料</v-card-title>
               <v-data-table
                   :headers="header"
                   :items="problemList"
@@ -62,64 +62,60 @@
               </v-dialog>
           </v-card>
         </v-col>
+
+        <v-divider vertical></v-divider>
+
         <v-col cols=2>
-          <v-navigation-drawer
-            style="top:50px;background-color:rgba(255, 255, 255, 0.0);"
-            absolute
-            permanent
-            right
-          >
-            <v-list dense>
-              <v-list-item>
-                <v-select
-                  :items="OptionJoin"
-                  item-text="method"
-                  item-value="value"
-                  v-model="exportContent.mergeMethod"
-                  label="合併方式"
-                ></v-select>
-              </v-list-item>
-              <v-list-item>
-                <v-radio-group
-                    v-model="exportContent.fileFormat"
-                    column
-                    label="匯出方式"
-                >
-                    <v-radio v-for="item in OptionExport" :key="item" :label="item" :value="item"></v-radio>
-                </v-radio-group>
-              </v-list-item>
-              <v-list-item>
-                <v-list-item-content>
-                  <v-btn dark color=primary @click="exportFile" :disabled="exportDialog">匯出</v-btn>
-                </v-list-item-content>
-              </v-list-item>
+          <v-list dense style="background-color:rgba(255, 255, 255, 0.0);">
+            <v-list-item>
+              <v-select
+                :items="OptionJoin"
+                item-text="method"
+                item-value="value"
+                v-model="exportContent.mergeMethod"
+                label="合併方式"
+              ></v-select>
+            </v-list-item>
+            <v-list-item>
+              <v-radio-group
+                  v-model="exportContent.fileFormat"
+                  column
+                  label="匯出方式"
+              >
+                  <v-radio v-for="item in OptionExport" :key="item" :label="item" :value="item"></v-radio>
+              </v-radio-group>
+            </v-list-item>
+            <v-list-item>
+              <v-list-item-content>
+                <v-btn dark color=primary @click="exportFile" :disabled="exportDialog">匯出</v-btn>
+              </v-list-item-content>
+            </v-list-item>
 
-                  <v-dialog
-                  v-model="exportDialog"
-                  hide-overlay
-                  persistent
-                  width="400"
-                >
-                  <v-card class="elevation-8 pb-3">
-                    <v-container fluid>
-                      <v-row justify="center">
-                        <h2 class="mt-5">
-                          正在合併資料，請勿跳轉頁面
-                        </h2>
-                      </v-row>
-                      <v-row justify="center" class="mt-5 mb-2">
-                        <v-progress-circular
-                            indeterminate
-                            color="secondary"
-                            :size="36"
-                        ></v-progress-circular>
-                      </v-row>
-                    </v-container>
-                  </v-card>
-                </v-dialog>
+                <v-dialog
+                v-model="exportDialog"
+                hide-overlay
+                persistent
+                width="400"
+              >
+                <v-card class="elevation-8 pb-3">
+                  <v-container fluid>
+                    <v-row justify="center">
+                      <h2 class="mt-5">
+                        正在合併資料，請勿跳轉頁面
+                      </h2>
+                    </v-row>
+                    <v-row justify="center" class="mt-5 mb-2">
+                      <v-progress-circular
+                          indeterminate
+                          color="secondary"
+                          :size="36"
+                      ></v-progress-circular>
+                    </v-row>
+                  </v-container>
+                </v-card>
+              </v-dialog>
 
-            </v-list>
-          </v-navigation-drawer>
+          </v-list>
         </v-col>
       </v-row>
     </div>
@@ -142,7 +138,7 @@ export default {
         // { text: '回答選項', align: 'center', value: 'answerTag' },
         { text: '構面', align: 'center', value: 'class' },
         { text: '存有類型', value: 'typeAction' },
-        { text: '存有波次', value: 'waveAction' }
+        { text: '存有波次', value: 'waveAction', sortable: false }
       ],
       tableType: [],
       dialogDelete: false,
@@ -192,6 +188,15 @@ export default {
       } else {
         this.problemList.splice(this.editedIndex, 1)
         for (let i = this.editedIndex; i < this.problemList.length; i++) { this.problemList[i].index-- }
+        if (!this.problemList.length) {
+          axios.delete('/api/searchApp/delProblem')
+            .catch((err) => { console.err(err) })
+        } else {
+          this.changeApiFormat()
+          axios.post('/api/searchApp/storeProblem', {
+            problemList: this.problemsForStore
+          })
+        }
       }
       this.closeDelete()
     },
@@ -239,42 +244,49 @@ export default {
         })
     },
 
+    exportApi () {
+      axios({
+        url: '/api/fileApp/export',
+        method: 'GET',
+        responseType: 'blob',
+        params: {
+          mergeMethod: this.exportContent.mergeMethod,
+          fileFormat: this.exportContent.fileFormat.toLowerCase()
+        }
+      }).then((res) => {
+        const fileURL = window.URL.createObjectURL(new Blob([res.data]))
+        const fileLink = document.createElement('a')
+
+        fileLink.href = fileURL
+        this.exportContent.fileFormat === 'CSV'
+          ? fileLink.setAttribute('download', 'output.zip') : fileLink.setAttribute('download', 'output.sav')
+        document.body.appendChild(fileLink)
+
+        fileLink.click()
+
+        this.exportDialog = false
+      })
+    },
+
     exportFile () {
+      if (!this.problemList.length) {
+        this.$swal({
+          title: '我的資料是空的，請選取資料',
+          icon: 'warning'
+        })
+        return
+      }
       if (this.exportContent.mergeMethod === '' || this.exportContent.fileFormat === '') {
-        this.$swal('請選擇合併方式及匯出檔案格式')
+        this.$swal({ title: '請選擇合併方式及匯出檔案格式', icon: 'warning' })
         return
       }
       this.exportDialog = true
-      this.changeApiFormat()
-      axios.post('/api/searchApp/storeProblem', {
-        problemList: this.problemsForStore
-      })
-        .then(res => {
-          axios({
-            url: '/api/fileApp/export',
-            method: 'GET',
-            responseType: 'blob',
-            params: {
-              mergeMethod: this.exportContent.mergeMethod,
-              fileFormat: this.exportContent.fileFormat.toLowerCase()
-            }
-          }).then((res) => {
-            const fileURL = window.URL.createObjectURL(new Blob([res.data]))
-            const fileLink = document.createElement('a')
-
-            fileLink.href = fileURL
-            this.exportContent.fileFormat === 'CSV'
-              ? fileLink.setAttribute('download', 'output.zip') : fileLink.setAttribute('download', 'output.sav')
-            document.body.appendChild(fileLink)
-
-            fileLink.click()
-
-            this.exportDialog = false
-          })
-        })
+      this.exportApi()
     },
 
     changeApiFormat () {
+      this.problemsForStore = []
+
       for (let i = 0; i < this.problemList.length; i++) {
         const item = {
           problem_id: this.problemList[i].pid,
@@ -283,7 +295,21 @@ export default {
         this.problemsForStore.push(item)
       }
     }
+
+    // preventNav (event) {
+    //   if (this.problemList.length === this.shopcart.length) return
+    //   event.preventDefault()
+    //   // Chrome requires returnValue to be set.
+    //   event.returnValue = ''
+    // }
   },
+
+  // beforeMount () {
+  //   window.addEventListener('beforeunload', this.preventNav)
+  //   this.$once('hook:beforeDestroy', () => {
+  //     window.removeEventListener('beforeunload', this.preventNav)
+  //   })
+  // },
 
   mounted () {
     axios.get('/api/searchApp/getProblem').then((res) => {
@@ -292,13 +318,18 @@ export default {
         this.getSearchProblem()
       }
     })
-  },
-
-  beforeDestroy () {
-    this.changeApiFormat()
-    axios.post('/api/searchApp/storeProblem', {
-      problemList: this.problemsForStore
-    })
   }
+
+  // beforeDestroy () {
+  //   if (!this.problemList.length) {
+  //     axios.delete('/api/searchApp/delProblem')
+  //       .catch((err) => { console.err(err) })
+  //     return
+  //   }
+  //   this.changeApiFormat()
+  //   axios.post('/api/searchApp/storeProblem', {
+  //     problemList: this.problemsForStore
+  //   })
+  // }
 }
 </script>
