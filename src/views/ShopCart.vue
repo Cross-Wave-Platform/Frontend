@@ -3,7 +3,7 @@
       <v-row>
         <v-col cols=10>
           <v-card flat style="background-color:rgba(255, 255, 255, 0.0);">
-              <v-card-title>我的資料</v-card-title>
+              <v-card-title class="font-weight-bold">我的資料</v-card-title>
               <v-data-table
                   :headers="header"
                   :items="problemList"

@@ -86,7 +86,7 @@
 
                 <v-card flat style="background-color:rgba(255, 255, 255, 0.0);">
                     <template id="facetFilter" v-if="facetList.length">
-                      <v-card-title>構面篩選</v-card-title>
+                      <v-card-title class="font-weight-bold">構面篩選</v-card-title>
                       <v-chip-group
                           v-model="selectedFacet"
                           column
@@ -99,7 +99,7 @@
                     </template>
 
                     <v-card-title>
-                        搜尋結果
+                        <span class="font-weight-bold">搜尋結果</span>
                         <v-spacer></v-spacer>
                         <v-text-field
                             v-model="searchKeyword"
