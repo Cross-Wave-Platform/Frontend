@@ -11,13 +11,17 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: () => import('@/views/Home.vue')
+    component: () => import('@/views/Home.vue'),
+    meta: {
+      title: '最新消息'
+    }
   },
   {
     path: '/Profile',
     name: 'Profile',
     component: () => import('@/views/Profile.vue'),
     meta: {
+      title: '個人頁面',
       requiresAuth: true,
       authRequirement: 2
     }
@@ -27,6 +31,7 @@ const routes = [
     name: 'DataImport',
     component: () => import('@/views/DataImport.vue'),
     meta: {
+      title: '資料匯入',
       requiresAuth: true,
       authRequirement: 1
     }
@@ -36,6 +41,7 @@ const routes = [
     name: 'ContactUs',
     component: () => import('@/views/ContactUs.vue'),
     meta: {
+      title: '聯繫我們',
       requiresAuth: true,
       authRequirement: 3
     }
@@ -45,6 +51,7 @@ const routes = [
     name: 'ProblemReport',
     component: () => import('@/views/ProblemReport.vue'),
     meta: {
+      title: '問題回報',
       requiresAuth: true,
       authRequirement: 3
     }
@@ -54,6 +61,7 @@ const routes = [
     name: 'About',
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
     meta: {
+      title: 'About',
       requiresAuth: true,
       authRequirement: 3
     }
@@ -68,6 +76,7 @@ const routes = [
         path: 'usermanage',
         component: UserManage,
         meta: {
+          title: '使用者權限管理',
           requiresAuth: true,
           authRequirement: 1
         }
@@ -76,6 +85,7 @@ const routes = [
         path: 'datamanage',
         component: DataManage,
         meta: {
+          title: '資料權限管理',
           requiresAuth: true,
           authRequirement: 1
         }
@@ -87,6 +97,7 @@ const routes = [
     name: 'ShopCart',
     component: () => import(/* webpackChunkName: "about" */ '../views/ShopCart.vue'),
     meta: {
+      title: '我的資料',
       requiresAuth: true,
       authRequirement: 2
     }
@@ -96,6 +107,7 @@ const routes = [
     name: 'Search',
     component: () => import(/* webpackChunkName: "about" */ '../views/Search.vue'),
     meta: {
+      title: '資料查詢',
       requiresAuth: true,
       authRequirement: 2
     }
@@ -131,5 +143,12 @@ router.beforeEach((to, from, next) => {
   } else {
     next()
   }
+})
+
+const DEFAULT_TITLE = 'KIT System'
+router.afterEach((to, from) => {
+  Vue.nextTick(() => {
+    document.title = to.meta.title || DEFAULT_TITLE
+  })
 })
 export default router
