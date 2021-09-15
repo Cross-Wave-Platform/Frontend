@@ -244,7 +244,8 @@ export default {
       color: '#673AB7',
       addBtnTTip: false,
       dialogUnlock: false,
-      isStoreProblem: false
+      checkBeforeLeave: false,
+      checkArray: []
     }
   },
 
@@ -324,6 +325,14 @@ export default {
           const tempelement = this.selectedWave[this.selectedWave.length - 1]
           this.selectedWave = []
           this.selectedWave.push(tempelement)
+        }
+      }
+    },
+    checkBeforeLeave (val) {
+      if (this.checkBeforeLeave) {
+        console.log(1)
+        if (!window.confirm('資料尚未加入我的資料，離開將不會儲存變更')) {
+
         }
       }
     }
@@ -414,16 +423,6 @@ export default {
       })
     },
 
-    // reset () {
-    //   this.selectedMonthOld = []
-    //   this.selectedQuestionnaireType = []
-    //   this.selectedWave = []
-    //   this.selectedFacet = []
-    //   this.waveList = []
-    //   this.omitConditions = true
-    //   this.lockCombo = false
-    // },
-
     TableWave (index) {
       return this.searchResult[index].exist.filter(item => {
         const target = this.tableType[index].toLowerCase()
@@ -433,6 +432,7 @@ export default {
     },
 
     StoreProblem () {
+      this.problemsForStore = []
       for (let i = 0; i < this.selectedCol.length; i++) {
         const item = {
           problem_id: this.selectedCol[i].pid,
@@ -447,19 +447,48 @@ export default {
         problemList: this.problemsForStore
       })
 
-      this.isStoreProblem = true
       this.$swal({
         title: '已成功加入我的資料!',
         icon: 'success'
       })
     },
 
-    preventNav (event) {
-      if (!this.selectedCol.length && !this.isStoreProblem) return
-      event.preventDefault()
-      // Chrome requires returnValue to be set.
-      event.returnValue = ''
+    arrayEquality (arr1, arr2) {
+      for (let i = 0; i < arr1.length; i++) {
+        if (arr1.indexOf(arr2[i]) === -1) return false
+      }
+      return true
+    },
+
+    checkAddProblemUnsaved () {
+      // Get Problem
+      axios.get('/api/searchApp/getProblem').then((res) => {
+        this.shopcart = res.data.data.problemList
+
+        if (this.selectedCol.length !== this.shopcart.length) {
+          console.log(true)
+          this.checkBeforeLeave = true
+        } else if (this.shopcart.length === 0 && this.selectedCol.length === 0) {
+          console.log(false)
+          this.checkBeforeLeave = false
+        } else {
+          this.checkArray = this.selectedCol.filter(item => {
+            return this.shopcart.findIndex(problem => {
+              return problem.problem_id === item.pid && this.arrayEquality(problem.survey_id, item.survey_id)
+            }) !== -1
+          })
+          console.log(this.checkArray.length !== this.shopcart.length)
+          this.checkBeforeLeave = (this.checkArray.length !== this.shopcart.length)
+        }
+      })
     }
+
+    // preventNav (event) {
+    //   if (!this.checkAddProblemUnsaved()) return
+    //   event.preventDefault()
+    //   // Chrome requires returnValue to be set.
+    //   event.returnValue = ''
+    // }
   },
 
   beforeMount () {
@@ -470,14 +499,9 @@ export default {
   },
 
   beforeRouteLeave (to, from, next) {
-    if (this.selectedCol.length) {
-      if (!window.confirm('資料尚未加入我的資料，離開將不會儲存變更')) {
-        return
-      }
-    }
+    this.checkAddProblemUnsaved()
     next()
   },
-
   mounted () {
     // getCombo
     axios.get('/api/searchApp/getCombo').then((res) => {
@@ -506,12 +530,10 @@ export default {
             // Get Problem
             axios.get('/api/searchApp/getProblem').then((res) => {
               this.shopcart = res.data.data.problemList
-              console.log(this.shopcart)
               if (this.shopcart.length) {
                 this.selectedCol = this.searchResult.filter(item => {
                   return this.shopcart.findIndex(problem => problem.problem_id === item.pid) !== -1
                 })
-                console.log(this.selectedCol)
               }
             })
           })
