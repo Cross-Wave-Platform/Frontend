@@ -155,7 +155,7 @@
                           <v-btn
                             :disabled="!loginValid"
                             color="success"
-                            @click="login"
+                            @click.prevent="login"
                             type="submit"
                             block
                           >
@@ -241,7 +241,7 @@
                           <v-btn
                             :disabled="!registerValid"
                             color="success"
-                            @click="register"
+                            @click.prevent="register"
                             type="submit"
                             block
                           >
