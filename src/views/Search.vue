@@ -2,104 +2,102 @@
     <div id="search">
         <v-row>
             <v-col cols=2 id="Combo">
-                <v-navigation-drawer
-                  permanent
-                  absolute
-                >
-                  <v-list>
-                      <v-list-item>
-                          <v-list-item-content>
-                              <v-list-item-title>
-                                  <h3>欲合併之問卷組合</h3>
-                              </v-list-item-title>
-                          </v-list-item-content>
-                      </v-list-item>
+                <v-list>
+                    <v-list-item>
+                        <v-list-item-content>
+                            <v-list-item-title>
+                                <h3>欲合併之問卷組合</h3>
+                            </v-list-item-title>
+                        </v-list-item-content>
+                    </v-list-item>
 
-                      <v-divider></v-divider>
+                    <v-divider></v-divider>
 
-                      <v-list-item>
-                          <v-list-item-content>
-                              月齡組:
-                              <v-btn-toggle multiple dense v-model="selectedMonthOld">
-                                  <v-btn v-for="monthOld in monthOldList" :key="monthOld.monthOld"
-                                      rounded
-                                      depressed
-                                      :value="monthOld.value"
-                                      :disabled="lockCombo"
-                                  >
-                                      {{monthOld.monthOld}}
-                                  </v-btn>
-                              </v-btn-toggle>
-                          </v-list-item-content>
-                      </v-list-item>
+                    <v-list-item>
+                        <v-list-item-content>
+                            月齡組:
+                            <v-btn-toggle multiple dense v-model="selectedMonthOld">
+                                <v-btn v-for="monthOld in monthOldList" :key="monthOld.monthOld"
+                                    rounded
+                                    depressed
+                                    :value="monthOld.value"
+                                    :disabled="lockCombo"
+                                >
+                                    {{monthOld.monthOld}}
+                                </v-btn>
+                            </v-btn-toggle>
+                        </v-list-item-content>
+                    </v-list-item>
 
-                      <v-list-item>
-                          <v-list-item-content>
-                              問卷類型:
-                              <v-btn-toggle multiple dense v-model="selectedQuestionnaireType">
-                                  <v-btn v-for="type in questionnaireTypeList" :key="type.type"
-                                      rounded
-                                      depressed
-                                      :value="type.value"
-                                      :disabled="lockCombo"
-                                  >
-                                      {{type.type}}
-                                  </v-btn>
-                              </v-btn-toggle>
-                          </v-list-item-content>
-                      </v-list-item>
+                    <v-list-item>
+                        <v-list-item-content>
+                            問卷類型:
+                            <v-btn-toggle multiple dense v-model="selectedQuestionnaireType">
+                                <v-btn v-for="type in questionnaireTypeList" :key="type.type"
+                                    rounded
+                                    depressed
+                                    :value="type.value"
+                                    :disabled="lockCombo"
+                                >
+                                    {{type.type}}
+                                </v-btn>
+                            </v-btn-toggle>
+                        </v-list-item-content>
+                    </v-list-item>
 
-                      <v-list-item>
-                          <v-btn
-                              @click="getWaveList"
-                              :disabled="lockCombo"
-                              color="primary">
-                              搜尋存有波次
-                          </v-btn>
-                      </v-list-item>
+                    <v-list-item>
+                        <v-btn
+                            @click="getWaveList"
+                            :disabled="lockCombo"
+                            color="primary">
+                            搜尋存有波次
+                        </v-btn>
+                    </v-list-item>
 
-                      <v-list-item>
-                          <v-list-item-content>
-                              波次:
-                              <v-select
-                                  dense
-                                  v-model="selectedWave"
-                                  :items="waveList"
-                                  :disabled="lockCombo || omitConditions"
-                                  item-text="wave"
-                                  chips
-                                  label="請先選擇月齡組以及問卷類型"
-                                  multiple
-                                  outlined
-                              ></v-select>
-                          </v-list-item-content>
-                      </v-list-item>
+                    <v-list-item>
+                        <v-list-item-content>
+                            波次:
+                            <v-select
+                                dense
+                                v-model="selectedWave"
+                                :items="waveList"
+                                :disabled="lockCombo || omitConditions"
+                                item-text="wave"
+                                chips
+                                label="請先選擇月齡組以及問卷類型"
+                                multiple
+                                outlined
+                            ></v-select>
+                        </v-list-item-content>
+                    </v-list-item>
 
-                      <v-list-item>
-                          <v-btn rounded @click="getColList" v-if="!lockCombo">綁定</v-btn>
-                          <v-btn rounded @click="unlockCombination" v-else>解除綁定</v-btn>
-                          <!-- <v-spacer></v-spacer>
-                          <v-btn rounded @click="reset">恢復預設</v-btn> -->
-                      </v-list-item>
-                  </v-list>
-                </v-navigation-drawer>
+                    <v-list-item>
+                        <v-btn rounded @click="getColList" v-if="!lockCombo">綁定</v-btn>
+                        <v-btn rounded @click="unlockCombination" v-else>解除綁定</v-btn>
+                        <!-- <v-spacer></v-spacer>
+                        <v-btn rounded @click="reset">恢復預設</v-btn> -->
+                    </v-list-item>
+                </v-list>
             </v-col>
 
+            <v-divider vertical ></v-divider>
+
             <v-col cols=10 no-gutters>
-                <div id="facetFilter" v-if="facetList.length">
-                    <label>構面篩選:</label>
-                    <v-chip-group
-                        v-model="selectedFacet"
-                        column
-                        multiple
-                    >
-                        <v-chip v-for="facet in facetList" :key="facet" :value="facet" filter outlined>
-                            {{ facet }}
-                        </v-chip>
-                    </v-chip-group>
-                </div>
 
                 <v-card flat style="background-color:rgba(255, 255, 255, 0.0);">
+                    <template id="facetFilter" v-if="facetList.length">
+                      <v-card-title>構面篩選</v-card-title>
+                      <v-chip-group
+                          v-model="selectedFacet"
+                          column
+                          multiple
+                      >
+                          <v-chip v-for="facet in facetList" :key="facet" :value="facet" filter outlined>
+                              {{ facet }}
+                          </v-chip>
+                      </v-chip-group>
+                    </template>
+
                     <v-card-title>
                         搜尋結果
                         <v-spacer></v-spacer>
@@ -238,14 +236,15 @@ export default {
         // { text: '回答選項', align: 'center', value: 'answerTag' },
         { text: '構面', align: 'center', value: 'class' },
         { text: '存有類型', value: 'typeAction' },
-        { text: '存有波次', value: 'waveAction' }
+        { text: '存有波次', value: 'waveAction', sortable: false }
       ],
 
       color: '#673AB7',
       addBtnTTip: false,
       dialogUnlock: false,
-      checkBeforeLeave: false,
-      checkArray: []
+      checkArray: [],
+      unsaveProblem: false,
+      drawer: false
     }
   },
 
@@ -328,17 +327,32 @@ export default {
         }
       }
     },
-    checkBeforeLeave (val) {
-      if (this.checkBeforeLeave) {
-        console.log(1)
-        if (!window.confirm('資料尚未加入我的資料，離開將不會儲存變更')) {
 
-        }
+    selectedCol: function () {
+      if (this.selectedCol.length !== this.shopcart.length) {
+        console.log(true)
+        this.unsaveProblem = true
+      } else if (this.shopcart.length === 0 && this.selectedCol.length === 0) {
+        console.log(false)
+        this.unsaveProblem = false
+      } else {
+        this.checkArray = this.selectedCol.filter(item => {
+          return this.shopcart.findIndex(problem => {
+            return problem.problem_id === item.pid && this.arrayEquality(problem.survey_id, item.survey_id)
+          }) !== -1
+        })
+        console.log(this.checkArray.length !== this.shopcart.length)
+        this.unsaveProblem = (this.checkArray.length !== this.shopcart.length)
       }
     }
   },
+
   methods: {
     getWaveList () {
+      if (!this.selectedMonthOld.length || !this.selectedQuestionnaireType.length) {
+        this.$swal({ title: '請選擇月齡組及問卷類型', icon: 'warning' })
+        return
+      }
       this.omitConditions = false
       console.log(this.selectedMonthOld, this.selectedQuestionnaireType)
       // Search Wave
@@ -399,6 +413,7 @@ export default {
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
+        cancelButtonText: '取消',
         confirmButtonText: '解除綁定！'
       }).then((result) => {
         if (result.value) {
@@ -432,6 +447,14 @@ export default {
     },
 
     StoreProblem () {
+      if (!this.selectedCol.length) {
+        this.$swal({
+          title: '請選取資料',
+          icon: 'warning'
+        })
+        return
+      }
+
       this.problemsForStore = []
       for (let i = 0; i < this.selectedCol.length; i++) {
         const item = {
@@ -451,6 +474,8 @@ export default {
         title: '已成功加入我的資料!',
         icon: 'success'
       })
+      this.shopcart = this.problemsForStore
+      this.unsaveProblem = false
     },
 
     arrayEquality (arr1, arr2) {
@@ -460,35 +485,12 @@ export default {
       return true
     },
 
-    checkAddProblemUnsaved () {
-      // Get Problem
-      axios.get('/api/searchApp/getProblem').then((res) => {
-        this.shopcart = res.data.data.problemList
-
-        if (this.selectedCol.length !== this.shopcart.length) {
-          console.log(true)
-          this.checkBeforeLeave = true
-        } else if (this.shopcart.length === 0 && this.selectedCol.length === 0) {
-          console.log(false)
-          this.checkBeforeLeave = false
-        } else {
-          this.checkArray = this.selectedCol.filter(item => {
-            return this.shopcart.findIndex(problem => {
-              return problem.problem_id === item.pid && this.arrayEquality(problem.survey_id, item.survey_id)
-            }) !== -1
-          })
-          console.log(this.checkArray.length !== this.shopcart.length)
-          this.checkBeforeLeave = (this.checkArray.length !== this.shopcart.length)
-        }
-      })
+    preventNav (event) {
+      if (!this.unsaveProblem) return
+      event.preventDefault()
+      // Chrome requires returnValue to be set.
+      event.returnValue = ''
     }
-
-    // preventNav (event) {
-    //   if (!this.checkAddProblemUnsaved()) return
-    //   event.preventDefault()
-    //   // Chrome requires returnValue to be set.
-    //   event.returnValue = ''
-    // }
   },
 
   beforeMount () {
@@ -499,7 +501,11 @@ export default {
   },
 
   beforeRouteLeave (to, from, next) {
-    this.checkAddProblemUnsaved()
+    if (this.unsaveProblem) {
+      if (!window.confirm('資料尚未加入我的資料，請問是否離開頁面')) {
+        return
+      }
+    }
     next()
   },
   mounted () {
