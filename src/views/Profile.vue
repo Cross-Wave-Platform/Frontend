@@ -60,6 +60,7 @@
           v-model="passwordForm"
           lazy-validation
           class="pa-5"
+          @submit.prevent="changePassword"
         >
           <v-text-field
             v-model="password.oldPassword"
@@ -91,16 +92,17 @@
             outlined
           >
           </v-text-field>
+          <v-btn
+            dark
+            color="primary"
+            block
+            type="submit"
+            @click.prevent="changePassword"
+          >
+            Save
+            <v-icon right>mdi-content-save</v-icon>
+          </v-btn>
         </v-form>
-        <v-btn
-          dark
-          color="primary"
-          block
-          @click="changePassword"
-        >
-          Save
-          <v-icon right>mdi-content-save</v-icon>
-        </v-btn>
         <v-alert
           :value="alertPlace == 'changePassword'"
           :type="alertType"
@@ -124,6 +126,7 @@
           v-model="nameForm"
           lazy-validation
           class="pa-5"
+          @submit="changeNickname"
         >
           <v-text-field
             v-model="name"
@@ -132,16 +135,17 @@
             outlined
           >
           </v-text-field>
+          <v-btn
+            dark
+            color="primary"
+            block
+            type="submit"
+            @click.prevent="changeNickname"
+          >
+            Save
+            <v-icon right>mdi-content-save</v-icon>
+          </v-btn>
         </v-form>
-        <v-btn
-          dark
-          color="primary"
-          block
-          @click="changeNickname"
-        >
-          Save
-          <v-icon right>mdi-content-save</v-icon>
-        </v-btn>
         <v-alert
           :value="alertPlace == 'changeNickname'"
           :type="alertType"

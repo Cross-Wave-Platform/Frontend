@@ -91,6 +91,7 @@
           ref="reportForm"
           v-model="reportForm"
           lazy-validation
+          @submit.prevent="quickReport"
         >
           <v-text-field
             v-model="report.title"
@@ -122,19 +123,20 @@
             </v-chip>
           </template>
           </v-file-input>
+          <v-btn
+            dark
+            block
+            color="primary"
+            :loading="loadReport"
+            type="submit"
+            @click.prevent="quickReport"
+          >
+            Send
+            <v-icon right>
+              mdi-send
+            </v-icon>
+          </v-btn>
         </v-form>
-        <v-btn
-          dark
-          block
-          color="primary"
-          :loading="loadReport"
-          @click="quickReport"
-        >
-          Send
-          <v-icon right>
-            mdi-send
-          </v-icon>
-        </v-btn>
         <v-alert
           :value="alertPlace == 'quickReport'"
           :type="alertType"
