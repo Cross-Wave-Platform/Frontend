@@ -221,7 +221,7 @@ export default {
           content: this.userdata.nickname
         }
       ]
-      if (this.userdata.auth === 1) { ret.push({ title: '使用者身分', content: '管理員' }) } else { ret.push({ title: '使用者身分', content: '一般會員' }) }
+      if (this.userdata.auth < 2) { ret.push({ title: '使用者身分', content: '管理員' }) } else { ret.push({ title: '使用者身分', content: '一般會員' }) }
       return ret
     }
   },
