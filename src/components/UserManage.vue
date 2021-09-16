@@ -280,18 +280,20 @@ export default {
           user: this.editedItem.account, userlevel: 'blacklist'
         }).then((res)=>{
           // console.log('移至黑名單')
-        }).catch(function (error) {
-          console.err(error);
         })
+        // .catch(function (error) {
+        //   console.err(error);
+        // })
       }else{
         this.editedItem.state = '一般會員'
         axios.put('/api/adminApp/change_auth',{
           user: this.editedItem.account, userlevel: 'member'
         }).then((res)=>{
           // console.log('移出黑名單')
-        }).catch(function (error) {
-          console.err(error);
         })
+        // .catch(function (error) {
+        //   console.err(error);
+        // })
       }
       this.menuUsers[(this.blacklist+1)%2].push(this.editedItem)
       this.menuUsers[this.blacklist].splice(this.editedIndex, 1)
@@ -331,9 +333,10 @@ export default {
         }
         this.menuUsers[0].push(item)
       }
-    }).catch(function (error) {
-      console.err(error);
     }),
+    // .catch(function (error) {
+    //   console.err(error);
+    // }),
 
     axios.get('/api/adminApp/user_management',{
       params: { Identity: 'blacklist' }
@@ -346,9 +349,10 @@ export default {
         }
         this.menuUsers[1].push(item)
       }
-    }).catch(function (error) {
-      console.err(error);
     })
+    // .catch(function (error) {
+    //   console.err(error);
+    // })
   }
 }
 

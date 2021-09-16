@@ -245,7 +245,7 @@ export default {
         Release: (this.editedItem.state) ? 1 : 0
       }
       // console.log(data)
-      axios.put('/api/adminApp/release',data).catch((err)=>{console.err(err)})
+      axios.put('/api/adminApp/release',data) // .catch((err)=>{console.err(err)})
       this.close()
     },
   },
@@ -268,7 +268,7 @@ export default {
         }
         this.menuData.push(item)
       }
-    }).catch((err)=>{console.err(err)})
+    }) //.catch((err)=>{console.err(err)})
   }
 }
 </script>
