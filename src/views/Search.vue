@@ -287,14 +287,21 @@ export default {
         this.selectedWave = []
       }
     },
+
     selectedWave: function () {
       if (this.selectedWave.length > 1) {
-        if (this.selectedMonthOld.length > 1) { this.showWarning('跨月齡組僅限同波次!') }
-        if (this.selectedQuestionnaireType.length > 1) { this.showWarning('跨問卷類型僅限同波次!') }
-
-        const tempelement = this.selectedWave[this.selectedWave.length - 1]
-        this.selectedWave = []
-        this.selectedWave.push(tempelement)
+        if (this.selectedMonthOld.length > 1) {
+          this.showWarning('跨月齡組僅限同波次!')
+          const tempelement = this.selectedWave[this.selectedWave.length - 1]
+          this.selectedWave = []
+          this.selectedWave.push(tempelement)
+        }
+        if (this.selectedQuestionnaireType.length > 1) {
+          this.showWarning('跨問卷類型僅限同波次!')
+          const tempelement = this.selectedWave[this.selectedWave.length - 1]
+          this.selectedWave = []
+          this.selectedWave.push(tempelement)
+        }
       }
     },
 
