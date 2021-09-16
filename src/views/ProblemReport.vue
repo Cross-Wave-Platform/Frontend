@@ -173,12 +173,12 @@ export default {
         problem:
         [
           {
-            question: 'asdf',
-            answer: 'qwer'
+            question: 'Example question 1',
+            answer: 'example answer 1'
           },
           {
-            question: 'qwer',
-            answer: 'qwer'
+            question: 'Example question 2',
+            answer: 'example answer 2'
           }
         ]
       },
@@ -187,12 +187,12 @@ export default {
         problem:
         [
           {
-            question: 'asdf',
-            answer: 'qwer'
+            question: 'Example question 1',
+            answer: 'example answer 1'
           },
           {
-            question: 'qwer',
-            answer: 'qwer'
+            question: 'Example question 2',
+            answer: 'example answer 2'
           }
         ]
       }
