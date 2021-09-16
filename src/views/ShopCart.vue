@@ -190,7 +190,7 @@ export default {
         for (let i = this.editedIndex; i < this.problemList.length; i++) { this.problemList[i].index-- }
         if (!this.problemList.length) {
           axios.delete('/api/searchApp/delProblem')
-            .catch((err) => { console.err(err) })
+          // .catch((err) => { console.err(err) })
         } else {
           this.changeApiFormat()
           axios.post('/api/searchApp/storeProblem', {
@@ -213,7 +213,7 @@ export default {
       this.dialogDelete = true
 
       axios.delete('/api/searchApp/delProblem')
-        .catch((err) => { console.err(err) })
+      // .catch((err) => { console.err(err) })
     },
     TableWave (index) {
       return this.problemList[index].exist.filter(item => {

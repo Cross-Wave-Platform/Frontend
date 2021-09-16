@@ -355,9 +355,10 @@ export default {
             survey_type: this.selectedQuestionnaireType,
             wave: this.selectedWave
           }
-        }).catch((err) => {
-          console.error(err)
         })
+        // .catch((err) => {
+        //   // console.error(err)
+        // })
         this.getSearchProblem()
       } else {
         this.$swal({
@@ -383,7 +384,7 @@ export default {
           this.lockCombo = true
           this.showWave = true
         })
-        .catch((err) => { console.err(err) })
+        // .catch((err) => { console.err(err) })
     },
 
     unlockCombination () {
@@ -405,9 +406,9 @@ export default {
           )
           this.lockCombo = false
           axios.delete('/api/searchApp/delCombo')
-            .catch((err) => { console.err(err) })
+          // .catch((err) => { console.err(err) })
           axios.delete('/api/searchApp/delProblem')
-            .catch((err) => { console.err(err) })
+          // .catch((err) => { console.err(err) })
 
           this.omitConditions = true
           this.selectedWave = []
@@ -521,7 +522,7 @@ export default {
               }
             })
           })
-          .catch((err) => { console.err(err) })
+          // .catch((err) => { console.err(err) })
       }
     })
   }
