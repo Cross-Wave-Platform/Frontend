@@ -98,16 +98,17 @@
                   </v-toolbar>
                 </template>
                 <template v-slot:item.actions="{ item }">
-                  <span v-if="item.state!=='管理員'">
-                    <!-- <v-btn text @click="editItem(item,'edit')">
+                  <span v-if="userdata.account_name!==item.account">
+                    <v-btn v-if="userdata.auth===0" text @click="editItem(item,'edit')">
                       <v-icon left>mdi-pencil</v-icon>編輯
-                    </v-btn> --> <!--超級管理員可用-->
+                    </v-btn> <!--超級管理員可用-->
                     <v-tooltip bottom>
                       <template v-slot:activator="{ on, attrs }">
                         <v-btn
                           icon
                           v-bind="attrs"
                           v-on="on"
+                          v-if="userdata.auth===0||(userdata.auth===1&&item.state=='一般會員')"
                           @click="editItem(item,'black')"
                         >
                           <v-icon>mdi-account-cancel</v-icon>
