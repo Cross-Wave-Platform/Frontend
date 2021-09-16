@@ -263,77 +263,45 @@ export default {
   watch: {
     selectedMonthOld: function () {
       if (this.selectedMonthOld.length > 1 && this.selectedQuestionnaireType.length > 1) {
-        this.$swal({
-          title: '跨問卷類型僅限同月齡組！',
-          text: '2秒後自動關閉。',
-          icon: 'warning',
-          timer: 2000
-        }).then(
-          function () {},
-          function (dismiss) {
-            if (dismiss === 'timer') {
-              console.log('I was closed by the timer')
-            }
-          }
-        )
+        this.showWarning('跨問卷類型僅限同月齡組！')
         const tempelement = this.selectedMonthOld[this.selectedMonthOld.length - 1]
         this.selectedMonthOld = []
         this.selectedMonthOld.push(tempelement)
       }
+      if (!this.omitConditions) {
+        this.omitConditions = true
+        this.waveList = []
+        this.selectedWave = []
+      }
     },
     selectedQuestionnaireType: function () {
       if (this.selectedMonthOld.length > 1 && this.selectedQuestionnaireType.length > 1) {
-        this.$swal({
-          title: '跨月齡組僅限同問卷類型!',
-          text: '2秒後自動關閉。',
-          icon: 'warning',
-          timer: 2000
-        }).then(
-          function () {},
-          function (dismiss) {
-            if (dismiss === 'timer') {
-              console.log('I was closed by the timer')
-            }
-          }
-        )
+        this.showWarning('跨月齡組僅限同問卷類型!')
         const tempelement = this.selectedQuestionnaireType[this.selectedQuestionnaireType.length - 1]
         this.selectedQuestionnaireType = []
         this.selectedQuestionnaireType.push(tempelement)
       }
+      if (!this.omitConditions) {
+        this.omitConditions = true
+        this.waveList = []
+        this.selectedWave = []
+      }
     },
     selectedWave: function () {
       if (this.selectedWave.length > 1) {
-        let change = false
-        let str = ''
-        if (this.selectedMonthOld.length > 1) { str = '跨月齡組僅限同波次!'; change = true }
-        if (this.selectedQuestionnaireType.length > 1) { str = '跨問卷類型僅限同波次!'; change = true }
-        if (change) {
-          this.$swal({
-            title: str,
-            text: '2秒後自動關閉。',
-            icon: 'warning',
-            timer: 2000
-          }).then(
-            function () {},
-            function (dismiss) {
-              if (dismiss === 'timer') {
-                console.log('I was closed by the timer')
-              }
-            }
-          )
-          const tempelement = this.selectedWave[this.selectedWave.length - 1]
-          this.selectedWave = []
-          this.selectedWave.push(tempelement)
-        }
+        if (this.selectedMonthOld.length > 1) { this.showWarning('跨月齡組僅限同波次!') }
+        if (this.selectedQuestionnaireType.length > 1) { this.showWarning('跨問卷類型僅限同波次!') }
+
+        const tempelement = this.selectedWave[this.selectedWave.length - 1]
+        this.selectedWave = []
+        this.selectedWave.push(tempelement)
       }
     },
 
     selectedCol: function () {
       if (this.selectedCol.length !== this.shopcart.length) {
-        console.log(true)
         this.unsaveProblem = true
       } else if (this.shopcart.length === 0 && this.selectedCol.length === 0) {
-        console.log(false)
         this.unsaveProblem = false
       } else {
         this.checkArray = this.selectedCol.filter(item => {
@@ -341,28 +309,41 @@ export default {
             return problem.problem_id === item.pid && this.arrayEquality(problem.survey_id, item.survey_id)
           }) !== -1
         })
-        console.log(this.checkArray.length !== this.shopcart.length)
         this.unsaveProblem = (this.checkArray.length !== this.shopcart.length)
       }
     }
   },
 
   methods: {
+    showWarning (warning) {
+      this.$swal({
+        title: warning,
+        text: '2秒後自動關閉。',
+        icon: 'warning',
+        timer: 2000
+      }).then(
+        function (dismiss) {
+          if (dismiss === 'timer') {
+            // console.log('I was closed by the timer')
+          }
+        }
+      )
+    },
+
     getWaveList () {
       if (!this.selectedMonthOld.length || !this.selectedQuestionnaireType.length) {
         this.$swal({ title: '請選擇月齡組及問卷類型', icon: 'warning' })
         return
       }
       this.omitConditions = false
-      console.log(this.selectedMonthOld, this.selectedQuestionnaireType)
       // Search Wave
       axios.get('/api/searchApp/searchWave',
         {
           params: { ageType: this.selectedMonthOld, surveyType: this.selectedQuestionnaireType }
         })
         .then((res) => {
-          console.log(res)
           this.waveList = res.data.data.wave
+          this.selectedWave = []
         })
     },
     getColList () {
@@ -463,9 +444,6 @@ export default {
         }
         this.problemsForStore.push(item)
       }
-
-      console.log(this.problemsForStore)
-
       axios.post('/api/searchApp/storeProblem', {
         problemList: this.problemsForStore
       })
