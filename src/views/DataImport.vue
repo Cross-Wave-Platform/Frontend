@@ -5,6 +5,15 @@
         style="width: 200px"
       >
         <v-icon left>
+          mdi-file-document
+        </v-icon>
+        變項對照表
+      </v-tab>
+      <v-tab
+        class="font-weight-bold"
+        style="width: 200px"
+      >
+        <v-icon left>
           mdi-file-delimited
         </v-icon>
         匯入SAV檔
@@ -19,17 +28,139 @@
         匯入CSV檔
       </v-tab> -->
       <!-- <v-divider></v-divider> -->
-      <v-tab
-        class="font-weight-bold"
-        style="width: 200px"
-      >
-        <v-icon left>
-          mdi-file-document
-        </v-icon>
-        變項對照表
-      </v-tab>
 
       <!-- <v-divider></v-divider> -->
+      <v-tab-item
+        transition="fade-transition" reverse-transition="fade-transition"
+      >
+        <v-card
+          tile
+          elevation="0"
+          class="pb-2"
+          color="rgba(255, 255, 255, 0.0)"
+        >
+          <v-card-title primary-title
+            class="font-weight-bold mb-2"
+          >
+            匯入變項對照表
+          </v-card-title>
+          <v-file-input
+            v-model="surveyFile"
+            label="File input"
+            class="ml-8"
+            counter
+            show-size
+            truncate-length="30"
+          >
+          <template v-slot:selection="{ text }">
+            <v-chip
+              small
+              label
+              color="primary"
+            >
+              {{ text }}
+            </v-chip>
+          </template>
+          </v-file-input>
+          <v-card-actions>
+            <v-dialog
+              v-model="surveyDialog"
+              persistent
+              max-width="350"
+            >
+              <template v-slot:activator="{ on, attrs }">
+                <v-btn
+                  color="success"
+                  class="ml-8"
+                  v-bind="attrs"
+                  v-on="on"
+                  @click="uploadSurveyProblem"
+                >
+                  add
+                </v-btn>
+              </template>
+              <!-- <v-container fluid> -->
+                <v-card class="pb-5">
+                  <!-- <v-card-title class="text-h5 font-weight-bold">
+                    上傳中，請勿離開這個頁面
+                  </v-card-title> -->
+                  <v-container
+                    fluid
+                  >
+                    <v-row justify="center">
+                      <h2 class="font-weight-bold mt-5 mb-7">
+                        上傳中，請勿離開這個頁面
+                      </h2>
+                    </v-row>
+                    <v-row justify="center" class="my-5">
+                      <v-progress-circular
+                        indeterminate
+                        color="secondary"
+                        :size="48"
+                      ></v-progress-circular>
+                    </v-row>
+                  </v-container>
+                </v-card>
+            </v-dialog>
+            <!-- <v-btn
+              color="success"
+              class="ml-8"
+            >
+              add
+            </v-btn> -->
+            <v-btn
+              color="error"
+              @click="surveyFile=null"
+              class="ml-2"
+            >
+              clear
+            </v-btn>
+            <!-- <span
+              v-if="savStatus!=null"
+            >
+              <span
+                v-for="(item, index) in varStatus"
+                :key="index"
+              >
+                <v-icon
+                  color="secondary"
+                  class="ml-4"
+                  v-if="item=='done'"
+                >
+                  mdi-checkbox-marked-circle
+                </v-icon>
+                <v-progress-circular
+                  indeterminate
+                  color="secondary"
+                  :size="21"
+                  class="ml-4"
+                  v-if="item=='loading'"
+                ></v-progress-circular>
+              </span>
+            </span> -->
+          </v-card-actions>
+          <v-alert
+            :value="alertPlace == 'survey'"
+            :type="alertType"
+            dense
+            outlined
+            class="mt-3 ml-4"
+          >
+            {{alertMsg}}
+          </v-alert>
+          <!-- <v-alert
+            border="left"
+            colored-border
+            dense
+            elevation="2"
+            dismissible
+            class="mt-4"
+            type="error"
+          >
+            123
+          </v-alert> -->
+        </v-card>
+      </v-tab-item>
       <v-tab-item
         transparent-body
         transition="fade-transition" reverse-transition="fade-transition"
@@ -199,137 +330,6 @@
           >
             {{alertMsg}}
           </v-alert>
-        </v-card>
-      </v-tab-item>
-      <v-tab-item
-        transition="fade-transition" reverse-transition="fade-transition"
-      >
-        <v-card
-          tile
-          elevation="0"
-          class="pb-2"
-          color="rgba(255, 255, 255, 0.0)"
-        >
-          <v-card-title primary-title
-            class="font-weight-bold mb-2"
-          >
-            匯入變項對照表
-          </v-card-title>
-          <v-file-input
-            v-model="surveyFile"
-            label="File input"
-            class="ml-8"
-            counter
-            show-size
-            truncate-length="30"
-          >
-          <template v-slot:selection="{ text }">
-            <v-chip
-              small
-              label
-              color="primary"
-            >
-              {{ text }}
-            </v-chip>
-          </template>
-          </v-file-input>
-          <v-card-actions>
-            <v-dialog
-              v-model="surveyDialog"
-              persistent
-              max-width="350"
-            >
-              <template v-slot:activator="{ on, attrs }">
-                <v-btn
-                  color="success"
-                  class="ml-8"
-                  v-bind="attrs"
-                  v-on="on"
-                  @click="uploadSurveyProblem"
-                >
-                  add
-                </v-btn>
-              </template>
-              <!-- <v-container fluid> -->
-                <v-card class="pb-5">
-                  <!-- <v-card-title class="text-h5 font-weight-bold">
-                    上傳中，請勿離開這個頁面
-                  </v-card-title> -->
-                  <v-container
-                    fluid
-                  >
-                    <v-row justify="center">
-                      <h2 class="font-weight-bold mt-5 mb-7">
-                        上傳中，請勿離開這個頁面
-                      </h2>
-                    </v-row>
-                    <v-row justify="center" class="my-5">
-                      <v-progress-circular
-                        indeterminate
-                        color="secondary"
-                        :size="48"
-                      ></v-progress-circular>
-                    </v-row>
-                  </v-container>
-                </v-card>
-            </v-dialog>
-            <!-- <v-btn
-              color="success"
-              class="ml-8"
-            >
-              add
-            </v-btn> -->
-            <v-btn
-              color="error"
-              @click="surveyFile=null"
-              class="ml-2"
-            >
-              clear
-            </v-btn>
-            <!-- <span
-              v-if="savStatus!=null"
-            >
-              <span
-                v-for="(item, index) in varStatus"
-                :key="index"
-              >
-                <v-icon
-                  color="secondary"
-                  class="ml-4"
-                  v-if="item=='done'"
-                >
-                  mdi-checkbox-marked-circle
-                </v-icon>
-                <v-progress-circular
-                  indeterminate
-                  color="secondary"
-                  :size="21"
-                  class="ml-4"
-                  v-if="item=='loading'"
-                ></v-progress-circular>
-              </span>
-            </span> -->
-          </v-card-actions>
-          <v-alert
-            :value="alertPlace == 'survey'"
-            :type="alertType"
-            dense
-            outlined
-            class="mt-3 ml-4"
-          >
-            {{alertMsg}}
-          </v-alert>
-          <!-- <v-alert
-            border="left"
-            colored-border
-            dense
-            elevation="2"
-            dismissible
-            class="mt-4"
-            type="error"
-          >
-            123
-          </v-alert> -->
         </v-card>
       </v-tab-item>
     </v-tabs>
