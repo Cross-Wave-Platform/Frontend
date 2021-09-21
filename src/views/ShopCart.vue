@@ -77,25 +77,6 @@
                 <template slot='selection' slot-scope='{ item }'>
                   <v-row>
                     <v-col justify="start">{{ item.method }}</v-col>
-                    <v-col justify="end" md="1">
-                      <v-tooltip left>
-                        <template v-slot:activator="{ on, attrs }">
-                          <v-icon
-                            color="primary"
-                            dark
-                            v-bind="attrs"
-                            v-on="on"
-                            style="float:right;"
-                          >
-                            mdi-help-circle-outline
-                          </v-icon>
-                        </template>
-                        <span>
-                          <v-icon color="white" left large>{{ item.icon }}</v-icon>
-                          {{ item.text }}
-                        </span>
-                      </v-tooltip>
-                    </v-col>
                   </v-row>
                 </template>
                 <template slot='item' slot-scope='{ item }'>
