@@ -70,11 +70,57 @@
             <v-list-item>
               <v-select
                 :items="OptionJoin"
-                item-text="method"
                 item-value="value"
                 v-model="exportContent.mergeMethod"
                 label="合併方式"
-              ></v-select>
+              >
+                <template slot='selection' slot-scope='{ item }'>
+                  <v-row>
+                    <v-col justify="start">{{ item.method }}</v-col>
+                    <v-col justify="end" md="1">
+                      <v-tooltip left>
+                        <template v-slot:activator="{ on, attrs }">
+                          <v-icon
+                            color="primary"
+                            dark
+                            v-bind="attrs"
+                            v-on="on"
+                            style="float:right;"
+                          >
+                            mdi-help-circle-outline
+                          </v-icon>
+                        </template>
+                        <span>
+                          <v-icon color="white" left large>{{ item.icon }}</v-icon>
+                          {{ item.text }}
+                        </span>
+                      </v-tooltip>
+                    </v-col>
+                  </v-row>
+                </template>
+                <template slot='item' slot-scope='{ item }'>
+                  <v-row>
+                    <v-col justify="start">{{ item.method }}</v-col>
+                    <v-col justify="end" md="1">
+                      <v-tooltip left>
+                        <template v-slot:activator="{ on, attrs }">
+                          <v-icon
+                            v-bind="attrs"
+                            v-on="on"
+                            style="float:right;"
+                          >
+                            mdi-help-circle-outline
+                          </v-icon>
+                        </template>
+                        <span>
+                          <v-icon color="white" left large>{{ item.icon }}</v-icon>
+                          {{ item.text }}
+                        </span>
+                      </v-tooltip>
+                    </v-col>
+                  </v-row>
+                </template>
+              </v-select>
             </v-list-item>
             <v-list-item>
               <v-radio-group
@@ -133,8 +179,8 @@ export default {
       deleteAll: false,
       header: [
         { text: '', value: 'delAction', sortable: false },
-        { text: '變項代碼', align: 'center', value: 'problem_id' },
-        { text: '變項敘述', align: 'center', value: 'topic' },
+        { text: '問題編碼', align: 'center', value: 'problem_id' },
+        { text: '問題敘述', align: 'center', value: 'topic' },
         // { text: '回答選項', align: 'center', value: 'answerTag' },
         { text: '構面', align: 'center', value: 'class' },
         { text: '存有類型', value: 'typeAction' },
@@ -151,15 +197,21 @@ export default {
       OptionJoin: [
         {
           method: 'Inner Join',
-          value: 'inner'
+          value: 'inner',
+          icon: 'mdi-set-center',
+          text: '交集，資料為"橫著併"'
         },
         {
           method: 'Outer Join',
-          value: 'outer'
+          value: 'outer',
+          icon: 'mdi-set-all',
+          text: '聯集，資料為"橫著併"，若有闕漏者補空白'
         },
         {
           method: 'Union',
-          value: 'union'
+          value: 'union',
+          icon: 'mdi-set-all',
+          text: '聯集，資料為"直著併"，闕漏者不補空白'
         }
       ],
       OptionExport: ['CSV', 'SAV'],
@@ -232,14 +284,13 @@ export default {
           })
           // Facet
           for (let i = 0; i < this.problemList.length; i++) {
-            for (let i = 0; i < this.searchResult.length; i++) {
-              const keyword = this.searchResult[i].class
-              if (!this.facetList.length || this.facetList.indexOf(keyword) === -1) {
-                this.facetList.push(keyword)
-              }
+            for (let j = 0; j < this.problemList[i].exist.length; j++) {
+              if (this.problemList[i].exist[j].type === 'parent') this.problemList[i].exist[j].type = '家長'
+              else if (this.problemList[i].exist[j].type === 'relative') this.problemList[i].exist[j].type = '親友'
+              else if (this.problemList[i].exist[j].type === 'teacher') this.problemList[i].exist[j].type = '教保/教師'
             }
             this.problemList[i].index = i
-            this.tableType[i] = this.searchResult[i].exist[0].type
+            this.tableType[i] = this.problemList[i].exist[0].type
           }
         })
     },

@@ -104,7 +104,7 @@
                         <v-text-field
                             v-model="searchKeyword"
                             prepend-inner-icon="mdi-magnify"
-                            label="請輸入變項編碼或變項敘述"
+                            label="請輸入問題編碼或問題敘述"
                             single-line
                             hide-details
                         ></v-text-field>
@@ -231,8 +231,8 @@ export default {
       tableType: ['none'],
 
       header: [
-        { text: '變項代碼', align: 'center', value: 'problem_id' },
-        { text: '變項敘述', align: 'center', value: 'topic' },
+        { text: '問題編碼', align: 'center', value: 'problem_id' },
+        { text: '問題敘述', align: 'center', value: 'topic' },
         // { text: '回答選項', align: 'center', value: 'answerTag' },
         { text: '構面', align: 'center', value: 'class' },
         { text: '存有類型', value: 'typeAction' },
@@ -380,18 +380,28 @@ export default {
       axios.get('/api/searchApp/searchProblem')
         .then((res) => {
           this.searchResult = res.data.data.info
-          for (let i = 0; i < this.searchResult.length; i++) {
-            const keyword = this.searchResult[i].class
-            if (!this.facetList.length || this.facetList.indexOf(keyword) === -1) {
-              this.facetList.push(keyword)
-            }
-            this.tableType[i] = this.searchResult[i].exist[0].type
-            this.searchResult[i].index = i
-          }
-          this.lockCombo = true
-          this.showWave = true
+          this.setSearchProblem()
         })
         // .catch((err) => { console.err(err) })
+    },
+
+    setSearchProblem () {
+      for (let i = 0; i < this.searchResult.length; i++) {
+        const keyword = this.searchResult[i].class
+        if (!this.facetList.length || this.facetList.indexOf(keyword) === -1) {
+          this.facetList.push(keyword)
+        }
+        for (let j = 0; j < this.searchResult[i].exist.length; j++) {
+          if (this.searchResult[i].exist[j].type === 'parent') this.searchResult[i].exist[j].type = '家長'
+          else if (this.searchResult[i].exist[j].type === 'relative') this.searchResult[i].exist[j].type = '親友'
+          else if (this.searchResult[i].exist[j].type === 'teacher') this.searchResult[i].exist[j].type = '教保/教師'
+        }
+
+        this.tableType[i] = this.searchResult[i].exist[0].type
+        this.searchResult[i].index = i
+      }
+      this.lockCombo = true
+      this.showWave = true
     },
 
     unlockCombination () {
@@ -504,20 +514,10 @@ export default {
 
       if (this.selectedMonthOld.length || this.selectedQuestionnaireType.length || this.selectedWave.length) {
         // Get Search Problem
-        this.getSearchProblem()
         axios.get('/api/searchApp/searchProblem')
           .then((res) => {
             this.searchResult = res.data.data.info
-            for (let i = 0; i < this.searchResult.length; i++) {
-              const keyword = this.searchResult[i].class
-              if (!this.facetList.length || this.facetList.indexOf(keyword) === -1) {
-                this.facetList.push(keyword)
-              }
-              this.tableType[i] = this.searchResult[i].exist[0].type
-              this.searchResult[i].index = i
-            }
-            this.lockCombo = true
-            this.showWave = true
+            this.setSearchProblem()
 
             // Get Problem
             axios.get('/api/searchApp/getProblem').then((res) => {
