@@ -86,7 +86,7 @@
 
                 <v-card flat style="background-color:rgba(255, 255, 255, 0.0);">
                     <template id="facetFilter" v-if="facetList.length">
-                      <v-card-title class="font-weight-bold">構面篩選</v-card-title>
+                      <v-card-title class="font-weight-bold">主構面篩選</v-card-title>
                       <v-chip-group
                           v-model="selectedFacet"
                           column
@@ -104,7 +104,7 @@
                         <v-text-field
                             v-model="searchKeyword"
                             prepend-inner-icon="mdi-magnify"
-                            label="請輸入問題編碼或問題敘述"
+                            label="請輸入問題編碼、問題敘述或次構面"
                             single-line
                             hide-details
                         ></v-text-field>
@@ -142,8 +142,9 @@
                         </v-btn> -->
 
                     </v-card-title>
-                    <v-card-text>顯示{{facetMenu.length}}筆</v-card-text>
+                    <v-card-text>顯示{{numberOfRows}}筆</v-card-text>
                     <v-data-table
+                        @pagination="CalculateNumberOfRows"
                         v-model="selectedCol"
                         :headers="header"
                         :search="searchKeyword"
@@ -227,6 +228,7 @@ export default {
       shopcart: [],
       searchKeyword: '',
       showWave: false,
+      numberOfRows: [],
 
       tableType: ['none'],
 
@@ -234,7 +236,8 @@ export default {
         { text: '問題編碼', align: 'center', value: 'problem_id' },
         { text: '問題敘述', align: 'center', value: 'topic' },
         // { text: '回答選項', align: 'center', value: 'answerTag' },
-        { text: '構面', align: 'center', value: 'class' },
+        { text: '主構面', align: 'center', value: 'class', filterable: false },
+        { text: '次構面', align: 'center', value: 'subclass' },
         { text: '存有類型', value: 'typeAction' },
         { text: '存有波次', value: 'waveAction', sortable: false }
       ],
@@ -322,6 +325,10 @@ export default {
   },
 
   methods: {
+    CalculateNumberOfRows (pagination) {
+      this.numberOfRows = pagination.itemsLength
+    },
+
     showWarning (warning) {
       this.$swal({
         title: warning,
