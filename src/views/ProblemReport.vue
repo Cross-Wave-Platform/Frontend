@@ -225,6 +225,8 @@ export default {
             this.alertType = 'success'
             this.alertMsg = res.data.message
             this.savDialog = false
+
+            this.$refs.reportForm.reset()
           })
           .catch((err) => {
             // console.log(err)
