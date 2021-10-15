@@ -440,6 +440,8 @@ export default {
           this.waveList = []
           this.searchResult = []
           this.facetList = []
+          this.selectedCol = []
+          this.unsaveProblem = false
         }
       })
     },
