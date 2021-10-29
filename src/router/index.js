@@ -107,9 +107,7 @@ const routes = [
     name: 'Search',
     component: () => import(/* webpackChunkName: "about" */ '../views/Search.vue'),
     meta: {
-      title: '資料查詢',
-      requiresAuth: true,
-      authRequirement: 2
+      title: '資料查詢'
     }
   },
   {

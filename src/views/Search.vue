@@ -109,7 +109,7 @@
                             hide-details
                         ></v-text-field>
 
-                        <v-tooltip bottom>
+                        <!-- <v-tooltip bottom>
                           <template v-slot:activator="{on, attrs}">
                             <v-btn
                               text
@@ -121,25 +121,12 @@
                             </v-btn>
                           </template>
                           <span>加入我的資料</span>
-                        </v-tooltip>
+                        </v-tooltip> -->
 
-                        <!-- <v-tooltip bottom v-model="addBtnTTip">
-                          加入我的資料
-                        </v-tooltip>
-
-                        <v-btn
-                          icon
-                          @click="StoreProblem"
-                          @mouseover="addBtnTTip = true"
-                          @mouseleave="addBtnTTip = false"
-                        >
-                          <v-icon>mdi-plus-thick</v-icon>
-                        </v-btn> -->
-
-                        <!-- <v-btn rounded @click="StoreProblem">
+                        <v-btn rounded depressed outlined color="grey darken-3" @click="StoreProblem">
                           <v-icon>mdi-plus-thick</v-icon>
                           加入我的資料
-                        </v-btn> -->
+                        </v-btn>
 
                     </v-card-title>
                     <v-card-text>顯示{{numberOfRows}}筆</v-card-text>
