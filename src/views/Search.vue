@@ -124,7 +124,7 @@
                         </v-tooltip> -->
 
                         <v-btn rounded depressed outlined color="grey darken-3" @click="StoreProblem">
-                          <v-icon>mdi-plus-thick</v-icon>
+                          <v-icon dense>mdi-plus-thick</v-icon>
                           加入我的資料
                         </v-btn>
 
