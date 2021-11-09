@@ -159,6 +159,7 @@ export default {
       select: false,
       deleteAll: false,
       header: [
+        { text: '', value: 'delAction', sortable: false },
         { text: '問題編碼', align: 'center', value: 'problem_id' },
         { text: '問題敘述', align: 'center', value: 'topic' },
         // { text: '回答選項', align: 'center', value: 'answerTag' },
