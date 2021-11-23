@@ -9,14 +9,14 @@
       </v-icon>
       常見問題
     </v-tab>
-    <v-tab
+    <!-- <v-tab
       class="font-weight-bold"
     >
       <v-icon left>
         mdi-account-question
       </v-icon>
       快速回報
-    </v-tab>
+    </v-tab> -->
     <v-tab-item
       transparent
       transition="fade-transition" reverse-transition="fade-transition"
@@ -78,7 +78,7 @@
 
       </v-card> -->
     </v-tab-item>
-    <v-tab-item
+    <!-- <v-tab-item
       transition="fade-transition" reverse-transition="fade-transition"
     >
       <v-card
@@ -147,7 +147,7 @@
           {{alertMsg}}
         </v-alert>
       </v-card>
-    </v-tab-item>
+    </v-tab-item> -->
   </v-tabs>
 </template>
 
@@ -189,6 +189,24 @@ export default {
           {
             question: 'Example question 1',
             answer: 'example answer 1'
+          },
+          {
+            question: 'Example question 2',
+            answer: 'example answer 2'
+          }
+        ]
+      },
+      {
+        category: '伺服器問題',
+        problem:
+        [
+          {
+            question: 'Example question 1',
+            answer: 'example answer 1'
+          },
+          {
+            question: 'Example question 2',
+            answer: 'example answer 2'
           },
           {
             question: 'Example question 2',
