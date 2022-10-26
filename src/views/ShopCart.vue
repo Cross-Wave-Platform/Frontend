@@ -5,11 +5,13 @@
           <v-card flat style="background-color:rgba(255, 255, 255, 0.0);">
               <v-card-title class="font-weight-bold">我的資料</v-card-title>
               <v-data-table
+                  v-model="selectedCol"
                   :headers="header"
                   :items="problemList"
                   :items-per-page="5"
                   item-key="pid"
                   sort-by="pid"
+                  :single-select="singleSelect"
                   style="background-color:rgba(255, 255, 255, 0.0);"
               >
                   <template v-slot:header.delAction>
@@ -54,6 +56,32 @@
                           <v-spacer></v-spacer>
                           <v-btn color="blue darken-1" text @click="closeDelete">取消</v-btn>
                           <v-btn color="blue darken-1" text @click="deleteItemConfirm">確認</v-btn>
+                          <v-spacer></v-spacer>
+                        </v-card-actions>
+                      </v-row>
+                    </v-container>
+                  </v-card>
+              </v-dialog>
+              <v-dialog v-model="waveChoose" max-width="500px" scrollable>
+                  <v-card class="elevation-8">
+                      <v-container fluid>
+                      <v-row justify="center">
+                        <v-card-title class="text-h5">請選擇波次</v-card-title>
+                      </v-row>
+                      <v-divider></v-divider>
+                      <v-card-text>
+                        <v-radio-group v-model="waveRadio" column>
+                          <v-radio
+
+                          ></v-radio>
+                        </v-radio-group>
+                      </v-card-text>
+                      <v-divider></v-divider>
+                      <v-row justify="center" class="mt-5 mb-2">
+                        <v-card-actions>
+                          <v-spacer></v-spacer>
+                          <v-btn color="blue darken-1" text @click="closeWaveChoose">取消</v-btn>
+                          <v-btn color="blue darken-1" text @click="waveConfirm">確認</v-btn>
                           <v-spacer></v-spacer>
                         </v-card-actions>
                       </v-row>
@@ -155,6 +183,8 @@ export default {
   name: 'search',
   data () {
     return {
+      selectedCol: '',
+      waveRadio: '',
       shopcart: [],
       select: false,
       deleteAll: false,
@@ -170,6 +200,8 @@ export default {
       ],
       tableType: [],
       dialogDelete: false,
+      waveChoose: false,
+      singleSelect: false,
       editedIndex: -1,
       editedItem: {},
       exportContent: {
@@ -194,6 +226,12 @@ export default {
           value: 'union',
           icon: 'mdi-set-all',
           text: '聯集，資料為"直著併"，闕漏者不補空白'
+        },
+        {
+          method: 'Left Join',
+          value: 'left',
+          icon: 'mdi-set-all',
+          text: '資料向選定對齊，其餘省略'
         }
       ],
       OptionExport: ['CSV', 'SAV'],
@@ -208,6 +246,16 @@ export default {
   watch: {
     dialogDelete (val) {
       val || this.closeDelete()
+    },
+    'exportContent.mergeMethod': function () {
+      if (this.exportContent.mergeMethod === 'left') {
+        this.singleSelect = true
+      } else {
+        this.singleSelect = false
+      }
+    },
+    selectedCol: function () {
+      this.waveChoose = true
     }
   },
   methods: {
@@ -275,6 +323,12 @@ export default {
             this.tableType[i] = this.problemList[i].exist[0].type
           }
         })
+    },
+    closeWaveChoose () {
+      this.waveChoose = false
+    },
+    waveConfirm () {
+      this.closeWaveChoose()
     },
 
     exportApi () {

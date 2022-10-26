@@ -138,7 +138,6 @@
                         :items="facetMenu"
                         :items-per-page="5"
                         item-key="pid"
-                        show-select
                         style="background-color:rgba(255, 255, 255, 0.4);"
                     >
                         <template v-slot:item.typeAction="{ item }">
