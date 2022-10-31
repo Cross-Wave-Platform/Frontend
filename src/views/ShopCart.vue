@@ -68,10 +68,11 @@
                         <v-card-title class="text-h5">請選擇波次</v-card-title>
                       </v-row>
                       <v-divider></v-divider>
-                        <v-radio-group v-model="waveSelect" column>
-                          <v-radio v-model="waveList">
-                          </v-radio>
-                        </v-radio-group>
+                        <v-select
+                          v-model="waveSelect"
+                          :items="waveList"
+                          >
+                        </v-select>
                       <v-divider></v-divider>
                       <v-row justify="center" class="mt-5 mb-2">
                         <v-card-actions>
@@ -298,7 +299,7 @@ export default {
       axios.get('/api/searchApp/searchProblem')
         .then((res) => {
           this.searchResult = res.data.data.info
-
+          this.waveList = res.data.data.info.wave
           this.problemList = this.searchResult.filter(item => {
             return this.shopcart.findIndex(problem => problem.problem_id === item.pid) !== -1
           })
@@ -320,6 +321,11 @@ export default {
       this.waveDialog = false
     },
     waveConfirm () {
+      if (this.waveSelect === '') {
+        this.$swal({ title: '請選擇波次', icon: 'warning' })
+        this.exportContent.mergeMethod = ''
+        return
+      }
       this.waveDialog = false
     },
 
