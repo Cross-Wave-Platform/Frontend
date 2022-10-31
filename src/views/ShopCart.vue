@@ -62,7 +62,7 @@
                     </v-container>
                   </v-card>
               </v-dialog>
-              <v-dialog v-model="waveChoose" max-width="500px" scrollable>
+              <v-dialog v-model="waveDialog" max-width="500px" scrollable>
                   <v-card class="elevation-8">
                       <v-container fluid>
                       <v-row justify="center">
@@ -70,9 +70,8 @@
                       </v-row>
                       <v-divider></v-divider>
                       <v-card-text>
-                        <v-radio-group v-model="waveRadio" column>
+                        <v-radio-group v-model="waveSelect" column>
                           <v-radio
-
                           ></v-radio>
                         </v-radio-group>
                       </v-card-text>
@@ -80,7 +79,7 @@
                       <v-row justify="center" class="mt-5 mb-2">
                         <v-card-actions>
                           <v-spacer></v-spacer>
-                          <v-btn color="blue darken-1" text @click="closeWaveChoose">取消</v-btn>
+                          <v-btn color="blue darken-1" text @click="closeWaveDialog">取消</v-btn>
                           <v-btn color="blue darken-1" text @click="waveConfirm">確認</v-btn>
                           <v-spacer></v-spacer>
                         </v-card-actions>
@@ -184,7 +183,8 @@ export default {
   data () {
     return {
       selectedCol: '',
-      waveRadio: '',
+      waveSelect: '',
+      waveRadio: [],
       shopcart: [],
       select: false,
       deleteAll: false,
@@ -200,7 +200,7 @@ export default {
       ],
       tableType: [],
       dialogDelete: false,
-      waveChoose: false,
+      waveDialog: false,
       singleSelect: false,
       editedIndex: -1,
       editedItem: {},
@@ -255,7 +255,7 @@ export default {
       }
     },
     selectedCol: function () {
-      this.waveChoose = true
+      this.waveDialog = true
     }
   },
   methods: {
@@ -324,11 +324,12 @@ export default {
           }
         })
     },
-    closeWaveChoose () {
-      this.waveChoose = false
+    closeWaveDialog () {
+      this.waveSelect = ''
+      this.waveDialog = false
     },
     waveConfirm () {
-      this.closeWaveChoose()
+      this.waveDialog = false
     },
 
     exportApi () {
@@ -365,6 +366,10 @@ export default {
       }
       if (this.exportContent.mergeMethod === '' || this.exportContent.fileFormat === '') {
         this.$swal({ title: '請選擇合併方式及匯出檔案格式', icon: 'warning' })
+        return
+      }
+      if (this.exportContent.mergeMethod === 'left' && this.waveSelect === '') {
+        this.$swal({ title: '請選擇合併主要波次', icon: 'warning' })
         return
       }
       this.exportDialog = true
