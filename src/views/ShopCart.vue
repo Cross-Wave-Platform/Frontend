@@ -5,13 +5,11 @@
           <v-card flat style="background-color:rgba(255, 255, 255, 0.0);">
               <v-card-title class="font-weight-bold">我的資料</v-card-title>
               <v-data-table
-                  v-model="selectedCol"
                   :headers="header"
                   :items="problemList"
                   :items-per-page="5"
                   item-key="pid"
                   sort-by="pid"
-                  :single-select="singleSelect"
                   style="background-color:rgba(255, 255, 255, 0.0);"
               >
                   <template v-slot:header.delAction>
@@ -62,19 +60,18 @@
                     </v-container>
                   </v-card>
               </v-dialog>
-              <v-dialog v-model="waveDialog" max-width="500px" scrollable>
+
+              <v-dialog v-model="waveDialog" max-width="500px" scrollable persistent>
                   <v-card class="elevation-8">
                       <v-container fluid>
                       <v-row justify="center">
                         <v-card-title class="text-h5">請選擇波次</v-card-title>
                       </v-row>
                       <v-divider></v-divider>
-                      <v-card-text>
                         <v-radio-group v-model="waveSelect" column>
-                          <v-radio
-                          ></v-radio>
+                          <v-radio v-model="waveList">
+                          </v-radio>
                         </v-radio-group>
-                      </v-card-text>
                       <v-divider></v-divider>
                       <v-row justify="center" class="mt-5 mb-2">
                         <v-card-actions>
@@ -182,9 +179,7 @@ export default {
   name: 'search',
   data () {
     return {
-      selectedCol: '',
       waveSelect: '',
-      waveRadio: [],
       shopcart: [],
       select: false,
       deleteAll: false,
@@ -199,9 +194,9 @@ export default {
         { text: '存有波次', value: 'waveAction', sortable: false }
       ],
       tableType: [],
+      waveList: [],
       dialogDelete: false,
       waveDialog: false,
-      singleSelect: false,
       editedIndex: -1,
       editedItem: {},
       exportContent: {
@@ -249,13 +244,8 @@ export default {
     },
     'exportContent.mergeMethod': function () {
       if (this.exportContent.mergeMethod === 'left') {
-        this.singleSelect = true
-      } else {
-        this.singleSelect = false
+        this.waveDialog = true
       }
-    },
-    selectedCol: function () {
-      this.waveDialog = true
     }
   },
   methods: {
@@ -326,6 +316,7 @@ export default {
     },
     closeWaveDialog () {
       this.waveSelect = ''
+      this.exportContent.mergeMethod = ''
       this.waveDialog = false
     },
     waveConfirm () {
