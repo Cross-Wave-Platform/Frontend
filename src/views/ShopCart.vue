@@ -299,10 +299,13 @@ export default {
       axios.get('/api/searchApp/searchProblem')
         .then((res) => {
           this.searchResult = res.data.data.info
-          this.waveList = res.data.data.info.wave
           this.problemList = this.searchResult.filter(item => {
             return this.shopcart.findIndex(problem => problem.problem_id === item.pid) !== -1
           })
+          this.waveList = this.problemList[0].exist[0].young
+          if (this.waveList) {
+            this.waveList = this.problemList[0].exist[0].old
+          }
           // Facet
           for (let i = 0; i < this.problemList.length; i++) {
             for (let j = 0; j < this.problemList[i].exist.length; j++) {
