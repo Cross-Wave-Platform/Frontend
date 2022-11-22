@@ -303,7 +303,7 @@ export default {
             return this.shopcart.findIndex(problem => problem.problem_id === item.pid) !== -1
           })
           this.waveList = this.problemList[0].exist[0].young
-          if (this.waveList) {
+          if (this.waveList === '') {
             this.waveList = this.problemList[0].exist[0].old
           }
           // Facet
@@ -339,7 +339,8 @@ export default {
         responseType: 'blob',
         params: {
           mergeMethod: this.exportContent.mergeMethod,
-          fileFormat: this.exportContent.fileFormat.toLowerCase()
+          fileFormat: this.exportContent.fileFormat.toLowerCase(),
+          wave: this.waveSelect
         }
       }).then((res) => {
         const fileURL = window.URL.createObjectURL(new Blob([res.data]))
