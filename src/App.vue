@@ -410,12 +410,18 @@ export default {
         name: '問題回報',
         path: '/ProblemReport',
         auth: 2
-      }
+      },
       // {
       //   index: 7,
       //   name: '聯繫我們',
       //   path: '/ContactUs'
       // }
+      {
+        index: 8,
+        name: '權限申請',
+        path: '/permission',
+        auth: 2
+      }
     ]
   }),
   // beforeMount () {

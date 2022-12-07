@@ -113,6 +113,16 @@ const routes = [
     }
   },
   {
+    path: '/permission',
+    name: 'Permission',
+    component: () => import('@/views/Permission.vue'),
+    meta: {
+      title: '權限申請',
+      requiresAuth: true,
+      authRequirement: 2
+    }
+  },
+  {
     path: '*',
     redirect: '/'
   }
