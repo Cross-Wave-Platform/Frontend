@@ -188,15 +188,7 @@
                           <v-text-field
                             v-model="username"
                             :rules="usernameRules"
-                            label="Username"
-                            outlined
-                            required
-                            dense
-                          ></v-text-field>
-                          <v-text-field
-                            v-model="email"
-                            :rules="emailRules"
-                            label="E-mail address"
+                            label="用戶名稱"
                             outlined
                             required
                             dense
@@ -204,12 +196,68 @@
                           <v-text-field
                             v-model="password"
                             :rules="passwordRules"
-                            label="Password"
+                            label="密碼"
                             :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
                             :type="showPassword ? 'text' : 'password'"
                             @click:append="showPassword = !showPassword"
                             outlined
                             required
+                            dense
+                          ></v-text-field>
+                          <v-text-field
+                            v-model="name"
+                            :rules="nameRules"
+                            label="使用者本名"
+                            outlined
+                            required
+                            dense
+                          ></v-text-field>
+                          <v-text-field
+                            v-model="identity"
+                            :rules="identityRules"
+                            label="身分證字號"
+                            outlined
+                            required
+                            dense
+                          ></v-text-field>
+                          <v-text-field
+                            v-model="email"
+                            :rules="emailRules"
+                            label="信箱"
+                            outlined
+                            required
+                            dense
+                          ></v-text-field>
+                          <v-text-field
+                            v-model="phonenumber"
+                            :rules="phonenumberRules"
+                            label="電話"
+                            required
+                            outlined
+                            dense
+                          ></v-text-field>
+                          <v-text-field
+                            v-model="department"
+                            :rules="departmentRules"
+                            label="服務單位"
+                            outlined
+                            dense
+                          ></v-text-field>
+                          <v-select
+                            v-model="status"
+                            :items="statuses"
+                            item-text="id"
+                            item-value="value"
+                            label="與KIT計畫的關係"
+                            outlined
+                            dense
+                          ></v-select>
+                          <v-text-field
+                            :disabled="!others"
+                            v-model="otherStatus"
+                            :rules="otherStatusRules"
+                            label="與KIT計畫的關係"
+                            outlined
                             dense
                           ></v-text-field>
                           <v-checkbox
@@ -346,11 +394,18 @@ export default {
     showPassword: false,
     loginValid: true,
     registerValid: true,
+    others: false,
 
     username: null,
+    name: null,
     account: null,
     email: null,
     password: null,
+    department: null,
+    identity: null,
+    phonenumber: null,
+    status: null,
+    otherStatus: null,
 
     alertPlace: '',
     alertType: null,
@@ -364,6 +419,13 @@ export default {
       v => !!v || 'Username is required',
       v => (v && v.length < 15) || 'Username must be less than 15 characters'
     ],
+    passwordRules: [
+      v => !!v || 'Password is required'
+      // v => (v && v.length >= 8) || 'Password must be longer than 8 characters'
+    ],
+    nameRules: [
+      v => !!v || 'Name is required'
+    ],
     accountRules: [
       v => !!v || 'Account is required'
     ],
@@ -371,9 +433,23 @@ export default {
       v => !!v || 'E-mail is required',
       v => /.+@.+\..+/.test(v) || 'E-mail must be valid'
     ],
-    passwordRules: [
-      v => !!v || 'Password is required'
-      // v => (v && v.length >= 8) || 'Password must be longer than 8 characters'
+    identityRules: [
+      v => !!v || 'IdentityRules is required'
+    ],
+    phonenumberRules: [
+      v => !!v || 'Phonenumber is required'
+    ],
+    departmentRules: [
+      v => !!v || 'Department is required'
+    ],
+    statuses: [
+      { id: '計畫主持人', value: '1' },
+      { id: '共同主持人', value: '2' },
+      { id: '協同研究人員', value: '3' },
+      { id: '駐點老師', value: '4' },
+      { id: '研究助理', value: '5' },
+      { id: '團隊老師指導學生', value: '6' },
+      { id: '其他', value: '7' }
     ],
     allTabItems: [
       {
@@ -427,6 +503,15 @@ export default {
   // beforeMount () {
   //   this.loadInfo()
   // },
+  watch: {
+    status () {
+      if (this.status === '7') {
+        this.others = true
+      } else {
+        this.others = false
+      }
+    }
+  },
   computed: {
     tabItems: function () {
       return this.allTabItems.filter(word => word.auth >= this.userdata.auth)
