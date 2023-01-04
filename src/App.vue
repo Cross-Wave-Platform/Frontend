@@ -233,7 +233,7 @@
                           ></v-text-field>
                           <v-text-field
                             v-model="phone"
-                            :rules="phone"
+                            :rules="phoneRules"
                             label="電話"
                             required
                             outlined
@@ -247,8 +247,8 @@
                             dense
                           ></v-text-field>
                           <v-select
-                            v-model="status"
-                            :items="statuses"
+                            v-model="relation"
+                            :items="relations"
                             item-text="id"
                             item-value="value"
                             label="與KIT計畫的關係"
@@ -408,7 +408,7 @@ export default {
     organization: null,
     identity: null,
     phone: null,
-    status: null,
+    relation: null,
     //  otherStatus: null,
 
     alertPlace: '',
@@ -446,7 +446,7 @@ export default {
     organizationRules: [
       v => !!v || '請填寫服務單位'
     ],
-    statuses: [
+    relations: [
       { id: '計畫主持人', value: 1 },
       { id: '共同主持人', value: 2 },
       { id: '協同研究人員', value: 3 },
@@ -508,8 +508,8 @@ export default {
   //   this.loadInfo()
   // },
   watch: {
-  //  status () {
-  //    if (this.status === 7) {
+  //  relation () {
+  //    if (this.relation === 7) {
   //      this.others = true
   //    } else {
   //      this.others = false
@@ -603,7 +603,7 @@ export default {
             identity: this.identity,
             phone: this.phone,
             organization: this.organization,
-            status: this.status
+            relation: this.relation
           }
         }
         axios(config)
