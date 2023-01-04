@@ -207,7 +207,7 @@
                           <v-text-field
                             v-model="name"
                             :rules="nameRules"
-                            label="使用者本名"
+                            label="使用者姓名"
                             outlined
                             required
                             dense
@@ -216,6 +216,9 @@
                             v-model="identity"
                             :rules="identityRules"
                             label="身分證字號"
+                            :append-icon="showIdentity ? 'mdi-eye' : 'mdi-eye-off'"
+                            :type="showIdentity ? 'text' : 'password'"
+                            @click:append="showIdentity = !showIdentity"
                             outlined
                             required
                             dense
@@ -229,16 +232,16 @@
                             dense
                           ></v-text-field>
                           <v-text-field
-                            v-model="phonenumber"
-                            :rules="phonenumberRules"
+                            v-model="phone"
+                            :rules="phone"
                             label="電話"
                             required
                             outlined
                             dense
                           ></v-text-field>
                           <v-text-field
-                            v-model="department"
-                            :rules="departmentRules"
+                            v-model="organization"
+                            :rules="organizationRules"
                             label="服務單位"
                             outlined
                             dense
@@ -252,14 +255,14 @@
                             outlined
                             dense
                           ></v-select>
-                          <v-text-field
+                          <!--<v-text-field
                             :disabled="!others"
                             v-model="otherStatus"
                             :rules="otherStatusRules"
                             label="與KIT計畫的關係"
                             outlined
                             dense
-                          ></v-text-field>
+                          ></v-text-field>-->
                           <v-checkbox
                             v-model="privacyCheckbox"
                             :rules="[v => !!v || 'You must agree to continue!']"
@@ -392,20 +395,21 @@ export default {
     loginTab: null,
     dialog: false,
     showPassword: false,
+    showIdentity: false,
     loginValid: true,
     registerValid: true,
-    others: false,
+    //  others: false,
 
     username: null,
     name: null,
     account: null,
     email: null,
     password: null,
-    department: null,
+    organization: null,
     identity: null,
-    phonenumber: null,
+    phone: null,
     status: null,
-    otherStatus: null,
+    //  otherStatus: null,
 
     alertPlace: '',
     alertType: null,
@@ -436,20 +440,20 @@ export default {
     identityRules: [
       v => !!v || 'IdentityRules is required'
     ],
-    phonenumberRules: [
+    phoneRules: [
       v => !!v || 'Phonenumber is required'
     ],
-    departmentRules: [
-      v => !!v || 'Department is required'
+    organizationRules: [
+      v => !!v || '請填寫服務單位'
     ],
     statuses: [
-      { id: '計畫主持人', value: '1' },
-      { id: '共同主持人', value: '2' },
-      { id: '協同研究人員', value: '3' },
-      { id: '駐點老師', value: '4' },
-      { id: '研究助理', value: '5' },
-      { id: '團隊老師指導學生', value: '6' },
-      { id: '其他', value: '7' }
+      { id: '計畫主持人', value: 1 },
+      { id: '共同主持人', value: 2 },
+      { id: '協同研究人員', value: 3 },
+      { id: '駐點老師', value: 4 },
+      { id: '研究助理', value: 5 },
+      { id: '團隊老師指導學生', value: 6 },
+      { id: '其他', value: 7 }
     ],
     allTabItems: [
       {
@@ -504,13 +508,13 @@ export default {
   //   this.loadInfo()
   // },
   watch: {
-    status () {
-      if (this.status === '7') {
-        this.others = true
-      } else {
-        this.others = false
-      }
-    }
+  //  status () {
+  //    if (this.status === 7) {
+  //      this.others = true
+  //    } else {
+  //      this.others = false
+  //    }
+  //  }
   },
   computed: {
     tabItems: function () {
@@ -594,7 +598,12 @@ export default {
           data: {
             username: this.username,
             password: this.password,
-            email: this.email
+            email: this.email,
+            name: this.name,
+            identity: this.identity,
+            phone: this.phone,
+            organization: this.organization,
+            status: this.status
           }
         }
         axios(config)
