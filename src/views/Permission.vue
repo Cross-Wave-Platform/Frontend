@@ -4,7 +4,7 @@
     :continuous="false"
     :show-arrows="false"
     hide-delimiters
-    height="850"
+    height="1100"
     v-model="shiftWindows"
     >
       <v-carousel-item>
@@ -63,349 +63,307 @@
             </v-card>
           </v-container>
         </v-row>
-      </v-carousel-item>
-      <v-carousel-item>
-        <v-container>
-        <v-card>
-          <v-card-title>
-            <span class="text-h4">
-             個人資料
-           </span>
-          </v-card-title>
-          <v-form
-            ref="permissionForm"
-            v-model="form"
-            lazy-validation
+        <v-row
+          align="center"
+          justify="space-around"
+        >
+          <v-btn
+            :disabled="true"
+            x-large
           >
-            <v-container>
-              <v-row>
-                <v-col cols="6">
-                  <v-text-field
-                    v-model="name"
-                    :rules="nameRules"
-                    label="姓名"
-                    :counter="20"
-                    required
-                    outlined
-                  >
-                  </v-text-field>
-                </v-col>
-                <v-col cols="6">
-                  <v-text-field
-                    v-model="section"
-                    :rules="sectionRules"
-                    label="職稱"
-                    :counter="20"
-                    required
-                    outlined
-                  >
-                  </v-text-field>
-                </v-col>
-              </v-row>
-              <v-row>
-                <v-col>
-                  <v-text-field
-                    v-model="department"
-                    :rules="departmentRules"
-                    label="服務單位/科/系/所"
-                    required
-                    outlined
-                  >
-                  </v-text-field>
-                </v-col>
-              </v-row>
-              <v-row>
-                <v-col cols="4">
-                  <v-text-field
-                    v-model="phonenumber"
-                    :rules="phonenumberRules"
-                    label="電話"
-                    :counter="10"
-                    :digit="10"
-                    required
-                    outlined
-                  >
-                  </v-text-field>
-                </v-col>
-                <v-col cols="8">
-                  <v-text-field
-                    v-model="email"
-                    :rules="emailRules"
-                    label="信箱"
-                    required
-                    outlined
-                  >
-                  </v-text-field>
-                </v-col>
-              </v-row>
-              <v-row>
-                <v-col>
-                  <v-text-field
-                    v-model="project"
-                    :rules="projectRules"
-                    label="研究計畫題目"
-                    required
-                    outlined
-                  >
-                  </v-text-field>
-                </v-col>
-              </v-row>
-              <v-row>
-                <v-col>
-                  <v-select
-                   v-model="identity"
-                   :items="identities"
-                   item-text="id"
-                   item-value="value"
-                   label="與KIT企劃的關係"
-                   outlined
-                  >
-                  </v-select>
-                </v-col>
-              </v-row>
-            </v-container>
-          </v-form>
-        </v-card>
-      </v-container>
+            返回
+          </v-btn>
+          <p class="font-weight-bold">
+            1/3頁
+          </p>
+          <v-btn
+            :disabled="!agree"
+            x-large
+            @click="shiftWindows++"
+            color="primary"
+          >
+            下一步
+          </v-btn>
+        </v-row>
       </v-carousel-item>
       <v-carousel-item>
+        <v-row>
+          <v-container>
+            <v-card>
+              <v-card-title>
+                <span class="text-h4">
+                  研究計畫說明
+                </span>
+              </v-card-title>
+              <v-text-field
+                v-model="researchLabel"
+                label="研究題目"
+                outlined
+              >
+              </v-text-field>
+              <v-select
+                v-model="researchAim"
+                :items="aim"
+                item-text="aim"
+                item-value="value"
+                label="本次申請/使用之研究用途"
+                outlined
+              >
+              </v-select>
+              <v-text-field
+                v-show="others"
+                v-model="otherAim"
+                label="其他研究用途"
+                outlined
+              >
+              </v-text-field>
+              <v-card-subtitle>
+                請簡要說明研究目的、方法，將如何使用本工具/資料、以及如何保護個人資料(pdf檔)
+              </v-card-subtitle>
+              <v-file-input
+                v-model="researchFile"
+                label="研究計畫說明"
+                counter
+                show-size
+                accept=".pdf"
+                :clearable="false"
+              >
+              </v-file-input>
+            </v-card>
+          </v-container>
+        </v-row>
+        <v-row
+          align="center"
+          justify="space-around"
+        >
+          <v-btn
+            color="default"
+            x-large
+            @click="shiftWindows--"
+          >
+            返回
+          </v-btn>
+          <p class="font-weight-bold">
+            2/3頁
+          </p>
+          <v-btn
+            :disabled="!research"
+            color="primary"
+            x-large
+            @click="shiftWindows++"
+          >
+            下一步
+          </v-btn>
+        </v-row>
+      </v-carousel-item>
+      <v-carousel-item>
+        <v-row>
         <v-container>
           <v-card>
             <v-card-title>
-            <span class="text-h4">
-              研究計畫說明
-            </span>
+              <span class="text-h4">
+               申請內容
+             </span>
             </v-card-title>
-            <v-select
-              v-model="researchAim"
-              :items="aim"
-              item-text="aim"
-              item-value="value"
-              label="本次申請/使用之研究用途"
-              outlined
-            >
-            </v-select>
-            <v-card-subtitle>
-              請簡要說明研究目的、方法，將如何使用本工具/資料、以及如何保護個人資料(pdf檔)
-            </v-card-subtitle>
-            <v-file-input
-              v-model="recearchFile"
-              label="研究計畫說明"
-              counter
-              show-size
-              accept=".pdf"
-            >
-            </v-file-input>
-          </v-card>
-        </v-container>
-      </v-carousel-item>
-      <v-carousel-item>
-        <v-container>
-        <v-card>
-          <v-card-title>
-            <span class="text-h4">
-             申請內容
-           </span>
-          </v-card-title>
-          <v-card-title>
-            申請波次：
-          </v-card-title>
-          <v-card-text>
+            <v-card-title>
+              申請波次：
+            </v-card-title>
+              <v-container fluid>
+                <v-row>
+                  <v-col  cols="4">
+                    <v-checkbox
+                      v-model="waveChoose"
+                      label="3月齡組"
+                      value="M03"
+                    >
+                    </v-checkbox>
+                  </v-col>
+                  <v-col cols="4">
+                    <v-checkbox
+                      v-model="waveChoose"
+                      label="36月齡組"
+                      value="M36"
+                    >
+                    </v-checkbox>
+                  </v-col>
+                </v-row>
+              </v-container>
+            <v-card-title>
+              申請資料：
+            </v-card-title>
             <v-container fluid>
               <v-row>
-                <v-col  cols="4">
+                <v-col>
+                  <v-card-subtitle>
+                    家長問卷資料：
+                  </v-card-subtitle>
+                </v-col>
+              </v-row>
+              <v-row>
+                <v-col cols="3">
                   <v-checkbox
-                  v-model="waveChoose"
-                  label="3月齡組"
-                  value="M03"
+                    v-model="classChoose"
+                    label="父母基本資料"
+                    value="class1"
                   >
                   </v-checkbox>
                 </v-col>
-                <v-col cols="4">
+                <v-col cols="3">
                   <v-checkbox
-                  v-model="waveChoose"
-                  label="36月齡組"
-                  value="M36"
+                    v-model="classChoose"
+                    label="孩子與家庭基本資料"
+                    value="class2"
+                  >
+                  </v-checkbox>
+                </v-col>
+                <v-col cols="3">
+                  <v-checkbox
+                    v-model="classChoose"
+                    label="其他主要照顧者基本資料"
+                    value="class3"
+                  >
+                  </v-checkbox>
+                </v-col>
+                  <v-col cols="3">
+                  <v-checkbox
+                    v-model="classChoose"
+                    label="健康問卷資料"
+                    value="class4"
+                  >
+                  </v-checkbox>
+                </v-col>
+              </v-row>
+              <v-row>
+                <v-col cols="3">
+                  <v-checkbox
+                    v-model="classChoose"
+                    label="認知問卷資料"
+                    value="class5"
+                  >
+                  </v-checkbox>
+                </v-col>
+                <v-col cols="3">
+                  <v-checkbox
+                    v-model="classChoose"
+                    label="語言問卷資料"
+                    value="class6"
+                  >
+                  </v-checkbox>
+                </v-col>
+                <v-col cols="3">
+                  <v-checkbox
+                    v-model="classChoose"
+                    label="社會情緒問卷資料"
+                    value="class7"
+                  >
+                  </v-checkbox>
+                </v-col>
+                <v-col cols="3">
+                  <v-checkbox
+                    v-model="classChoose"
+                    label="身體動作問卷資料"
+                    value="class8"
+                  >
+                  </v-checkbox>
+                </v-col>
+              </v-row>
+              <v-row>
+                <v-col cols="3">
+                  <v-checkbox
+                    v-model="classChoose"
+                    label="家庭問卷資料_學習環境"
+                    value="class9"
+                  >
+                  </v-checkbox>
+                </v-col>
+                <v-col cols="3">
+                  <v-checkbox
+                    v-model="classChoose"
+                    label="家庭問卷資料_教養"
+                    value="class10"
+                  >
+                  </v-checkbox>
+                </v-col>
+              </v-row>
+              <v-row>
+                <v-col cols="3">
+                  <v-card-subtitle>
+                    親友問卷資料：
+                  </v-card-subtitle>
+                </v-col>
+              </v-row>
+              <v-row>
+                <v-col cols="3">
+                  <v-checkbox
+                    v-model="classChoose"
+                    label="照顧者基本資料"
+                    value="class11"
+                  >
+                  </v-checkbox>
+                </v-col>
+                <v-col cols="3">
+                  <v-checkbox
+                    v-model="classChoose"
+                    label="家庭問卷資料_學習環境"
+                    value="class12"
+                  >
+                  </v-checkbox>
+                </v-col>
+                <v-col cols="3">
+                  <v-checkbox
+                    v-model="classChoose"
+                    label="家庭問卷資料_教養"
+                    value="class13"
+                  >
+                  </v-checkbox>
+                </v-col>
+              </v-row>
+              <v-row>
+                <v-col cols="3">
+                  <v-card-subtitle>
+                    教保問卷資料：
+                  </v-card-subtitle>
+                </v-col>
+              </v-row>
+              <v-row>
+                <v-col cols="3">
+                  <v-checkbox
+                    v-model="classChoose"
+                    label="教保問卷資料"
+                    value="class14"
                   >
                   </v-checkbox>
                 </v-col>
               </v-row>
             </v-container>
-          </v-card-text>
-          <v-card-title>
-            申請資料：
-          </v-card-title>
-            <v-col>
-              <v-card-subtitle>
-                家長問卷資料：
-              </v-card-subtitle>
-            </v-col>
-          <v-container fluid>
-            <v-row>
-              <v-col cols="3">
-                <v-checkbox
-                v-model="classChoose"
-                label="父母基本資料"
-                value="class1"
-                >
-                </v-checkbox>
-              </v-col>
-              <v-col cols="3">
-                <v-checkbox
-                v-model="classChoose"
-                label="孩子與家庭基本資料"
-                value="class2"
-                >
-                </v-checkbox>
-              </v-col>
-              <v-col cols="3">
-                <v-checkbox
-                v-model="classChoose"
-                label="其他主要照顧者基本資料"
-                value="class3"
-                >
-                </v-checkbox>
-              </v-col>
-                <v-col cols="3">
-                <v-checkbox
-                v-model="classChoose"
-                label="健康問卷資料"
-                value="class4"
-                >
-                </v-checkbox>
-              </v-col>
-            </v-row>
-            <v-row>
-              <v-col cols="3">
-                <v-checkbox
-                v-model="classChoose"
-                label="認知問卷資料"
-                value="class5"
-                >
-                </v-checkbox>
-              </v-col>
-              <v-col cols="3">
-                <v-checkbox
-                v-model="classChoose"
-                label="語言問卷資料"
-                value="class6"
-                >
-                </v-checkbox>
-              </v-col>
-              <v-col cols="3">
-                <v-checkbox
-                v-model="classChoose"
-                label="社會情緒問卷資料"
-                value="class7"
-                >
-                </v-checkbox>
-              </v-col>
-              <v-col cols="3">
-                <v-checkbox
-                v-model="classChoose"
-                label="身體動作問卷資料"
-                value="class8"
-                >
-                </v-checkbox>
-              </v-col>
-            </v-row>
-            <v-row>
-              <v-col cols="3">
-                <v-checkbox
-                v-model="classChoose"
-                label="家庭問卷資料_學習環境"
-                value="class9"
-                >
-                </v-checkbox>
-              </v-col>
-              <v-col cols="3">
-                <v-checkbox
-                v-model="classChoose"
-                label="家庭問卷資料_教養"
-                value="class10"
-                >
-                </v-checkbox>
-              </v-col>
-            </v-row>
-            <v-row>
-              <v-col cols="8">
-                <v-card-subtitle>
-                  親友問卷資料：
-                </v-card-subtitle>
-              </v-col>
-              <v-col cols="3">
-                <v-card-subtitle>
-                  教保問卷資料：
-                </v-card-subtitle>
-              </v-col>
-            </v-row>
-            <v-row>
-              <v-col cols="3">
-                <v-checkbox
-                v-model="classChoose"
-                label="照顧者基本資料"
-                value="class11"
-                >
-                </v-checkbox>
-              </v-col>
-              <v-col cols="3">
-                <v-checkbox
-                v-model="classChoose"
-                label="家庭問卷資料_學習環境"
-                value="class12"
-                >
-                </v-checkbox>
-              </v-col>
-              <v-col cols="3">
-                <v-checkbox
-                v-model="classChoose"
-                label="家庭問卷資料_教養"
-                value="class13"
-                >
-                </v-checkbox>
-              </v-col>
-              <v-col cols="3">
-                <v-checkbox
-                v-model="classChoose"
-                label="教保問卷資料"
-                value="class14"
-                >
-                </v-checkbox>
-              </v-col>
-            </v-row>
-          </v-container>
-        </v-card>
-      </v-container>
+          </v-card>
+        </v-container>
+        </v-row>
+        <v-row
+          align="center"
+          justify="space-around"
+        >
+          <v-btn
+            color="default"
+            x-large
+            @click="shiftWindows--"
+          >
+            返回
+          </v-btn>
+          <p class="font-weight-bold">
+            3/3頁
+          </p>
+          <v-btn
+            :disabled="!choose"
+            color="primary"
+            x-large
+            @click="sendPermission"
+          >
+            送出
+          </v-btn>
+        </v-row>
       </v-carousel-item>
     </v-carousel>
-    <v-row
-    align="start"
-    justify="space-around"
-    >
-      <v-btn
-      :disabled="!prev"
-      large
-      color="grey-blue"
-      @click="shiftWindows--"
-      >
-        返回
-      </v-btn>
-      <v-btn
-      :disabled="!next"
-      large
-      color="primary"
-      @click="shiftWindows++"
-      >
-        下一步
-      </v-btn>
-      <v-btn
-      :disabled="!complete"
-      large
-      color="primary"
-      >
-        送出
-      </v-btn>
-    </v-row>
   </v-row>
 </template>
 <script>
@@ -416,103 +374,83 @@ export default {
       waveChoose: [],
       classChoose: [],
       shiftWindows: 0,
-      prev: false,
-      next: false,
       complete: false,
       check: false,
-      name: null,
-      nameRules: [
-        v => !!v || '請輸入姓名',
-        v => (v && v.length < 20) || '輸入內容需小於20字'
-      ],
-      section: null,
-      sectionRules: [
-        v => !!v || '請輸入職稱',
-        v => (v && v.length < 20) || '輸入內容需小於20字'
-      ],
-      department: null,
-      departmentRules: [
-        v => !!v || '請輸入服務單位'
-      ],
-      phonenumber: null,
-      phonenumberRules: [
-        v => !!v || '請輸入電話號碼',
-        v => (v && v.length === 10) || '電話號碼需包含10位數字',
-        v => /09+./.test(v) || '請輸入有效的電話號碼(09)'
-      ],
-      email: null,
-      emailRules: [
-        v => !!v || '請輸入信箱',
-        v => /.+@.+\..+/.test(v) || '請輸入有效的信箱'
-      ],
-      project: null,
-      projectRules: [
-        v => !!v || '請輸入研究題目'
-      ],
-      identity: '',
-      identities: [
-        { id: '計畫主持人', value: '1' },
-        { id: '共同主持人', value: '2' },
-        { id: '協同研究人員', value: '3' },
-        { id: '駐點老師', value: '4' },
-        { id: '研究助理', value: '5' },
-        { id: '團隊老師指導學生', value: '6' }
-      ],
+      researchLabel: '',
       researchAim: '',
       aim: [
-        { aim: '個人研究', value: '1' },
-        { aim: '國家補助計畫 (如國科會專題計畫)', value: '2' },
-        { aim: '博士論文', value: '3' },
-        { aim: '碩士論文', value: '4' }
-      ]
-
+        { aim: '個人研究', value: 1 },
+        { aim: '國家補助計畫 (如國科會專題計畫)', value: 2 },
+        { aim: '博士論文', value: 3 },
+        { aim: '碩士論文', value: 4 },
+        { aim: '其他', value: 5 }
+      ],
+      others: false,
+      otherAim: '',
+      researchFile: [],
+      research: false,
+      choose: false
     }
   },
   watch: {
-    shiftWindows (val) {
-      if (this.shiftWindows === 0) {
-        this.prev = false
+    check () {
+      if (this.check === false) {
+        this.agree = false
       } else {
-        this.prev = true
-      }
-      if (this.shiftWindows === 3) {
-        this.next = false
-      } else {
-        this.next = true
-      }
-      if (this.shiftWindows === 3) {
-        if (this.waveChoose.length === 0 || this.classChoose.length === 0) {
-          this.next = false
-        } else {
-          this.complete = true
-        }
-      } else {
-        this.complete = false
+        this.agree = true
       }
     },
-    check (val) {
-      if (this.check === false) {
-        this.next = false
+    researchAim () {
+      if (this.researchAim === 5) {
+        this.others = true
       } else {
-        this.next = true
+        this.others = false
+      }
+      if (this.researchAim !== '' && this.researchLabel.length > 0 && this.researchFile.size > 0) {
+        this.research = true
+      } else {
+        this.research = false
+      }
+    },
+    researchFile () {
+      if (this.researchAim !== '' && this.researchLabel.length > 0 && this.researchFile.size > 0) {
+        this.research = true
+      } else {
+        this.research = false
+      }
+    },
+    researchLabel () {
+      if (this.researchAim !== '' && this.researchLabel.length > 0 && this.researchFile.size > 0) {
+        this.research = true
+      } else {
+        this.research = false
       }
     },
     waveChoose () {
-      if (this.waveChoose.length === 0 || this.classChoose.length === 0) {
-        this.complete = false
+      if (this.waveChoose.length > 0 && this.classChoose.length > 0) {
+        this.choose = true
       } else {
-        this.complete = true
+        this.choose = false
       }
     },
     classChoose () {
-      if (this.waveChoose.length === 0 || this.classChoose.length === 0) {
-        this.complete = false
+      if (this.waveChoose.length > 0 && this.classChoose.length > 0) {
+        this.choose = true
       } else {
-        this.complete = true
+        this.choose = false
       }
     }
   },
-  method: {
+  methods: {
+    sendPermission () {
+      this.shiftWindows = 0
+      this.waveChoose = []
+      this.classChoose = []
+      this.researchFile = []
+      this.researchLabel = ''
+      this.researchAim = ''
+      this.check = false
+    }
   }
 }
 </script>
