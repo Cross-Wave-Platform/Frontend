@@ -70,7 +70,7 @@
                       <v-card-text>
                         <v-text-field
                           v-model="editedItem.title"
-                          label="帳戶名稱"
+                          label="問卷名稱"
                           readonly
                         ></v-text-field>
                         <v-switch
@@ -85,7 +85,7 @@
                         <v-btn
                           color="blue darken-1"
                           text
-                          @click="close"
+                          @click="closeState"
                         >
                           Cancel
                         </v-btn>
@@ -99,6 +99,90 @@
                       </v-card-actions>
                     </v-card>
                   </v-dialog>
+                  <v-dialog
+                    v-model="counting"
+                    max-width="500px"
+                  >
+                    <v-card>
+                      <v-card-title>
+                        <span class="text-h5">次數查詢</span>
+                      </v-card-title>
+
+                      <v-card-text>
+                        <v-text-field
+                          v-model="editedItem.title"
+                          label="問卷名稱"
+                          readonly
+                        ></v-text-field>
+                        <v-card-subtitle>
+                          <span class="text-subtitle-2">輸入範例(2000-01-01)</span>
+                        </v-card-subtitle>
+                        <v-form
+                          ref="dateForm"
+                          v-model="dateValid"
+                          lazy-validation
+                          @submit.prevent="DateType"
+                        >
+                            <v-text-field
+                            v-model="startDate"
+                            placeholder="xxxx-xx-xx"
+                            :rules="dateRules"
+                            label="開始日期"
+                            outlined
+                            required
+                            dense
+                            ></v-text-field>
+                            <v-text-field
+                            v-model="endDate"
+                            placeholder="xxxx-xx-xx"
+                            :rules="dateRules"
+                            label="結束日期"
+                            outlined
+                            required
+                            dense
+                            ></v-text-field>
+                        </v-form>
+                      </v-card-text>
+
+                      <v-card-actions>
+                        <v-spacer></v-spacer>
+                        <v-btn
+                          color="blue darken-1"
+                          text
+                          @click="closeCount"
+                        >
+                          Cancel
+                        </v-btn>
+                        <v-btn
+                          :disabled="!dateValid"
+                          @click.prevent="DateType"
+                          color="blue darken-1"
+                          text
+                          @click="startCount"
+                        >
+                          Search
+                        </v-btn>
+                      </v-card-actions>
+                    </v-card>
+                  </v-dialog>
+                  <v-dialog
+                    v-model="showResult"
+                    max-width="500px"
+                  >
+                    <v-card>
+                      <v-card-title>
+                        <span class="text-h5">查詢結果</span>
+                      </v-card-title>
+
+                      <v-card-text>
+                        <v-text-field
+                          v-model="countResult"
+                          label="查詢結果"
+                          readonly
+                        ></v-text-field>
+                      </v-card-text>
+                    </v-card>
+                  </v-dialog>
                 </v-toolbar>
               </template>
               <template v-slot:item.state="{ item }">
@@ -107,6 +191,11 @@
               <template v-slot:item.actions="{ item }">
                 <v-btn text @click="editItem(item)">
                   <v-icon left>mdi-pencil</v-icon>編輯
+                </v-btn>
+              </template>
+              <template v-slot:item.count="{ item }">
+                <v-btn text @click="dataCount(item)">
+                  <v-icon left>mdi-magnify</v-icon>查詢
                 </v-btn>
               </template>
             </v-data-table>
@@ -122,6 +211,16 @@ export default {
   data () {
     return {
       dialog: false,
+      counting: false,
+      showResult: false,
+      countResult: 0,
+      dateValid: true,
+      startDate: null,
+      endDate: null,
+      dateRules: [
+      v => !!v || '請輸入日期',
+      v => /\d{4}[-]\d{2}[-]\d{2}/.test(v) || '輸入內容須符合格式'
+      ],
       menuData: [],
       input_data: {
         group: '全部',
@@ -142,7 +241,8 @@ export default {
             value: 'title',
         },
         { text: '釋出狀態', value: 'state' },
-        { text: '', value: 'actions', sortable: false }
+        { text: '編輯釋出', value: 'actions', sortable: false },
+        { text: '下載次數', value: 'count' }
       ],
       editedIndex: -1,
       editedItem: {
@@ -219,7 +319,7 @@ export default {
   },
   watch: {
     dialog (val) {
-      val || this.close()
+      val || this.closeState()
     }
   },
 
@@ -230,7 +330,7 @@ export default {
       this.dialog = true
     },
 
-    close () {
+    closeState () {
       this.dialog = false
       this.$nextTick(() => {
         this.editedItem = Object.assign({}, this.defaultItem)
@@ -246,8 +346,40 @@ export default {
       }
       // console.log(data)
       axios.put('/api/adminApp/release',data) // .catch((err)=>{console.err(err)})
-      this.close()
+      this.closeState()
     },
+
+    dataCount (item) {
+      this.editedItem = Object.assign({}, item)
+      this.counting = true
+    },
+
+    closeCount () {
+      this.editedItem = Object.assign({}, this.defaultItem)
+      this.startDate = null
+      this.endDate = null
+      this.counting = false
+    },
+
+    startCount () {
+      const config = {
+          url: '/api/historyApp/surveyDownloadCount',
+          method: 'get',
+
+          params: {
+            surveyId: this.editedItem.id,
+            startDate: this.startDate,
+            endDate: this.endDate
+          }
+      }
+      axios(config)
+        .then((res) => {
+        this.countResult = res.data.downloadCount
+        })
+      this.startDate = null
+      this.endDate = null
+      this.closeCount()
+    }
   },
   mounted () {
     axios.get('/api/adminApp/auth',{
