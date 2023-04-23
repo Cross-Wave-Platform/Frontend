@@ -213,7 +213,7 @@ export default {
       dialog: false,
       counting: false,
       showResult: false,
-      countResult: 0,
+      countResult: null,
       dateValid: true,
       startDate: null,
       endDate: null,
@@ -374,7 +374,8 @@ export default {
       }
       axios(config)
         .then((res) => {
-        this.countResult = res.data.downloadCount
+        this.countResult = res.data.data.downloadCount
+        this.showResult = true
         })
       this.startDate = null
       this.endDate = null
