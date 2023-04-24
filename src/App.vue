@@ -372,8 +372,9 @@ export default {
       v => /.+@.+\..+/.test(v) || 'E-mail must be valid'
     ],
     passwordRules: [
-      v => !!v || 'Password is required'
+      v => !!v || 'Password is required',
       // v => (v && v.length >= 8) || 'Password must be longer than 8 characters'
+      v => /^(?=.*\d)(?=.*[^a-zA-Z0-9])(?=.*[a-z])(?=.*[A-Z]).{7,}$/.test(v) || '需含有至少大小寫英文字母、數字和特殊字元，長度8位以上'
     ],
     allTabItems: [
       {
