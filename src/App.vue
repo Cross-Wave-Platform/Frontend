@@ -143,7 +143,6 @@
                           ></v-text-field>
                           <v-text-field
                             v-model="password"
-                            :rules="passwordRules"
                             label="Password"
                             :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
                             :type="showPassword ? 'text' : 'password'"
