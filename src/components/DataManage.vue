@@ -219,7 +219,7 @@ export default {
       endDate: null,
       dateRules: [
       v => !!v || '請輸入日期',
-      v => /\d{4}[-]\d{2}[-]\d{2}/.test(v) || '輸入內容須符合格式'
+      v => /^\d{4}[-]\d{2}[-]\d{2}$/.test(v) || '輸入內容須符合格式'
       ],
       menuData: [],
       input_data: {
