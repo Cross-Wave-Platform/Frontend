@@ -151,7 +151,7 @@
                           text
                           @click="closeCount"
                         >
-                          Cancel
+                          取消
                         </v-btn>
                         <v-btn
                           :disabled="!dateValid"
@@ -160,7 +160,7 @@
                           text
                           @click="startCount"
                         >
-                          Search
+                          查詢
                         </v-btn>
                       </v-card-actions>
                     </v-card>
@@ -219,7 +219,7 @@ export default {
       endDate: null,
       dateRules: [
       v => !!v || '請輸入日期',
-      v => /\d{4}[-]\d{2}[-]\d{2}/.test(v) || '輸入內容須符合格式'
+      v => /^[2][01]\d{2}[-][01]\d{1}[-][0-3]\d{1}$/.test(v) || '輸入內容須符合格式'
       ],
       menuData: [],
       input_data: {
@@ -362,7 +362,8 @@ export default {
     },
 
     startCount () {
-      const config = {
+      if (this.startDate.length !== 0 && this.endDate.length !== 0){
+        const config = {
           url: '/api/historyApp/surveyDownloadCount',
           method: 'get',
 
@@ -371,16 +372,17 @@ export default {
             startDate: this.startDate,
             endDate: this.endDate
           }
+        }
+        axios(config)
+          .then((res) => {
+            this.countResult = res.data.data.downloadCount
+            this.showResult = true
+          })
+          this.startDate = null
+          this.endDate = null
+          this.closeCount()
+        }
       }
-      axios(config)
-        .then((res) => {
-        this.countResult = res.data.data.downloadCount
-        this.showResult = true
-        })
-      this.startDate = null
-      this.endDate = null
-      this.closeCount()
-    }
   },
   mounted () {
     axios.get('/api/adminApp/auth',{
