@@ -2,9 +2,9 @@
   <div>
     <v-container>
       <v-row justify="center">
-        <v-col md="8">
+        <v-col md="6">
           <v-card
-            max-width="800px"
+            max-width="600px"
             class="mx-auto"
           >
             <v-carousel
@@ -22,7 +22,7 @@
             </v-carousel>
           </v-card>
         </v-col>
-        <v-col md="4">
+        <v-col md="6">
           <v-card
             height="450px"
             outlined

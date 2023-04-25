@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Admin from '../views/Admin.vue'
 import UserManage from '../components/UserManage.vue'
 import DataManage from '../components/DataManage.vue'
+import AnnounceManage from '../components/AnnounceManage.vue'
 import store from '../store'
 
 Vue.use(VueRouter)
@@ -85,7 +86,16 @@ const routes = [
         path: 'datamanage',
         component: DataManage,
         meta: {
-          title: '資料權限管理',
+          title: '資料管理',
+          requiresAuth: true,
+          authRequirement: 1
+        }
+      },
+      {
+        path: 'announcemanage',
+        component: AnnounceManage,
+        meta: {
+          title: '公告管理',
           requiresAuth: true,
           authRequirement: 1
         }
