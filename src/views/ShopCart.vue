@@ -60,6 +60,31 @@
                     </v-container>
                   </v-card>
               </v-dialog>
+
+              <v-dialog v-model="waveDialog" max-width="500px" scrollable persistent>
+                  <v-card class="elevation-8">
+                      <v-container fluid>
+                      <v-row justify="center">
+                        <v-card-title class="text-h5">請選擇波次</v-card-title>
+                      </v-row>
+                      <v-divider></v-divider>
+                        <v-select
+                          v-model="waveSelect"
+                          :items="waveList"
+                          >
+                        </v-select>
+                      <v-divider></v-divider>
+                      <v-row justify="center" class="mt-5 mb-2">
+                        <v-card-actions>
+                          <v-spacer></v-spacer>
+                          <v-btn color="blue darken-1" text @click="closeWaveDialog">取消</v-btn>
+                          <v-btn color="blue darken-1" text @click="waveConfirm">確認</v-btn>
+                          <v-spacer></v-spacer>
+                        </v-card-actions>
+                      </v-row>
+                    </v-container>
+                  </v-card>
+              </v-dialog>
           </v-card>
         </v-col>
 
@@ -155,6 +180,7 @@ export default {
   name: 'search',
   data () {
     return {
+      waveSelect: '',
       shopcart: [],
       select: false,
       deleteAll: false,
@@ -169,7 +195,9 @@ export default {
         { text: '存有波次', value: 'waveAction', sortable: false }
       ],
       tableType: [],
+      waveList: [],
       dialogDelete: false,
+      waveDialog: false,
       editedIndex: -1,
       editedItem: {},
       exportContent: {
@@ -194,6 +222,12 @@ export default {
           value: 'union',
           icon: 'mdi-set-all',
           text: '聯集，資料為"直著併"，闕漏者不補空白'
+        },
+        {
+          method: 'Left Join',
+          value: 'left',
+          icon: 'mdi-set-all',
+          text: '資料向選定對齊，其餘省略'
         }
       ],
       OptionExport: ['CSV', 'SAV'],
@@ -208,6 +242,11 @@ export default {
   watch: {
     dialogDelete (val) {
       val || this.closeDelete()
+    },
+    'exportContent.mergeMethod': function () {
+      if (this.exportContent.mergeMethod === 'left') {
+        this.waveDialog = true
+      }
     }
   },
   methods: {
@@ -260,10 +299,13 @@ export default {
       axios.get('/api/searchApp/searchProblem')
         .then((res) => {
           this.searchResult = res.data.data.info
-
           this.problemList = this.searchResult.filter(item => {
             return this.shopcart.findIndex(problem => problem.problem_id === item.pid) !== -1
           })
+          this.waveList = this.problemList[0].exist[0].young
+          if (this.waveList.length === 0) {
+            this.waveList = this.problemList[0].exist[0].old
+          }
           // Facet
           for (let i = 0; i < this.problemList.length; i++) {
             for (let j = 0; j < this.problemList[i].exist.length; j++) {
@@ -276,6 +318,19 @@ export default {
           }
         })
     },
+    closeWaveDialog () {
+      this.waveSelect = ''
+      this.exportContent.mergeMethod = ''
+      this.waveDialog = false
+    },
+    waveConfirm () {
+      if (this.waveSelect === '') {
+        this.$swal({ title: '請選擇波次', icon: 'warning' })
+        this.exportContent.mergeMethod = ''
+        return
+      }
+      this.waveDialog = false
+    },
 
     exportApi () {
       axios({
@@ -284,7 +339,8 @@ export default {
         responseType: 'blob',
         params: {
           mergeMethod: this.exportContent.mergeMethod,
-          fileFormat: this.exportContent.fileFormat.toLowerCase()
+          fileFormat: this.exportContent.fileFormat.toLowerCase(),
+          wave: this.waveSelect
         }
       }).then((res) => {
         const fileURL = window.URL.createObjectURL(new Blob([res.data]))
@@ -311,6 +367,10 @@ export default {
       }
       if (this.exportContent.mergeMethod === '' || this.exportContent.fileFormat === '') {
         this.$swal({ title: '請選擇合併方式及匯出檔案格式', icon: 'warning' })
+        return
+      }
+      if (this.exportContent.mergeMethod === 'left' && this.waveSelect === '') {
+        this.$swal({ title: '請選擇合併主要波次', icon: 'warning' })
         return
       }
       this.exportDialog = true
