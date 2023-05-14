@@ -6,7 +6,7 @@
         :headers="header"
         :items="announcementList"
         :items-per-page="5"
-        sort-by="id"
+        sort-by="-id"
         style="background-color:rgba(255, 255, 255, 0.0);"
       >
         <template v-slot:item.deleteAction="{ item }">
@@ -74,6 +74,7 @@
     <v-dialog
         v-model="modifyDialog"
         max-width="1000"
+        persistent
     >
       <v-card>
         <v-card-title>
@@ -81,7 +82,7 @@
         </v-card-title>
         <v-card-text>
           <v-textarea
-            v-model="createTitle"
+            v-model="modifyTitle"
             counter
             label="公告標題"
             rows="3"
@@ -89,13 +90,30 @@
           >
           </v-textarea>
           <v-textarea
-            v-model="createContents"
+            v-model="modifyContents"
             counter
             label="公告內容"
             auto-grow
           >
           </v-textarea>
         </v-card-text>
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn
+            color="green-darken-1"
+            variant="text"
+            @click="closeModifyDialog"
+          >
+            取消
+          </v-btn>
+          <v-btn
+            color="green-darken-1"
+            variant="text"
+            @click="startModify"
+          >
+            確認
+          </v-btn>
+        </v-card-actions>
       </v-card>
     </v-dialog>
   </div>
@@ -118,8 +136,12 @@ export default {
       modifyDialog: false,
 
       createTitle: '',
-      createContents: ''
+      createContents: '',
+      modifyTitle: '',
+      modifyContents: ''
     }
+  },
+  watch: {
   },
   methods: {
     openCreateDialog () {
@@ -138,7 +160,47 @@ export default {
       this.closeCreateDialog()
     },
     modifyAnnouncement (item) {
+      this.editedItem = Object.assign({}, item)
       this.modifyDialog = true
+      const config = {
+        url: '/api/announcementApp/queryAnnouncement',
+        method: 'get',
+
+        params: {
+          id: item.id
+        }
+      }
+      axios(config)
+        .then((res) => {
+          this.modifyTitle = res.data.data.title
+          this.modifyContents = res.data.data.contents
+        })
+    },
+    closeModifyDialog () {
+      this.modifyDialog = false
+      this.modifyTitle = ''
+      this.modifyContents = ''
+    },
+    startModify () {
+      axios.post('/api/announcementApp/updateAnnouncement', {
+        id: this.editedItem.id,
+        title: this.modifyTitle,
+        contents: this.modifyContents
+      })
+      this.closeModifyDialog()
+    },
+    deleteAnnouncement (item) {
+      const config = {
+        url: '/api/announcementApp/deleteAnnouncement',
+        method: 'delete',
+
+        params: {
+          id: item.id
+        }
+      }
+      axios(config)
+        .then((res) => {
+        })
     }
   },
   mounted () {

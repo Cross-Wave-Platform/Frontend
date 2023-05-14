@@ -37,7 +37,7 @@
               :headers="header"
               :items="announcementList"
               :items-per-page="5"
-              sort-by="id"
+              sort-by="-id"
               style="background-color:rgba(255, 255, 255, 0.0);"
             >
               <template v-slot:item.searchAction="{ item }">
@@ -106,7 +106,7 @@ export default {
         url: '/api/announcementApp/queryAnnouncement',
         method: 'get',
 
-        param: {
+        params: {
           id: item.id
         }
       }
