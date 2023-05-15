@@ -8,7 +8,8 @@
         :items-per-page="5"
         sort-by="-id"
         style="background-color:rgba(255, 255, 255, 0.0);"
-      >
+        :footer-props="{'items-per-page-options': [5]}"
+        >
         <template v-slot:item.deleteAction="{ item }">
           <v-btn text @click="deleteAnnouncement(item)">
             <v-icon>
@@ -107,11 +108,11 @@
             取消
           </v-btn>
           <v-btn
-            color="green-darken-1"
+            color="primary"
             variant="text"
             @click="startModify"
           >
-            確認
+            確認編輯
           </v-btn>
         </v-card-actions>
       </v-card>
@@ -182,7 +183,7 @@ export default {
       this.modifyContents = ''
     },
     startModify () {
-      axios.post('/api/announcementApp/updateAnnouncement', {
+      axios.put('/api/announcementApp/updateAnnouncement', {
         id: this.editedItem.id,
         title: this.modifyTitle,
         contents: this.modifyContents
