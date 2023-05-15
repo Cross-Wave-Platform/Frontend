@@ -55,14 +55,13 @@
       <v-dialog v-model="searchDialog" max-width="1000">
         <v-card>
           <v-card-text>
-            <v-textarea
+            <v-card-title
               v-model="title"
               label="標題"
-              rows="3"
-              auto-grow
-              readonly
+              class="text--primary"
             >
-            </v-textarea>
+              {{title}}
+            </v-card-title>
             <v-textarea
               v-model="contents"
               label="內容"
@@ -99,6 +98,14 @@ export default {
       searchDialog: false,
       title: '',
       contents: ''
+    }
+  },
+  watch: {
+    searchDialog (val) {
+      if (val === false) {
+        this.title = ''
+        this.contents = ''
+      }
     }
   },
   methods: {

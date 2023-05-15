@@ -117,6 +117,38 @@
         </v-card-actions>
       </v-card>
     </v-dialog>
+    <v-dialog
+        v-model="deleteDialog"
+        max-width="500"
+    >
+      <v-card>
+        <v-container fluid>
+          <v-row justify="center">
+            <v-card-title>
+              確認刪除此公告？
+            </v-card-title>
+          </v-row>
+          <v-row justify="center">
+            <v-card-actions>
+              <v-btn
+                color="green-darken-1"
+                variant="text"
+                @click="deleteDialog=false"
+              >
+                取消
+              </v-btn>
+              <v-btn
+                color="primary"
+                variant="text"
+                @click="startDelete"
+              >
+                確認刪除
+              </v-btn>
+            </v-card-actions>
+          </v-row>
+        </v-container>
+      </v-card>
+    </v-dialog>
   </div>
 </template>
 
@@ -135,6 +167,7 @@ export default {
       ],
       createDialog: false,
       modifyDialog: false,
+      deleteDialog: false,
 
       createTitle: '',
       createContents: '',
@@ -143,6 +176,24 @@ export default {
     }
   },
   watch: {
+    createDialog (val) {
+      this.sleep(100)
+      axios.get('/api/announcementApp/listAnnouncement').then((res) => {
+        this.announcementList = res.data.data
+      })
+    },
+    deleteDialog (val) {
+      this.sleep(100)
+      axios.get('/api/announcementApp/listAnnouncement').then((res) => {
+        this.announcementList = res.data.data
+      })
+    },
+    modifyDialog (val) {
+      this.sleep(100)
+      axios.get('/api/announcementApp/listAnnouncement').then((res) => {
+        this.announcementList = res.data.data
+      })
+    }
   },
   methods: {
     openCreateDialog () {
@@ -191,17 +242,30 @@ export default {
       this.closeModifyDialog()
     },
     deleteAnnouncement (item) {
+      this.deleteItem = Object.assign({}, item)
+      this.deleteDialog = true
+    },
+    startDelete () {
       const config = {
         url: '/api/announcementApp/deleteAnnouncement',
         method: 'delete',
 
         data: {
-          id: item.id
+          id: this.deleteItem.id
         }
       }
       axios(config)
         .then((res) => {
         })
+      this.deleteDialog = false
+    },
+    sleep (val) {
+      var now = new Date()
+      var exitTime = now.getTime() + val
+      while (true) {
+        now = new Date()
+        if (now.getTime() > exitTime) return
+      }
     }
   },
   mounted () {
