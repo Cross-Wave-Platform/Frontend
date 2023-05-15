@@ -195,7 +195,7 @@ export default {
         url: '/api/announcementApp/deleteAnnouncement',
         method: 'delete',
 
-        params: {
+        data: {
           id: item.id
         }
       }
