@@ -10,7 +10,11 @@
                 </v-tab>
                 <v-tab class="font-weight-bold" to="/admin/datamanage">
                     <v-icon left>mdi-clipboard-text-multiple</v-icon>
-                    資料權限管理
+                    資料管理
+                </v-tab>
+                <v-tab class="font-weight-bold" to="/admin/announcemanage">
+                    <v-icon left>mdi-clipboard-text-multiple</v-icon>
+                    公告管理
                 </v-tab>
             </v-tabs>
           </div>
