@@ -177,19 +177,19 @@ export default {
   },
   watch: {
     createDialog (val) {
-      this.sleep(100)
+      this.sleep(300)
       axios.get('/api/announcementApp/listAnnouncement').then((res) => {
         this.announcementList = res.data.data
       })
     },
     deleteDialog (val) {
-      this.sleep(100)
+      this.sleep(300)
       axios.get('/api/announcementApp/listAnnouncement').then((res) => {
         this.announcementList = res.data.data
       })
     },
     modifyDialog (val) {
-      this.sleep(100)
+      this.sleep(300)
       axios.get('/api/announcementApp/listAnnouncement').then((res) => {
         this.announcementList = res.data.data
       })
