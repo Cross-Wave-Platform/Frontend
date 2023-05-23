@@ -199,6 +199,41 @@
                 </v-btn>
               </template>
             </v-data-table>
+            <v-col>
+              <v-btn
+              color="primary"
+              @click="downloadDialog=true"
+              >
+              產生報表
+              </v-btn>
+            </v-col>
+            <v-div>
+              <v-dialog
+              v-model="downloadDialog"
+              max-width="400px"
+              >
+                <v-card>
+                  <v-card-title>
+                    產生下載紀錄報表
+                  </v-card-title>
+                  <v-card-actions>
+                    <v-spacer></v-spacer>
+                    <v-btn
+                      @click="downloadDialog=false"
+                    >
+                      取消
+                    </v-btn>
+                    <v-btn
+                      color="primary"
+                      @click="startDownload"
+                    >
+                      確認
+                    </v-btn>
+                    <v-spacer></v-spacer>
+                  </v-card-actions>
+                </v-card>
+              </v-dialog>
+            </v-div>
         </v-card-text>
     </v-card>
   </div>
@@ -210,6 +245,7 @@ export default {
   name: 'DataManage',
   data () {
     return {
+      downloadDialog: false,
       dialog: false,
       counting: false,
       showResult: false,
@@ -382,6 +418,25 @@ export default {
           this.endDate = null
           this.closeCount()
         }
+      },
+      startDownload () {
+        const config = {
+          url: '/api/historyApp/export',
+          method: 'get',
+          responseType: 'blob',
+        }
+        axios(config)
+          .then((res) => {
+            const fileURL = window.URL.createObjectURL(new Blob([res.data]))
+            const fileLink = document.createElement('a')
+
+            fileLink.href = fileURL
+            fileLink.setAttribute('download', 'download.xlsx')
+
+            fileLink.click()
+
+            this.downloadDialog = false
+          })
       }
   },
   mounted () {
