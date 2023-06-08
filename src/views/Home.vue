@@ -128,6 +128,7 @@ export default {
   mounted () {
     axios.get('/api/announcementApp/listAnnouncement').then((res) => {
       this.announcementList = res.data.data
+      this.searchAnnouncement(this.announcementList[0])
     })
   }
 }
