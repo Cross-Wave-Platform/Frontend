@@ -16,6 +16,9 @@
             </v-icon>
           </v-btn>
         </template>
+        <!--<template v-slot:item.top="{ item }">
+          {{ item.top?'已置頂':'未置頂' }}
+        </template>-->
         <template v-slot:item.modifyAction="{ item }">
           <v-btn text @click="modifyAnnouncement(item)">
             <v-icon>
@@ -96,6 +99,11 @@
             auto-grow
           >
           </v-textarea>
+          <v-div></v-div>
+          <!-- <v-switch
+          :label="`${editedItem.top==1 ? '已置頂':'未置頂'}`"-*/
+          >
+          </v-switch>-->
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
@@ -162,6 +170,7 @@ export default {
       header: [
         { text: '刪除', align: 'start', value: 'deleteAction', sortable: false },
         { text: '公告標題', align: 'start', value: 'title', sortable: false },
+        //  { text: '置頂狀態', align: 'start', value: 'top', sortable: false },
         { text: '編輯公告', align: 'end', value: 'modifyAction', sortable: false }
       ],
       createDialog: false,
@@ -237,6 +246,7 @@ export default {
         id: this.editedItem.id,
         title: this.modifyTitle,
         contents: this.modifyContents
+      //  top: (this.editedItem.top) ? 1 : 0
       })
       this.closeModifyDialog()
     },
