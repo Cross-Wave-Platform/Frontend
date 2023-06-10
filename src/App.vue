@@ -300,6 +300,19 @@
           </v-tab>
         </v-tabs>
       </template>
+      <v-dialog
+      v-model="notification"
+      width="800"
+      >
+        <v-card>
+          <v-card-title>
+            E-mail認證
+          </v-card-title>
+          <v-card-text>
+            請查看您填寫的E-mail，確認有無收到認證信件，E-mail認證完成後才算註冊成功。
+          </v-card-text>
+        </v-card>
+      </v-dialog>
     </v-app-bar>
     <v-main>
       <!-- <v-tabs
@@ -345,6 +358,7 @@ export default {
     showPassword: false,
     loginValid: true,
     registerValid: true,
+    notification: false,
 
     username: null,
     account: null,
@@ -512,6 +526,7 @@ export default {
             this.alertPlace = 'register'
             this.alertType = 'success'
             this.alertMsg = res.data.message
+            this.notification = true
           })
           .catch((err) => {
             // console.log(err.response.data.message)

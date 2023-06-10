@@ -1,41 +1,44 @@
 <template>
-<div>
-  <v-container>
-    <v-card flat style="background-color:rgba(255, 255, 255, 0.0);">
-      <v-card-title>
-          信箱認證
-      </v-card-title>
-      <v-card-actions>
-        <v-btn
-        color="primary"
-        @click="$router.push('/')"
-        >
-          回到首頁
-        </v-btn>
-      </v-card-actions>
-      <v-dialog
-        width="600"
-        v-model="successResponse"
-      >
-        <v-card>
-          <v-card-title justify="center">
-            信箱認證成功
+  <div>
+    <v-container>
+      <template v-if="success">
+        <v-card flat style="background-color:rgba(255, 255, 255, 0.0);">
+          <v-card-title>
+              信箱認證
           </v-card-title>
+          <v-card-text>
+            認證信箱成功，回到首頁開始使用。
+          </v-card-text>
+          <v-card-actions>
+            <v-btn
+            color="primary"
+            @click="$router.push('/')"
+            >
+              回到首頁
+            </v-btn>
+          </v-card-actions>
         </v-card>
-      </v-dialog>
-      <v-dialog
-      width="600"
-      v-model="failResponse"
-      >
-        <v-card>
-          <v-card-title justify="center">
-            信箱認證失敗
+      </template>
+      <template v-if="fail">
+        <v-card flat style="background-color:rgba(255, 255, 255, 0.0);">
+          <v-card-title>
+              信箱認證
           </v-card-title>
+          <v-card-text>
+            認證信箱失敗，請重新驗證
+          </v-card-text>
+          <v-card-actions>
+            <v-btn
+            color="primary"
+            @click="$router.push('/')"
+            >
+              回到首頁
+            </v-btn>
+          </v-card-actions>
         </v-card>
-      </v-dialog>
-    </v-card>
-  </v-container>
-</div>
+      </template>
+    </v-container>
+  </div>
 </template>
 
 <script>
@@ -45,8 +48,8 @@ export default {
   name: 'Verify',
   data () {
     return {
-      successResponse: false,
-      failResponse: false
+      success: false,
+      fail: false
     }
   },
   mounted () {
@@ -60,11 +63,11 @@ export default {
     }
     axios(config)
       .then((res) => {
-        this.successResponse = true
+        this.success = true
       })
       .catch((err) => {
         this.errorMsg = err
-        this.failResponse = true
+        this.fail = true
       })
   }
 }
