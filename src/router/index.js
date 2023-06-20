@@ -18,6 +18,18 @@ const routes = [
     }
   },
   {
+    path: 'Verify',
+    redirect: '/'
+  },
+  {
+    path: '/Verify/:token',
+    name: 'Verify',
+    component: () => import('@/views/Verify.vue'),
+    meta: {
+      title: '信箱認證'
+    }
+  },
+  {
     path: '/Profile',
     name: 'Profile',
     component: () => import('@/views/Profile.vue'),
