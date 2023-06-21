@@ -16,9 +16,9 @@
             </v-icon>
           </v-btn>
         </template>
-        <!--<template v-slot:item.top="{ item }">
-          {{ item.top?'已置頂':'未置頂' }}
-        </template>-->
+        <template v-slot:item.pinAction="{ item }">
+          {{ item.pinned?'已置頂':'未置頂' }}
+        </template>
         <template v-slot:item.modifyAction="{ item }">
           <v-btn text @click="modifyAnnouncement(item)">
             <v-icon>
@@ -99,11 +99,11 @@
             auto-grow
           >
           </v-textarea>
-          <v-div></v-div>
-          <!-- <v-switch
-          :label="`${editedItem.top==1 ? '已置頂':'未置頂'}`"-*/
+          <v-switch
+          v-model="modifyPinned"
+          :label="`${modifyPinned==true ? '已置頂':'未置頂'}`"
           >
-          </v-switch>-->
+          </v-switch>
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
@@ -170,7 +170,7 @@ export default {
       header: [
         { text: '刪除', align: 'start', value: 'deleteAction', sortable: false },
         { text: '公告標題', align: 'start', value: 'title', sortable: false },
-        //  { text: '置頂狀態', align: 'start', value: 'top', sortable: false },
+        { text: '置頂狀態', align: 'end', value: 'pinAction', sortable: false },
         { text: '編輯公告', align: 'end', value: 'modifyAction', sortable: false }
       ],
       createDialog: false,
@@ -180,7 +180,8 @@ export default {
       createTitle: '',
       createContents: '',
       modifyTitle: '',
-      modifyContents: ''
+      modifyContents: '',
+      modifyPinned: ''
     }
   },
   watch: {
@@ -234,19 +235,21 @@ export default {
         .then((res) => {
           this.modifyTitle = res.data.data.title
           this.modifyContents = res.data.data.contents
+          this.modifyPinned = res.data.data.pinned
         })
     },
     closeModifyDialog () {
       this.modifyDialog = false
       this.modifyTitle = ''
       this.modifyContents = ''
+      this.modifyPinned = ''
     },
     startModify () {
       axios.put('/api/announcementApp/updateAnnouncement', {
         id: this.editedItem.id,
         title: this.modifyTitle,
-        contents: this.modifyContents
-      //  top: (this.editedItem.top) ? 1 : 0
+        contents: this.modifyContents,
+        pinned: this.modifyPinned
       })
       this.closeModifyDialog()
     },
