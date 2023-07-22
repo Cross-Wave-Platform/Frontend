@@ -1,4 +1,4 @@
-<template>
+  <template>
   <v-tabs vertical>
     <v-tab
         class="font-weight-bold"
@@ -95,19 +95,19 @@
         >
           <v-text-field
             v-model="report.title"
-            label="Title"
+            label="標題"
             :rules="[v => !!v || !!report.content || 'You have to write at least title or content.']"
           >
           </v-text-field>
           <v-textarea
             v-model="report.content"
-            label="Content"
+            label="內容"
             :rules="[v => !!v || !!report.title || 'You have to write at least title or content.']"
           >
           </v-textarea>
           <v-file-input
             v-model="report.file"
-            label="File input"
+            label="附件"
             counter
             show-size
             truncate-length="30"
@@ -131,7 +131,7 @@
             type="submit"
             @click.prevent="quickReport"
           >
-            Send
+            送出
             <v-icon right>
               mdi-send
             </v-icon>

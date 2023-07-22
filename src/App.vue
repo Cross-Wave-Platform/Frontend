@@ -1,4 +1,4 @@
-<template>
+ <template>
   <v-app>
     <v-app-bar
       app
@@ -74,7 +74,7 @@
             dense
           >
             <v-icon class="mr-2">mdi-login</v-icon>
-            <span>Login</span>
+            <span>登入</span>
           </v-btn>
         </template>
         <v-sheet>
@@ -136,14 +136,14 @@
                           <v-text-field
                             v-model="account"
                             :rules="accountRules"
-                            label="Account"
+                            label="帳號"
                             outlined
                             required
                             dense
                           ></v-text-field>
                           <v-text-field
                             v-model="password"
-                            label="Password"
+                            label="密碼"
                             :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
                             :type="showPassword ? 'text' : 'password'"
                             @click:append="showPassword = !showPassword"
@@ -158,7 +158,7 @@
                             type="submit"
                             block
                           >
-                            Login
+                            登入
                           </v-btn>
                           <v-alert
                             :value="alertPlace == 'login'"
@@ -187,7 +187,7 @@
                           <v-text-field
                             v-model="username"
                             :rules="usernameRules"
-                            label="Username"
+                            label="帳號"
                             outlined
                             required
                             dense
@@ -195,7 +195,7 @@
                           <v-text-field
                             v-model="email"
                             :rules="emailRules"
-                            label="E-mail address"
+                            label="電子信箱(請使用和SRDA相同信箱)"
                             outlined
                             required
                             dense
@@ -203,7 +203,7 @@
                           <v-text-field
                             v-model="password"
                             :rules="passwordRules"
-                            label="Password"
+                            label="密碼"
                             :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
                             :type="showPassword ? 'text' : 'password'"
                             @click:append="showPassword = !showPassword"
@@ -273,7 +273,7 @@
         @click="logout"
       >
         <v-icon class="mr-2">mdi-logout</v-icon>
-        <span>Logout</span>
+        <span>登出</span>
       </v-btn>
       <template
         v-slot:extension
