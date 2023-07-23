@@ -4,6 +4,7 @@ import Admin from '../views/Admin.vue'
 import UserManage from '../components/UserManage.vue'
 import DataManage from '../components/DataManage.vue'
 import AnnounceManage from '../components/AnnounceManage.vue'
+import PictureManage from '../components/PictureManage.vue'
 import store from '../store'
 
 Vue.use(VueRouter)
@@ -108,6 +109,15 @@ const routes = [
         component: AnnounceManage,
         meta: {
           title: '公告管理',
+          requiresAuth: true,
+          authRequirement: 1
+        }
+      },
+      {
+        path: 'picturemanage',
+        component: PictureManage,
+        meta: {
+          title: '圖片管理',
           requiresAuth: true,
           authRequirement: 1
         }

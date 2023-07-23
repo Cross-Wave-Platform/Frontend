@@ -16,7 +16,11 @@
                     <v-icon left>mdi-clipboard-text-multiple</v-icon>
                     公告管理
                 </v-tab>
-            </v-tabs>
+                <v-tab class="font-weight-bold" to="/admin/picturemanage">
+                    <v-icon left>mdi-clipboard-text-multiple</v-icon>
+                    圖片管理
+                </v-tab>
+              </v-tabs>
           </div>
         </v-col>
         <v-col  cols=10><router-view></router-view></v-col>
