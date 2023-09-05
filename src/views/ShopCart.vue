@@ -85,6 +85,98 @@
                     </v-container>
                   </v-card>
               </v-dialog>
+              <v-dialog
+                v-model="innerJoin"
+                max-width="650px"
+              >
+                <v-card>
+                  <v-container>
+                    <v-row justify="center">
+                      <v-card-title>
+                        Inner Join
+                      </v-card-title>
+                    </v-row>
+                    <v-row>
+                      <v-card-text>
+                        匯出資料檔中的樣本，為勾選的資料檔的每一個波次皆完訪的樣本（亦即全勤樣本）。輸出資料格式為一個樣本一列，變項往右展開（wide format）。
+                      </v-card-text>
+                    </v-row>
+                    <img
+                      :src="require('@/assets/innerJoin.png')"
+                      style="width: 600px"
+                    >
+                  </v-container>
+                </v-card>
+              </v-dialog>
+              <v-dialog
+                v-model="outerJoin"
+                max-width="650px"
+              >
+                <v-card>
+                  <v-container>
+                    <v-row justify="center">
+                      <v-card-title>
+                        Outer Join
+                      </v-card-title>
+                    </v-row>
+                    <v-row>
+                      <v-card-text>
+                        匯出資料檔中的樣本，為勾選的資料檔的任何一個波次曾經完訪的樣本。輸出資料格式為一個樣本一列，變項往右展開（wide format）。
+                      </v-card-text>
+                    </v-row>
+                    <img
+                      :src="require('@/assets/outerJoin.png')"
+                      style="width: 600px"
+                    >
+                  </v-container>
+                </v-card>
+              </v-dialog>
+              <v-dialog
+                v-model="unionJoin"
+                max-width="650px"
+              >
+                <v-card>
+                  <v-container>
+                    <v-row justify="center">
+                      <v-card-title>
+                        Union
+                      </v-card-title>
+                    </v-row>
+                    <v-row>
+                      <v-card-text>
+                        匯出資料檔中的樣本，為勾選的資料檔的任何一個波次曾經完訪的樣本。輸出資料格式為一個樣本會有一列以上，每一個變項只會往右列出一次，波次則是往下展開（long format） 。
+                      </v-card-text>
+                    </v-row>
+                    <img
+                      :src="require('@/assets/union.png')"
+                      style="width: 300px"
+                    >
+                  </v-container>
+                </v-card>
+              </v-dialog>
+              <v-dialog
+                v-model="leftJoin"
+                max-width="650px"
+              >
+                <v-card>
+                  <v-container>
+                    <v-row justify="center">
+                      <v-card-title>
+                        Left Join
+                      </v-card-title>
+                    </v-row>
+                    <v-row>
+                      <v-card-text>
+                        匯出資料檔中的樣本，為勾選的資料檔的第一個波次曾經完訪的樣本。輸出資料格式為一個樣本一列，變項往右展開（wide format）。
+                      </v-card-text>
+                    </v-row>
+                    <img
+                      :src="require('@/assets/leftJoin.png')"
+                      style="width: 600px"
+                    >
+                  </v-container>
+                </v-card>
+              </v-dialog>
           </v-card>
         </v-col>
 
@@ -108,21 +200,6 @@
                   <v-row>
                     <v-col justify="start">{{ item.method }}</v-col>
                     <v-col justify="end" md="1">
-                      <v-tooltip left>
-                        <template v-slot:activator="{ on, attrs }">
-                          <v-icon
-                            v-bind="attrs"
-                            v-on="on"
-                            style="float:right;"
-                          >
-                            mdi-help-circle-outline
-                          </v-icon>
-                        </template>
-                        <span>
-                          <v-icon color="white" left large>{{ item.icon }}</v-icon>
-                          {{ item.text }}
-                        </span>
-                      </v-tooltip>
                     </v-col>
                   </v-row>
                 </template>
@@ -166,7 +243,6 @@
                   </v-container>
                 </v-card>
               </v-dialog>
-
           </v-list>
         </v-col>
       </v-row>
@@ -232,6 +308,11 @@ export default {
       ],
       OptionExport: ['CSV', 'SAV'],
 
+      innerJoin: false,
+      outerJoin: false,
+      unionJoin: false,
+      leftJoin: false,
+
       searchResult: [],
       problemList: [],
       facetList: [],
@@ -245,7 +326,14 @@ export default {
     },
     'exportContent.mergeMethod': function () {
       if (this.exportContent.mergeMethod === 'left') {
+        this.leftJoin = true
         this.waveDialog = true
+      } else if (this.exportContent.mergeMethod === 'inner') {
+        this.innerJoin = true
+      } else if (this.exportContent.mergeMethod === 'outer') {
+        this.outerJoin = true
+      } else if (this.exportContent.mergeMethod === 'union') {
+        this.unionJoin = true
       }
     }
   },
