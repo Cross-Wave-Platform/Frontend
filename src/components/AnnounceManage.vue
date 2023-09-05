@@ -216,7 +216,8 @@ export default {
     startCreate () {
       axios.post('/api/announcementApp/createAnnouncement', {
         title: this.createTitle,
-        contents: this.createContents
+        contents: this.createContents,
+        pinned: false
       })
       this.closeCreateDialog()
     },
