@@ -37,7 +37,6 @@
               :headers="header"
               :items="announcementList"
               :items-per-page="5"
-              sort-by="-id"
               style="background-color:rgba(255, 255, 255, 0.0);"
               :footer-props="{'items-per-page-options': [5]}"
             >
@@ -129,6 +128,7 @@ export default {
   mounted () {
     axios.get('/api/announcementApp/listAnnouncement').then((res) => {
       this.announcementList = res.data.data
+      this.searchAnnouncement(this.announcementList[0])
     })
   }
 }

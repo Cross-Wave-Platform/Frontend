@@ -6,7 +6,6 @@
         :headers="header"
         :items="announcementList"
         :items-per-page="5"
-        sort-by="-id"
         style="background-color:rgba(255, 255, 255, 0.0);"
         :footer-props="{'items-per-page-options': [5]}"
         >
@@ -16,6 +15,9 @@
               mdi-delete
             </v-icon>
           </v-btn>
+        </template>
+        <template v-slot:item.pinAction="{ item }">
+          {{ item.pinned?'已置頂':'未置頂' }}
         </template>
         <template v-slot:item.modifyAction="{ item }">
           <v-btn text @click="modifyAnnouncement(item)">
@@ -97,6 +99,11 @@
             auto-grow
           >
           </v-textarea>
+          <v-switch
+          v-model="modifyPinned"
+          :label="`${modifyPinned==true ? '已置頂':'未置頂'}`"
+          >
+          </v-switch>
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
@@ -163,6 +170,7 @@ export default {
       header: [
         { text: '刪除', align: 'start', value: 'deleteAction', sortable: false },
         { text: '公告標題', align: 'start', value: 'title', sortable: false },
+        { text: '置頂狀態', align: 'end', value: 'pinAction', sortable: false },
         { text: '編輯公告', align: 'end', value: 'modifyAction', sortable: false }
       ],
       createDialog: false,
@@ -172,7 +180,8 @@ export default {
       createTitle: '',
       createContents: '',
       modifyTitle: '',
-      modifyContents: ''
+      modifyContents: '',
+      modifyPinned: ''
     }
   },
   watch: {
@@ -207,7 +216,8 @@ export default {
     startCreate () {
       axios.post('/api/announcementApp/createAnnouncement', {
         title: this.createTitle,
-        contents: this.createContents
+        contents: this.createContents,
+        pinned: false
       })
       this.closeCreateDialog()
     },
@@ -226,18 +236,21 @@ export default {
         .then((res) => {
           this.modifyTitle = res.data.data.title
           this.modifyContents = res.data.data.contents
+          this.modifyPinned = res.data.data.pinned
         })
     },
     closeModifyDialog () {
       this.modifyDialog = false
       this.modifyTitle = ''
       this.modifyContents = ''
+      this.modifyPinned = ''
     },
     startModify () {
       axios.put('/api/announcementApp/updateAnnouncement', {
         id: this.editedItem.id,
         title: this.modifyTitle,
-        contents: this.modifyContents
+        contents: this.modifyContents,
+        pinned: this.modifyPinned
       })
       this.closeModifyDialog()
     },
