@@ -169,6 +169,7 @@ export default {
       announcementList: [],
       header: [
         { text: '刪除', align: 'start', value: 'deleteAction', sortable: false },
+        { text: '公告日期', align: 'start', value: 'modifyDate', sortable: false },
         { text: '公告標題', align: 'start', value: 'title', sortable: false },
         { text: '置頂狀態', align: 'end', value: 'pinAction', sortable: false },
         { text: '編輯公告', align: 'end', value: 'modifyAction', sortable: false }
