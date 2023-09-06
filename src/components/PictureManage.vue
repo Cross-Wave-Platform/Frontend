@@ -32,7 +32,7 @@
       >
       </v-file-input>
       <v-card-actions>
-        <v-btn color=primary>
+        <v-btn color=primary @click="inputPictureTwo">
           新增
         </v-btn>
         <v-btn color="error">
@@ -49,7 +49,7 @@
       >
       </v-file-input>
       <v-card-actions>
-        <v-btn color=primary>
+        <v-btn color=primary @click="inputPictureThree">
           新增
         </v-btn>
         <v-btn color="error">
@@ -66,7 +66,7 @@
       >
       </v-file-input>
       <v-card-actions>
-        <v-btn color=primary>
+        <v-btn color=primary @click="inputPictureFour">
           新增
         </v-btn>
         <v-btn color="error">
@@ -88,7 +88,7 @@
           <v-carousel-item
             v-for="(item,i) in items"
             :key="i"
-            :src="item"
+            :src="'data:image/jpg;base64,'+ item"
           >
           </v-carousel-item>
         </v-carousel>
@@ -110,12 +110,8 @@ export default {
       pictureInput3: null,
       pictureInput4: null,
       preview: 0,
-      items: [
-        'https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg',
-        'https://cdn.vuetifyjs.com/images/carousel/sky.jpg',
-        'https://cdn.vuetifyjs.com/images/carousel/bird.jpg',
-        'https://cdn.vuetifyjs.com/images/carousel/planet.jpg'
-      ]
+      items: [],
+      image: 'data:image/jpg;base64,'
     }
   },
 
@@ -132,8 +128,59 @@ export default {
       }
       axios(config)
         .then((res) => {
+          this.pictureInput = null
+        })
+    },
+    inputPictureTwo () {
+      var formData = new FormData()
+      formData.append('id', 2)
+      formData.append('picture', this.pictureInput2)
+      const config = {
+        url: '/api/pictureApp/inputPicture',
+        method: 'post',
+
+        data: formData
+      }
+      axios(config)
+        .then((res) => {
+          this.pictureInput2 = null
+        })
+    },
+    inputPictureThree () {
+      var formData = new FormData()
+      formData.append('id', 3)
+      formData.append('picture', this.pictureInput3)
+      const config = {
+        url: '/api/pictureApp/inputPicture',
+        method: 'post',
+
+        data: formData
+      }
+      axios(config)
+        .then((res) => {
+          this.pictureInput3 = null
+        })
+    },
+    inputPictureFour () {
+      var formData = new FormData()
+      formData.append('id', 4)
+      formData.append('picture', this.pictureInput4)
+      const config = {
+        url: '/api/pictureApp/inputPicture',
+        method: 'post',
+
+        data: formData
+      }
+      axios(config)
+        .then((res) => {
+          this.pictureInput4 = null
         })
     }
+  },
+  mounted () {
+    axios.get('/api/pictureApp/listPicture').then((res) => {
+      this.items = res.data.data
+    })
   }
 }
 </script>
