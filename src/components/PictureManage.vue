@@ -18,7 +18,7 @@
         <v-btn color=primary @click="inputPictureOne" >
           新增
         </v-btn>
-        <v-btn color="error">
+        <v-btn color="error" @click="deletePicture(1)">
           刪除
         </v-btn>
       </v-card-actions>
@@ -35,7 +35,7 @@
         <v-btn color=primary @click="inputPictureTwo">
           新增
         </v-btn>
-        <v-btn color="error">
+        <v-btn color="error" @click="deletePicture(2)">
           刪除
         </v-btn>
       </v-card-actions>
@@ -52,7 +52,7 @@
         <v-btn color=primary @click="inputPictureThree">
           新增
         </v-btn>
-        <v-btn color="error">
+        <v-btn color="error" @click="deletePicture(3)">
           刪除
         </v-btn>
       </v-card-actions>
@@ -69,7 +69,7 @@
         <v-btn color=primary @click="inputPictureFour">
           新增
         </v-btn>
-        <v-btn color="error">
+        <v-btn color="error" @click="deletePicture(4)">
           刪除
         </v-btn>
       </v-card-actions>
@@ -94,6 +94,38 @@
         </v-carousel>
       </v-col>
       </v-row>
+    <v-dialog
+        v-model="deleteDialog"
+        max-width="500"
+    >
+      <v-card>
+        <v-container fluid>
+          <v-row justify="center">
+            <v-card-title>
+              確認刪除此公告？
+            </v-card-title>
+          </v-row>
+          <v-row justify="center">
+            <v-card-actions>
+              <v-btn
+                color="green-darken-1"
+                variant="text"
+                @click="deleteDialog=false"
+              >
+                取消
+              </v-btn>
+              <v-btn
+                color="primary"
+                variant="text"
+                @click="startDelete"
+              >
+                確認刪除
+              </v-btn>
+            </v-card-actions>
+          </v-row>
+        </v-container>
+      </v-card>
+    </v-dialog>
     </v-card>
   </div>
 </template>
@@ -111,7 +143,8 @@ export default {
       pictureInput4: null,
       preview: 0,
       items: [],
-      image: 'data:image/jpg;base64,'
+      deleteID: '',
+      deleteDialog: false
     }
   },
 
@@ -130,6 +163,10 @@ export default {
         .then((res) => {
           this.pictureInput = null
         })
+      this.sleep(300)
+      axios.get('/api/pictureApp/listPicture').then((res) => {
+        this.items = res.data.data
+      })
     },
     inputPictureTwo () {
       var formData = new FormData()
@@ -145,6 +182,10 @@ export default {
         .then((res) => {
           this.pictureInput2 = null
         })
+      this.sleep(300)
+      axios.get('/api/pictureApp/listPicture').then((res) => {
+        this.items = res.data.data
+      })
     },
     inputPictureThree () {
       var formData = new FormData()
@@ -160,6 +201,10 @@ export default {
         .then((res) => {
           this.pictureInput3 = null
         })
+      this.sleep(300)
+      axios.get('/api/pictureApp/listPicture').then((res) => {
+        this.items = res.data.data
+      })
     },
     inputPictureFour () {
       var formData = new FormData()
@@ -175,6 +220,36 @@ export default {
         .then((res) => {
           this.pictureInput4 = null
         })
+      this.sleep(300)
+      axios.get('/api/pictureApp/listPicture').then((res) => {
+        this.items = res.data.data
+      })
+    },
+    deletePicture (val) {
+      this.deleteID = val
+      this.deleteDialog = true
+    },
+    startDelete () {
+      const config = {
+        url: '/api/pictureApp/deletePicture',
+        method: 'delete',
+
+        data: {
+          id: this.deleteID
+        }
+      }
+      axios(config)
+        .then((res) => {
+        })
+      this.deleteDialog = false
+    },
+    sleep (val) {
+      var now = new Date()
+      var exitTime = now.getTime() + val
+      while (true) {
+        now = new Date()
+        if (now.getTime() > exitTime) return
+      }
     }
   },
   mounted () {

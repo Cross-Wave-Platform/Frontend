@@ -16,7 +16,7 @@
               <v-carousel-item
                 v-for="(item,i) in items"
                 :key="i"
-                :src="item"
+                :src="'data:image/jpg;base64,'+ item"
               >
               </v-carousel-item>
             </v-carousel>
@@ -85,12 +85,7 @@ export default {
     return {
       model: 0,
       announcementList: [],
-      items: [
-        'https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg',
-        'https://cdn.vuetifyjs.com/images/carousel/sky.jpg',
-        'https://cdn.vuetifyjs.com/images/carousel/bird.jpg',
-        'https://cdn.vuetifyjs.com/images/carousel/planet.jpg'
-      ],
+      items: [],
       header: [
         { text: '標題', align: 'center', value: 'title', sortable: false },
         { text: '詳細內容', align: 'end', value: 'searchAction', sortable: false }
@@ -129,6 +124,9 @@ export default {
   mounted () {
     axios.get('/api/announcementApp/listAnnouncement').then((res) => {
       this.announcementList = res.data.data
+    })
+    axios.get('/api/pictureApp/listPicture').then((res) => {
+      this.items = res.data.data
     })
   }
 }
