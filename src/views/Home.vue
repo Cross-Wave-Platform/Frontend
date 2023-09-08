@@ -87,6 +87,7 @@ export default {
       announcementList: [],
       items: [],
       header: [
+        { text: '公告日期', align: 'start', value: 'modifyDate', sortable: false },
         { text: '標題', align: 'center', value: 'title', sortable: false },
         { text: '詳細內容', align: 'end', value: 'searchAction', sortable: false }
       ],
